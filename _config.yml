@@ -27,3 +27,5 @@ defaults:
       permalink: /:path/:basename:output_ext
 
 exclude: [LICENSE-CODE.md, LICENSE-IMAGES, README.md, bower.json]
+
+theme: jekyll-theme-slate
