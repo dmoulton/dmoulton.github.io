@@ -1,0 +1,317 @@
+picture_path: messier
+pictures:
+- filename: m1
+  original: m1-6096x4056.jpg
+  sizes:
+  - m1-300x200.jpg
+  sort_id: 1
+  thumbnail: m1-300x200.jpg
+  title: M1
+- filename: m2
+  original: m2-6096x4056.jpg
+  sizes:
+  - m2-300x200.jpg
+  sort_id: 2
+  thumbnail: m2-300x200.jpg
+  title: M2
+- filename: m3
+  original: m3-3184x1968.jpg
+  sizes:
+  - m3-300x185.jpg
+  sort_id: 3
+  thumbnail: m3-300x185.jpg
+  title: M3
+- filename: m4
+  original: m4-5682x3707.jpg
+  sizes:
+  - m4-300x196.jpg
+  sort_id: 4
+  thumbnail: m4-300x196.jpg
+  title: M4
+- filename: m5
+  original: m5-4032x2672.jpg
+  sizes:
+  - m5-300x199.jpg
+  sort_id: 5
+  thumbnail: m5-300x199.jpg
+  title: M5
+- filename: m6
+  original: m6-5704x3751.jpg
+  sizes:
+  - m6-300x197.jpg
+  sort_id: 6
+  thumbnail: m6-300x197.jpg
+  title: M6
+- filename: m7
+  original: m7-2000x1287.jpg
+  sizes:
+  - m7-300x193.jpg
+  sort_id: 7
+  thumbnail: m7-300x193.jpg
+  title: M7
+- filename: m8
+  original: m8-5818x3805.jpg
+  sizes:
+  - m8-300x196.jpg
+  sort_id: 8
+  thumbnail: m8-300x196.jpg
+  title: M8
+- filename: m9
+  original: m9-5748x3779.jpg
+  sizes:
+  - m9-300x197.jpg
+  sort_id: 9
+  thumbnail: m9-300x197.jpg
+  title: M9
+- filename: m10
+  original: m10-5648x3570.jpg
+  sizes:
+  - m10-300x190.jpg
+  sort_id: 10
+  thumbnail: m10-300x190.jpg
+  title: M10
+- filename: m11
+  original: m11-5005x3074.jpg
+  sizes:
+  - m11-300x184.jpg
+  sort_id: 11
+  thumbnail: m11-300x184.jpg
+  title: M11
+- filename: m12
+  original: m12-6096x4056.jpg
+  sizes:
+  - m12-300x200.jpg
+  sort_id: 12
+  thumbnail: m12-300x200.jpg
+  title: M12
+- filename: m13
+  original: m13-6000x4000.jpg
+  sizes:
+  - m13-300x200.jpg
+  sort_id: 13
+  thumbnail: m13-300x200.jpg
+  title: M13
+- filename: m14
+  original: m14-4996x2915.jpg
+  sizes:
+  - m14-300x175.jpg
+  sort_id: 14
+  thumbnail: m14-300x175.jpg
+  title: M14
+- filename: m15
+  original: m15-6096x4056.jpg
+  sizes:
+  - m15-300x200.jpg
+  sort_id: 15
+  thumbnail: m15-300x200.jpg
+  title: M15
+- filename: m16
+  original: m16-4056x6096.jpg
+  sizes:
+  - m16-133x200.jpg
+  sort_id: 16
+  thumbnail: m16-133x200.jpg
+  title: M16
+- filename: m17
+  original: m17-2000x3000.jpg
+  sizes:
+  - m17-133x200.jpg
+  sort_id: 17
+  thumbnail: m17-133x200.jpg
+  title: M17
+- filename: m20
+  original: m20-6000x4000.jpg
+  sizes:
+  - m20-300x200.jpg
+  sort_id: 20
+  thumbnail: m20-300x200.jpg
+  title: M20
+- filename: m22
+  original: m22-5516x3525.jpg
+  sizes:
+  - m22-300x192.jpg
+  sort_id: 22
+  thumbnail: m22-300x192.jpg
+  title: M22
+- filename: m24
+  original: m24-6024x4022.jpg
+  sizes:
+  - m24-300x200.jpg
+  sort_id: 24
+  thumbnail: m24-300x200.jpg
+  title: M24
+- filename: m27
+  original: m27-6096x4056.jpg
+  sizes:
+  - m27-300x200.jpg
+  sort_id: 27
+  thumbnail: m27-300x200.jpg
+  title: M27
+- filename: m28
+  original: m28-5506x3531.jpg
+  sizes:
+  - m28-300x192.jpg
+  sort_id: 28
+  thumbnail: m28-300x192.jpg
+  title: M28
+- filename: m29
+  original: m29-5000x3327.jpg
+  sizes:
+  - m29-300x200.jpg
+  sort_id: 29
+  thumbnail: m29-300x200.jpg
+  title: M29
+- filename: m30
+  original: m30-6096x4056.jpg
+  sizes:
+  - m30-300x200.jpg
+  sort_id: 30
+  thumbnail: m30-300x200.jpg
+  title: M30
+- filename: m31
+  original: m31-4000x2874.jpg
+  sizes:
+  - m31-278x200.jpg
+  sort_id: 31
+  thumbnail: m31-278x200.jpg
+  title: M31
+- filename: m33
+  original: m33-6096x4056.jpg
+  sizes:
+  - m33-300x200.jpg
+  sort_id: 33
+  thumbnail: m33-300x200.jpg
+  title: M33
+- filename: m34
+  original: m34-6096x4056.jpg
+  sizes:
+  - m34-300x200.jpg
+  sort_id: 34
+  thumbnail: m34-300x200.jpg
+  title: M34
+- filename: m35
+  original: m35-6096x4056.jpg
+  sizes:
+  - m35-300x200.jpg
+  sort_id: 35
+  thumbnail: m35-300x200.jpg
+  title: M35
+- filename: m36
+  original: m36-6096x4056.jpg
+  sizes:
+  - m36-300x200.jpg
+  sort_id: 36
+  thumbnail: m36-300x200.jpg
+  title: M36
+- filename: m37
+  original: m37-6096x4056.jpg
+  sizes:
+  - m37-300x200.jpg
+  sort_id: 37
+  thumbnail: m37-300x200.jpg
+  title: M37
+- filename: m38
+  original: m38-6096x4056.jpg
+  sizes:
+  - m38-300x200.jpg
+  sort_id: 38
+  thumbnail: m38-300x200.jpg
+  title: M38
+- filename: m39
+  original: m39-6096x4056.jpg
+  sizes:
+  - m39-300x200.jpg
+  sort_id: 39
+  thumbnail: m39-300x200.jpg
+  title: M39
+- filename: m42
+  original: m42-4918x3252.jpg
+  sizes:
+  - m42-300x198.jpg
+  sort_id: 42
+  thumbnail: m42-300x198.jpg
+  title: M42
+- filename: m44
+  original: m44-6096x4056.jpg
+  sizes:
+  - m44-200x300.jpg
+  sort_id: 44
+  thumbnail: m44-200x300.jpg
+  title: M44
+- filename: m45
+  original: m45-5646x3659.jpg
+  sizes:
+  - m45-300x194.jpg
+  sort_id: 45
+  thumbnail: m45-300x194.jpg
+  title: M45
+- filename: m51
+  original: m51-6000x4000.jpg
+  sizes:
+  - m51-300x200.jpg
+  sort_id: 51
+  thumbnail: m51-300x200.jpg
+  title: M51
+- filename: m52
+  original: m52-6096x4056.jpg
+  sizes:
+  - m52-300x200.jpg
+  sort_id: 52
+  thumbnail: m52-300x200.jpg
+  title: M52
+- filename: m56
+  original: m56-6096x4056.jpg
+  sizes:
+  - m56-300x200.jpg
+  sort_id: 56
+  thumbnail: m56-300x200.jpg
+  title: M56
+- filename: m57
+  original: m57-3000x2000.jpg
+  sizes:
+  - m57-300x200.jpg
+  sort_id: 57
+  thumbnail: m57-300x200.jpg
+  title: M57
+- filename: m71
+  original: m71-6096x4056.jpg
+  sizes:
+  - m71-300x200.jpg
+  sort_id: 71
+  thumbnail: m71-300x200.jpg
+  title: M71
+- filename: m72
+  original: m72-6096x4056.jpg
+  sizes:
+  - m72-300x200.jpg
+  sort_id: 72
+  thumbnail: m72-300x200.jpg
+  title: M72
+- filename: m76
+  original: m76-6096x4056.jpg
+  sizes:
+  - m76-300x200.jpg
+  sort_id: 76
+  thumbnail: m76-300x200.jpg
+  title: M76
+- filename: m80
+  original: m80-6000x4000.jpg
+  sizes:
+  - m80-300x200.jpg
+  sort_id: 80
+  thumbnail: m80-300x200.jpg
+  title: M80
+- filename: m92
+  original: m92-6000x4000.jpg
+  sizes:
+  - m92-300x200.jpg
+  sort_id: 92
+  thumbnail: m92-300x200.jpg
+  title: M92
+- filename: m100
+  original: m100-6000x4000.jpg
+  sizes:
+  - m100-300x200.jpg
+  sort_id: 100
+  thumbnail: m100-300x200.jpg
+  title: M100

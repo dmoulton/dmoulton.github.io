@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption/>
+  <note>Processing: Photometric CC
+Processing: Histogram Transf. (mid=0.008, lo=0.049, hi=1.000)
+Processing: SCNR (type=0, amount=1.00, preserve=true)
+Processing: Background extraction (Correction: Subtraction)
+Processing: Deconvolution (iter=10, sig=2.000)
+Processing: Median Filter (filter=3x3 px)
+</note>
+  <place/>
+  <categories/>
+</comment>

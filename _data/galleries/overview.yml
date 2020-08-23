@@ -1,0 +1,10 @@
+-
+ title: Messier Gallery
+ directory: messier
+ preview:
+  filename: m8
+  original: m8-5818x3805.jpg
+  sizes:
+  - m8-5818x3805.jpg
+  - m8-300x196.jpg
+  thumbnail: m8-300x196.jpg
