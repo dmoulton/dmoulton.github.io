@@ -22,10 +22,10 @@ markdown: kramdown
 defaults:
   -
     scope:
-      path: "photography"
+      path: "astrophotography"
     values:
       permalink: /:path/:basename:output_ext
 
 exclude: [LICENSE-CODE.md, LICENSE-IMAGES, README.md, bower.json]
 
-theme: jekyll-theme-slate
+# theme: jekyll-theme-slate
