@@ -1,0 +1,63 @@
+---
+layout: page
+title: Latest Astrobin
+comments: false
+permalink: /my-astrobin/
+published: true
+no_menu_item: false
+---
+
+<style>
+    div.gallery {
+    border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+    border: 1px solid #777;
+    }
+
+    div.gallery img {
+    width: 100%;
+    height: auto;
+    }
+
+    div.desc {
+    padding: 15px;
+    text-align: center;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+
+    .responsive {
+    padding: 6px 6px;
+    float: left;
+    width: 49.99999%;
+    }
+
+    @media only screen and (max-width: 700px) {
+    .responsive {
+        width: 99.99999%;
+        margin: 6px 0;
+    }
+    }
+
+    @media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+    }
+
+    .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<body>
+    These are my latest uploads to <a href="https://www.astrobin.com/users/dmoulton/" target="_astrobin">Astrobin</a>
+    <div id='root'></div>
+    <script src="/assets/js/astrobin-gallery.js"></script>
+</body>
