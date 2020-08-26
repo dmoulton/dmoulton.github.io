@@ -1,0 +1,32 @@
+picture_path: other
+pictures:
+- filename: ngc5897
+  original: ngc5897-6024x4022.jpg
+  sizes: []
+  thumbnail: ngc5897-thumbnail.jpg
+  title: NGC5897
+- filename: pelican
+  original: pelican-6024x4022.jpg
+  sizes: []
+  thumbnail: pelican-thumbnail.jpg
+  title: PELICAN
+- filename: ngc6888
+  original: ngc6888-6024x4022.jpg
+  sizes: []
+  thumbnail: ngc6888-thumbnail.jpg
+  title: NGC6888
+- filename: ngc6334
+  original: ngc6334-6024x4022.jpg
+  sizes: []
+  thumbnail: ngc6334-thumbnail.jpg
+  title: NGC6334
+- filename: ngc7000
+  original: ngc7000-5120x3837.jpg
+  sizes: []
+  thumbnail: ngc7000-thumbnail.jpg
+  title: NGC7000
+- filename: rosette
+  original: rosette-6024x4022.jpg
+  sizes: []
+  thumbnail: rosette-thumbnail.jpg
+  title: ROSETTE

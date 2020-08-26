@@ -8,4 +8,11 @@
   - m31-4000x2874.jpg
   - m31-278x200.jpg
   thumbnail: m31-278x200.jpg
-
+-
+ title: Other Astro Photos
+ directory: other
+ preview:
+  filename: ngc6334
+  original: ngc6334-6024x4022.jpg
+  sizes: []
+  thumbnail: ngc6334-thumbnail.jpg
