@@ -15,6 +15,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "//dmoulton.github.io" # the base hostname & protocol for your site
 twitter_username: moultondj
 github_username:  dmoulton
+google_analytics: UA-20518309-1
+astrobin_key: 2c284ca6393ceb538d753cb307b7dd8eb2b41144
+astrobin_secret: c5637a20035f8ab070e38cc0171cd47dd164a76d
 
 # Build settings
 markdown: kramdown

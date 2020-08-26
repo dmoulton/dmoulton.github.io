@@ -1,3 +1,5 @@
+---
+---
 // Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest()
 
@@ -5,7 +7,7 @@ const app = document.getElementById('root')
 
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key=2c284ca6393ceb538d753cb307b7dd8eb2b41144&api_secret=c5637a20035f8ab070e38cc0171cd47dd164a76d&format=json', true)
+request.open('GET', 'https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key={{site.astrobin_key}}&api_secret={{site.astrobin_secret}}&format=json', true)
 
 request.onload = function () {
   // Begin accessing JSON data here

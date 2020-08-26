@@ -10,6 +10,10 @@
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.url | replace:'index.html','' }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/{{ "feed.xml" }}">
 
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include analytics.html %}
+  {% endif %}
+
   {% if page.support contains 'jquery' %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   {% endif %}
