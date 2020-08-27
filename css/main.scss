@@ -68,7 +68,7 @@ $on-laptop:        75%;
     .half-width {
         @extend .column;
         @media screen and (min-width: $on-palm) {
-            width: 48%;
+            width: 47%;
         }
     }
     .one-third-width {
@@ -105,5 +105,8 @@ $on-laptop:        75%;
         content: "";
         display: table;
         clear: both;
+    }
+    .image_spacer{
+        margin-right: 10px;
     }
 }
