@@ -30,3 +30,38 @@ pictures:
   sizes: []
   thumbnail: rosette-thumbnail.jpg
   title: ROSETTE
+- filename: ngc2244
+  original: ngc2244-1075x1075.jpg
+  sizes: []
+  thumbnail: ngc2244-thumbnail.jpg
+  title: NGC2244
+- filename: lost_lake
+  original: lost_lake-4898x3265.jpg
+  sizes: []
+  thumbnail: lost_lake-thumbnail.jpg
+  title: LOST_LAKE
+- filename: barn
+  original: barn-6000x4000.jpg
+  sizes: []
+  thumbnail: barn-thumbnail.jpg
+  title: BARN
+- filename: jupiter
+  original: jupiter-594x397.jpg
+  sizes: []
+  thumbnail: jupiter-thumbnail.jpg
+  title: JUPITER
+- filename: steve
+  original: steve-6000x4000.jpg
+  sizes: []
+  thumbnail: steve-thumbnail.jpg
+  title: STEVE
+- filename: moon
+  original: moon-2784x1736.jpg
+  sizes: []
+  thumbnail: moon-thumbnail.jpg
+  title: MOON
+- filename: solar_eclipse
+  original: solar_eclipse-4898x3265.jpg
+  sizes: []
+  thumbnail: solar_eclipse-thumbnail.jpg
+  title: SOLAR_ECLIPSE
