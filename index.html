@@ -3,12 +3,7 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading"><a href="https://www.instagram.com/moulton_astro">My Instagram Feed</a></h1>
-  <!-- SnapWidget -->
-<iframe src="https://snapwidget.com/embed/867679" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:1200px; height:400px"></iframe>  <hr />
   <h1 class="page-heading">Posts</h1>
-
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
@@ -20,5 +15,10 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
+  <hr />
+  <h1 class="page-heading">
+    <a href="https://www.instagram.com/moulton_astro">My Instagram Feed</a>
+  </h1>
+  <!-- SnapWidget -->
+  <iframe src="https://snapwidget.com/embed/867679" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:1200px; height:400px"></iframe>  
 </div>
