@@ -3,7 +3,7 @@ title: Installing RMagick on Ubuntu Maverick
 layout: post
 comments: true
 categories: linux
-published: false
+archived: true
 ---
 Installing RMagick can be an adventure to say the least. It seems to me like sometimes it goes great, then the next time you're all afternoon.
 

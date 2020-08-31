@@ -3,6 +3,7 @@ title: ADConnect - A Ruby Active Directory Authentication Gem
 layout: post
 comments: true
 categories: programming ruby
+archived: true
 ---
 Over the past few weeks its become more and more apparent to me that I would need to be able to authenticate some of our internal rails sites to the Active Directory. There are a number of plugins and gems to get the job done, although almost all of them are geared towards vanilla ldap. Of course, Active Directory isn't **quite** the same as ldap. That shouldn't come as any surprise.
 

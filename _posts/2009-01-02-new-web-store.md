@@ -1,7 +1,7 @@
 ---
 title: New Web Store
 layout: post
-published: false
+archived: true
 ---
 My son and I have launched a new joint online venture, selling skateboarding equipment. The new site is at [http://www.skatebordz.com](http://www.skatebordz.com). Its hosted by shopify, which means its a rails app, which is what attracted me to it in the first place. It has a nice API, nice admin tool, and looks pretty good.
 

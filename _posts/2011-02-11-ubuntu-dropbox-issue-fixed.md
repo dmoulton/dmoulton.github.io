@@ -4,7 +4,7 @@ layout: post
 comments: true
 author: David Moulton
 categories: linux
-published: false
+archived: true
 ---
 I've had an issue for several days now where my Ubuntu 10.10 based laptop would not sync to my Dropbox account. I felt as though I had one arm tied behind my back without a working dropbox. I reinstalled, relinked, and every other thing I could think of to redo.
 

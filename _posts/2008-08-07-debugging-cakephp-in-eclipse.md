@@ -1,7 +1,8 @@
 ---
 title: Debugging CakePHP in Eclipse
 layout: post
-published: false
+published: true
+archived: true
 categories: programming PHP
 ---
 

@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: Streaming vudu.com videos from your iPad to AppleTV via AirPlay
 categories: apple ios ipad appletv
-published: false
+archived: true
 ---
 If you have tried to stream your vudu.com video playing onto your AppleTV, you may have found that all you seem to get is the audio. It is possible, with a little setup and some small inconvenience, to get the audio to stream as well.
 

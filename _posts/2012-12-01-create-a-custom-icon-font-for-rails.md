@@ -3,6 +3,7 @@ title: Creating a Custom Icon Font For Rails
 layout: post
 categories: programming ruby
 comments: true
+archived: true
 ---
 If you've used any @font-face icon fonts, whether with twitter-boostrap or Zurb, or elsewhere, you know they can be handy. Its nice from a rails perspective to have them bundled up in an engine, and its nice to have an easy-to-remember name to find them with.
 

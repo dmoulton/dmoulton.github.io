@@ -3,7 +3,7 @@ title: Re-sign Ruby Executable in OSX
 layout: post
 categories: programming ruby osx
 comments: true
-published: false
+archived: true
 ---
 Yesterday I finally fixed an issue that I have been sort of ignoring for a few weeks. Each time I started a rails server in dev mode, I would get the alert box wanting to know if I want the application "ruby" to accept incoming network connections. No matter how many time I clicked allow, the next time I ran the server, it would ask me that again. I found that in firewall preferences, it was in the list to be allowed. It was annoying, but I didn't bother with finding a solution until yesterday. I made this fix in OSX Mountain Lion, but I assume it will work in other versions
 

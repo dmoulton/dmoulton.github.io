@@ -2,7 +2,7 @@
 title: Testing a Simple Rails XML API
 layout: post
 categories: programming ruby rails
-published: false
+archived: true
 ---
 I have a very simple xml API for adding users to our system at work. It adds a user to our front end database, and also adds that same user to our back end billing system. It needs a refactor quite badly, so testing needs to be created to make sure that the refactor works as it should.
 

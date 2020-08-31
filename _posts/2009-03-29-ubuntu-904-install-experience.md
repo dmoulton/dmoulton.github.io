@@ -2,7 +2,7 @@
 title: Ubuntu 9.04 Install Experience
 layout: post
 categories: linux
-published: false
+archived: true
 ---
 The laptop I currently use at work and home has in the past been a dual boot, XP and Ubuntu machine. I kept Windows on it mostly because we're really a windows shop at work, so I felt like I needed to have that available to me. It seems like I boot into windows maybe once every six weeks, and thats for maybe 5 minutes to check whether something works in IE. Thats about all I can stand...
 

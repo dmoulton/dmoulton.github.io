@@ -3,7 +3,7 @@ title: Create a Private Gem Repository
 layout: post
 comments: true
 categories: programming ruby
-published: false
+archived: true
 ---
 I recently created a private gem repository for gems that I use at work that are not public. Searching for 'create gem repository' yields plenty of hits, but I had a couple of bumps along the journey that I thought I would detail here to help anyone else that might need it.
 
