@@ -77,11 +77,10 @@ pictures:
   thumbnail: m11-300x184.jpg
   title: M11
 - filename: m12
-  original: m12-6096x4056.jpg
-  sizes:
-  - m12-300x200.jpg
+  original: m12-4449x2908.jpg
+  sizes: []
   sort_id: 12
-  thumbnail: m12-300x200.jpg
+  thumbnail: m12-thumbnail.jpg
   title: M12
 - filename: m13
   original: m13-6000x4000.jpg
