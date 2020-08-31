@@ -16,10 +16,10 @@ A week or so ago, I put an ad on CloudyNights to see if anyone by chance had a S
 
 The package arrived a couple of days ago. Here are some photos of the contents (camera not included!):
 
-<img src="https://goo.gl/pVBsMg" width="500">
-<img src="https://goo.gl/F6uJOI" width="500">
-<img src="https://goo.gl/FHjziX" width="500">
-<img src="https://goo.gl/oHzbov" width="500">
+<img src="/assets/analyzer-and-camera.jpg" width="500">
+<img src="/assets/camera.jpg" width="500">
+<img src="/assets/analyzer.jpg" width="500">
+<img src="/assets/analyzer-closeup.jpg" width="500">
 
 The small ring in the plastic bag is a locking ring, so that you can orient the filter in the same position each time. This makes producing consistent spectra a little easier.
 
@@ -27,12 +27,12 @@ I also ordered a 2" camera adapter so that I can connect my T6i to my Celestron 
 
 Here are a couple of photos of the setup with my camera, now that all the adapters are here.
 
-<img src="https://goo.gl/EA6gF1" width="500">
-<img src="https://goo.gl/L7jakX" width="500">
+<img src="/assets/camera-adapters.jpg" width="500">
+<img src="/assets/analyzer-in-place.jpg" width="500">
 
 As you would expect, it's been cloudy since it came. I finally had a chance to test it on a fixed tripod. Here is my first spectrum, of Sirius. This is from my backyard, which is highly light-polluted. I call it a 7 on the Bortle scale. Our valley has a few hundred thousand people, with about 150,000 very close to me. That certainly means that I will be limited in what spectra I can take from my backyard.
 
-<img src="https://goo.gl/ADgM5x" width="500">
+<img src="/assets/sirius-cropped.jpg" width="500">
 
 It's blurry. I definitely have a lot to learn about focusing. I'm sure that will come in time.
 
