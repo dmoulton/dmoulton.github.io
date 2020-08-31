@@ -8,11 +8,10 @@ pictures:
   thumbnail: m1-300x200.jpg
   title: M1
 - filename: m2
-  original: m2-6096x4056.jpg
-  sizes:
-  - m2-300x200.jpg
+  original: m2-4877x2993.jpg
+  sizes: []
   sort_id: 2
-  thumbnail: m2-300x200.jpg
+  thumbnail: m2-thumbnail.jpg
   title: M2
 - filename: m3
   original: m3-3184x1968.jpg
