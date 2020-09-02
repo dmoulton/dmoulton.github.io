@@ -232,9 +232,9 @@ pictures:
 - filename: m44
   original: m44-6096x4056.jpg
   sizes:
-  - m44-200x300.jpg
+  - m44-thumbnail.jpg
   sort_id: 44
-  thumbnail: m44-200x300.jpg
+  thumbnail: m44-thumbnail.jpg
   title: M44
 - filename: m45
   original: m45-5646x3659.jpg
