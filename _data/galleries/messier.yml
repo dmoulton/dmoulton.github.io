@@ -153,11 +153,10 @@ pictures:
   thumbnail: m28-300x192.jpg
   title: M28
 - filename: m29
-  original: m29-5000x3327.jpg
-  sizes:
-  - m29-300x200.jpg
+  original: m29-6024x4022.jpg
+  sizes: []
   sort_id: 29
-  thumbnail: m29-300x200.jpg
+  thumbnail: m29-thumbnail.jpg
   title: M29
 - filename: m30
   original: m30-6096x4056.jpg
@@ -219,8 +218,9 @@ pictures:
   original: m39-6096x4056.jpg
   sizes:
   - m39-300x200.jpg
+  - m39-6024x4022.jpg
   sort_id: 39
-  thumbnail: m39-300x200.jpg
+  thumbnail: m39-thumbnail.jpg
   title: M39
 - filename: m42
   original: m42-4918x3252.jpg
@@ -231,8 +231,7 @@ pictures:
   title: M42
 - filename: m44
   original: m44-6096x4056.jpg
-  sizes:
-  - m44-thumbnail.jpg
+  sizes: []
   sort_id: 44
   thumbnail: m44-thumbnail.jpg
   title: M44
@@ -251,11 +250,10 @@ pictures:
   thumbnail: m51-300x200.jpg
   title: M51
 - filename: m52
-  original: m52-6096x4056.jpg
-  sizes:
-  - m52-300x200.jpg
+  original: m52-5687x3756.jpg
+  sizes: []
   sort_id: 52
-  thumbnail: m52-300x200.jpg
+  thumbnail: m52-thumbnail.jpg
   title: M52
 - filename: m56
   original: m56-6096x4056.jpg
@@ -272,11 +270,10 @@ pictures:
   thumbnail: m57-300x200.jpg
   title: M57
 - filename: m71
-  original: m71-6096x4056.jpg
-  sizes:
-  - m71-300x200.jpg
+  original: m71-6024x4022.jpg
+  sizes: []
   sort_id: 71
-  thumbnail: m71-300x200.jpg
+  thumbnail: m71-thumbnail.jpg
   title: M71
 - filename: m72
   original: m72-6096x4056.jpg
