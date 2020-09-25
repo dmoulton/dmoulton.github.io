@@ -172,6 +172,12 @@ pictures:
   sort_id: 31
   thumbnail: m31-278x200.jpg
   title: M31
+- filename: m32
+  original: m32-4000x2874.jpg
+  sizes: []
+  sort_id: 32
+  thumbnail: m32-thumbnail.jpg
+  title: M32
 - filename: m33
   original: m33-6096x4056.jpg
   sizes:
@@ -215,10 +221,8 @@ pictures:
   thumbnail: m38-300x200.jpg
   title: M38
 - filename: m39
-  original: m39-6096x4056.jpg
-  sizes:
-  - m39-300x200.jpg
-  - m39-6096x4056.jpg
+  original: m39-6024x4022.jpg
+  sizes: []
   sort_id: 39
   thumbnail: m39-thumbnail.jpg
   title: M39
@@ -322,3 +326,9 @@ pictures:
   sort_id: 104
   thumbnail: m104-thumbnail.jpg
   title: M104
+- filename: m110
+  original: m110-4000x2874.jpg
+  sizes: []
+  sort_id: 110
+  thumbnail: m110-thumbnail.jpg
+  title: M110
