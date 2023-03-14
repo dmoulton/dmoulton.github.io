@@ -1,5 +1,25 @@
 picture_path: other
 pictures:
+- filename: horsehead
+  original: horsehead-5000x3338.jpg
+  sizes: []
+  thumbnail: horsehead-300x200.jpg
+  title: Horse Head Nebula
+- filename: thors_helmet
+  original: thors_helmet-3757x2591.jpg
+  sizes: []
+  thumbnail: thors_helmet-300x207.jpg
+  title: NGC 2359 - Thor's Helmet
+- filename: fish_head
+  original: fish_head-5000x3338.jpg
+  sizes: []
+  thumbnail: fish_head-300x200.jpg
+  title: IC 1795 - The Fish Head Nebula
+- filename: ngc6960
+  original: ngc6960-5366x3320.jpg
+  sizes: []
+  thumbnail: ngc6960-300x186.jpg
+  title: NGC 6960 - The Veil Nebula
 - filename: ngc5897
   original: ngc5897-6024x4022.jpg
   sizes: []

@@ -111,11 +111,11 @@ pictures:
   thumbnail: m16-133x200.jpg
   title: M16
 - filename: m17
-  original: m17-2000x3000.jpg
+  original: m17-6024x4022.jpg
   sizes:
-  - m17-133x200.jpg
+  - m17-300x200.jpg
   sort_id: 17
-  thumbnail: m17-133x200.jpg
+  thumbnail: m17-300x200.jpg
   title: M17
 - filename: m20
   original: m20-6000x4000.jpg
@@ -227,11 +227,11 @@ pictures:
   thumbnail: m39-thumbnail.jpg
   title: M39
 - filename: m42
-  original: m42-4918x3252.jpg
+  original: m42-5000x3338.jpg
   sizes:
-  - m42-300x198.jpg
+  - m42-300x200.jpg
   sort_id: 42
-  thumbnail: m42-300x198.jpg
+  thumbnail: m42-300x200.jpg
   title: M42
 - filename: m44
   original: m44-6096x4056.jpg
@@ -247,11 +247,11 @@ pictures:
   thumbnail: m45-300x194.jpg
   title: M45
 - filename: m51
-  original: m51-6000x4000.jpg
+  original: m51-5000x3263.jpg
   sizes:
-  - m51-300x200.jpg
+  - m51-300x196.jpg
   sort_id: 51
-  thumbnail: m51-300x200.jpg
+  thumbnail: m51-300x196.jpg
   title: M51
 - filename: m52
   original: m52-5687x3756.jpg
