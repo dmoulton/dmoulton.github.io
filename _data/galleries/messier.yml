@@ -232,7 +232,7 @@ pictures:
   - m42-300x200.jpg
   sort_id: 42
   thumbnail: m42-300x200.jpg
-  title: M42
+  title: M42 & the Running Man
 - filename: m44
   original: m44-6096x4056.jpg
   sizes: []
@@ -240,12 +240,12 @@ pictures:
   thumbnail: m44-thumbnail.jpg
   title: M44
 - filename: m45
-  original: m45-5646x3659.jpg
+  original: m45-5000x3338.jpg
   sizes:
-  - m45-300x194.jpg
+  - m45-300x200.jpg
   sort_id: 45
-  thumbnail: m45-300x194.jpg
-  title: M45
+  thumbnail: m45-300x200.jpg
+  title: M45 - The Pleiades
 - filename: m51
   original: m51-5000x3263.jpg
   sizes:
@@ -280,7 +280,7 @@ pictures:
   thumbnail: m71-thumbnail.jpg
   title: M71
 - filename: m72
-  original: m72-6096x4056.jpg
+  original: m72-5000x3327.jpg
   sizes:
   - m72-300x200.jpg
   sort_id: 72
