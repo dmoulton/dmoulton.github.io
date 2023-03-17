@@ -2,7 +2,7 @@
 Title: Astrophotography First Attempts
 layout: post
 categories: astronomy astrophotography
-comments: true
+comments: false
 author: David Moulton
 ---
 The weather has finally gotten warm enough, and the sky clear enough to try some astrophotography with all the stuff I bought over the winter.

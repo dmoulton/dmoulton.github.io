@@ -2,8 +2,9 @@
 Title: Installing Arch Linux [Part 1]
 layout: post
 categories: linux
-comments: true
+comments: false
 author: David Moulton
+archived: true
 ---
 
 This article describes my installation procedure for a very basic starting point with Arch Linux. My philosophy on the initial install is to only install what is absolutely needed, especially before the first boot. That's when you find out if you screwed up, after all.

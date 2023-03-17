@@ -4,6 +4,7 @@ layout: post
 categories: linux
 comments: true
 author: David Moulton
+archived: true
 ---
 This post is the second part describing my personal install of Arch Linux. Part 1 ended with a very basic command line install of Arch, including luks encryption, btrfs filesystem, and a swapfile.
 
