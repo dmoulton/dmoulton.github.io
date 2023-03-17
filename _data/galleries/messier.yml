@@ -246,6 +246,13 @@ pictures:
   sort_id: 45
   thumbnail: m45-300x200.jpg
   title: M45 - The Pleiades
+- filename: m48
+  original: m48-3775x2515.jpg
+  sizes:
+  - m48-300x200.jpg
+  sort_id: 48
+  thumbnail: m48-300x200.jpg
+  title: M48
 - filename: m51
   original: m51-5000x3263.jpg
   sizes:
@@ -273,6 +280,13 @@ pictures:
   sort_id: 57
   thumbnail: m57-300x200.jpg
   title: M57
+- filename: m67
+  original: m67-3705x2342.jpg
+  sizes:
+  - m67-300x190.jpg
+  sort_id: 67
+  thumbnail: m67-300x190.jpg
+  title: M67
 - filename: m71
   original: m71-6024x4022.jpg
   sizes: []
