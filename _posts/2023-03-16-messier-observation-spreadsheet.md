@@ -9,6 +9,8 @@ One of the things I set out to do when I started doing astrophotography was to c
 
 I needed a way to keep track of what I had imaged, what I should attempt next. I located a very basic spreadsheet on the internet and imported it into Google Sheets. From there, I made some additions to it to fit my needs.  Perhaps it will fit yours as well. This can certainly be used for visual observation as well.
 
+![Messier Spreadsheet](/assets/messier-sheet.jpg)
+
 [Here is a copy of my sheet](https://docs.google.com/spreadsheets/d/1mNEUwc-yqQ6Nd1bJmGxTwlVTtT-rQZiVSMXEUImtP-s/edit#gid=1983653817)
 
 You should be logged into your Google account. If so, you should be able to make a copy of this spreadsheet from the File menu.
