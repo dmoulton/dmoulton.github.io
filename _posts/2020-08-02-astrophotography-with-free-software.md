@@ -2,7 +2,7 @@
 Title: Astrophotography with Free Software
 layout: post
 categories: astronomy astrophotography
-comments: false
+comments: true
 author: David Moulton
 ---
 For a number of years I have wanted to switch to using all free software involved in my astrophotography. The intent of this post is to outline what I am now using and how it is working out for me.

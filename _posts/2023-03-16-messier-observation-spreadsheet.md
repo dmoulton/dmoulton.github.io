@@ -2,7 +2,7 @@
 Title: Messier Observing Spreadsheet
 layout: post
 categories: astronomy
-comments: false
+comments: true
 author: David Moulton
 ---
 One of the things I set out to do when I started doing astrophotography was to capture an image of each of the objects on the Messier List.
