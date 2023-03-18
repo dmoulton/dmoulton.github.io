@@ -10,9 +10,9 @@
     <label for="comment-form-message"><h2>Add Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
       <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message" placeholder="Your comment (markdown accepted)" required rows="6"></textarea>
     </label>
-    <div class="comment-form-message-footnote">
+    <!-- <div class="comment-form-message-footnote">
       Learn how to write in Markdown with this <a rel="nofollow" target="_blank" href="https://kramdown.gettalong.org/quickref.html">Quick Reference</a>.
-    </div>
+    </div> -->
   </div>
 
     <div class="textfield narrowfield">
@@ -57,3 +57,15 @@
   </div>
 </article>
 
+<!-- Simple Markdown Editor -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"/>
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+  var simplemde = new SimpleMDE({
+    element: document.getElementById("comment-form-message"),
+    forceSync: true,
+    spellChecker: false,
+    status: false,
+    placeholder: "Your comment (markdown accepted)",
+  });
+</script>
