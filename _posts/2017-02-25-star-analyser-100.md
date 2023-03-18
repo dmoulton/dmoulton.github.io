@@ -2,7 +2,7 @@
 Title: Star Analyser 100
 layout: post
 categories: astronomy spectroscopy
-comments: false
+comments: true
 ---
 Earlier this winter, I bought a Canon EOS T6i. I have been wanting to start doing some astrophotography, and this seemed like a good time to give it a try.
 
