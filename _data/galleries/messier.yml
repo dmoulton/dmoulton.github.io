@@ -321,6 +321,27 @@ pictures:
   sort_id: 92
   thumbnail: m92-300x200.jpg
   title: M92
+- filename: m93
+  original: m93-4824x2988.jpg
+  sizes:
+  - m93-300x186.jpg
+  sort_id: 93
+  thumbnail: m93-300x186.jpg
+  title: M93
+- filename: m95
+  original: m95-3585x2132.jpg
+  sizes:
+  - m95-300x178.jpg
+  sort_id: 95
+  thumbnail: m95-300x178.jpg
+  title: M95
+- filename: m96
+  original: m96-3597x2563.jpg
+  sizes:
+  - m96-300x214.jpg
+  sort_id: 96
+  thumbnail: m96-300x214.jpg
+  title: M96
 - filename: m100
   original: m100-6000x4000.jpg
   sizes:
