@@ -314,6 +314,20 @@ pictures:
   sort_id: 80
   thumbnail: m80-300x200.jpg
   title: M80
+- filename: m81
+  original: m81-1981x1798.jpg
+  sizes:
+  - m81-300x272.jpg
+  sort_id: 81
+  thumbnail: m81-300x272.jpg
+  title: M81
+- filename: m82
+  original: m82-1445x1592.jpg
+  sizes:
+  - m82-300x331.jpg
+  sort_id: 82
+  thumbnail: m82-300x331.jpg
+  title: M82
 - filename: m92
   original: m92-6000x4000.jpg
   sizes:
