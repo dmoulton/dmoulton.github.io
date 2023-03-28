@@ -280,6 +280,13 @@ pictures:
   sort_id: 57
   thumbnail: m57-300x200.jpg
   title: M57
+- filename: leo_triplet
+  original: leo_triplet-6000x3868.jpg
+  sizes:
+  - leo_triplet-300x193.jpg
+  sort_id: 64
+  thumbnail: leo_triplet-300x193.jpg
+  title: The Leo Triplet - M64 & M65
 - filename: m67
   original: m67-3705x2342.jpg
   sizes:
@@ -375,6 +382,12 @@ pictures:
   sort_id: 104
   thumbnail: m104-thumbnail.jpg
   title: M104
+- filename: m105
+  original: m105-1885x1630.jpg
+  sizes: []
+  sort_id: 105
+  thumbnail: m105-300x259.jpg
+  title: M105
 - filename: m110
   original: m110-4000x2874.jpg
   sizes: []
