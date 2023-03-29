@@ -34,4 +34,4 @@ exclude: [LICENSE-CODE.md, LICENSE-IMAGES, README.md, bower.json]
 # theme: jekyll-theme-slate
 
 # staticman comments configuration
-staticman_url: http://themoultons.net:8080/v2/entry/dmoulton/dmoulton.github.io/master/comments
+staticman_url: https://themoultons.net:8080/v2/entry/dmoulton/dmoulton.github.io/master/comments
