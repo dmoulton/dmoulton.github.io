@@ -253,6 +253,13 @@ pictures:
   sort_id: 48
   thumbnail: m48-300x200.jpg
   title: M48
+  filename: m49
+  original: m49-4000x2595.jpg
+  sizes:
+  - m49-300x195.jpg
+  sort_id: 49
+  thumbnail: m49-300x195.jpg
+  title: M49
 - filename: m51
   original: m51-5000x3263.jpg
   sizes:
@@ -287,6 +294,13 @@ pictures:
   sort_id: 65
   thumbnail: leo_triplet-300x193.jpg
   title: The Leo Triplet - M65 & M66
+- filename: m59_m60
+  original: m59_m60-4000x2755.jpg
+  sizes:
+  - m59_m60-300x207.jpg
+  sort_id: 59
+  thumbnail: m59_m60-300x207.jpg
+  title: M59 & M60
 - filename: m67
   original: m67-3705x2342.jpg
   sizes:
