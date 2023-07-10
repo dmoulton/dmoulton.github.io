@@ -75,6 +75,12 @@ pictures:
   sort_id: 6888
   thumbnail: ngc6888-2023-thumbnail.jpg
   title: NGC6888 - The Crescent Nebula
+- filename: ngc6888
+  original: ngc6888-6024x4022.jpg
+  sizes: []
+  sort_id: 6888
+  thumbnail: ngc6888-thumbnail.jpg
+  title: NGC6888
 - filename: ngc6960
   original: ngc6960-5366x3320.jpg
   sizes:

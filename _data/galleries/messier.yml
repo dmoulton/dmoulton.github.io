@@ -104,12 +104,12 @@ pictures:
   thumbnail: m15-300x200.jpg
   title: M15
 - filename: m16
-  original: m16-4056x6096.jpg
+  original: m16-3922x2750.jpg
   sizes:
-  - m16-133x200.jpg
+  - m16-3922x2750.jpg
   sort_id: 16
-  thumbnail: m16-133x200.jpg
-  title: M16
+  thumbnail: m16-thumbnail.jpg
+  title: M16 - The Eagle
 - filename: m17
   original: m17-6024x4022.jpg
   sizes:
@@ -253,7 +253,7 @@ pictures:
   sort_id: 48
   thumbnail: m48-300x200.jpg
   title: M48
-  filename: m49
+- filename: m49
   original: m49-4000x2595.jpg
   sizes:
   - m49-300x195.jpg
@@ -287,13 +287,6 @@ pictures:
   sort_id: 57
   thumbnail: m57-300x200.jpg
   title: M57
-- filename: leo_triplet
-  original: leo_triplet-4994x3203.jpg
-  sizes:
-  - leo_triplet-300x193.jpg
-  sort_id: 65
-  thumbnail: leo_triplet-300x193.jpg
-  title: The Leo Triplet - M65 & M66
 - filename: m59_m60
   original: m59_m60-4000x2755.jpg
   sizes:
@@ -301,6 +294,13 @@ pictures:
   sort_id: 59
   thumbnail: m59_m60-300x207.jpg
   title: M59 & M60
+- filename: leo_triplet
+  original: leo_triplet-4994x3203.jpg
+  sizes:
+  - leo_triplet-300x193.jpg
+  sort_id: 65
+  thumbnail: leo_triplet-300x193.jpg
+  title: The Leo Triplet - M65 & M66
 - filename: m67
   original: m67-3705x2342.jpg
   sizes:
@@ -398,7 +398,8 @@ pictures:
   title: M104
 - filename: m105
   original: m105-3393x2538.jpg
-  sizes: []
+  sizes:
+  - m105-300x259.jpg
   sort_id: 105
   thumbnail: m105-300x259.jpg
   title: M105
