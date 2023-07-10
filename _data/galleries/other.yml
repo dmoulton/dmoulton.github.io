@@ -2,86 +2,89 @@ picture_path: other
 pictures:
 - filename: horsehead
   original: horsehead-5000x3338.jpg
-  sizes: []
+  sizes:
+  - horsehead-300x200.jpg
+  sort_id: 1001
   thumbnail: horsehead-300x200.jpg
-  title: Horse Head Nebula
-- filename: thors_helmet
-  original: thors_helmet-3757x2591.jpg
-  sizes: []
-  thumbnail: thors_helmet-300x207.jpg
-  title: NGC 2359 - Thor's Helmet
+  title: The Horsehead Nebula
 - filename: fish_head
   original: fish_head-5000x3338.jpg
-  sizes: []
+  sizes:
+  - fish_head-300x200.jpg
+  sort_id: 1002
   thumbnail: fish_head-300x200.jpg
-  title: IC 1795 - The Fish Head Nebula
-- filename: ngc6960
-  original: ngc6960-5366x3320.jpg
-  sizes: []
-  thumbnail: ngc6960-300x186.jpg
-  title: NGC 6960 - The Veil Nebula
-- filename: ngc5897
-  original: ngc5897-6024x4022.jpg
-  sizes: []
-  thumbnail: ngc5897-thumbnail.jpg
-  title: NGC5897
-- filename: pelican
-  original: pelican-6024x4022.jpg
-  sizes: []
-  thumbnail: pelican-thumbnail.jpg
-  title: PELICAN
-- filename: ngc6888
-  original: ngc6888-6024x4022.jpg
-  sizes: []
-  thumbnail: ngc6888-thumbnail.jpg
-  title: NGC6888
-- filename: ngc6334
-  original: ngc6334-6024x4022.jpg
-  sizes: []
-  thumbnail: ngc6334-thumbnail.jpg
-  title: NGC6334
-- filename: ngc7000
-  original: ngc7000-5120x3837.jpg
-  sizes: []
-  thumbnail: ngc7000-thumbnail.jpg
-  title: NGC7000
-- filename: rosette
-  original: rosette-6024x4022.jpg
-  sizes: []
-  thumbnail: rosette-thumbnail.jpg
-  title: ROSETTE
-- filename: ngc2244
-  original: ngc2244-1075x1075.jpg
-  sizes: []
-  thumbnail: ngc2244-thumbnail.jpg
-  title: NGC2244
-- filename: lost_lake
-  original: lost_lake-4898x3265.jpg
-  sizes: []
-  thumbnail: lost_lake-thumbnail.jpg
-  title: LOST_LAKE
+  title: The Fish Head Nebula
 - filename: barn
   original: barn-6000x4000.jpg
   sizes: []
+  sort_id: 1003
   thumbnail: barn-thumbnail.jpg
-  title: BARN
+  title: Steve over the Moulton Barn
 - filename: jupiter
   original: jupiter-594x397.jpg
   sizes: []
+  sort_id: 1004
   thumbnail: jupiter-thumbnail.jpg
   title: JUPITER
-- filename: steve
-  original: steve-6000x4000.jpg
-  sizes: []
-  thumbnail: steve-thumbnail.jpg
-  title: STEVE
 - filename: moon
   original: moon-2784x1736.jpg
   sizes: []
+  sort_id: 1005
   thumbnail: moon-thumbnail.jpg
-  title: MOON
+  title: Moon
+- filename: thors_helmet
+  original: thors_helmet-3757x2591.jpg
+  sizes:
+  - thors_helmet-300x207.jpg
+  sort_id: 1007
+  thumbnail: thors_helmet-300x207.jpg
+  title: Thor's Helment
+- filename: steve
+  original: steve-6000x4000.jpg
+  sizes: []
+  sort_id: 1008
+  thumbnail: steve-thumbnail.jpg
+  title: STEVE over the Moulton Barn
 - filename: solar_eclipse
   original: solar_eclipse-4898x3265.jpg
   sizes: []
+  sort_id: 1009
   thumbnail: solar_eclipse-thumbnail.jpg
-  title: SOLAR_ECLIPSE
+  title: Solar Eclipse 2017
+- filename: lost_lake
+  original: lost_lake-4898x3265.jpg
+  sizes: []
+  sort_id: 1010
+  thumbnail: lost_lake-thumbnail.jpg
+  title: Lost Lake
+- filename: ngc5897
+  original: ngc5897-6024x4022.jpg
+  sizes: []
+  sort_id: 5897
+  thumbnail: ngc5897-thumbnail.jpg
+  title: NGC5897
+- filename: ngc6334
+  original: ngc6334-6024x4022.jpg
+  sizes: []
+  sort_id: 6334
+  thumbnail: ngc6334-thumbnail.jpg
+  title: NGC6334 - The Cat's Paw
+- filename: ngc6888-2023
+  original: ngc6888-2023-4737x3135.jpg
+  sizes: []
+  sort_id: 6888
+  thumbnail: ngc6888-2023-thumbnail.jpg
+  title: NGC6888 - The Crescent Nebula
+- filename: ngc6960
+  original: ngc6960-5366x3320.jpg
+  sizes:
+  - ngc6960-300x186.jpg
+  sort_id: 6960
+  thumbnail: ngc6960-300x186.jpg
+  title: NGC6960
+- filename: ngc7000-pelican-2023
+  original: ngc7000-pelican-2023-5000x4051.jpg
+  sizes: []
+  sort_id: 7000
+  thumbnail: ngc7000-pelican-2023-thumbnail.jpg
+  title: The North America and Pelican Nebulas

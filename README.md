@@ -4,6 +4,8 @@ Many thanks Olivier Pieters for providing an elegant way to create a gallery in 
 
 To add a new image to a gallery, create two images in the assets/messier, or assets/whatever directory. One is the full sized image, titled <whatever>-large.jpg, and the other a smaller thumbnail 300 pixels wide with the name <whatever>-thumb.jpg. Then run the script located at https://gist.github.com/dmoulton/0d9ce1da1a60a0e991e0a497a7ee5b5b. You will need to verify that the directories that are in that script are what you need for the particular gallery that you are creating or updating. The script is geared towards messier objects, and will need modifications to create other images.
 
+You can run the script from the _data/galleries directory and then it will automatically replace the yaml file. Otherwise, you will need to copy in the file that it creates.
+
 The rest of this is the original readme for reference.
 
 ## Installing
