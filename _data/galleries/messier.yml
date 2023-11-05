@@ -1,11 +1,11 @@
 picture_path: messier
 pictures:
 - filename: m1
-  original: m1-6096x4056.jpg
+  original: m1-3119x1965.jpg
   sizes:
-  - m1-300x200.jpg
+  - m1-300x291.jpg
   sort_id: 1
-  thumbnail: m1-300x200.jpg
+  thumbnail: m1-300x291.jpg
   title: M1
 - filename: m2
   original: m2-4877x2993.jpg
@@ -105,8 +105,7 @@ pictures:
   title: M15
 - filename: m16
   original: m16-3922x2750.jpg
-  sizes:
-  - m16-3922x2750.jpg
+  sizes: []
   sort_id: 16
   thumbnail: m16-thumbnail.jpg
   title: M16 - The Eagle
@@ -166,17 +165,17 @@ pictures:
   thumbnail: m30-300x200.jpg
   title: M30
 - filename: m31
-  original: m31-4000x2874.jpg
+  original: m31-6024x4022.jpg
   sizes:
-  - m31-278x200.jpg
+  - m31-300x200.jpg
   sort_id: 31
-  thumbnail: m31-278x200.jpg
+  thumbnail: m31-300x200.jpg
   title: M31
 - filename: m32
-  original: m32-4000x2874.jpg
+  original: m31-6024x4022.jpg
   sizes: []
   sort_id: 32
-  thumbnail: m32-thumbnail.jpg
+  thumbnail: m31-300x200.jpg
   title: M32
 - filename: m33
   original: m33-4895x3268.jpg
@@ -321,6 +320,13 @@ pictures:
   sort_id: 72
   thumbnail: m72-300x200.jpg
   title: M72
+- filename: m73
+  original: m73-5225x3417.jpg
+  sizes:
+  - m73-300x196.jpg
+  sort_id: 73
+  thumbnail: m73-300x196.jpg
+  title: M73
 - filename: m76
   original: m76-6096x4056.jpg
   sizes:
@@ -328,6 +334,13 @@ pictures:
   sort_id: 76
   thumbnail: m76-300x200.jpg
   title: M76
+- filename: m78
+  original: m78-5442x3506.jpg
+  sizes:
+  - m78-300x193.jpg
+  sort_id: 78
+  thumbnail: m78-300x193.jpg
+  title: M78
 - filename: m80
   original: m80-6000x4000.jpg
   sizes:
