@@ -16,8 +16,8 @@ Run the website with ` bundle exec jekyll s`. Or just view the [GitHub Pages ver
 ## Add a New Image to the Messier Gallery
 
 1. Identify the image you want to use. It should be in jpg format
-2. Rename the image m<whatever>-large.jpg
-3. Create a thumbnail using imagemagick: magick m<whatever>-large.jpg -resize 300x -strip m<whatever>-thumb.jpg
+2. Rename the image m[whatever]-large.jpg
+3. Create a thumbnail using imagemagick: magick m[whatever]-large.jpg -resize 300x -strip m[whatever]-thumb.jpg
 4. Copy these files to assets/astrophotography/messier
 5. cd to _data/galleries
 6. run scripts/messier-gallery.py from that location
