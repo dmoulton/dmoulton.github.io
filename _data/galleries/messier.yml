@@ -226,6 +226,12 @@ pictures:
   sort_id: 39
   thumbnail: m39-thumbnail.jpg
   title: M39
+- filename: m40
+  original: m40-1603x1079.jpg
+  sizes: []
+  sort_id: 40
+  thumbnail: m40-300x202.jpg
+  title: M40
 - filename: m42
   original: m42-5000x3338.jpg
   sizes:

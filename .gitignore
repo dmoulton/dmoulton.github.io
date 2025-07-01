@@ -4,3 +4,4 @@ Gemfile.lock
 .jekyll-cache/
 .jekyll-metadata/
 *Zone.Identifier
+*DS_Store
