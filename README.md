@@ -2,11 +2,10 @@
 
 Many thanks Olivier Pieters for providing an elegant way to create a gallery in Jekyll. This started with his example and has a few additions of mine that are specific to my own needs. Feel free to use this as an example for yourself.
 
-## Installing
+## Dev Container
 
-1. Clone the git repo: `git clone https://github.com/opieters/jekyll-image-gallery-example.git`
-2. Change folder: `cd jekyll-image-gallery-example`
-3. Install Jekyll: `gem install jekyll`
+This is much easier to keep running on multiple dev machines if you use a docker conainer. This project has a .devconainer 
+directory so that it can be run with vscode and docker.
 
 ## Run the Website and Make It Your Own
 
