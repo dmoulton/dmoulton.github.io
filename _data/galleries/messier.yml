@@ -117,6 +117,13 @@ pictures:
   sort_id: 17
   thumbnail: m17-300x200.jpg
   title: M17
+- filename: m19
+  original: m19-2952x2269.jpg
+  sizes:
+  - m19-300x231.jpg
+  sort_id: 19
+  thumbnail: m19-300x231.jpg
+  title: M19
 - filename: m20
   original: m20-6000x4000.jpg
   sizes:
