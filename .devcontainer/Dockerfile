@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
     sudo \
     curl \
     zsh \
+    less \
+    vim \
     python3 \
     imagemagick \
     python3-pip \

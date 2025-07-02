@@ -15,13 +15,24 @@ Run the website with ` bundle exec jekyll s`. Or just view the [GitHub Pages ver
 
 ## Add a New Image to the Messier Gallery
 
-1. Identify the image you want to use. It should be in jpg format
+1. Identify the image you want to use. It should be in jpg or png format (don't use jpeg)
 2. Rename the image m[whatever]-large.jpg
-3. Create a thumbnail using imagemagick: magick m[whatever]-large.jpg -resize 300x -strip m[whatever]-thumb.jpg
+3. Create a thumbnail using imagemagick: convert m[whatever]-large.jpg -resize 300x -strip m[whatever]-thumb.jpg
 4. Copy these files to assets/astrophotography/messier
 5. cd to _data/galleries
-6. run scripts/messier-gallery.py from that location
+6. run ../../scripts/messier-gallery.py from that location
   That script is also here: https://gist.github.com/dmoulton/0d9ce1da1a60a0e991e0a497a7ee5b5b
+7. If you want to change the display title for an object, modify the messier.yaml file in _data/galleries after the images are imported
+
+## Add a New Image to the Other Gallery
+
+1. Identify the image you want to use. It should be in jpg or png format (don't use jpeg)
+2. Rename the image [whatever]-large.jpg. Whatever you use for the filename, aside from -large, will be used as the display title for this object in the gallery.
+3. Create a thumbnail using imagemagick: convert [whatever]-large.jpg -resize 300x -strip [whatever]-thumb.jpg
+4. Copy these files to assets/astrophotography/other
+5. cd to _data/galleries
+6. Run ../../scripts/other-gallery.py from that location
+7. New images will be added to the top of the gallery. If you would like to change the order, or modify the titles for anything, you will need to do that in the yaml file after the image or images are imported.
 
 ## License
 
