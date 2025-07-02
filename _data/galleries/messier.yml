@@ -261,6 +261,20 @@ pictures:
   sort_id: 45
   thumbnail: m45-300x200.jpg
   title: M45 - The Pleiades
+- filename: m46
+  original: m46-6024x4022.jpg
+  sizes:
+  - m46-300x200.jpg
+  sort_id: 46
+  thumbnail: m46-300x200.jpg
+  title: M46
+- filename: m47
+  original: m47-6096x4056.jpg
+  sizes:
+  - m47-300x200.jpg
+  sort_id: 47
+  thumbnail: m47-300x200.jpg
+  title: M47
 - filename: m48
   original: m48-3775x2515.jpg
   sizes:
@@ -275,6 +289,13 @@ pictures:
   sort_id: 49
   thumbnail: m49-300x195.jpg
   title: M49
+- filename: m50
+  original: m50-6024x4022.png
+  sizes:
+  - m50-300x200.png
+  sort_id: 50
+  thumbnail: m50-300x200.png
+  title: M50
 - filename: m51
   original: m51-5000x3263.jpg
   sizes:
@@ -309,6 +330,13 @@ pictures:
   sort_id: 59
   thumbnail: m59_m60-300x207.jpg
   title: M59 & M60
+- filename: m62
+  original: m62-5044x3538.jpg
+  sizes:
+  - m62-300x210.jpg
+  sort_id: 62
+  thumbnail: m62-300x210.jpg
+  title: M62
 - filename: leo_triplet
   original: leo_triplet-4994x3203.jpg
   sizes:
