@@ -385,6 +385,13 @@ pictures:
   sort_id: 78
   thumbnail: m78-300x193.jpg
   title: M78
+- filename: m79
+  original: m79-4103x2651.jpg
+  sizes:
+  - m79-300x194.jpg
+  sort_id: 79
+  thumbnail: m79-300x194.jpg
+  title: M79
 - filename: m80
   original: m80-6000x4000.jpg
   sizes:
@@ -406,6 +413,13 @@ pictures:
   sort_id: 82
   thumbnail: m82-300x331.jpg
   title: M82
+- filename: m87
+  original: m87-4763x3073.jpg
+  sizes:
+  - m87-300x194.jpg
+  sort_id: 87
+  thumbnail: m87-300x194.jpg
+  title: M87
 - filename: m92
   original: m92-6000x4000.jpg
   sizes:

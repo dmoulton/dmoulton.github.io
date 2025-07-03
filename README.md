@@ -34,6 +34,11 @@ Run the website with ` bundle exec jekyll s`. Or just view the [GitHub Pages ver
 6. Run ../../scripts/other-gallery.py from that location
 7. New images will be added to the top of the gallery. If you would like to change the order, or modify the titles for anything, you will need to do that in the yaml file after the image or images are imported.
 
+## Replacing an existing image in either gallery
+
+If you want to update an image in either gallery, follow the same naming and thumbnail creating instructions. Then edit the appropriate yaml file for the gallery and delete the reference to the image you are changing. cd to _data/galleries and run the gallery script for the gallery you are updating. In the Other gallery, that will move the updated image to the top, so you'll have to fix that in the yaml
+file if that's not what you want.
+
 ## License
 
 The code is licensed under MIT license (see LICENSE-CODE.md). The images in the `assets/photography` folder are licensed under CC-BY-NC-SA license (see LICENSE-IMAGES.md).
