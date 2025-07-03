@@ -462,6 +462,13 @@ pictures:
   sort_id: 100
   thumbnail: m100-300x200.jpg
   title: M100
+- filename: m101
+  original: m101-6096x4056.jpg
+  sizes:
+  - m101-300x200.jpg
+  sort_id: 101
+  thumbnail: m101-300x200.jpg
+  title: M101
 - filename: m103
   original: m103-6096x4056.jpg
   sizes: []
