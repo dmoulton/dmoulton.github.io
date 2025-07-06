@@ -4,9 +4,8 @@ pictures:
   original: m1-3119x1965.jpg
   sizes:
   - m1-300x189.jpg
-  - m1-300x291.jpg
   sort_id: 1
-  thumbnail: m1-300x189.jpg
+  thumbnail: m1-300x291.jpg
   title: M1
 - filename: m2
   original: m2-4877x2993.jpg
@@ -138,6 +137,13 @@ pictures:
   sort_id: 22
   thumbnail: m22-300x192.jpg
   title: M22
+- filename: m23
+  original: m23-1920x1080.jpg
+  sizes:
+  - m23-300x169.jpg
+  sort_id: 23
+  thumbnail: m23-300x169.jpg
+  title: M23
 - filename: m24
   original: m24-6024x4022.jpg
   sizes:
@@ -175,17 +181,10 @@ pictures:
 - filename: m31
   original: m31-6024x4022.jpg
   sizes:
-  - m31-278x200.jpg
   - m31-300x200.jpg
   sort_id: 31
-  thumbnail: m31-278x200.jpg
-  title: M31
-- filename: m32
-  original: m31-6024x4022.jpg
-  sizes: []
-  sort_id: 32
   thumbnail: m31-300x200.jpg
-  title: M32
+  title: M31, M32, &M110
 - filename: m33
   original: m33-4895x3268.jpg
   sizes:
@@ -309,6 +308,13 @@ pictures:
   sort_id: 52
   thumbnail: m52-thumbnail.jpg
   title: M52
+- filename: m53
+  original: m53-1920x1080.jpg
+  sizes:
+  - m53-300x169.jpg
+  sort_id: 53
+  thumbnail: m53-300x169.jpg
+  title: M53
 - filename: m56
   original: m56-6096x4056.jpg
   sizes:
@@ -488,9 +494,3 @@ pictures:
   sort_id: 105
   thumbnail: m105-300x259.jpg
   title: M105
-- filename: m110
-  original: m110-4000x2874.jpg
-  sizes: []
-  sort_id: 110
-  thumbnail: m110-thumbnail.jpg
-  title: M110
