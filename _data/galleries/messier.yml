@@ -3,7 +3,7 @@ pictures:
 - filename: m1
   original: m1-3119x1965.jpg
   sizes:
-  - m1-300x189.jpg
+  - m1-300x291.jpg
   sort_id: 1
   thumbnail: m1-300x291.jpg
   title: M1
@@ -116,6 +116,13 @@ pictures:
   sort_id: 17
   thumbnail: m17-300x200.jpg
   title: M17
+- filename: m18
+  original: m18-3840x2160.jpg
+  sizes:
+  - m18-300x169.jpg
+  sort_id: 18
+  thumbnail: m18-300x169.jpg
+  title: M18
 - filename: m19
   original: m19-2952x2269.jpg
   sizes:
@@ -130,6 +137,13 @@ pictures:
   sort_id: 20
   thumbnail: m20-300x200.jpg
   title: M20
+- filename: m21
+  original: m21-3592x1912.jpg
+  sizes:
+  - m21-300x160.jpg
+  sort_id: 21
+  thumbnail: m21-300x160.jpg
+  title: M21
 - filename: m22
   original: m22-5516x3525.jpg
   sizes:
@@ -151,6 +165,13 @@ pictures:
   sort_id: 24
   thumbnail: m24-300x200.jpg
   title: M24
+- filename: m25
+  original: m25-3840x2160.jpg
+  sizes:
+  - m25-300x169.jpg
+  sort_id: 25
+  thumbnail: m25-300x169.jpg
+  title: M25
 - filename: m27
   original: m27-6096x4056.jpg
   sizes:

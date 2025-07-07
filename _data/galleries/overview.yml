@@ -2,12 +2,12 @@
  title: Messier Gallery
  directory: messier
  preview:
-  filename: m31
-  original: m31-4000x2874.jpg
+  filename: m1
+  original: m1-3119x1965.jpg
   sizes:
-  - m31-4000x2874.jpg
-  - m31-278x200.jpg
-  thumbnail: m31-278x200.jpg
+  - m1-3119x1965.jpg
+  - m1-300x291.jpg
+  thumbnail: m1-300x291.jpg
 -
  title: Other Astro Photos
  directory: other
