@@ -42,3 +42,5 @@ WORKDIR /home/$USERNAME/workspace
 
 RUN gem install bundler -v 2.6.9
 RUN gem install --no-document bundler jekyll
+RUN echo "alias js='bundle exec jekyll server'" >> ~/.zshrc
+
