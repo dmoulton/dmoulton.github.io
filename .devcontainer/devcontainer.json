@@ -1,20 +1,9 @@
 {
-  "name": "Jekyll Dev",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "runArgs": [
-    "--init",
-    "--name=Jekyll",
-    "--hostname=jekyll"
-  ],
-  "mounts": [
-    "source=${env:HOME}/.ssh,target=/home/astro/.ssh,type=bind,consistency=cached"
-  ],
+  "name": "jekyll-dev",
+  "dockerComposeFile": "../.devcontainer/docker-compose.yml",
+  "service": "jekyll",
+  "workspaceFolder": "/workspace",
   "remoteUser": "astro",
-  "forwardPorts": [
-    4000
-  ],
   "postCreateCommand": "bundle install || true",
   "customizations": {
     "vscode": {
@@ -23,6 +12,5 @@
         "editorconfig.editorconfig"
       ]
     }
-  },
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+  }
 }

@@ -1,0 +1,14 @@
+name: davidmoulton-me
+services:
+  jekyll:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    hostname: jekyll
+    ports:
+      - "4000:4000"
+    init: true
+    user: astro
+    volumes:
+      - ..:/workspace
+      - ${HOME}/.ssh:/home/astro/.ssh:ro
