@@ -31,15 +31,13 @@ RUN echo "/usr/bin/zsh" >> /etc/shells
 
 # Setup Oh My Zsh and default environment
 USER $USERNAME
-WORKDIR /home/$USERNAME
+WORKDIR /workspace
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
     && sed -i 's/^ZSH_THEME=.*/ZSH_THEME="bira"/' ~/.zshrc
 
 ENV GEM_HOME=/home/$USERNAME/.gem
 ENV PATH=$GEM_HOME/bin:$PATH
-
-WORKDIR /home/$USERNAME/workspace
 
 RUN gem install bundler -v 2.6.9 && \
     gem install --no-document bundler jekyll && \

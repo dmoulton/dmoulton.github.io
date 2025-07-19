@@ -1,7 +1,7 @@
 {
   "name": "jekyll-dev",
   "dockerComposeFile": "../.devcontainer/docker-compose.yml",
-  "service": "jekyll",
+  "service": "app",
   "workspaceFolder": "/workspace",
   "remoteUser": "astro",
   "postCreateCommand": "bundle install || true",

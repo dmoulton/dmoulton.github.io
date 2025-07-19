@@ -1,6 +1,6 @@
-name: davidmoulton-me
+name: jekyll
 services:
-  jekyll:
+  app:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
