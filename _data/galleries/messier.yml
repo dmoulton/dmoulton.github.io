@@ -172,6 +172,13 @@ pictures:
   sort_id: 25
   thumbnail: m25-300x169.jpg
   title: M25
+- filename: m26
+  original: m26-3840x2160.jpg
+  sizes:
+  - m26-300x169.jpg
+  sort_id: 26
+  thumbnail: m26-300x169.jpg
+  title: M26
 - filename: m27
   original: m27-6096x4056.jpg
   sizes:
@@ -398,6 +405,13 @@ pictures:
   sort_id: 73
   thumbnail: m73-300x196.jpg
   title: M73
+- filename: m75
+  original: m75-1920x1080.jpg
+  sizes:
+  - m75-300x169.jpg
+  sort_id: 75
+  thumbnail: m75-300x169.jpg
+  title: M75
 - filename: m76
   original: m76-6096x4056.jpg
   sizes:
