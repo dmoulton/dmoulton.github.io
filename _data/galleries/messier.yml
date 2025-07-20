@@ -343,6 +343,20 @@ pictures:
   sort_id: 53
   thumbnail: m53-300x169.jpg
   title: M53
+- filename: m54
+  original: m54-3840x2160.jpg
+  sizes:
+  - m54-300x169.jpg
+  sort_id: 54
+  thumbnail: m54-300x169.jpg
+  title: M54
+- filename: m55
+  original: m55-3840x2160.jpg
+  sizes:
+  - m55-300x169.jpg
+  sort_id: 55
+  thumbnail: m55-300x169.jpg
+  title: M55
 - filename: m56
   original: m56-6096x4056.jpg
   sizes:
