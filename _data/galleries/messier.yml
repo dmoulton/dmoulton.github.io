@@ -399,6 +399,13 @@ pictures:
   sort_id: 67
   thumbnail: m67-300x190.jpg
   title: M67
+- filename: m69
+  original: m69-1820x980.jpg
+  sizes:
+  - m69-300x162.jpg
+  sort_id: 69
+  thumbnail: m69-300x162.jpg
+  title: M69
 - filename: m71
   original: m71-6024x4022.jpg
   sizes: []
