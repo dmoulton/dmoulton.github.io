@@ -111,7 +111,9 @@ pictures:
 - filename: ngc6960
   original: ngc6960-5366x3320.jpg
   sizes:
+  - ngc6960-300x533.jpg
   - ngc6960-300x186.jpg
+  - ngc6960-2160x3840.jpg
   sort_id: 1018
   thumbnail: ngc6960-300x186.jpg
   title: NGC6960
