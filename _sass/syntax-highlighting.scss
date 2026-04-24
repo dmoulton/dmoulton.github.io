@@ -1,0 +1,20 @@
+// Monokai-inspired syntax highlighting for the dark space theme
+.highlight {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  overflow-x: auto;
+
+  pre { border: none; background: none; border-radius: 0; margin: 0; }
+
+  .c, .c1, .cm, .cs { color: #6b8299; font-style: italic; } // Comment
+  .k, .kd, .kn, .kp, .kr, .kt { color: #7c4dff; font-weight: bold; } // Keyword
+  .s, .s1, .s2, .sb, .sc, .sd, .sh, .si, .sx { color: #a5d6a7; } // String
+  .n, .nb, .nc, .nd, .ni, .no, .nv { color: $text; } // Name
+  .nf, .nx { color: $accent; } // Function
+  .o, .ow { color: $accent3; } // Operator
+  .m, .mi, .mf, .mh, .mo { color: #ffcc80; } // Number
+  .p { color: $text-dim; } // Punctuation
+  .err { color: #ef5350; background: none; }
+}
