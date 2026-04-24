@@ -123,6 +123,67 @@ layout: default
   opacity: 1;
 }
 
+/* ── Setup card ─────────────────────────────────────────────────────────────── */
+.setup-card {
+  background: #0d1520;
+  border: 1px solid #1e3050;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.setup-item {
+  padding: 22px 26px;
+  border-bottom: 1px solid #1e3050;
+  border-right: 1px solid #1e3050;
+}
+
+.setup-item:nth-child(even) { border-right: none; }
+.setup-item:nth-last-child(-n+2) { border-bottom: none; }
+
+.setup-item-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.setup-item-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.setup-item-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #eaf2ff;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+
+.setup-item-detail {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #6b8299;
+  line-height: 1.5;
+}
+
+@media (max-width: 540px) {
+  .setup-grid { grid-template-columns: 1fr; }
+  .setup-item { border-right: none; }
+  .setup-item:nth-last-child(-n+2) { border-bottom: 1px solid #1e3050; }
+  .setup-item:last-child { border-bottom: none; }
+}
+
 .csk-wrap a { display: inline-block; line-height: 0; }
 .csk-wrap img { border-radius: 6px; border: 1px solid #1e3050; margin: 0; max-width: 100%; height: auto; }
 
@@ -131,6 +192,12 @@ layout: default
   .hero-title { font-size: 1.4rem !important; }
 }
 </style>
+
+<!-- About Me -->
+<div class="home-section">
+  <p class="section-heading">// About Me</p>
+  <p style="font-size:1.05rem;line-height:1.7;color:#cdd9e8;">I'm a Utah software developer and astrophotographer. All images are mine.</p>
+</div>
 
 <!-- Latest Astrobin Photo -->
 <div class="home-section">
@@ -147,18 +214,75 @@ layout: default
   </div>
 </div>
 
-<!-- Instagram -->
+<!-- Setup Card -->
 <div class="home-section">
-  <p class="section-heading">
-    // <a href="https://www.instagram.com/moulton_astro" target="_blank" rel="noopener">Instagram — @moulton_astro</a>
-  </p>
-  <figure data-behold-id="V6ZztIfOYr6FCp89p58b"></figure>
-  <script src="https://w.behold.so/widget.js" type="module"></script>
+  <p class="section-heading">// My Setup</p>
+  <div class="setup-card">
+
+    <div style="overflow:hidden;max-height:530px;border-bottom:1px solid #1e3050;">
+      <img src="{{ site.baseurl }}/assets/observatory.jpeg"
+           alt="Observatory interior showing Paramount MyT mount with AT130EDT and Zenithstar 73"
+           style="width:100%;height:530px;object-fit:cover;object-position:center 50%;display:block;margin:0;border-radius:0;border:none;">
+    </div>
+
+    <div class="setup-grid">
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🔭</div>
+        <div class="setup-item-label">Primary OTA</div>
+        <div class="setup-item-value">AstroTech AT130EDT</div>
+        <div class="setup-item-detail">130mm f/7 Triplet Refractor<br>0.8× Reducer · 728mm focal length</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">📷</div>
+        <div class="setup-item-label">Primary Camera</div>
+        <div class="setup-item-value">QHY Minicam8</div>
+        <div class="setup-item-detail">Dedicated astronomy camera<br>Cooled CMOS sensor</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🎯</div>
+        <div class="setup-item-label">Guiding — AT130EDT</div>
+        <div class="setup-item-value">OAG + QHY5IIIM</div>
+        <div class="setup-item-detail">Off-axis guider<br>QHY5IIIM guide camera</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">⚙️</div>
+        <div class="setup-item-label">Mount</div>
+        <div class="setup-item-value">Paramount MyT</div>
+        <div class="setup-item-detail">Software Bisque<br>German equatorial</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🔭</div>
+        <div class="setup-item-label">Widefield OTA</div>
+        <div class="setup-item-value">William Optics Zenithstar 73</div>
+        <div class="setup-item-detail">73mm APO Doublet<br>Canon T6i · Piggyback on AT130EDT</div>
+      </div>
+
+      <div class="setup-item" style="border-bottom: 1px solid #1e3050;">
+        <div class="setup-item-icon">🎯</div>
+        <div class="setup-item-label">Guiding — Z73</div>
+        <div class="setup-item-value">Svbony 30mm f/4 + ZWO ASI468</div>
+        <div class="setup-item-detail">30mm f/4 guidescope<br>ZWO ASI468 guide camera</div>
+      </div>
+
+      <div class="setup-item" style="grid-column: 1 / -1; border-right: none;">
+        <div class="setup-item-icon">🏠</div>
+        <div class="setup-item-label">Observatory</div>
+        <div class="setup-item-value">8ft Exploradome</div>
+        <div class="setup-item-detail">Dedicated backyard observatory · Utah</div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- Sky Conditions -->
 <div class="home-section">
-  <p class="section-heading">// Tonight's Sky — Orem, Utah</p>
+  <p class="section-heading">// Tonight's Sky — Utah</p>
   <div class="csk-wrap">
     <a href="https://www.cleardarksky.com/c/MrtnObUTkey.html">
       <img src="https://www.cleardarksky.com/c/MrtnObUTcsk.gif?c=2113251" alt="Clear Sky Chart for Orem, Utah">
