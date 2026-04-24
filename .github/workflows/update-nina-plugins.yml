@@ -1,0 +1,48 @@
+name: Update NINA Plugins Page
+
+on:
+  # Run every Monday at 06:00 UTC
+  schedule:
+    - cron: "0 6 * * 1"
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-plugins:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to push the updated file back
+
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate NINA plugins page
+        run: python3 scripts/generate_nina_plugins.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet pages/nina-plugins.html \
+            && echo "changed=false" >> "$GITHUB_OUTPUT" \
+            || echo "changed=true"  >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push if changed
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pages/nina-plugins.html
+          git commit -m "chore: update NINA plugins page [$(date -u '+%Y-%m-%d')]"
+          git push
+
+      - name: No changes
+        if: steps.diff.outputs.changed == 'false'
+        run: echo "Plugin page is already up to date — nothing to commit."
