@@ -12,6 +12,8 @@ body {
   line-height: $base-line-height;
   font-weight: $base-font-weight;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
