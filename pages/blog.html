@@ -1,0 +1,142 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+nav_order: 4
+---
+
+<style>
+.blog-header {
+  margin-bottom: 48px;
+}
+
+.blog-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #eaf2ff;
+  margin-bottom: 8px;
+  border: none;
+  padding: 0;
+}
+
+.blog-header p {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #6b8299;
+  margin: 0;
+}
+
+.blog-year {
+  margin-bottom: 48px;
+}
+
+.blog-year-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  opacity: 0.6;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e3050;
+}
+
+.blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(30,48,80,0.5);
+  align-items: baseline;
+  animation: fadeUp 0.3s ease both;
+}
+
+.blog-list li:last-child { border-bottom: none; }
+
+.blog-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #6b8299;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.blog-title-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #eaf2ff;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.blog-title-link:hover {
+  color: #4fc3f7;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.blog-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.blog-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  padding: 2px 7px;
+  background: #0d2040;
+  color: #4fc3f7;
+  border-radius: 3px;
+  border: 1px solid rgba(79,195,247,0.15);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 540px) {
+  .blog-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+</style>
+
+<div class="blog-header">
+  <h1>Blog</h1>
+  <p>// {{ site.posts | size }} posts</p>
+</div>
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year_group in posts_by_year %}
+  <div class="blog-year">
+    <p class="blog-year-label">{{ year_group.name }}</p>
+    <ul class="blog-list">
+      {% for post in year_group.items %}
+        {% if post.archived != true %}
+        <li style="animation-delay: {{ forloop.index | times: 30 }}ms">
+          <span class="blog-date">{{ post.date | date: "%b %-d" }}</span>
+          <div>
+            <a class="blog-title-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            {% if post.categories %}
+              <div class="blog-cats">
+                {% for cat in post.categories %}
+                  <span class="blog-cat">{{ cat }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
