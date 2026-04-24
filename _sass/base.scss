@@ -1,0 +1,170 @@
+// ── Reset ─────────────────────────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: $bg;
+  color: $text;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: $base-font-weight;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+// Starfield
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 8%  18%, rgba(255,255,255,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 72%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 9%,  rgba(255,255,255,.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 74% 33%, rgba(255,255,255,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 60%, rgba(255,255,255,.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 14% 50%, rgba(255,255,255,.3)  0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 64% 22%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 80%, rgba(255,255,255,.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 46% 55%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 5%,  rgba(255,255,255,.55) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  color: $text-bright;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.25rem; font-weight: 800; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; }
+
+p  { margin-bottom: 1.25em; color: $text; }
+
+a {
+  color: $accent;
+  text-decoration: none;
+  transition: color 0.2s, opacity 0.2s;
+  &:hover { opacity: 0.8; text-decoration: underline; text-underline-offset: 3px; }
+}
+
+strong { color: $text-bright; font-weight: 700; }
+em     { font-style: italic; }
+
+hr {
+  border: none;
+  border-top: 1px solid $border;
+  margin: 2em 0;
+}
+
+// ── Code ──────────────────────────────────────────────────────────────────────
+code, pre {
+  font-family: $mono-font-family;
+  font-size: 0.85em;
+}
+
+code {
+  background: $surface2;
+  border: 1px solid $border;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: $accent3;
+}
+
+pre {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 1.25em 1.5em;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+  code { background: none; border: none; padding: 0; color: $text; }
+}
+
+// ── Lists ─────────────────────────────────────────────────────────────────────
+ul, ol {
+  margin-left: 1.5em;
+  margin-bottom: 1.25em;
+  color: $text;
+}
+
+li > ul, li > ol { margin-bottom: 0; }
+
+// ── Blockquote ────────────────────────────────────────────────────────────────
+blockquote {
+  border-left: 3px solid $accent2;
+  padding: 0.75em 1.25em;
+  margin: 1.5em 0;
+  background: $surface2;
+  border-radius: 0 6px 6px 0;
+  color: $text-dim;
+  font-style: italic;
+}
+
+// ── Images ────────────────────────────────────────────────────────────────────
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+
+figure {
+  margin: 1.5em 0;
+  img { display: block; }
+  figcaption {
+    font-family: $mono-font-family;
+    font-size: 0.75rem;
+    color: $text-dim;
+    margin-top: 0.5em;
+    text-align: center;
+  }
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────────
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  font-size: $small-font-size;
+
+  th {
+    font-family: $mono-font-family;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $accent;
+    background: $surface2;
+    padding: 10px 14px;
+    border-bottom: 1px solid $border;
+    text-align: left;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba($border, 0.5);
+    color: $text;
+  }
+
+  tr:last-child td { border-bottom: none; }
+}
+
+// ── Scrollbar ─────────────────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: $bg; }
+::-webkit-scrollbar-thumb { background: $border; border-radius: 3px; }

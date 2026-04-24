@@ -3,14 +3,14 @@ layout: default
 ---
 
 <div class="home">
-  <div style="float: left; padding-right: 10px;">
-    <h1 class="page-heading">Posts</h1>
+
+  <div class="home-posts">
+    <h2 class="page-heading">// Recent Posts</h2>
     <ul class="post-list">
       {% for post in site.posts %}
         {% if post.archived != true %}
           <li>
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
             <h2>
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h2>
@@ -19,13 +19,14 @@ layout: default
       {% endfor %}
     </ul>
   </div>
-  <div style="float: left; width: 50%;">
-    <h1 class="page-heading">
-      <a href="https://www.instagram.com/moulton_astro">Recent Instagram Posts</a>
-    </h1>
-    <!-- Instagram feed is via http://behold.so -->
+
+  <div class="home-instagram">
+    <h2 class="page-heading">
+      // <a href="https://www.instagram.com/moulton_astro" target="_blank" rel="noopener">Instagram</a>
+    </h2>
+    <!-- Instagram feed via behold.so -->
     <figure data-behold-id="V6ZztIfOYr6FCp89p58b"></figure>
     <script src="https://w.behold.so/widget.js" type="module"></script>
   </div>
- 
+
 </div>
