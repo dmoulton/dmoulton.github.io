@@ -171,7 +171,7 @@ layout: default
   var url = 'https://www.astrobin.com/api/v1/image/?user=dmoulton'
     + '&api_key={{ site.astrobin_key }}'
     + '&api_secret={{ site.astrobin_secret }}'
-    + '&format=json&limit=1&offset=0';
+    + '&format=json&limit=10&offset=0';
 
   var req = new XMLHttpRequest();
   req.open('GET', url, true);
@@ -182,7 +182,7 @@ layout: default
     var objects = data['objects'];
     if (!objects || objects.length === 0) return;
 
-    var img   = objects[0];
+    var img   = objects[Math.floor(Math.random() * objects.length)];
     var ident = img.hash || img.id;
     var href  = 'https://www.astrobin.com/' + ident;
 
@@ -205,8 +205,7 @@ layout: default
     if (desc.length > 300) desc = desc.substring(0, 300) + '&hellip;';
 
     document.getElementById('hero-info').innerHTML =
-      '<p class="hero-label">// Latest Astrophoto</p>'
-      + '<h2 class="hero-title">' + (img.title || 'Untitled').replace(/</g,'&lt;') + '</h2>'
+      '<h2 class="hero-title">' + (img.title || 'Untitled').replace(/</g,'&lt;') + '</h2>'
       + (dateStr ? '<p class="hero-date">Uploaded ' + dateStr + '</p>' : '')
       + (desc    ? '<p class="hero-description">' + desc + '</p>' : '')
       + '<a class="hero-link" href="' + href + '" target="_blank" rel="noopener">'
