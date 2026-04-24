@@ -2,31 +2,340 @@
 layout: default
 ---
 
-<div class="home">
+<style>
+.home-section {
+  margin-bottom: 48px;
+}
 
-  <div class="home-posts">
-    <h2 class="page-heading">// Recent Posts</h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-        {% if post.archived != true %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <h2>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
+.section-heading {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e3050;
+  opacity: 0.8;
+}
 
-  <div class="home-instagram">
-    <h2 class="page-heading">
-      // <a href="https://www.instagram.com/moulton_astro" target="_blank" rel="noopener">Instagram</a>
-    </h2>
-    <!-- Instagram feed via behold.so -->
-    <figure data-behold-id="V6ZztIfOYr6FCp89p58b"></figure>
-    <script src="https://w.behold.so/widget.js" type="module"></script>
-  </div>
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
 
+.hero-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  opacity: 0.7;
+  margin-bottom: 14px;
+}
+
+.hero-image-wrap {
+  border-radius: 10px;
+  border: 1px solid #1e3050;
+  background: #0d1520;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-wrap a { display: block; width: 100%; height: 100%; }
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-image-wrap:hover img { transform: scale(1.03); }
+
+.hero-loading {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #6b8299;
+  text-align: center;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero-title {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #eaf2ff !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.hero-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #6b8299;
+  margin: 0;
+}
+
+.hero-description {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #cdd9e8;
+  margin: 0;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #4fc3f7;
+  text-decoration: none;
+  border: 1px solid rgba(79,195,247,0.3);
+  border-radius: 5px;
+  padding: 8px 14px;
+  width: fit-content;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero-link:hover {
+  background: rgba(79,195,247,0.08);
+  border-color: #4fc3f7;
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ── Setup card ─────────────────────────────────────────────────────────────── */
+.setup-card {
+  background: #0d1520;
+  border: 1px solid #1e3050;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.setup-item {
+  padding: 22px 26px;
+  border-bottom: 1px solid #1e3050;
+  border-right: 1px solid #1e3050;
+}
+
+.setup-item:nth-child(even) { border-right: none; }
+.setup-item:nth-last-child(-n+2) { border-bottom: none; }
+
+.setup-item-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.setup-item-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.setup-item-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #eaf2ff;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+
+.setup-item-detail {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #6b8299;
+  line-height: 1.5;
+}
+
+@media (max-width: 540px) {
+  .setup-grid { grid-template-columns: 1fr; }
+  .setup-item { border-right: none; }
+  .setup-item:nth-last-child(-n+2) { border-bottom: 1px solid #1e3050; }
+  .setup-item:last-child { border-bottom: none; }
+}
+
+.csk-wrap a { display: inline-block; line-height: 0; }
+.csk-wrap img { border-radius: 6px; border: 1px solid #1e3050; margin: 0; max-width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+  .home-hero { grid-template-columns: 1fr; }
+  .hero-title { font-size: 1.4rem !important; }
+}
+</style>
+
+<!-- About Me -->
+<div class="home-section">
+  <p class="section-heading">// About Me</p>
+  <p style="font-size:1.05rem;line-height:1.7;color:#cdd9e8;">I'm a Utah software developer and astrophotographer. All images are mine.</p>
 </div>
+
+<!-- Latest Astrobin Photo -->
+<div class="home-section">
+  <div class="home-hero">
+    <div>
+      <p class="hero-label">// Latest Astrophoto</p>
+      <div class="hero-image-wrap" id="hero-image-wrap">
+        <div class="hero-loading">Loading…</div>
+      </div>
+    </div>
+    <div class="hero-info" id="hero-info">
+      <div class="hero-loading">Loading…</div>
+    </div>
+  </div>
+</div>
+
+<!-- Setup Card -->
+<div class="home-section">
+  <p class="section-heading">// My Setup</p>
+  <div class="setup-card">
+
+    <div style="overflow:hidden;max-height:530px;border-bottom:1px solid #1e3050;">
+      <img src="{{ site.baseurl }}/assets/observatory.jpeg"
+           alt="Observatory interior showing Paramount MyT mount with AT130EDT and Zenithstar 73"
+           style="width:100%;height:530px;object-fit:cover;object-position:center 50%;display:block;margin:0;border-radius:0;border:none;">
+    </div>
+
+    <div class="setup-grid">
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🔭</div>
+        <div class="setup-item-label">Primary OTA</div>
+        <div class="setup-item-value">AstroTech AT130EDT</div>
+        <div class="setup-item-detail">130mm f/7 Triplet Refractor<br>0.8× Reducer · 728mm focal length</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">📷</div>
+        <div class="setup-item-label">Primary Camera</div>
+        <div class="setup-item-value">QHY Minicam8</div>
+        <div class="setup-item-detail">Dedicated astronomy camera<br>Cooled CMOS sensor</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🎯</div>
+        <div class="setup-item-label">Guiding — AT130EDT</div>
+        <div class="setup-item-value">OAG + QHY5IIIM</div>
+        <div class="setup-item-detail">Off-axis guider<br>QHY5IIIM guide camera</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">⚙️</div>
+        <div class="setup-item-label">Mount</div>
+        <div class="setup-item-value">Paramount MyT</div>
+        <div class="setup-item-detail">Software Bisque<br>German equatorial</div>
+      </div>
+
+      <div class="setup-item">
+        <div class="setup-item-icon">🔭</div>
+        <div class="setup-item-label">Widefield OTA</div>
+        <div class="setup-item-value">William Optics Zenithstar 73</div>
+        <div class="setup-item-detail">73mm APO Doublet<br>Canon T6i · Piggyback on AT130EDT</div>
+      </div>
+
+      <div class="setup-item" style="border-bottom: 1px solid #1e3050;">
+        <div class="setup-item-icon">🎯</div>
+        <div class="setup-item-label">Guiding — Z73</div>
+        <div class="setup-item-value">Svbony 30mm f/4 + ZWO ASI468</div>
+        <div class="setup-item-detail">30mm f/4 guidescope<br>ZWO ASI468 guide camera</div>
+      </div>
+
+      <div class="setup-item" style="grid-column: 1 / -1; border-right: none;">
+        <div class="setup-item-icon">🏠</div>
+        <div class="setup-item-label">Observatory</div>
+        <div class="setup-item-value">8ft Exploradome</div>
+        <div class="setup-item-detail">Dedicated backyard observatory · Utah</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Sky Conditions -->
+<div class="home-section">
+  <p class="section-heading">// Tonight's Sky — Utah</p>
+  <div class="csk-wrap">
+    <a href="https://www.cleardarksky.com/c/MrtnObUTkey.html">
+      <img src="https://www.cleardarksky.com/c/MrtnObUTcsk.gif?c=2113251" alt="Clear Sky Chart for Orem, Utah">
+    </a>
+  </div>
+</div>
+
+<script>
+(function() {
+  var url = 'https://www.astrobin.com/api/v1/image/?user=dmoulton'
+    + '&api_key={{ site.astrobin_key }}'
+    + '&api_secret={{ site.astrobin_secret }}'
+    + '&format=json&limit=10&offset=0';
+
+  var req = new XMLHttpRequest();
+  req.open('GET', url, true);
+  req.onload = function() {
+    if (req.status < 200 || req.status >= 400) return;
+    var data;
+    try { data = JSON.parse(req.response); } catch(e) { return; }
+    var objects = data['objects'];
+    if (!objects || objects.length === 0) return;
+
+    var img   = objects[Math.floor(Math.random() * objects.length)];
+    var ident = img.hash || img.id;
+    var href  = 'https://www.astrobin.com/' + ident;
+
+    var wrap = document.getElementById('hero-image-wrap');
+    wrap.innerHTML = '<a href="' + href + '" target="_blank" rel="noopener">'
+      + '<img src="' + img.url_regular + '" alt="' + (img.title || 'Latest astrophoto').replace(/"/g,'&quot;') + '" loading="lazy">'
+      + '</a>';
+
+    var uploaded = (img.uploaded || '').split('T')[0];
+    var dateStr  = '';
+    if (uploaded) {
+      var parts  = uploaded.split('-');
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      dateStr = months[parseInt(parts[1],10)-1] + ' ' + parseInt(parts[2],10) + ', ' + parts[0];
+    }
+
+    var tmp = document.createElement('div');
+    tmp.innerHTML = img.description || '';
+    var desc = (tmp.textContent || tmp.innerText || '').trim();
+    if (desc.length > 300) desc = desc.substring(0, 300) + '&hellip;';
+
+    document.getElementById('hero-info').innerHTML =
+      '<h2 class="hero-title">' + (img.title || 'Untitled').replace(/</g,'&lt;') + '</h2>'
+      + (dateStr ? '<p class="hero-date">Uploaded ' + dateStr + '</p>' : '')
+      + (desc    ? '<p class="hero-description">' + desc + '</p>' : '')
+      + '<a class="hero-link" href="' + href + '" target="_blank" rel="noopener">'
+      + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
+      + 'View on Astrobin</a>';
+  };
+  req.send();
+})();
+</script>
