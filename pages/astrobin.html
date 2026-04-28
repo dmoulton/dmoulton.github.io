@@ -1,63 +1,75 @@
 ---
-layout: page
+layout: default
 title: Latest Astrobin
 comments: false
 permalink: /my-astrobin/
 published: true
 no_menu_item: false
+nav_order: 1
+support: [jquery, gallery]
 ---
 
 <style>
-    div.gallery {
-    border: 1px solid #ccc;
-    }
-
-    div.gallery:hover {
-    border: 1px solid #777;
-    }
-
-    div.gallery img {
-    width: 100%;
-    height: auto;
-    }
-
-    div.desc {
-    padding: 15px;
-    text-align: center;
-    }
-
-    * {
-    box-sizing: border-box;
-    }
-
-    .responsive {
-    padding: 6px 6px;
-    float: left;
-    width: 49.99999%;
-    }
-
-    @media only screen and (max-width: 700px) {
-    .responsive {
-        width: 99.99999%;
-        margin: 6px 0;
-    }
-    }
-
-    @media only screen and (max-width: 500px) {
-    .responsive {
-        width: 100%;
-    }
-    }
-
-    .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-    }
+#image-gallery .image-wrapper { padding-right: 5px; }
+#image-gallery .gallery-sizer  { width: 23%; }
 </style>
 
-<body>
-    These are my latest uploads to <a href="https://www.astrobin.com/users/dmoulton/" target="_astrobin">Astrobin</a>
-    <div id='root'></div>
-    <script src="/js/astrobin-gallery.js"></script>
-</body>
+<h1 class="page-title">{{ page.title }}</h1>
+<p class="astrobin-intro">
+  My latest uploads to <a href="https://www.astrobin.com/users/dmoulton/" target="_blank" rel="noopener">Astrobin</a>.
+  Click any image to view it on Astrobin.
+</p>
+
+<div id="image-gallery" class="image-gallery">
+  <div id="gallery-sizer" class="gallery-sizer"></div>
+</div>
+
+<script>
+var request = new XMLHttpRequest();
+request.open('GET', 'https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key={{ site.astrobin_key }}&api_secret={{ site.astrobin_secret }}&format=json', true);
+
+request.onload = function() {
+  if (request.status < 200 || request.status >= 400) return;
+  var data = JSON.parse(this.response);
+  var gallery = document.getElementById('image-gallery');
+
+  data['objects'].forEach(function(image) {
+    var ident = image.hash || image.id;
+    var href  = 'https://www.astrobin.com/' + ident;
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'image-wrapper';
+
+    var a = document.createElement('a');
+    a.className = 'image';
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener';
+
+    var img = document.createElement('img');
+    img.src = image.url_regular;
+    img.alt = image.title || '';
+    img.title = image.title || '';
+
+    a.appendChild(img);
+    wrapper.appendChild(a);
+    gallery.appendChild(wrapper);
+  });
+
+  // Init Isotope masonry after images are added
+  $(document).ready(function() {
+    var $grid = $('#image-gallery').isotope({
+      percentPosition: true,
+      columnWidth: '#gallery-sizer',
+      itemSelector: '.image-wrapper',
+      layoutMode: 'masonry'
+    });
+
+    $grid.imagesLoaded().progress(function() {
+      $grid.isotope('layout');
+    });
+  });
+};
+
+request.send();
+</script>
