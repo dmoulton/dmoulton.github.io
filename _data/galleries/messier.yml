@@ -331,11 +331,10 @@ pictures:
   thumbnail: m50-300x200.png
   title: M50
 - filename: m51
-  original: m51-5000x3263.jpg
-  sizes:
-  - m51-300x196.jpg
+  original: m51-1844x1691.jpg
+  sizes: []
   sort_id: 51
-  thumbnail: m51-300x196.jpg
+  thumbnail: m51-thumbnail.jpg
   title: M51
 - filename: m52
   original: m52-5687x3756.jpg

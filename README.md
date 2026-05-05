@@ -17,7 +17,7 @@ Run the website with ` bundle exec jekyll s`. Or just view the [GitHub Pages ver
 
 1. Identify the image you want to use. It should be in jpg or png format (don't use jpeg)
 2. Rename the image m[whatever]-large.jpg
-3. Create a thumbnail using imagemagick: convert m[whatever]-large.jpg -resize 300x -strip m[whatever]-thumb.jpg
+3. Create a thumbnail using imagemagick: convert m[whatever]-large.jpg -resize 300x -strip m[whatever]-thumbnail.jpg
 4. Copy these files to assets/astrophotography/messier
 5. cd to _data/galleries
 6. run ../../scripts/messier-gallery.py from that location
