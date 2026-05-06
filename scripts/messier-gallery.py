@@ -32,31 +32,30 @@ files = [f for f in files if f[f.rfind('.')+1:] in extensions ]
 # rename image files
 print('Renaming files...')
 new_files = []
+explicit_thumbs = {}  # base filename -> renamed file for -thumb/-thumbnail inputs
 for f in files:
-    if f[f.rfind('-')+1:f.rfind('.')] != 'thumbnail':
-        newf = f[:f.rfind('-')] + "-%sx%s" % imagesize.get(join(path, f)) + f[f.rfind('.'):]
-        rename(join(path, f),join(path, newf))
-    else:
-        newf = f
+    suffix = f[f.rfind('-')+1:f.rfind('.')]
+    base = f[:f.rfind('-')]
+    newf = base + "-%sx%s" % imagesize.get(join(path, f)) + f[f.rfind('.'):]
+    if suffix in ('thumb', 'thumbnail'):
+        explicit_thumbs[base] = newf
+    rename(join(path, f), join(path, newf))
     new_files.append(newf)
 
 files = new_files
 
 # helper objects to store gallery data
 new_gallery = {}
-thumbs = {}
+thumbs = dict(explicit_thumbs)
 
 # group gallery data
 print('Grouping files...')
 for f in files:
     filename = f[:f.rfind('-')]
-    if f[f.rfind('-')+1:f.rfind('.')] == "thumbnail":
-        thumbs[filename] = f
+    if filename in new_gallery:
+        new_gallery[filename].append(f)
     else:
-        if filename in new_gallery:
-            new_gallery[filename].append(f)
-        else:
-            new_gallery[filename] = [f]
+        new_gallery[filename] = [f]
 
 # find largest image -> set as original
 print('Searching for originals and missing thumbnails...')

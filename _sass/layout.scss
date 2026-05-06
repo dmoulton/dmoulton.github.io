@@ -371,12 +371,12 @@
 
   .gallery-sizer,
   .image-wrapper {
-    width: 23%;
-    margin-bottom: 2%;
+    width: calc(25% - 7.5px);
+    margin-bottom: 10px;
 
-    @media (max-width: 900px) { width: 31%; }
-    @media (max-width: 600px) { width: 48%; }
-    @media (max-width: 400px) { width: 98%; }
+    @media (max-width: 900px) { width: calc(33.333% - 6.667px); }
+    @media (max-width: 600px) { width: calc(50% - 5px); }
+    @media (max-width: 400px) { width: 100%; }
   }
 
   .image {
