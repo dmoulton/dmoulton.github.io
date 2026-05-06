@@ -101,13 +101,13 @@ layout: default
 
     .hero-date {
         font-family: "Space Mono", monospace;
-        font-size: 11px;
+        font-size: 13px;
         color: #6b8299;
         margin: 0;
     }
 
     .hero-description {
-        font-size: 0.875rem;
+        font-size: 1rem;
         line-height: 1.65;
         color: #cdd9e8;
         margin: 0;
@@ -222,6 +222,38 @@ layout: default
         height: auto;
     }
 
+    .hero-image-wrap,
+    .hero-info {
+        transition: opacity 0.4s ease;
+    }
+
+    .hero-dots {
+        display: flex;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .hero-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #1e3050;
+        border: 1px solid #2e4870;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        flex-shrink: 0;
+    }
+
+    .hero-dot:hover {
+        background: rgba(79, 195, 247, 0.4);
+        border-color: #4fc3f7;
+    }
+
+    .hero-dot-active {
+        background: #4fc3f7;
+        border-color: #4fc3f7;
+    }
+
     @media (max-width: 768px) {
         .home-hero {
             grid-template-columns: 1fr;
@@ -245,10 +277,11 @@ layout: default
 <div class="home-section">
     <div class="home-hero">
         <div>
-            <p class="hero-label">// Latest Astrophoto</p>
+            <p class="hero-label">// Latest Astrophotos</p>
             <div class="hero-image-wrap" id="hero-image-wrap">
                 <div class="hero-loading">Loading…</div>
             </div>
+            <div class="hero-dots" id="hero-dots"></div>
         </div>
         <div class="hero-info" id="hero-info">
             <div class="hero-loading">Loading…</div>
@@ -380,79 +413,93 @@ layout: default
             "&api_secret={{ site.astrobin_secret }}" +
             "&format=json&limit=10&offset=0";
 
+        var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+        function formatDate(uploaded) {
+            var s = (uploaded || "").split("T")[0];
+            if (!s) return "";
+            var parts = s.split("-");
+            return months[parseInt(parts[1], 10) - 1] + " " + parseInt(parts[2], 10) + ", " + parts[0];
+        }
+
+        function renderImage(objects, index, wrap, info, dots) {
+            var img = objects[index];
+            var ident = img.hash || img.id;
+            var href = "https://www.astrobin.com/" + ident;
+            var dateStr = formatDate(img.uploaded);
+
+            var tmp = document.createElement("div");
+            tmp.innerHTML = img.description || "";
+            var desc = (tmp.textContent || tmp.innerText || "").trim();
+            if (desc.length > 300) desc = desc.substring(0, 300) + "…";
+
+            wrap.style.opacity = "0";
+            info.style.opacity = "0";
+
+            setTimeout(function () {
+                wrap.innerHTML =
+                    '<a href="' + href + '" target="_blank" rel="noopener">' +
+                    '<img src="' + img.url_regular + '" alt="' + (img.title || "Astrophoto").replace(/"/g, "&quot;") + '" loading="lazy">' +
+                    '</a>';
+                var heroImg = wrap.querySelector("img");
+                heroImg.addEventListener("load", function () {
+                    if (this.naturalHeight > this.naturalWidth) {
+                        this.style.objectFit = "contain";
+                    }
+                });
+
+                info.innerHTML =
+                    '<h2 class="hero-title">' + (img.title || "Untitled").replace(/</g, "&lt;") + "</h2>" +
+                    (dateStr ? '<p class="hero-date">Uploaded ' + dateStr + "</p>" : "") +
+                    (desc ? '<p class="hero-description">' + desc + "</p>" : "") +
+                    '<a class="hero-link" href="' + href + '" target="_blank" rel="noopener">' +
+                    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+                    "View on Astrobin</a>";
+
+                dots.querySelectorAll(".hero-dot").forEach(function (d, i) {
+                    d.classList.toggle("hero-dot-active", i === index);
+                });
+
+                wrap.style.opacity = "1";
+                info.style.opacity = "1";
+            }, 400);
+        }
+
         var req = new XMLHttpRequest();
         req.open("GET", url, true);
         req.onload = function () {
             if (req.status < 200 || req.status >= 400) return;
             var data;
-            try {
-                data = JSON.parse(req.response);
-            } catch (e) {
-                return;
-            }
+            try { data = JSON.parse(req.response); } catch (e) { return; }
             var objects = data["objects"];
             if (!objects || objects.length === 0) return;
 
-            var img = objects[Math.floor(Math.random() * objects.length)];
-            var ident = img.hash || img.id;
-            var href = "https://www.astrobin.com/" + ident;
-
             var wrap = document.getElementById("hero-image-wrap");
-            wrap.innerHTML =
-                '<a href="' +
-                href +
-                '" target="_blank" rel="noopener">' +
-                '<img src="' +
-                img.url_regular +
-                '" alt="' +
-                (img.title || "Latest astrophoto").replace(/"/g, "&quot;") +
-                '" loading="lazy">' +
-                "</a>";
+            var info = document.getElementById("hero-info");
+            var dots = document.getElementById("hero-dots");
+            var current = 0;
+            var timer;
 
-            var uploaded = (img.uploaded || "").split("T")[0];
-            var dateStr = "";
-            if (uploaded) {
-                var parts = uploaded.split("-");
-                var months = [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December",
-                ];
-                dateStr =
-                    months[parseInt(parts[1], 10) - 1] +
-                    " " +
-                    parseInt(parts[2], 10) +
-                    ", " +
-                    parts[0];
+            dots.innerHTML = objects.map(function (_, i) {
+                return '<span class="hero-dot' + (i === 0 ? " hero-dot-active" : "") + '" data-i="' + i + '"></span>';
+            }).join("");
+
+            dots.querySelectorAll(".hero-dot").forEach(function (d) {
+                d.addEventListener("click", function () {
+                    current = parseInt(this.getAttribute("data-i"), 10);
+                    clearInterval(timer);
+                    renderImage(objects, current, wrap, info, dots);
+                    timer = setInterval(advance, 10000);
+                });
+            });
+
+            function advance() {
+                current = (current + 1) % objects.length;
+                renderImage(objects, current, wrap, info, dots);
             }
 
-            var tmp = document.createElement("div");
-            tmp.innerHTML = img.description || "";
-            var desc = (tmp.textContent || tmp.innerText || "").trim();
-            if (desc.length > 300) desc = desc.substring(0, 300) + "&hellip;";
-
-            document.getElementById("hero-info").innerHTML =
-                '<h2 class="hero-title">' +
-                (img.title || "Untitled").replace(/</g, "&lt;") +
-                "</h2>" +
-                (dateStr
-                    ? '<p class="hero-date">Uploaded ' + dateStr + "</p>"
-                    : "") +
-                (desc ? '<p class="hero-description">' + desc + "</p>" : "") +
-                '<a class="hero-link" href="' +
-                href +
-                '" target="_blank" rel="noopener">' +
-                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
-                "View on Astrobin</a>";
+            renderImage(objects, 0, wrap, info, dots);
+            timer = setInterval(advance, 10000);
         };
         req.send();
     })();
