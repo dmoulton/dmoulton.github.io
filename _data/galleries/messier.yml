@@ -39,10 +39,10 @@ pictures:
     sort_id: 4
     thumbnail: m4-300x196.jpg
     title: M4
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 10 Aug 2020
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.63) | Canon T6i | Astronomic CLS-CCD
+    image_info: 30x60" subframes
   - filename: m5
     original: m5-4032x2672.jpg
     sizes:
