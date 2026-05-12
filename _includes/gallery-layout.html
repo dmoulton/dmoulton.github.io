@@ -1,36 +1,189 @@
+<style>
+.image-wrapper {
+  position: relative;
+}
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 12, 20, 0.75);
+  padding: 5px 8px;
+}
+.image-caption-title {
+  display: block;
+  color: #cdd6f4;
+  font-size: 0.78rem;
+  font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lg-toolbar {
+  position: relative;
+}
+.lg-info-btn {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  padding: 0 14px;
+  line-height: 47px;
+  font-size: 1.3rem;
+  color: #999;
+  transition: color 0.2s;
+  user-select: none;
+}
+.lg-info-btn:hover {
+  color: #fff;
+}
+.lg-info-popover {
+  display: none;
+  position: absolute;
+  top: 47px;
+  right: 0;
+  width: 476px;
+  background: rgba(10, 12, 20, 0.88);
+  border: 1px solid rgba(137, 180, 250, 0.25);
+  border-top: none;
+  padding: 14px 16px;
+  z-index: 1090;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.lg-info-popover.lg-info-open {
+  display: block;
+}
+.lg-info-popover table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #cdd6f4;
+}
+.lg-info-popover th {
+  text-align: left;
+  color: #89b4fa;
+  font-weight: 700;
+  padding: 4px 12px 4px 0;
+  white-space: nowrap;
+  vertical-align: top;
+  width: 1%;
+}
+.lg-info-popover td {
+  padding: 4px 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.lg-info-popover .no-data {
+  color: #6c7086;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0;
+}
+</style>
+
 <div id="image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}" class="image-gallery">
   <div id="gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}" class="gallery-sizer"></div>
   {% for picture in include.gallery.pictures %}
   <div class="image-wrapper">
     <a href="{{ site.url }}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ picture.original }}"
-    data-responsive="{% for size in picture.sizes %} {{ site.url}}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ size }} {{ size | split: '-' | last | split: '.' | first | split: 'x' | first | strip }}{% unless forloop.last %},{% endunless %}{% endfor %}" class="image"
-    {% if picture.title %} data-sub-html="<div class='lg-toolbar caption'><h4>{{ picture.title | escape }}</h4>{% if picture.caption %}<p>{{ picture.caption | escape }}</p>{% endif %}{% if picture.date or picture.equipment or picture.image_info %}<ul class='image-details'>{% if picture.date %}<li><strong>Date:</strong> {{ picture.date | escape }}</li>{% endif %}{% if picture.equipment %}<li><strong>Equipment:</strong> {{ picture.equipment | escape }}</li>{% endif %}{% if picture.image_info %}<li><strong>Image Info:</strong> {{ picture.image_info | escape }}</li>{% endif %}</ul>{% endif %}</div>"{% endif %}>
+    data-responsive="{% for size in picture.sizes %} {{ site.url}}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ size }} {{ size | split: '-' | last | split: '.' | first | split: 'x' | first | strip }}{% unless forloop.last %},{% endunless %}{% endfor %}" class="image" data-object="{{ picture.filename }}"
+    {% if picture.title %} data-sub-html="<h4>{{ picture.title | escape }}</h4>"{% endif %}>
       <img title="{{ picture.title }}" alt="{{ picture.title }}" src="{{ site.url }}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ picture.thumbnail }}" />
     </a>
+    {% if picture.title %}
+    <div class="image-caption">
+      <span class="image-caption-title">{{ picture.title }}</span>
+    </div>
+    {% endif %}
   </div>
   {% endfor %}
 </div>
 
 <script>
-$(document).ready(function() {
-  var $gallery{% if include.id_number %}{{ include.id_number }}{% endif %} = $("#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}").lightGallery({
-    thumbnail: false,
-    selector: '.image'
+(function() {
+  var imageData{% if include.id_number %}{{ include.id_number }}{% endif %} = [
+    {% for picture in include.gallery.pictures %}
+    {
+      date: "{{ picture.date | escape }}",
+      location: "{{ picture.location | escape }}",
+      equipment: "{{ picture.equipment | escape }}",
+      image_info: "{{ picture.image_info | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  function buildPopoverHtml(data) {
+    var hasData = data.date || data.location || data.equipment || data.image_info;
+    if (!hasData) {
+      return '<p class="no-data">Image data not entered</p>';
+    }
+    var rows = '';
+    if (data.date)       rows += '<tr><th>Date</th><td>'       + data.date       + '</td></tr>';
+    if (data.location)   rows += '<tr><th>Location</th><td>'   + data.location   + '</td></tr>';
+    if (data.equipment)  rows += '<tr><th>Equipment</th><td>'  + data.equipment.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
+    if (data.image_info) rows += '<tr><th>Image Info</th><td>' + data.image_info.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
+    return '<table>' + rows + '</table>';
+  }
+
+  $(document).ready(function() {
+    var $gallery{% if include.id_number %}{{ include.id_number }}{% endif %} = $("#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}").lightGallery({
+      thumbnail: false,
+      selector: '.image'
+    });
+
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+      var $target = $('[data-object="' + hash + '"]');
+      if ($target.length) {
+        setTimeout(function() { $target.trigger('click'); }, 300);
+      }
+    }
+
+    $gallery{% if include.id_number %}{{ include.id_number }}{% endif %}.on('onAfterOpen.lg', function() {
+      $('.lg-toolbar').append(
+        '<span class="lg-info-btn" title="Image Info">&#9432;</span>' +
+        '<div class="lg-info-popover"></div>'
+      );
+      var idx = $('.lg-current').index('.lg-item');
+      if (idx < 0) idx = 0;
+      $('.lg-info-popover').html(buildPopoverHtml(imageData{% if include.id_number %}{{ include.id_number }}{% endif %}[idx] || {}));
+
+      $(document).on('click.lginfo{% if include.id_number %}{{ include.id_number }}{% endif %}', '.lg-info-btn', function(e) {
+        e.stopPropagation();
+        $('.lg-info-popover').toggleClass('lg-info-open');
+      });
+      $(document).on('click.lginfodismiss{% if include.id_number %}{{ include.id_number }}{% endif %}', '.lg-outer', function() {
+        $('.lg-info-popover').removeClass('lg-info-open');
+      });
+    });
+
+    $gallery{% if include.id_number %}{{ include.id_number }}{% endif %}.on('onAfterSlide.lg', function(e, prevIndex, index) {
+      $('.lg-info-popover')
+        .removeClass('lg-info-open')
+        .html(buildPopoverHtml(imageData{% if include.id_number %}{{ include.id_number }}{% endif %}[index] || {}));
+    });
+
+    $gallery{% if include.id_number %}{{ include.id_number }}{% endif %}.on('onBeforeClose.lg', function() {
+      $(document).off('click.lginfo{% if include.id_number %}{{ include.id_number }}{% endif %} click.lginfodismiss{% if include.id_number %}{{ include.id_number }}{% endif %}');
+    });
   });
-});
 
-// init isotope
-var $grid{% if include.id_number %}{{ include.id_number }}{% endif %} = $('#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}').isotope({
-  percentPosition: true,
-  columnWidth: '#gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}',
-  itemSelector: '.image-wrapper',
-  layoutMode: "masonry",
-  masonry: { gutter: 10 }
-});
+  // init isotope
+  var $grid{% if include.id_number %}{{ include.id_number }}{% endif %} = $('#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}').isotope({
+    percentPosition: true,
+    columnWidth: '#gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}',
+    itemSelector: '.image-wrapper',
+    layoutMode: "masonry",
+    masonry: { gutter: 10 }
+  });
 
-// layout Isotope after each image loads
-$grid{% if include.id_number %}{{ include.id_number }}{% endif %}.imagesLoaded().progress( function() {
-  $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.masonry();
-});
-
+  // layout Isotope after each image loads
+  $(document).ready(function() {
+    $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.imagesLoaded().progress(function() {
+      $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.masonry();
+    });
+  });
+})();
 </script>
