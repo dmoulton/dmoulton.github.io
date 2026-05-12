@@ -148,11 +148,11 @@ pictures:
     sort_id: 13
     thumbnail: m13-300x226.jpg
     title: M13
-    date:
+    date: 25 Aug 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 33x60"
   - filename: m14
     original: m14-4996x2915.jpg
     sizes:
