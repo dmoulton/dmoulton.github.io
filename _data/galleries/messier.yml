@@ -31,7 +31,7 @@ pictures:
     date: 14 Apr 2019
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.63) | Canon T6i
-    image_info:
+    image_info: 28x60"
   - filename: m4
     original: m4-4339x3101.jpg
     sizes:
@@ -39,10 +39,10 @@ pictures:
     sort_id: 4
     thumbnail: m4-300x214.jpg
     title: M4
-    date: 10 Aug 2020
-    location: My Backyard
-    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.63) | Canon T6i | Astronomic CLS-CCD
-    image_info: 30x60" subframes
+    date: 1 Jul 2022
+    location: Joshua Tree National Park
+    equipment: Astro-Tech AT130EDT (130mm)| Hotech Flattener | Canon T6i
+    image_info: 18x120"
   - filename: m5
     original: m5-4032x2672.jpg
     sizes:
