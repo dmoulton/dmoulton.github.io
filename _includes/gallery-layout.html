@@ -4,7 +4,7 @@
   <div class="image-wrapper">
     <a href="{{ site.url }}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ picture.original }}"
     data-responsive="{% for size in picture.sizes %} {{ site.url}}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ size }} {{ size | split: '-' | last | split: '.' | first | split: 'x' | first | strip }}{% unless forloop.last %},{% endunless %}{% endfor %}" class="image"
-    {% if picture.title %} data-sub-html="<div class='lg-toolbar caption'><h4>{{ picture.title | escape }}</h4>{% if picture.caption %}<p>{{ picture.caption | escape }}</p>{% endif %}</div>"{% endif %}>
+    {% if picture.title %} data-sub-html="<div class='lg-toolbar caption'><h4>{{ picture.title | escape }}</h4>{% if picture.caption %}<p>{{ picture.caption | escape }}</p>{% endif %}{% if picture.date or picture.equipment or picture.image_info %}<ul class='image-details'>{% if picture.date %}<li><strong>Date:</strong> {{ picture.date | escape }}</li>{% endif %}{% if picture.equipment %}<li><strong>Equipment:</strong> {{ picture.equipment | escape }}</li>{% endif %}{% if picture.image_info %}<li><strong>Image Info:</strong> {{ picture.image_info | escape }}</li>{% endif %}</ul>{% endif %}</div>"{% endif %}>
       <img title="{{ picture.title }}" alt="{{ picture.title }}" src="{{ site.url }}{{ site.baseurl }}/assets/astrophotography/{{ include.gallery.picture_path }}/{{ picture.thumbnail }}" />
     </a>
   </div>

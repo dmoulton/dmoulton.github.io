@@ -7,6 +7,9 @@ pictures:
   sort_id: 1
   thumbnail: m1-300x291.jpg
   title: M1
+  date:
+  equipment:
+  image_info:
 - filename: m2
   original: m2-4877x2993.jpg
   sizes: []
