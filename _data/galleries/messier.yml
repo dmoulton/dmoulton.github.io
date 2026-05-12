@@ -333,10 +333,10 @@ pictures:
     sort_id: 31
     thumbnail: m31-300x200.jpg
     title: M31, M32, & M110
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 8 - 16 Sep 2023
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance 2"
+    image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
   - filename: m33
     original: m33-4895x3268.jpg
     sizes:
@@ -344,10 +344,10 @@ pictures:
     sort_id: 33
     thumbnail: m33-300x200.jpg
     title: M33
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 12 Nov 2021
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Astronomik CSL-CCD
+    image_info: 16x300" subframes
   - filename: m34
     original: m34-2160x3840.jpg
     sizes:
@@ -746,10 +746,10 @@ pictures:
     sort_id: 73
     thumbnail: m73-300x196.jpg
     title: M73
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 7 - 14 Oct 2023
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
+    image_info: 36x180" subframes
   - filename: m74
     original: m74-2002x1521.jpg
     sizes:
@@ -801,10 +801,10 @@ pictures:
     sort_id: 78
     thumbnail: m78-300x193.jpg
     title: M78
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 5 - 14 Oct 2023
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
+    image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
   - filename: m79
     original: m79-4103x2651.jpg
     sizes:
