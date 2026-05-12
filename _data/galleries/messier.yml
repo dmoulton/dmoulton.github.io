@@ -479,11 +479,11 @@ pictures:
     sort_id: 42
     thumbnail: m42-300x200.jpg
     title: M42 & the Running Man
-    date:
+    date: 16 Feb 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-eNhance 2"
+    image_info: 58x120" | 49x60" | 28x30"
   - filename: m44
     original: m44-6096x4056.jpg
     sizes: []
