@@ -502,11 +502,11 @@ pictures:
     sort_id: 45
     thumbnail: m45-300x200.jpg
     title: M45 - The Pleiades
-    date:
+    date: 19 Sep 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 30x120"
   - filename: m46
     original: m46-6024x4022.jpg
     sizes:
@@ -632,11 +632,11 @@ pictures:
     sort_id: 56
     thumbnail: m56-300x200.jpg
     title: M56
-    date:
+    date: 16 Aug 2017
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 23x30"
   - filename: m57
     original: m57-3000x2000.jpg
     sizes:
@@ -644,11 +644,11 @@ pictures:
     sort_id: 57
     thumbnail: m57-300x200.jpg
     title: M57
-    date:
+    date: 16 Aug 2017
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 23x30"
   - filename: m58
     original: m58-1080x1920.jpg
     sizes:
@@ -656,11 +656,11 @@ pictures:
     sort_id: 58
     thumbnail: m58-300x533.jpg
     title: M58
-    date:
+    date: 17 Jan 2026
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 148x20"
   - filename: m59_m60
     original: m59_m60-4000x2755.jpg
     sizes:
@@ -668,11 +668,11 @@ pictures:
     sort_id: 59
     thumbnail: m59_m60-300x207.jpg
     title: M59 & M60
-    date:
+    date: 26 Apr 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 31x180"
   - filename: m61
     original: m61-1080x1920.jpg
     sizes:
@@ -680,11 +680,11 @@ pictures:
     sort_id: 61
     thumbnail: m61-300x533.jpg
     title: M61
-    date:
+    date: 17 Jan 2026
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 149x20"
   - filename: m62
     original: m62-5044x3538.jpg
     sizes:
@@ -692,11 +692,11 @@ pictures:
     sort_id: 62
     thumbnail: m62-300x210.jpg
     title: M62
-    date:
+    date: 18 Aug 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 25x30"
   - filename: m63
     original: m63-2043x1724.jpg
     sizes:
