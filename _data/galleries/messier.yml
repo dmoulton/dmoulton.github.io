@@ -53,11 +53,11 @@ pictures:
     sort_id: 5
     thumbnail: m5-300x181.jpg
     title: M5
-    date: 9 Sep 2017
+    date: 14 Apr 2019 - 00:58 -> 01:30 MT
     time:
-    location: Pit 'n Pole Observing Site
-    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
-    image_info: 27x60"
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 26x60"
   - filename: m6
     original: m6-5704x3751.jpg
     sizes:
@@ -453,11 +453,10 @@ pictures:
     sort_id: 40
     thumbnail: m40-300x202.jpg
     title: M40
-    date: 7 Jul 2025
-    time:
+    date: 29 Jun 2025 - 22:03 -> 22:33 MT
     location: My Backyard
     equipment: Seestar S50 (50mm)
-    image_info: 110x20"
+    image_info: 41x10"
   - filename: m41
     original: m41-1080x1920.jpg
     sizes:
@@ -548,8 +547,7 @@ pictures:
     sort_id: 49
     thumbnail: m49-300x195.jpg
     title: M49
-    date: 25 Apr 2023
-    time:
+    date: 25 Apr 2023 - 22:25 -> 00:15 MT
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 31x180"
@@ -654,8 +652,7 @@ pictures:
     sort_id: 58
     thumbnail: m58-300x533.jpg
     title: M58
-    date: 17 Jan 2026
-    time:
+    date: 17 Jan 2026 - 02:30 -> 04:30 MT
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 148x20"
@@ -666,8 +663,7 @@ pictures:
     sort_id: 59
     thumbnail: m59_m60-300x207.jpg
     title: M59 & M60
-    date: 26 Apr 2023
-    time:
+    date: 26 Apr 2023 - 00:34 -> 02:34 MT
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 31x180"
@@ -1139,11 +1135,10 @@ pictures:
     sort_id: 104
     thumbnail: m104-thumbnail.jpg
     title: M104
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 27 Apr 2020 - 22:20 -> 23:22 MT
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 30x120"
   - filename: m105
     original: m105-3393x2538.jpg
     sizes:
@@ -1186,11 +1181,10 @@ pictures:
     sort_id: 108
     thumbnail: m108-300x264.jpg
     title: M108
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 18 Jan 2026 - 00:30 -> 02:28 MT
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 150x20"
   - filename: m109
     original: m109-924x1208.jpg
     sizes:
@@ -1198,8 +1192,7 @@ pictures:
     sort_id: 109
     thumbnail: m109-300x392.jpg
     title: M109
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 20 Jan 2026 - 00:30 -> 02:28 MT
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 215x20"
