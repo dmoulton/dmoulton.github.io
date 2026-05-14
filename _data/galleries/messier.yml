@@ -762,8 +762,7 @@ pictures:
     sort_id: 69
     thumbnail: m69-300x162.jpg
     title: M69
-    date: 27 Jul 2025
-    time:
+    date: 27 Jul 2025 - 01:00 -> 02:04 MT
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 139x20" subframes
@@ -774,8 +773,7 @@ pictures:
     sort_id: 70
     thumbnail: m70-300x168.jpg
     title: M70
-    date: 27 Jul 2025
-    time:
+    date: 27 Jul 2025 - 23:00 -> 00:12 MT
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 120x20" subframes
@@ -1153,11 +1151,10 @@ pictures:
     sort_id: 105
     thumbnail: m105-300x259.jpg
     title: M105
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 19 Mar 2023 - 01:56 -> 04:05 MT | 27 Mar 2023 - 21:39 -> 23:05 MT
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 58x180"
   - filename: m106
     original: m106-968x1109.jpg
     sizes:
