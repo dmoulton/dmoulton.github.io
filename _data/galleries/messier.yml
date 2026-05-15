@@ -30,8 +30,7 @@ pictures:
     sort_id: 3
     thumbnail: m3-300x185.jpg
     title: M3
-    date: 14 Apr 2019 - 01:49 -> 02:21 MT
-    time:
+    date: 14 Apr 2019 - 01:16 -> 01:48 MT
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 28x60"
@@ -42,7 +41,7 @@ pictures:
     sort_id: 4
     thumbnail: m4-300x214.jpg
     title: M4
-    date: 1 Jul 2022
+    date: 30 Jun 2022 - 23:23 -> 00:25 PT
     location: Joshua Tree National Park
     equipment: Astro-Tech AT130EDT (130mm)| Hotech Flattener | Canon T6i
     image_info: 18x120"
@@ -77,8 +76,7 @@ pictures:
     sort_id: 7
     thumbnail: m7-300x193.jpg
     title: M7
-    date: 18 Jul
-    time:
+    date: 18 Jul 2020 - 23:33 -> 23:55 MT
     location: Pit 'n Pole Observing Site,
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 20x60"
@@ -113,7 +111,7 @@ pictures:
     sort_id: 10
     thumbnail: m10-300x190.jpg
     title: M10
-    date: 8 Aug 2020
+    date: 11 Aug 2020 - 00:27 -> 01:25 MT
     time:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
@@ -125,7 +123,7 @@ pictures:
     sort_id: 11
     thumbnail: m11-300x184.jpg
     title: M11
-    date: 28 Jul 2020
+    date: 28 Jul 2020 - 10:50 -> 00:24 MT
     time:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
@@ -160,8 +158,7 @@ pictures:
     sort_id: 14
     thumbnail: m14-300x175.jpg
     title: M14
-    date: 18 Aug 2020
-    time:
+    date: 18 Aug 2020 - 22:30 -> 23:06 MT
     location: Pit 'n Pole Observing Site
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 56x30"
@@ -490,11 +487,11 @@ pictures:
     sort_id: 44
     thumbnail: m44-thumbnail.jpg
     title: M44
-    date:
+    date: 12 Mar 2018
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 30x60"
   - filename: m45
     original: m45-5000x3338.jpg
     sizes:
@@ -502,11 +499,11 @@ pictures:
     sort_id: 45
     thumbnail: m45-300x200.jpg
     title: M45 - The Pleiades
-    date:
+    date: 19 Sep 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 30x120"
   - filename: m46
     original: m46-6024x4022.jpg
     sizes:
@@ -514,11 +511,11 @@ pictures:
     sort_id: 46
     thumbnail: m46-300x200.jpg
     title: M46
-    date:
+    date: 19 Feb 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 19x60"
   - filename: m47
     original: m47-6096x4056.jpg
     sizes:
@@ -526,11 +523,11 @@ pictures:
     sort_id: 47
     thumbnail: m47-300x200.jpg
     title: M47
-    date:
+    date: 12 Mar 2018
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 40x30s
   - filename: m48
     original: m48-3775x2515.jpg
     sizes:
@@ -538,11 +535,11 @@ pictures:
     sort_id: 48
     thumbnail: m48-300x200.jpg
     title: M48
-    date:
+    date: 16 Mar 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 76x60"
   - filename: m49
     original: m49-4000x2595.jpg
     sizes:
@@ -550,11 +547,11 @@ pictures:
     sort_id: 49
     thumbnail: m49-300x195.jpg
     title: M49
-    date:
+    date: 25 Apr 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 31x180"
   - filename: m50
     original: m50-6024x4022.png
     sizes:
@@ -562,11 +559,11 @@ pictures:
     sort_id: 50
     thumbnail: m50-300x200.png
     title: M50
-    date:
+    date: 27 Feb 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 13x120"
   - filename: m51
     original: m51-1844x1691.jpg
     sizes: []
@@ -584,11 +581,11 @@ pictures:
     sort_id: 52
     thumbnail: m52-thumbnail.jpg
     title: M52
-    date:
+    date: 12 Sep 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 27x120"
   - filename: m53
     original: m53-1920x1080.jpg
     sizes:
@@ -596,11 +593,11 @@ pictures:
     sort_id: 53
     thumbnail: m53-300x169.jpg
     title: M53
-    date:
+    date: 5 Jul 2025
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 152x10"
   - filename: m54
     original: m54-3840x2160.jpg
     sizes:
@@ -632,11 +629,11 @@ pictures:
     sort_id: 56
     thumbnail: m56-300x200.jpg
     title: M56
-    date:
+    date: 16 Aug 2017
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 23x30"
   - filename: m57
     original: m57-3000x2000.jpg
     sizes:
@@ -644,11 +641,11 @@ pictures:
     sort_id: 57
     thumbnail: m57-300x200.jpg
     title: M57
-    date:
+    date: 16 Aug 2017
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 23x30"
   - filename: m58
     original: m58-1080x1920.jpg
     sizes:
@@ -656,11 +653,11 @@ pictures:
     sort_id: 58
     thumbnail: m58-300x533.jpg
     title: M58
-    date:
+    date: 17 Jan 2026
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 148x20"
   - filename: m59_m60
     original: m59_m60-4000x2755.jpg
     sizes:
@@ -668,11 +665,11 @@ pictures:
     sort_id: 59
     thumbnail: m59_m60-300x207.jpg
     title: M59 & M60
-    date:
+    date: 26 Apr 2023
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 31x180"
   - filename: m61
     original: m61-1080x1920.jpg
     sizes:
@@ -680,11 +677,11 @@ pictures:
     sort_id: 61
     thumbnail: m61-300x533.jpg
     title: M61
-    date:
+    date: 17 Jan 2026
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 149x20"
   - filename: m62
     original: m62-5044x3538.jpg
     sizes:
@@ -692,11 +689,11 @@ pictures:
     sort_id: 62
     thumbnail: m62-300x210.jpg
     title: M62
-    date:
+    date: 18 Aug 2020
     time:
-    location:
-    equipment:
-    image_info:
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 25x30"
   - filename: m63
     original: m63-2043x1724.jpg
     sizes:
@@ -764,8 +761,7 @@ pictures:
     sort_id: 69
     thumbnail: m69-300x162.jpg
     title: M69
-    date: 27 Jul 2025
-    time:
+    date: 27 Jul 2025 - 01:00 -> 02:04 MT
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 139x20" subframes
@@ -776,8 +772,7 @@ pictures:
     sort_id: 70
     thumbnail: m70-300x168.jpg
     title: M70
-    date: 27 Jul 2025
-    time:
+    date: 27 Jul 2025 - 23:00 -> 00:12 MT
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 120x20" subframes
@@ -1155,11 +1150,10 @@ pictures:
     sort_id: 105
     thumbnail: m105-300x259.jpg
     title: M105
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 19 Mar 2023 - 01:56 -> 04:05 MT | 27 Mar 2023 - 21:39 -> 23:05 MT
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 58x180"
   - filename: m106
     original: m106-968x1109.jpg
     sizes:
