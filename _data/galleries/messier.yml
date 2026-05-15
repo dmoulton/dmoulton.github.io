@@ -1014,11 +1014,10 @@ pictures:
     sort_id: 93
     thumbnail: m93-300x186.jpg
     title: M93
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 18 Mar 2023 - 21:36 -> 22:50 MT
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 49x60"
   - filename: m94
     original: m94-849x1143.jpg
     sizes:
