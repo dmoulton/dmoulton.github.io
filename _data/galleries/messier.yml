@@ -566,11 +566,11 @@ pictures:
     sort_id: 51
     thumbnail: m51-thumbnail.jpg
     title: M51
-    date: 4-6 May 2026
+    date: 30 Apr 2026 (21:59 - 00:32) | 1 May 2026 (00:53 - 04:34)
     time:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBH Filters
-    image_info: LRGB - 136x120" | Hα - 12x300"
+    image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
   - filename: m52
     original: m52-5687x3756.jpg
     sizes: []
@@ -1091,17 +1091,16 @@ pictures:
     equipment:
     image_info:
   - filename: m100
-    original: m100-6000x4000.jpg
+    original: m100-3128x2400.jpg
     sizes:
-      - m100-300x200.jpg
+      - m100-300x230.jpg
     sort_id: 100
-    thumbnail: m100-300x200.jpg
+    thumbnail: m100-300x230.jpg
     title: M100
-    date:
-    time:
-    location:
-    equipment:
-    image_info:
+    date: 14 May 2026 (22:30 - 01:30)
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBHO Filters
+    image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
   - filename: m101
     original: m101-2502x1877.jpg
     sizes:
@@ -1109,11 +1108,10 @@ pictures:
     sort_id: 101
     thumbnail: m101-300x225.jpg
     title: M101
-    date: 9-11 May 2026
-    time:
+    date: 7 May 2026 (22:59 - 02:55) | 9 May 2026 (22:18 - 04:41)
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBHO Filters
-    image_info: 146x120" LRGB | 27x300" Hα | 15x300" OIII
+    image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
   - filename: m103
     original: m103-6096x4056.jpg
     sizes: []
