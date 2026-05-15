@@ -18,7 +18,7 @@ pictures:
     sort_id: 2
     thumbnail: m2-thumbnail.jpg
     title: M2
-    date: 26 Aug 2017
+    date: 26 Aug 2017 - 23:00 -> 23:55 MT
     time:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
@@ -52,11 +52,10 @@ pictures:
     sort_id: 5
     thumbnail: m5-300x181.jpg
     title: M5
-    date: 9 Sep 2017
-    time:
+    date: 14 Apr 2019 - 00:58 -> 01:16
     location: Pit 'n Pole Observing Site
-    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
-    image_info: 27x60"
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 26x60"
   - filename: m6
     original: m6-5704x3751.jpg
     sizes:
@@ -64,8 +63,7 @@ pictures:
     sort_id: 6
     thumbnail: m6-300x197.jpg
     title: M6
-    date: 10 Aug 2020
-    time:
+    date: 11 Aug 2020 - 03:57 -> 04:44 MT
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 30x60"
@@ -87,7 +85,7 @@ pictures:
     sort_id: 8
     thumbnail: m8-300x196.jpg
     title: M8 - The Lagoon
-    date: 15 Jun 2018
+    date: 15 Jun 2018 - 02:56 -> 03:40 MT
     time:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
@@ -359,7 +357,7 @@ pictures:
     sort_id: 31
     thumbnail: m31-300x200.jpg
     title: M31, M32, & M110
-    date: 8 - 16 Sep 2023
+    date: 16 Sep 2023 - 12:04 -> 02:15 MT
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance 2"
     image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
