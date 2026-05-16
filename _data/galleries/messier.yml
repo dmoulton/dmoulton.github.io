@@ -121,15 +121,16 @@ pictures:
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 40x120"
   - filename: m12
-    original: m12-4449x2908.jpg
-    sizes: []
+    original: m12-6097x3722.jpg
+    sizes:
+      - m12-300x183.jpg
     sort_id: 12
-    thumbnail: m12-thumbnail.jpg
+    thumbnail: m12-300x183.jpg
     title: M12
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 15 May 2026 (01:30 - 04:30)
+    location: My Backyard
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 25x120" Lum | 15x120" Red | 15x120" Green | 15x120" Blue
   - filename: m13
     original: m13-3268x2459.jpg
     sizes:
