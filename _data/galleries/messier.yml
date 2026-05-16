@@ -11,6 +11,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2"
     image_info: 69x300" subframes
+    checked: true
   - filename: m2
     original: m2-4877x2993.jpg
     sizes: []
@@ -21,6 +22,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 36x30" subframes
+    checked: true
   - filename: m3
     original: m3-3184x1968.jpg
     sizes:
@@ -32,6 +34,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 28x60"
+    checked: true
   - filename: m4
     original: m4-4339x3101.jpg
     sizes:
@@ -43,6 +46,7 @@ pictures:
     location: Joshua Tree National Park
     equipment: Astro-Tech AT130EDT (130mm)| Hotech Flattener | Canon T6i
     image_info: 18x120"
+    checked: true
   - filename: m5
     original: m5-3016x1824.jpg
     sizes:
@@ -54,6 +58,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 26x60"
+    checked: true
   - filename: m6
     original: m6-5704x3751.jpg
     sizes:
@@ -65,6 +70,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 30x60"
+    checked: true
   - filename: m7
     original: m7-2000x1287.jpg
     sizes:
@@ -76,6 +82,7 @@ pictures:
     location: Pit 'n Pole Observing Site,
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 20x60"
+    checked: true
   - filename: m8
     original: m8-5818x3805.jpg
     sizes:
@@ -87,6 +94,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 30x60" subframes
+    checked: true
   - filename: m9
     original: m9-5748x3779.jpg
     sizes:
@@ -98,6 +106,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | CLS-CCD
     image_info: 50x60"
+    checked: true
   - filename: m10
     original: m10-5648x3570.jpg
     sizes:
@@ -109,6 +118,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 30x60"
+    checked: true
   - filename: m11
     original: m11-5005x3074.jpg
     sizes:
@@ -120,6 +130,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 40x120"
+    checked: true
   - filename: m12
     original: m12-6097x3722.jpg
     sizes:
@@ -131,6 +142,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGB Filters
     image_info: 25x120" Lum | 15x120" Red | 15x120" Green | 15x120" Blue
+    checked: true
   - filename: m13
     original: m13-3268x2459.jpg
     sizes:
@@ -138,10 +150,11 @@ pictures:
     sort_id: 13
     thumbnail: m13-300x226.jpg
     title: M13
-    date: 25 Aug 2023
+    date: 25 Aug 2023 (23:05 - 00:03)
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 33x60"
+    checked: true
   - filename: m14
     original: m14-4996x2915.jpg
     sizes:
@@ -153,6 +166,7 @@ pictures:
     location: Pit 'n Pole Observing Site
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 56x30"
+    checked: true
   - filename: m15
     original: m15-6096x4056.jpg
     sizes:
@@ -164,16 +178,18 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 40x30"
+    checked: true
   - filename: m16
     original: m16-3922x2750.jpg
     sizes: []
     sort_id: 16
     thumbnail: m16-thumbnail.jpg
     title: M16 - The Eagle
-    date: 15 Jun 2023
+    date: 15 Jun 2023 (23:41 - 04:40)
     location: My Backyard
-    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Optolong LeNhance 2"
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | UV/IR Cut
     image_info: 50x300" subframes
+    checked: true
   - filename: m17
     original: m17-6024x4022.jpg
     sizes:
@@ -185,6 +201,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Hotech Flattener | Canon T6i | Optolong L-eNhance 2"
     image_info: 25x180"
+    checked: true
   - filename: m18
     original: m18-3840x2160.jpg
     sizes:
@@ -192,10 +209,11 @@ pictures:
     sort_id: 18
     thumbnail: m18-300x169.jpg
     title: M18
-    date: 7 Jul 2025
+    date: 7 Jul 2025 (23:30 - 00:29)
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 233x10"
+    checked: true
   - filename: m19
     original: m19-2952x2269.jpg
     sizes:
@@ -207,6 +225,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | UV/IR Cut
     image_info: 6x120"
+    checked: false
   - filename: m20
     original: m20-6000x4000.jpg
     sizes:
@@ -218,6 +237,7 @@ pictures:
     location: Pit 'n Pole Observing Site
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 22x90"
+    checked: false
   - filename: m21
     original: m21-3592x1912.jpg
     sizes:
@@ -229,6 +249,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 223x10"
+    checked: false
   - filename: m22
     original: m22-5516x3525.jpg
     sizes:
@@ -240,6 +261,7 @@ pictures:
     location: Pit 'n Pole Observing Site
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 20x60"
+    checked: false
   - filename: m23
     original: m23-1920x1080.jpg
     sizes:
@@ -251,6 +273,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 92x10"
+    checked: false
   - filename: m24
     original: m24-6024x4022.jpg
     sizes:
@@ -262,6 +285,7 @@ pictures:
     location: Pit 'n Pole Observing Site,
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 28x60"
+    checked: false
   - filename: m25
     original: m25-3840x2160.jpg
     sizes:
@@ -273,6 +297,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 284x10"
+    checked: false
   - filename: m26
     original: m26-3840x2160.jpg
     sizes:
@@ -284,6 +309,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m27
     original: m27-6096x4056.jpg
     sizes:
@@ -295,6 +321,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 20x60"
+    checked: false
   - filename: m28
     original: m28-5506x3531.jpg
     sizes:
@@ -306,6 +333,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 20x60"
+    checked: false
   - filename: m29
     original: m29-6024x4022.jpg
     sizes: []
@@ -316,6 +344,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 9x120"
+    checked: false
   - filename: m30
     original: m30-6096x4056.jpg
     sizes:
@@ -327,6 +356,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 40x60"
+    checked: false
   - filename: m31
     original: m31-6024x4022.jpg
     sizes:
@@ -338,6 +368,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance 2"
     image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
+    checked: true
   - filename: m33
     original: m33-4895x3268.jpg
     sizes:
@@ -349,6 +380,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i | Astronomik CSL-CCD
     image_info: 16x300" subframes
+    checked: false
   - filename: m34
     original: m34-2160x3840.jpg
     sizes:
@@ -360,6 +392,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm)
     image_info: 150x20" subframes
+    checked: false
   - filename: m35
     original: m35-2126x3576.jpg
     sizes:
@@ -371,6 +404,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm)
     image_info: 150x20" subframes
+    checked: false
   - filename: m36
     original: m36-6096x4056.jpg
     sizes:
@@ -382,6 +416,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 36x30"
+    checked: false
   - filename: m37
     original: m37-6096x4056.jpg
     sizes:
@@ -393,6 +428,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 36x30"
+    checked: false
   - filename: m38
     original: m38-6096x4056.jpg
     sizes:
@@ -404,6 +440,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 39x30"
+    checked: false
   - filename: m39
     original: m39-6024x4022.jpg
     sizes: []
@@ -414,6 +451,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 38x120"
+    checked: false
   - filename: m40
     original: m40-1603x1079.jpg
     sizes:
@@ -425,6 +463,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm)
     image_info: 41x10"
+    checked: true
   - filename: m41
     original: m41-1080x1920.jpg
     sizes:
@@ -436,6 +475,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP
     image_info: 101x20"
+    checked: false
   - filename: m42
     original: m42-5000x3338.jpg
     sizes:
@@ -447,6 +487,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-eNhance 2"
     image_info: 58x120" | 49x60" | 28x30"
+    checked: false
   - filename: m44
     original: m44-6096x4056.jpg
     sizes: []
@@ -457,6 +498,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 30x60"
+    checked: false
   - filename: m45
     original: m45-5000x3338.jpg
     sizes:
@@ -468,6 +510,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 30x120"
+    checked: false
   - filename: m46
     original: m46-6024x4022.jpg
     sizes:
@@ -479,6 +522,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 19x60"
+    checked: false
   - filename: m47
     original: m47-6096x4056.jpg
     sizes:
@@ -490,6 +534,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 40x30s
+    checked: false
   - filename: m48
     original: m48-3775x2515.jpg
     sizes:
@@ -501,6 +546,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 76x60"
+    checked: false
   - filename: m49
     original: m49-4000x2595.jpg
     sizes:
@@ -512,6 +558,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 31x180"
+    checked: true
   - filename: m50
     original: m50-6024x4022.png
     sizes:
@@ -523,6 +570,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 13x120"
+    checked: false
   - filename: m51
     original: m51-1844x1691.jpg
     sizes: []
@@ -533,6 +581,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBH Filters
     image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
+    checked: true
   - filename: m52
     original: m52-5687x3756.jpg
     sizes: []
@@ -543,6 +592,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 27x120"
+    checked: false
   - filename: m53
     original: m53-1920x1080.jpg
     sizes:
@@ -554,6 +604,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 152x10"
+    checked: false
   - filename: m54
     original: m54-3840x2160.jpg
     sizes:
@@ -561,10 +612,11 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m55
     original: m55-3840x2160.jpg
     sizes:
@@ -576,6 +628,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m56
     original: m56-6096x4056.jpg
     sizes:
@@ -587,6 +640,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 23x30"
+    checked: true
   - filename: m57
     original: m57-3000x2000.jpg
     sizes:
@@ -598,6 +652,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 23x30"
+    checked: true
   - filename: m58
     original: m58-1080x1920.jpg
     sizes:
@@ -609,6 +664,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 148x20"
+    checked: true
   - filename: m59_m60
     original: m59_m60-4000x2755.jpg
     sizes:
@@ -620,6 +676,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 31x180"
+    checked: true
   - filename: m61
     original: m61-1080x1920.jpg
     sizes:
@@ -631,6 +688,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 149x20"
+    checked: false
   - filename: m62
     original: m62-5044x3538.jpg
     sizes:
@@ -642,6 +700,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 25x30"
+    checked: false
   - filename: m63
     original: m63-2043x1724.jpg
     sizes:
@@ -653,6 +712,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m64
     original: m64-1080x1920.jpg
     sizes:
@@ -664,6 +724,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 154x20"
+    checked: false
   - filename: leo_triplet
     original: leo_triplet-4994x3203.jpg
     sizes:
@@ -675,6 +736,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m67
     original: m67-3705x2342.jpg
     sizes:
@@ -686,6 +748,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m68
     original: m68-902x933.jpg
     sizes:
@@ -697,6 +760,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m69
     original: m69-1820x980.jpg
     sizes:
@@ -708,6 +772,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 139x20" subframes
+    checked: true
   - filename: m70
     original: m70-1859x1038.jpg
     sizes:
@@ -719,6 +784,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 120x20" subframes
+    checked: true
   - filename: m71
     original: m71-6024x4022.jpg
     sizes: []
@@ -729,6 +795,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 300x20" | LP Filter
+    checked: false
   - filename: m72
     original: m72-5000x3327.jpg
     sizes:
@@ -740,6 +807,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m73
     original: m73-5225x3417.jpg
     sizes:
@@ -751,6 +819,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
     image_info: 36x180" subframes
+    checked: false
   - filename: m74
     original: m74-2002x1521.jpg
     sizes:
@@ -762,6 +831,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m75
     original: m75-1920x1080.jpg
     sizes:
@@ -773,6 +843,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m76
     original: m76-6096x4056.jpg
     sizes:
@@ -784,6 +855,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m77
     original: m77-2064x2180.jpg
     sizes:
@@ -795,6 +867,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m78
     original: m78-5442x3506.jpg
     sizes:
@@ -806,6 +879,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
     image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
+    checked: false
   - filename: m79
     original: m79-4103x2651.jpg
     sizes:
@@ -817,6 +891,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m80
     original: m80-6000x4000.jpg
     sizes:
@@ -828,6 +903,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m81
     original: m81-1981x1798.jpg
     sizes:
@@ -839,6 +915,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m82
     original: m82-1445x1592.jpg
     sizes:
@@ -850,6 +927,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m83
     original: m83-795x751.jpg
     sizes:
@@ -861,6 +939,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m84
     original: m84-2052x3648.jpg
     sizes:
@@ -872,6 +951,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m85
     original: m85-1080x1920.jpg
     sizes:
@@ -883,6 +963,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 143x20"
+    checked: false
   - filename: m87
     original: m87-4763x3073.jpg
     sizes:
@@ -894,6 +975,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m88
     original: m88-1080x1920.jpg
     sizes:
@@ -905,6 +987,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 146x20"
+    checked: false
   - filename: m90
     original: m90-1080x1920.jpg
     sizes:
@@ -916,6 +999,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 97x20"
+    checked: false
   - filename: m91
     original: m91-1080x1920.jpg
     sizes:
@@ -927,6 +1011,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 158x20"
+    checked: false
   - filename: m92
     original: m92-2160x3840.jpg
     sizes:
@@ -938,6 +1023,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 15x20"
+    checked: true
   - filename: m93
     original: m93-4824x2988.jpg
     sizes:
@@ -949,6 +1035,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 49x60"
+    checked: true
   - filename: m94
     original: m94-849x1143.jpg
     sizes:
@@ -960,6 +1047,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m95
     original: m95-3585x2132.jpg
     sizes:
@@ -971,6 +1059,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m96
     original: m96-3597x2563.jpg
     sizes:
@@ -982,6 +1071,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m97
     original: m97-1611x996.jpg
     sizes:
@@ -993,6 +1083,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m98
     original: m98-1080x1920.jpg
     sizes:
@@ -1004,6 +1095,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m99
     original: m99-1080x1920.jpg
     sizes:
@@ -1015,6 +1107,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m100
     original: m100-3128x2400.jpg
     sizes:
@@ -1026,6 +1119,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBHO Filters
     image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
+    checked: true
   - filename: m101
     original: m101-2502x1877.jpg
     sizes:
@@ -1037,6 +1131,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBHO Filters
     image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
+    checked: true
   - filename: m102
     original: m102-3350x2905.jpg
     sizes:
@@ -1048,6 +1143,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | Luminance Only
     image_info: 32x120"
+    checked: true
   - filename: m103
     original: m103-6096x4056.jpg
     sizes: []
@@ -1058,6 +1154,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m104
     original: m104-4022x6024.jpg
     sizes: []
@@ -1068,6 +1165,7 @@ pictures:
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 30x120"
+    checked: true
   - filename: m105
     original: m105-3393x2538.jpg
     sizes:
@@ -1079,6 +1177,7 @@ pictures:
     location: My Backyard
     equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
     image_info: 58x180"
+    checked: true
   - filename: m106
     original: m106-968x1109.jpg
     sizes:
@@ -1090,6 +1189,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m107
     original: m107-3630x2030.jpg
     sizes:
@@ -1101,6 +1201,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
+    checked: false
   - filename: m108
     original: m108-806x708.jpg
     sizes:
@@ -1112,6 +1213,7 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 150x20"
+    checked: true
   - filename: m109
     original: m109-924x1208.jpg
     sizes:
@@ -1123,3 +1225,4 @@ pictures:
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 215x20"
+    checked: true
