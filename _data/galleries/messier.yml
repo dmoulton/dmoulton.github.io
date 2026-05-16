@@ -280,10 +280,10 @@ pictures:
     sort_id: 26
     thumbnail: m26-300x169.jpg
     title: M26
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m27
     original: m27-6096x4056.jpg
     sizes:
@@ -561,10 +561,10 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date:
-    location:
-    equipment:
-    image_info:
+    date: ""
+    location: null
+    equipment: null
+    image_info: null
   - filename: m55
     original: m55-3840x2160.jpg
     sizes:
@@ -572,10 +572,10 @@ pictures:
     sort_id: 55
     thumbnail: m55-300x169.jpg
     title: M55
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m56
     original: m56-6096x4056.jpg
     sizes:
@@ -583,7 +583,7 @@ pictures:
     sort_id: 56
     thumbnail: m56-300x200.jpg
     title: M56
-    date: 16 Aug 2017
+    date: 16 Aug 2017 (22:57 - 23:15)
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 23x30"
@@ -594,7 +594,7 @@ pictures:
     sort_id: 57
     thumbnail: m57-300x200.jpg
     title: M57
-    date: 16 Aug 2017
+    date: 16 Aug 2017 (22:43 - 23:07)
     location: My Backyard
     equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
     image_info: 23x30"
@@ -649,10 +649,10 @@ pictures:
     sort_id: 63
     thumbnail: m63-300x253.jpg
     title: M63
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m64
     original: m64-1080x1920.jpg
     sizes:
@@ -671,10 +671,10 @@ pictures:
     sort_id: 65
     thumbnail: leo_triplet-300x193.jpg
     title: The Leo Triplet - M65 & M66
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m67
     original: m67-3705x2342.jpg
     sizes:
@@ -682,10 +682,10 @@ pictures:
     sort_id: 67
     thumbnail: m67-300x190.jpg
     title: M67
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m68
     original: m68-902x933.jpg
     sizes:
@@ -693,10 +693,10 @@ pictures:
     sort_id: 68
     thumbnail: m68-300x310.jpg
     title: M68
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m69
     original: m69-1820x980.jpg
     sizes:
@@ -736,10 +736,10 @@ pictures:
     sort_id: 72
     thumbnail: m72-300x200.jpg
     title: M72
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m73
     original: m73-5225x3417.jpg
     sizes:
@@ -758,10 +758,10 @@ pictures:
     sort_id: 74
     thumbnail: m74-300x228.jpg
     title: M74
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m75
     original: m75-1920x1080.jpg
     sizes:
@@ -769,10 +769,10 @@ pictures:
     sort_id: 75
     thumbnail: m75-300x169.jpg
     title: M75
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m76
     original: m76-6096x4056.jpg
     sizes:
@@ -780,10 +780,10 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m77
     original: m77-2064x2180.jpg
     sizes:
@@ -791,10 +791,10 @@ pictures:
     sort_id: 77
     thumbnail: m77-300x317.jpg
     title: M77
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m78
     original: m78-5442x3506.jpg
     sizes:
@@ -813,10 +813,10 @@ pictures:
     sort_id: 79
     thumbnail: m79-300x194.jpg
     title: M79
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m80
     original: m80-6000x4000.jpg
     sizes:
@@ -824,10 +824,10 @@ pictures:
     sort_id: 80
     thumbnail: m80-300x200.jpg
     title: M80
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m81
     original: m81-1981x1798.jpg
     sizes:
@@ -835,10 +835,10 @@ pictures:
     sort_id: 81
     thumbnail: m81-300x272.jpg
     title: M81
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m82
     original: m82-1445x1592.jpg
     sizes:
@@ -846,10 +846,10 @@ pictures:
     sort_id: 82
     thumbnail: m82-300x331.jpg
     title: M82
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m83
     original: m83-795x751.jpg
     sizes:
@@ -857,10 +857,10 @@ pictures:
     sort_id: 83
     thumbnail: m83-300x283.jpg
     title: M83 The Southern Pinwheel
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m84
     original: m84-2052x3648.jpg
     sizes:
@@ -868,10 +868,10 @@ pictures:
     sort_id: 84
     thumbnail: m84-300x533.jpg
     title: M84, M86, & Markarian Chain
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m85
     original: m85-1080x1920.jpg
     sizes:
@@ -890,10 +890,10 @@ pictures:
     sort_id: 87
     thumbnail: m87-300x194.jpg
     title: M87 The Smoking Gun Galaxy
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m88
     original: m88-1080x1920.jpg
     sizes:
@@ -928,16 +928,16 @@ pictures:
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 158x20"
   - filename: m92
-    original: m92-6000x4000.jpg
+    original: m92-2160x3840.jpg
     sizes:
-      - m92-300x200.jpg
+      - m92-300x533.jpg
     sort_id: 92
-    thumbnail: m92-300x200.jpg
+    thumbnail: m92-300x533.jpg
     title: M92
-    date:
-    location:
-    equipment:
-    image_info:
+    date: 23 Sep 2025 (22:00 - 22:20)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 15x20"
   - filename: m93
     original: m93-4824x2988.jpg
     sizes:
@@ -956,10 +956,10 @@ pictures:
     sort_id: 94
     thumbnail: m94-300x404.jpg
     title: M94
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m95
     original: m95-3585x2132.jpg
     sizes:
@@ -967,10 +967,10 @@ pictures:
     sort_id: 95
     thumbnail: m95-300x178.jpg
     title: M95
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m96
     original: m96-3597x2563.jpg
     sizes:
@@ -978,10 +978,10 @@ pictures:
     sort_id: 96
     thumbnail: m96-300x214.jpg
     title: M96
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m97
     original: m97-1611x996.jpg
     sizes:
@@ -989,10 +989,10 @@ pictures:
     sort_id: 97
     thumbnail: m97-300x185.jpg
     title: M97
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m98
     original: m98-1080x1920.jpg
     sizes:
@@ -1000,10 +1000,10 @@ pictures:
     sort_id: 98
     thumbnail: m98-300x533.jpg
     title: M98
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m99
     original: m99-1080x1920.jpg
     sizes:
@@ -1011,10 +1011,10 @@ pictures:
     sort_id: 99
     thumbnail: m99-300x533.jpg
     title: M99
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m100
     original: m100-3128x2400.jpg
     sizes:
@@ -1054,10 +1054,10 @@ pictures:
     sort_id: 103
     thumbnail: m103-thumbnail.jpg
     title: M103
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m104
     original: m104-4022x6024.jpg
     sizes: []
@@ -1086,10 +1086,10 @@ pictures:
     sort_id: 106
     thumbnail: m106-300x344.jpg
     title: M106
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m107
     original: m107-3630x2030.jpg
     sizes:
@@ -1097,10 +1097,10 @@ pictures:
     sort_id: 107
     thumbnail: m107-300x168.jpg
     title: M107
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
   - filename: m108
     original: m108-806x708.jpg
     sizes:
