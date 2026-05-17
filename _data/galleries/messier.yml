@@ -851,7 +851,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: null
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -864,7 +864,7 @@ pictures:
     thumbnail: m77-300x317.jpg
     title: M77
     date: null
-    location: null
+    location: ''
     equipment: null
     image_info: null
     checked: false
@@ -875,11 +875,11 @@ pictures:
     sort_id: 78
     thumbnail: m78-300x193.jpg
     title: M78
-    date: 5 - 14 Oct 2023
+    date: 5 Oct 2023 (01:55 - 05:30) | 6 Oct 2023 (01:55 - 05:30) | 7 Oct 2023 (01:55 - 05:30) | 14 Oct 2023 (01:35 - 05:30)
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
     image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
-    checked: false
+    checked: true
   - filename: m79
     original: m79-4103x2651.jpg
     sizes:
@@ -899,7 +899,7 @@ pictures:
     sort_id: 80
     thumbnail: m80-300x179.jpg
     title: M80
-    date: 15 May 2026
+    date: 15 May 2026 (00:01 - 03:56)
     location: Heatheridge Observatory
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBFilters
     image_info: '25x120” Lum | 23x120” R | 20x120” G | 20x120” B '

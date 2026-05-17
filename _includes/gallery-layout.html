@@ -120,7 +120,7 @@
       return '<p class="no-data">Image data not entered</p>';
     }
     var rows = '';
-    if (data.date)       rows += '<tr><th>Date</th><td>'       + data.date       + '</td></tr>';
+    if (data.date)       rows += '<tr><th>Date</th><td>'       + data.date.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
     if (data.location)   rows += '<tr><th>Location</th><td>'   + data.location   + '</td></tr>';
     if (data.equipment)  rows += '<tr><th>Equipment</th><td>'  + data.equipment.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
     if (data.image_info) rows += '<tr><th>Image Info</th><td>' + data.image_info.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
