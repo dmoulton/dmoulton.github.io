@@ -311,11 +311,11 @@ pictures:
     image_info: null
     checked: true
   - filename: m27
-    original: m27-6096x4056.jpg
+    original: m27-3677x2336.jpg
     sizes:
-      - m27-300x200.jpg
+      - m27-300x191.jpg
     sort_id: 27
-    thumbnail: m27-300x200.jpg
+    thumbnail: m27-300x191.jpg
     title: M27
     date: '1 Jul 2022 (02:23 - 02:54 '
     location: My Backyard
@@ -893,17 +893,17 @@ pictures:
     image_info: null
     checked: false
   - filename: m80
-    original: m80-6000x4000.jpg
+    original: m80-5417x3234.jpg
     sizes:
-      - m80-300x200.jpg
+      - m80-300x179.jpg
     sort_id: 80
-    thumbnail: m80-300x200.jpg
+    thumbnail: m80-300x179.jpg
     title: M80
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 15 May 2026
+    location: Heatheridge Observatory
+    equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | QHYCCD miniCAM8M | LRGBFilters
+    image_info: '25x120” Lum | 23x120” R | 20x120” G | 20x120” B '
+    checked: true
   - filename: m81
     original: m81-1981x1798.jpg
     sizes:
@@ -913,7 +913,7 @@ pictures:
     title: M81
     date: null
     location: null
-    equipment: null
+    equipment: ''
     image_info: null
     checked: false
   - filename: m82
@@ -926,7 +926,7 @@ pictures:
     date: null
     location: null
     equipment: null
-    image_info: null
+    image_info: ''
     checked: false
   - filename: m83
     original: m83-795x751.jpg
