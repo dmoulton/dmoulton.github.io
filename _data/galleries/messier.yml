@@ -927,7 +927,7 @@ pictures:
     location: null
     equipment: null
     image_info: ''
-    checked: false
+    checked: true
   - filename: m83
     original: m83-795x751.jpg
     sizes:
