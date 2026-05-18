@@ -791,11 +791,11 @@ pictures:
     sort_id: 71
     thumbnail: m71-thumbnail.jpg
     title: M71
-    date: 25 Jan 2026
+    date: 13 September 2020
     location: My Backyard
-    equipment: Seestar S50 | LP Filter
-    image_info: 300x20" | LP Filter
-    checked: false
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 20x120"
+    checked: true
   - filename: m72
     original: m72-5000x3327.jpg
     sizes:
@@ -807,7 +807,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
-    checked: false
+    checked: true
   - filename: m73
     original: m73-5225x3417.jpg
     sizes:
@@ -819,7 +819,7 @@ pictures:
     location: My Backyard
     equipment: Astro-Tech AT130EDT (130mm)| Reducer/Flattener (.8) | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
     image_info: 36x180" subframes
-    checked: false
+    checked: true
   - filename: m74
     original: m74-2002x1521.jpg
     sizes:
@@ -843,7 +843,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
-    checked: false
+    checked: true
   - filename: m76
     original: m76-6096x4056.jpg
     sizes:
@@ -855,7 +855,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
-    checked: false
+    checked: true
   - filename: m77
     original: m77-2064x2180.jpg
     sizes:
@@ -863,11 +863,11 @@ pictures:
     sort_id: 77
     thumbnail: m77-300x317.jpg
     title: M77
-    date: null
-    location: ''
-    equipment: null
-    image_info: null
-    checked: false
+    date: 18 Jan 2026 (19:10 - 20:10)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 137x20"
+    checked: true
   - filename: m78
     original: m78-5442x3506.jpg
     sizes:
@@ -887,11 +887,11 @@ pictures:
     sort_id: 79
     thumbnail: m79-300x194.jpg
     title: M79
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 14 Jan 2018 (21:30 - 22:06)
+    location: My Backyard
+    equipment: Celestron 9.25 SCT (235mm)| Reducer/Flattener (.63) | Canon T6i
+    image_info: 30x60"
+    checked: true
   - filename: m80
     original: m80-5417x3234.jpg
     sizes:
@@ -1007,11 +1007,11 @@ pictures:
     sort_id: 91
     thumbnail: m91-300x533.jpg
     title: M91
-    date: 16 Jan 2026
+    date: 17 Jan 2026 (04:30 - 05:30)
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 158x20"
-    checked: false
+    checked: true
   - filename: m92
     original: m92-2160x3840.jpg
     sizes:
@@ -1154,7 +1154,7 @@ pictures:
     location: null
     equipment: null
     image_info: null
-    checked: false
+    checked: true
   - filename: m104
     original: m104-4022x6024.jpg
     sizes: []
@@ -1185,11 +1185,11 @@ pictures:
     sort_id: 106
     thumbnail: m106-300x344.jpg
     title: M106
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 25 Jan 2026 (01:50 - 03:50)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 299x20"
+    checked: true
   - filename: m107
     original: m107-3630x2030.jpg
     sizes:
@@ -1197,11 +1197,11 @@ pictures:
     sort_id: 107
     thumbnail: m107-300x168.jpg
     title: M107
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 11 Jul 2025 (22:30 - 00:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 349x10"
+    checked: true
   - filename: m108
     original: m108-806x708.jpg
     sizes:
