@@ -911,11 +911,11 @@ pictures:
     sort_id: 81
     thumbnail: m81-300x272.jpg
     title: M81
-    date: null
-    location: null
-    equipment: ''
-    image_info: null
-    checked: false
+    date: 4 May 2019 (01:00 - 01:45)
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 16x120"
+    checked: true
   - filename: m82
     original: m82-1445x1592.jpg
     sizes:
@@ -935,11 +935,11 @@ pictures:
     sort_id: 83
     thumbnail: m83-300x283.jpg
     title: M83 The Southern Pinwheel
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 25 Jan 2026 (03:50 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 320x20"
+    checked: true
   - filename: m84
     original: m84-2052x3648.jpg
     sizes:
@@ -947,11 +947,11 @@ pictures:
     sort_id: 84
     thumbnail: m84-300x533.jpg
     title: M84, M86, & Markarian Chain
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 18 Jan 2026 (01:30 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 529x20"
+    checked: true
   - filename: m85
     original: m85-1080x1920.jpg
     sizes:
@@ -959,11 +959,11 @@ pictures:
     sort_id: 85
     thumbnail: m85-300x533.jpg
     title: M85
-    date: 16 Jan 2026
+    date: 17 Jan 2026 ( 02:30 - 03:00)
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 143x20"
-    checked: false
+    checked: true
   - filename: m87
     original: m87-4763x3073.jpg
     sizes:
@@ -971,11 +971,11 @@ pictures:
     sort_id: 87
     thumbnail: m87-300x194.jpg
     title: M87 The Smoking Gun Galaxy
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: ' 16 May 2023 (23:45 - 02:15) '
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 40x180"
+    checked: true
   - filename: m88
     original: m88-1080x1920.jpg
     sizes:
@@ -983,11 +983,11 @@ pictures:
     sort_id: 88
     thumbnail: m88-300x533.jpg
     title: M88
-    date: 16 Jan 2026
+    date: 16 Jan 2026 (03:30 - 04:30)
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 146x20"
-    checked: false
+    checked: true
   - filename: m90
     original: m90-1080x1920.jpg
     sizes:
