@@ -995,11 +995,11 @@ pictures:
     sort_id: 89
     thumbnail: m90-300x533.jpg
     title: M89 & M90
-    date: 16 Jan 2026
+    date: 17 Jan 2026 (05:30 - 06:15)
     location: My Backyard
     equipment: Seestar S50 (50mm) | LP Filter
     image_info: 97x20"
-    checked: false
+    checked: true
   - filename: m91
     original: m91-1080x1920.jpg
     sizes:
@@ -1043,11 +1043,11 @@ pictures:
     sort_id: 94
     thumbnail: m94-300x404.jpg
     title: M94
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 25 Jan 2026 (00:00 - 02:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 253x20"
+    checked: true
   - filename: m95
     original: m95-3585x2132.jpg
     sizes:
@@ -1055,11 +1055,11 @@ pictures:
     sort_id: 95
     thumbnail: m95-300x178.jpg
     title: M95
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 19 Mar 2023 (22:45 - 01:45)
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 37x180” | 10x20"
+    checked: true
   - filename: m96
     original: m96-3597x2563.jpg
     sizes:
@@ -1067,11 +1067,11 @@ pictures:
     sort_id: 96
     thumbnail: m96-300x214.jpg
     title: M96
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 19 Mar 2023 (22:45 - 01:45)
+    location: My Backyard
+    equipment: William Optics Zenithstar 73 (73mm)| Reducer/Flattener (.8) | Canon T6i
+    image_info: 37x180” | 10x20"
+    checked: true
   - filename: m97
     original: m97-1611x996.jpg
     sizes:
@@ -1079,11 +1079,11 @@ pictures:
     sort_id: 97
     thumbnail: m97-300x185.jpg
     title: M97
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 30 Jun 2025 (22:20 - 23:15)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 159x10"
+    checked: true
   - filename: m98
     original: m98-1080x1920.jpg
     sizes:
@@ -1091,11 +1091,11 @@ pictures:
     sort_id: 98
     thumbnail: m98-300x533.jpg
     title: M98
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 17 Jan 2026 (04:00 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 152x20"
+    checked: true
   - filename: m99
     original: m99-1080x1920.jpg
     sizes:
@@ -1103,11 +1103,11 @@ pictures:
     sort_id: 99
     thumbnail: m99-300x533.jpg
     title: M99
-    date: null
-    location: null
-    equipment: null
-    image_info: null
-    checked: false
+    date: 17 Jan 2026 (05:00 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 (50mm) | LP Filter
+    image_info: 154x20"
+    checked: true
   - filename: m100
     original: m100-3128x2400.jpg
     sizes:
