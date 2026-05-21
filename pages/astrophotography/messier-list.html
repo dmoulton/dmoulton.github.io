@@ -1,0 +1,372 @@
+---
+layout: gallery
+title: Messier Imaging Program
+no_menu_item: true
+support: [jquery, gallery]
+permalink: /astrophotography/messier-list
+---
+
+<style>
+.messier-table-intro {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: #6c7086;
+  margin-bottom: 1.5rem;
+}
+
+.messier-hidden-gallery {
+  display: none;
+}
+
+.messier-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.messier-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #cdd6f4;
+  table-layout: fixed;
+}
+
+.messier-table thead tr {
+  border-bottom: 2px solid #4fc3f7;
+}
+
+.messier-table th {
+  text-align: left;
+  color: #4fc3f7;
+  font-weight: 700;
+  padding: 8px 14px 8px 6px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.messier-table col.col-thumb     { width: 88px; }
+.messier-table col.col-name      { width: 120px; }
+.messier-table col.col-date      { width: 220px; }
+.messier-table col.col-location  { width: 200px; }
+.messier-table col.col-equipment { width: 280px; }
+.messier-table col.col-info      { width: 160px; }
+
+.messier-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.messier-table tbody td {
+  border-bottom: 1px solid rgba(79, 195, 247, 0.25);
+}
+
+.messier-table tbody tr:hover {
+  background: rgba(79, 195, 247, 0.07);
+}
+
+.messier-table td {
+  padding: 6px 14px 6px 6px;
+  vertical-align: middle;
+  color: #cdd6f4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.messier-table td.col-thumb {
+  padding: 4px 10px 4px 4px;
+  vertical-align: middle;
+}
+
+.messier-table td.col-thumb img {
+  display: block;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+
+.messier-table tbody tr:hover td.col-thumb img {
+  border-color: #4fc3f7;
+}
+
+.messier-table td.col-name {
+  color: #4fc3f7;
+  font-weight: 700;
+}
+
+.messier-table td .no-data {
+  color: #45475a;
+  font-style: italic;
+}
+
+.messier-table td .cell-line {
+  display: block;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .messier-table th.col-location,
+  .messier-table td.col-location { display: none; }
+}
+
+@media (max-width: 600px) {
+  .messier-table th.col-info,
+  .messier-table td.col-info { display: none; }
+}
+</style>
+
+<style>
+.ml-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.ml-notes-section {
+  background: rgba(79, 195, 247, 0.04);
+  border: 1px solid rgba(79, 195, 247, 0.15);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.ml-notes-heading {
+  color: #4fc3f7;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+}
+
+.ml-notes-observer {
+  color: #cdd6f4;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.ml-notes-dim {
+  color: #6c7086;
+  line-height: 1.8;
+}
+
+.ml-notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #a0aec0;
+  line-height: 2;
+}
+
+.ml-notes-list li {
+  border-bottom: 1px solid rgba(79, 195, 247, 0.06);
+  padding: 4px 0;
+}
+
+.ml-notes-list li:last-child {
+  border-bottom: none;
+}
+
+.ml-notes-list strong {
+  color: #cdd6f4;
+}
+
+
+</style>
+
+<p>This page is my imaging log for the Astronomical League's <a href='https://www.astroleague.org/imaging-messier-observing-program/' target="_blank">Messier Imaging program</a></p>
+
+<div class="ml-notes">
+
+  <div class="ml-notes-section">
+    <p class="ml-notes-heading">Observer / Imager</p>
+    <p class="ml-notes-observer">David Moulton</p>
+    <p class="ml-notes-dim">Utah Valley Astronomy Club<br>Orem, UT</p>
+  </div>
+
+  <div class="ml-notes-section">
+    <p class="ml-notes-heading">Equipment Notes</p>
+    <ul class="ml-notes-list">
+      <li><strong>Canon T6i</strong> - Full astro-modified DSLR by Spencer's Camera, Utah.</li>
+      <li><strong>QHYCCD miniCAM8M</strong> - Monochrome camera with integrated filter wheel with broadband and 3nm narrowband filters</li>
+      <li><strong>Z 73</strong> — William Optics Zenithstar 73mm doublet refractor, W.O. .8 reducer/flattener</li>
+      <li><strong>C 9.25</strong> — Celestron 9¼" (235mm) SCT, Celestron .63 reducer/flattener</li>
+      <li><strong>AT130EDT</strong> — AstroTech 130mm refractor, AstroTech .8 reducer/flattener (unless otherwise noted)</li>
+      <li><strong>Celestron CGEM I mount</strong> - Mount for mages before 31 Aug 2021</li>
+      <li><strong>Paramount MyT 5000 mount</strong> - Images after 31 Aug 2021</li>
+    </ul>
+  </div>
+
+  <div class="ml-notes-section">
+    <p class="ml-notes-heading">Locations</p>
+    <ul class="ml-notes-list">
+      <li><strong>My Backyard</strong> / <strong>Heatheridge Observatory</strong> — Orem, UT - approx. 40°17'50.0"N 111°41'40.6"W</li>
+      <li><strong>Pit 'n Pole</strong> — approx. 40°12'27.8"N 112°16'00.1"W</li>
+      <li><strong>Joshua Tree National Park</strong> — approx. 33°44'45.9"N 115°48'47.8"W</li>
+    </ul>
+  </div>
+
+</div>
+
+{% assign all_pictures = site.data.galleries.messier.pictures %}
+{% assign picture_path = site.data.galleries.messier.picture_path %}
+
+<!-- Hidden gallery drives lightGallery -->
+<div id="messier-hidden-gallery" class="messier-hidden-gallery">
+  {% for pic in all_pictures %}
+  <a href="{{ site.baseurl }}/assets/astrophotography/{{ picture_path }}/{{ pic.original }}"
+     class="messier-lg-item"
+     data-object="{{ pic.filename }}"
+     data-sub-html="<h4>{{ pic.title | escape }}</h4>">
+  </a>
+  {% endfor %}
+</div>
+
+{% comment %}
+  Build a flat array of row objects. For entries with an `objects` array,
+  emit one row per object number. Otherwise emit one row using sort_id.
+  We store rows as "NNNN|||filename" strings so we can sort by number,
+  using ||| as delimiter since it won't appear in filenames.
+  All other field rendering is done by looking up the pic by filename in the loop below.
+{% endcomment %}
+
+{% assign row_keys = "" | split: "" %}
+{% for pic in all_pictures %}
+  {% if pic.objects %}
+    {% for obj_num in pic.objects %}
+      {% assign padded = obj_num | prepend: "0000" | slice: -4, 4 %}
+      {% assign key = padded | append: "|||" | append: pic.filename | append: "|||" | append: obj_num %}
+      {% assign row_keys = row_keys | push: key %}
+    {% endfor %}
+  {% else %}
+    {% assign padded = pic.sort_id | prepend: "0000" | slice: -4, 4 %}
+    {% assign key = padded | append: "|||" | append: pic.filename | append: "|||" | append: pic.sort_id %}
+    {% assign row_keys = row_keys | push: key %}
+  {% endif %}
+{% endfor %}
+
+{% assign sorted_keys = row_keys | sort %}
+
+<div class="messier-table-wrap">
+  <table class="messier-table">
+    <colgroup>
+      <col class="col-thumb" />
+      <col class="col-name" />
+      <col class="col-date" />
+      <col class="col-location" />
+      <col class="col-equipment" />
+      <col class="col-info" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="col-thumb">Image</th>
+        <th class="col-name">Name</th>
+        <th class="col-date">Date</th>
+        <th class="col-location">Location</th>
+        <th class="col-equipment">Equipment</th>
+        <th class="col-info">Image Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for key in sorted_keys %}
+        {% assign parts    = key | split: "|||" %}
+        {% assign r_filename = parts[1] %}
+        {% assign r_objnum   = parts[2] %}
+
+        {% comment %} Look up the picture entry by filename {% endcomment %}
+        {% assign pic = nil %}
+        {% for p in all_pictures %}
+          {% if p.filename == r_filename %}
+            {% assign pic = p %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Display name: M + object number {% endcomment %}
+        {% assign r_name = "M" | append: r_objnum %}
+
+      <tr data-object="{{ r_filename }}">
+
+        <td class="col-thumb">
+          <img
+            src="{{ site.baseurl }}/assets/astrophotography/{{ picture_path }}/{{ pic.thumbnail }}"
+            alt="{{ r_name }}"
+            loading="lazy"
+          />
+        </td>
+
+        <td class="col-name">{{ r_name }}</td>
+
+        <td class="col-date">
+          {% if pic.date and pic.date != "" %}
+            {% assign date_parts = pic.date | split: " | " %}
+            {% for part in date_parts %}
+              <span class="cell-line">{{ part | strip }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="no-data">—</span>
+          {% endif %}
+        </td>
+
+        <td class="col-location">
+          {% if pic.location and pic.location != "" %}
+            {{ pic.location | strip }}
+          {% else %}
+            <span class="no-data">—</span>
+          {% endif %}
+        </td>
+
+        <td class="col-equipment">
+          {% if pic.equipment and pic.equipment != "" %}
+            {% assign equip_parts = pic.equipment | split: "|" %}
+            {% for part in equip_parts %}
+              <span class="cell-line">{{ part | strip }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="no-data">—</span>
+          {% endif %}
+        </td>
+
+        <td class="col-info">
+          {% if pic.image_info and pic.image_info != "" %}
+            {% assign info_parts = pic.image_info | split: "|" %}
+            {% for part in info_parts %}
+              <span class="cell-line">{{ part | strip }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="no-data">—</span>
+          {% endif %}
+        </td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+(function () {
+  $(document).ready(function () {
+    var $lg = $('#messier-hidden-gallery').lightGallery({
+      thumbnail: false,
+      selector: '.messier-lg-item'
+    });
+
+    $('.messier-table tbody tr').on('click', function () {
+      var filename = $(this).data('object');
+      var $anchor = $('[data-object="' + filename + '"].messier-lg-item');
+      if ($anchor.length) {
+        $anchor.trigger('click');
+      }
+    });
+  });
+})();
+</script>
