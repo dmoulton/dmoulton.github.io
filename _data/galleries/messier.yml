@@ -281,7 +281,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: '9 Jun 2018 (00:56 - 01:28) '
+    date: "9 Jun 2018 (00:56 - 01:28) "
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -305,7 +305,7 @@ pictures:
     sort_id: 26
     thumbnail: m26-300x169.jpg
     title: M26
-    date: ''
+    date: ""
     location: null
     equipment: null
     image_info: null
@@ -317,7 +317,7 @@ pictures:
     sort_id: 27
     thumbnail: m27-300x191.jpg
     title: M27
-    date: '1 Jul 2022 (02:23 - 02:54 '
+    date: "1 Jul 2022 (02:23 - 02:54 "
     location: My Backyard
     equipment: Z73 | Canon T6i
     image_info: 20x60"
@@ -391,7 +391,7 @@ pictures:
     title: M34
     date: 25 Jan 2026 (19:30 - 21:11)
     location: My Backyard
-    equipment: Seestar S50 (50mm)
+    equipment: Seestar S50
     image_info: 150x20"
     checked: true
   - filename: m35
@@ -403,7 +403,7 @@ pictures:
     title: M35
     date: 25 Jan 2026 (21:15 - 23:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm)
+    equipment: Seestar S50
     image_info: 150x20"
     checked: true
   - filename: m36
@@ -462,7 +462,7 @@ pictures:
     title: M40
     date: 29 Jun 2025 (22:03 - 22:33)
     location: My Backyard
-    equipment: Seestar S50 (50mm)
+    equipment: Seestar S50
     image_info: 41x10"
     checked: true
   - filename: m41
@@ -474,7 +474,7 @@ pictures:
     title: M41
     date: 16 Jan 2026 (22:00 - 22:37)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP
+    equipment: Seestar S50 | LP
     image_info: 101x20"
     checked: true
   - filename: m42
@@ -604,7 +604,7 @@ pictures:
     title: M53
     date: 5 Jul 2025 (23:05 - 23:59)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 152x10"
     checked: true
   - filename: m54
@@ -614,7 +614,7 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date: ''
+    date: ""
     location: null
     equipment: null
     image_info: null
@@ -664,7 +664,7 @@ pictures:
     title: M58
     date: 17 Jan 2026 (02:30 - 04:30)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 148x20"
     checked: true
   - filename: m59_m60
@@ -689,7 +689,7 @@ pictures:
     title: M61
     date: 17 Jan 2026 (02:00 - (4:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 149x20"
     checked: true
   - filename: m62
@@ -725,7 +725,7 @@ pictures:
     title: M64 The Blackeye Galaxy
     date: 17 Jan 2026 (00:30 - 02:30)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 154x20"
     checked: true
   - filename: leo_triplet
@@ -738,7 +738,7 @@ pictures:
     title: The Leo Triplet - M65 & M66
     date: 29 Dec 2025 (04:10 - 05:40)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 63x20"
     checked: true
   - filename: m67
@@ -762,7 +762,7 @@ pictures:
     title: M68
     date: 25 Jan 2026 (03:00 - 06:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 320x20"
     checked: true
   - filename: m69
@@ -855,7 +855,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: ''
+    date: ""
     location: null
     equipment: null
     image_info: null
@@ -869,7 +869,7 @@ pictures:
     title: M77
     date: 18 Jan 2026 (19:10 - 20:10)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 137x20"
     checked: true
   - filename: m78
@@ -941,7 +941,7 @@ pictures:
     title: M83 The Southern Pinwheel
     date: 25 Jan 2026 (03:50 - 06:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 320x20"
     checked: true
   - filename: m84
@@ -954,7 +954,7 @@ pictures:
     title: M84, M86, & Markarian Chain
     date: 18 Jan 2026 (01:30 - 06:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 529x20"
     checked: true
   - filename: m85
@@ -966,7 +966,7 @@ pictures:
     title: M85
     date: 17 Jan 2026 ( 02:30 - 03:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 143x20"
     checked: true
   - filename: m87
@@ -990,7 +990,7 @@ pictures:
     title: M88
     date: 16 Jan 2026 (03:30 - 04:30)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 146x20"
     checked: true
   - filename: m90
@@ -1003,7 +1003,7 @@ pictures:
     title: M89 & M90
     date: 17 Jan 2026 (05:30 - 06:15)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 97x20"
     checked: true
   - filename: m91
@@ -1015,7 +1015,7 @@ pictures:
     title: M91
     date: 17 Jan 2026 (04:30 - 05:30)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 158x20"
     checked: true
   - filename: m92
@@ -1027,7 +1027,7 @@ pictures:
     title: M92
     date: 23 Sep 2025 (22:00 - 22:20)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 15x20"
     checked: true
   - filename: m93
@@ -1051,7 +1051,7 @@ pictures:
     title: M94
     date: 25 Jan 2026 (00:00 - 02:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 253x20"
     checked: true
   - filename: m95
@@ -1087,7 +1087,7 @@ pictures:
     title: M97
     date: 30 Jun 2025 (22:20 - 23:15)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 159x10"
     checked: true
   - filename: m98
@@ -1099,7 +1099,7 @@ pictures:
     title: M98
     date: 17 Jan 2026 (04:00 - 05:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 152x20"
     checked: true
   - filename: m99
@@ -1111,7 +1111,7 @@ pictures:
     title: M99
     date: 17 Jan 2026 (05:00 - 06:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 154x20"
     checked: true
   - filename: m100
@@ -1193,7 +1193,7 @@ pictures:
     title: M106
     date: 25 Jan 2026 (01:50 - 03:50)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 299x20"
     checked: true
   - filename: m107
@@ -1205,7 +1205,7 @@ pictures:
     title: M107
     date: 11 Jul 2025 (22:30 - 00:00)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 349x10"
     checked: true
   - filename: m108
@@ -1217,7 +1217,7 @@ pictures:
     title: M108
     date: 18 Jan 2026 (00:30 - 02:28)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 150x20"
     checked: true
   - filename: m109
@@ -1229,6 +1229,6 @@ pictures:
     title: M109
     date: 20 Jan 2026 (00:30 - 02:28)
     location: My Backyard
-    equipment: Seestar S50 (50mm) | LP Filter
+    equipment: Seestar S50 | LP Filter
     image_info: 215x20"
     checked: true
