@@ -281,7 +281,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: '9 Jun 2018 (00:56 - 00:28) '
+    date: '9 Jun 2018 (00:56 - 01:28) '
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -319,7 +319,7 @@ pictures:
     title: M27
     date: '1 Jul 2022 (02:23 - 02:54 '
     location: My Backyard
-    equipment: C 9.25 | Canon T6i
+    equipment: Z73 | Canon T6i
     image_info: 20x60"
     checked: true
   - filename: m28
