@@ -1,6 +1,6 @@
 ---
 layout: gallery
-title: Messier Imaging Program
+title: Astro League Messier Imaging Program
 no_menu_item: true
 support: [jquery, gallery]
 permalink: /astrophotography/messier-list
@@ -48,10 +48,10 @@ permalink: /astrophotography/messier-list
 }
 
 .messier-table col.col-thumb     { width: 88px; }
-.messier-table col.col-name      { width: 120px; }
-.messier-table col.col-date      { width: 220px; }
-.messier-table col.col-location  { width: 200px; }
-.messier-table col.col-equipment { width: 280px; }
+.messier-table col.col-name      { width: 90px; }
+.messier-table col.col-date      { width: 250px; }
+.messier-table col.col-location  { width: 220px; }
+.messier-table col.col-equipment { width: 260px; }
 .messier-table col.col-info      { width: 160px; }
 
 .messier-table tbody tr {
@@ -121,6 +121,71 @@ permalink: /astrophotography/messier-list
 </style>
 
 <style>
+.lg-toolbar {
+  position: relative;
+}
+.lg-info-btn {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  padding: 0 14px;
+  line-height: 47px;
+  font-size: 1.3rem;
+  color: #999;
+  transition: color 0.2s;
+  user-select: none;
+}
+.lg-info-btn:hover {
+  color: #fff;
+}
+.lg-info-popover {
+  display: none;
+  position: absolute;
+  top: 47px;
+  right: 0;
+  width: 476px;
+  background: rgba(10, 12, 20, 0.88);
+  border: 1px solid rgba(137, 180, 250, 0.25);
+  border-top: none;
+  padding: 14px 16px;
+  z-index: 1090;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.lg-info-popover.lg-info-open {
+  display: block;
+}
+.lg-info-popover table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #cdd6f4;
+}
+.lg-info-popover th {
+  text-align: left;
+  color: #89b4fa;
+  font-weight: 700;
+  padding: 4px 12px 4px 0;
+  white-space: nowrap;
+  vertical-align: top;
+  width: 1%;
+}
+.lg-info-popover td {
+  padding: 4px 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.lg-info-popover .no-data {
+  color: #6c7086;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0;
+}
+</style>
+
+<style>
 .ml-notes {
   display: flex;
   flex-direction: column;
@@ -183,9 +248,66 @@ permalink: /astrophotography/messier-list
 
 </style>
 
-<p>This page is my imaging log for the Astronomical League's <a href='https://www.astroleague.org/imaging-messier-observing-program/' target="_blank">Messier Imaging program</a></p>
+<style>
+.ml-page-intro {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #6c7086;
+  border-left: 2px solid rgba(79, 195, 247, 0.4);
+  padding-left: 12px;
+  margin-bottom: 1.5rem;
+}
+.ml-page-intro a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+.ml-page-intro a:hover {
+  text-decoration: underline;
+}
+.ml-notes-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #6c7086;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  transition: color 0.2s, border-color 0.2s;
+  width: 100%;
+  text-align: left;
+}
+.ml-notes-toggle:hover {
+  color: #cdd6f4;
+  border-color: rgba(79, 195, 247, 0.5);
+}
+.ml-notes-toggle-icon {
+  font-size: 0.6rem;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.ml-notes-toggle[aria-expanded="true"] .ml-notes-toggle-icon {
+  transform: rotate(90deg);
+}
+#ml-notes-body[hidden] {
+  display: none;
+}
+</style>
 
-<div class="ml-notes">
+<p class="ml-page-intro">This page is my imaging log for the Astronomical League's <a href='https://www.astroleague.org/imaging-messier-observing-program/' target="_blank">Messier Imaging program</a></p>
+
+<button class="ml-notes-toggle" id="ml-notes-toggle" aria-expanded="false" aria-controls="ml-notes-body">
+  <span class="ml-notes-toggle-icon">&#9654;</span>
+  <span>Expand for Notes</span>
+</button>
+
+<div class="ml-notes" id="ml-notes-body" hidden>
 
   <div class="ml-notes-section">
     <p class="ml-notes-heading">Observer / Imager</p>
@@ -196,11 +318,12 @@ permalink: /astrophotography/messier-list
   <div class="ml-notes-section">
     <p class="ml-notes-heading">Equipment Notes</p>
     <ul class="ml-notes-list">
+      <li><strong>AT130EDT</strong> — AstroTech 130mm refractor, AstroTech .8 reducer/flattener (unless otherwise noted)</li>
+      <li><strong>Z 73</strong> — William Optics Zenithstar 73mm doublet refractor, W.O. .8 reducer/flattener</li>
+      <li><strong>Seestar S50</strong> — Smart telescope with integrated camera and mount</li>
+      <li><strong>C 9.25</strong> — Celestron 9¼" (235mm) SCT, Celestron .63 reducer/flattener</li>
       <li><strong>Canon T6i</strong> - Full astro-modified DSLR by Spencer's Camera, Utah.</li>
       <li><strong>QHYCCD miniCAM8M</strong> - Monochrome camera with integrated filter wheel with broadband and 3nm narrowband filters</li>
-      <li><strong>Z 73</strong> — William Optics Zenithstar 73mm doublet refractor, W.O. .8 reducer/flattener</li>
-      <li><strong>C 9.25</strong> — Celestron 9¼" (235mm) SCT, Celestron .63 reducer/flattener</li>
-      <li><strong>AT130EDT</strong> — AstroTech 130mm refractor, AstroTech .8 reducer/flattener (unless otherwise noted)</li>
       <li><strong>Celestron CGEM I mount</strong> - Mount for mages before 31 Aug 2021</li>
       <li><strong>Paramount MyT 5000 mount</strong> - Images after 31 Aug 2021</li>
     </ul>
@@ -216,6 +339,18 @@ permalink: /astrophotography/messier-list
   </div>
 
 </div>
+
+<script>
+(function () {
+  var btn  = document.getElementById('ml-notes-toggle');
+  var body = document.getElementById('ml-notes-body');
+  btn.addEventListener('click', function () {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    body.hidden = expanded;
+  });
+})();
+</script>
 
 {% assign all_pictures = site.data.galleries.messier.pictures %}
 {% assign picture_path = site.data.galleries.messier.picture_path %}
@@ -354,6 +489,30 @@ permalink: /astrophotography/messier-list
 
 <script>
 (function () {
+  var imageData = [
+    {% for pic in all_pictures %}
+    {
+      date: "{{ pic.date | escape }}",
+      location: "{{ pic.location | escape }}",
+      equipment: "{{ pic.equipment | escape }}",
+      image_info: "{{ pic.image_info | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  function buildPopoverHtml(data) {
+    var hasData = data.date || data.location || data.equipment || data.image_info;
+    if (!hasData) {
+      return '<p class="no-data">Image data not entered</p>';
+    }
+    var rows = '';
+    if (data.date)       rows += '<tr><th>Date</th><td>'       + data.date.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
+    if (data.location)   rows += '<tr><th>Location</th><td>'   + data.location   + '</td></tr>';
+    if (data.equipment)  rows += '<tr><th>Equipment</th><td>'  + data.equipment.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
+    if (data.image_info) rows += '<tr><th>Image Info</th><td>' + data.image_info.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
+    return '<table>' + rows + '</table>';
+  }
+
   $(document).ready(function () {
     var $lg = $('#messier-hidden-gallery').lightGallery({
       thumbnail: false,
@@ -366,6 +525,34 @@ permalink: /astrophotography/messier-list
       if ($anchor.length) {
         $anchor.trigger('click');
       }
+    });
+
+    $lg.on('onAfterOpen.lg', function () {
+      $('.lg-toolbar').append(
+        '<span class="lg-info-btn" title="Image Info">&#9432;</span>' +
+        '<div class="lg-info-popover"></div>'
+      );
+      var idx = $('.lg-current').index('.lg-item');
+      if (idx < 0) idx = 0;
+      $('.lg-info-popover').html(buildPopoverHtml(imageData[idx] || {}));
+
+      $(document).on('click.lginfomessierlist', '.lg-info-btn', function (e) {
+        e.stopPropagation();
+        $('.lg-info-popover').toggleClass('lg-info-open');
+      });
+      $(document).on('click.lginfodismissmessierlist', '.lg-outer', function () {
+        $('.lg-info-popover').removeClass('lg-info-open');
+      });
+    });
+
+    $lg.on('onAfterSlide.lg', function (e, prevIndex, index) {
+      $('.lg-info-popover')
+        .removeClass('lg-info-open')
+        .html(buildPopoverHtml(imageData[index] || {}));
+    });
+
+    $lg.on('onBeforeClose.lg', function () {
+      $(document).off('click.lginfomessierlist click.lginfodismissmessierlist');
     });
   });
 })();
