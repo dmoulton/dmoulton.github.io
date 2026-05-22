@@ -7,20 +7,67 @@ published: true
 no_menu_item: true
 ---
 
-This is my current setup for astrophotography
+This is my current astrophotography setup. It has evolved considerably over the years — I started with just the C9.25 and a CGEM mount, and have added equipment gradually since then.
 
-<h2>Celestron C9.25</h2>
+## Mount
 
-I use an older Celstron 9.25" SCT. This is the 90's version of this OTA. I've owned this OTA since about 2002. Yes, there is some sentimental attachment to it. I have it mounted on a much more recently purchased CGEM mount. I've liked it so far.
+### Paramount MyT 5000
 
-For a guidescope, I am using a 70mm Celestron travelscope. Its not really meant for this purpose, but so far it seems to work. I have attached a ZWO ASI120MC-S camera to it. Its attached with a 2" extension to reach focus.
+My primary mount since September 2021.
 
-My camera is an unmodified Canon T6i. I use APT, Astro Photography Tool to capture. It can be used forever free, but I've paid for it because I find it useful and what I need. 
+### Celestron CGEM I *(retired)*
 
-<img src="https://bit.ly/3hnzMEi">
+My original imaging mount, used for all images taken before August 31, 2021. I now only use it for visual observing and public star parties.
 
-<h2>William Optics Z73</h2>
+---
 
-A more recent purchase is a W.O. ZenithStar 73 doublet refractor. This is a great scope for wide-field. I find the build quality to very high for William Optics scopes.
+## Telescopes
 
-<img src="http://bit.ly/3bEyGBD">
+### AstroTech AT130EDT
+
+My main imaging refractor — a 130mm f/7 apochromatic triplet. I use it with either an AstroTech .8x reducer/flattener or a Hotech field flattener depending on the target. This is the workhorse for most of my serious imaging sessions.
+
+### William Optics Zenithstar 73
+
+A 73mm doublet refractor that I user when I want a wider field of view. It uses a .8x reducer/flattener. It is nounted on top of my AT130.
+
+### Celestron C9.25
+
+A 9.25" (235mm) Schmidt-Cassegrain that I've owned since around 2002. It's the older 1990s-era OTA. I use it for visual astronomy.
+
+
+### ZWO Seestar S50
+
+An all-in-one smart telescope I use when I want to image without a full setup. It's a great little scope.
+
+---
+
+## Cameras
+
+### QHYCCD miniCAM8M
+
+A dedicated monochrome astronomy camera with an integrated filter wheel. I use it with broadband (LRGB) filters as well as 3nm narrowband filters. Being a dedicated mono camera, it produces noticeably cleaner data than the DSLR for demanding targets.
+
+### Canon T6i *(astro-modified)*
+
+A Canon T6i that has been full-spectrum astro-modified by Spencer's Camera in Utah. The modification removes the stock IR cut filter, significantly improving Ha sensitivity. I still use it regularly alongside the miniCAM8M.
+
+---
+
+## Filters
+
+I use a mix of filters depending on the target and conditions:
+
+- **Optolong L-eNhance** — dual-narrowband (Ha/OIII) for emission nebulae from my light-polluted backyard
+- **Astronomik CLS-CCD** — broadband light pollution filter for use with the T6i
+- **LRGB** — standard broadband set used with the miniCAM8M
+- **UV/IR Cut** — used with the T6i for broadband targets
+- **LP Filter** — built-in filter on the Seestar S50
+
+---
+
+## Software
+
+I use [NINA (Nighttime Imaging 'N' Astronomy)](https://nighttime-imaging.eu/) for sequence planning and camera/mount control. 
+
+I process all my images using [Siril](https://siril.org)
