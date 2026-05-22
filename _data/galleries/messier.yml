@@ -9,7 +9,7 @@ pictures:
     title: M1
     date: 25 Sep 2023 (03:03 - 05:55)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance 2"
+    equipment: AT130EDT | Canon T6i | Optolong L-enHance
     image_info: 69x300"
     checked: true
   - filename: m2
@@ -199,7 +199,7 @@ pictures:
     title: M17
     date: 20 Jul 2022
     location: My Backyard
-    equipment: AT130EDT | Hotech Flattener | Canon T6i | Optolong L-eNhance 2"
+    equipment: AT130EDT | Hotech Flattener | Canon T6i | Optolong L-eNhance
     image_info: 25x180"
     checked: true
   - filename: m18
@@ -367,7 +367,7 @@ pictures:
     title: M31, M32, & M110
     date: 16 Sep 2023 (12:04 - 02:15)
     location: My Backyard
-    equipment: Z 73 | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance 2"
+    equipment: Z 73 | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance
     image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
     checked: true
   - filename: m33
@@ -487,7 +487,7 @@ pictures:
     title: M42 & the Running Man
     date: 16 Feb 2023 (19:00 - 00:00)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-eNhance 2"
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance
     image_info: 58x120" | 49x60" | 28x30"
     checked: true
   - filename: m44
@@ -821,7 +821,7 @@ pictures:
     title: M73
     date: 7 Oct 2023
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
+    equipment: AT130EDT | Canon T6i | Optolong L-enHance | ICE Optical Glass Filters UV/IR Cut
     image_info: 36x180"
     checked: true
   - filename: m74
@@ -881,7 +881,7 @@ pictures:
     title: M78
     date: 6 Oct 2023 (02:45 - 06:01) | 7 Oct 2023 (02:40 - 06:00) | 8 Oct 2023 (03:40 - 06:05) | 15 Oct 2023 (02:00 - 06:00)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance 2" | ICE Optical Glass Filters UV/IR Cut 2"
+    equipment: AT130EDT | Canon T6i | Optolong L-enHance | ICE Optical Glass Filters UV/IR Cut
     image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
     checked: true
   - filename: m79
@@ -976,7 +976,7 @@ pictures:
     sort_id: 87
     thumbnail: m87-300x194.jpg
     title: M87 The Smoking Gun Galaxy
-    date: ' 16 May 2023 (23:45 - 02:15) '
+    date: 16 May 2023 (23:45 - 02:15)
     location: My Backyard
     equipment: Z 73 | Canon T6i
     image_info: 40x180"
