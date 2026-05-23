@@ -527,6 +527,7 @@ permalink: /astrophotography/messier-list
       }
     });
 
+    var hideTimer;
     $lg.on('onAfterOpen.lg', function () {
       $('.lg-toolbar').append(
         '<span class="lg-info-btn" title="Image Info">&#9432;</span>' +
@@ -536,23 +537,35 @@ permalink: /astrophotography/messier-list
       if (idx < 0) idx = 0;
       $('.lg-info-popover').html(buildPopoverHtml(imageData[idx] || {}));
 
-      $(document).on('click.lginfomessierlist', '.lg-info-btn', function (e) {
-        e.stopPropagation();
-        $('.lg-info-popover').toggleClass('lg-info-open');
+      $(document).on('mouseenter.lginfomessierlist', '.lg-info-btn', function () {
+        clearTimeout(hideTimer);
+        $('.lg-info-popover').addClass('lg-info-open');
       });
-      $(document).on('click.lginfodismissmessierlist', '.lg-outer', function () {
-        $('.lg-info-popover').removeClass('lg-info-open');
+      $(document).on('mouseleave.lginfomessierlist', '.lg-info-btn', function () {
+        hideTimer = setTimeout(function () {
+          $('.lg-info-popover').removeClass('lg-info-open');
+        }, 150);
+      });
+      $(document).on('mouseenter.lginfomessierlist', '.lg-info-popover', function () {
+        clearTimeout(hideTimer);
+      });
+      $(document).on('mouseleave.lginfomessierlist', '.lg-info-popover', function () {
+        hideTimer = setTimeout(function () {
+          $('.lg-info-popover').removeClass('lg-info-open');
+        }, 150);
       });
     });
 
     $lg.on('onAfterSlide.lg', function (e, prevIndex, index) {
+      clearTimeout(hideTimer);
       $('.lg-info-popover')
         .removeClass('lg-info-open')
         .html(buildPopoverHtml(imageData[index] || {}));
     });
 
     $lg.on('onBeforeClose.lg', function () {
-      $(document).off('click.lginfomessierlist click.lginfodismissmessierlist');
+      clearTimeout(hideTimer);
+      $(document).off('.lginfomessierlist');
     });
   });
 })();
