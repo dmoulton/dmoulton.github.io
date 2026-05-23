@@ -96,16 +96,16 @@ pictures:
     image_info: 30x60"
     checked: true
   - filename: m9
-    original: m9-5748x3779.jpg
+    original: m9-2777x2132.jpg
     sizes:
-      - m9-300x197.jpg
+      - m9-300x230.jpg
     sort_id: 9
-    thumbnail: m9-300x197.jpg
+    thumbnail: m9-300x230.jpg
     title: M9
-    date: 8 Aug 2020
+    date: 20 May 2026 (00:30 - 2:30) | 22 May 2026 (00:40 - 02:25)
     location: My Backyard
-    equipment: Z 73 | Canon T6i | CLS-CCD
-    image_info: 50x60"
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 22x120” Lum | 21x120” R | 25x120” G | 24x120” B
     checked: true
   - filename: m10
     original: m10-5648x3570.jpg
@@ -281,7 +281,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: "9 Jun 2018 (00:56 - 01:28) "
+    date: '9 Jun 2018 (00:56 - 01:28) '
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -305,7 +305,7 @@ pictures:
     sort_id: 26
     thumbnail: m26-300x169.jpg
     title: M26
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -317,7 +317,7 @@ pictures:
     sort_id: 27
     thumbnail: m27-300x191.jpg
     title: M27
-    date: "1 Jul 2022 (02:23 - 02:54 "
+    date: '1 Jul 2022 (02:23 - 02:54 '
     location: My Backyard
     equipment: Z73 | Canon T6i
     image_info: 20x60"
@@ -362,7 +362,10 @@ pictures:
     sizes:
       - m31-300x200.jpg
     sort_id: 31
-    objects: [31, 32, 110]
+    objects:
+      - 31
+      - 32
+      - 110
     thumbnail: m31-300x200.jpg
     title: M31, M32, & M110
     date: 16 Sep 2023 (12:04 - 02:15)
@@ -482,7 +485,9 @@ pictures:
     sizes:
       - m42-300x200.jpg
     sort_id: 42
-    objects: [42, 43]
+    objects:
+      - 42
+      - 43
     thumbnail: m42-300x200.jpg
     title: M42 & the Running Man
     date: 16 Feb 2023 (19:00 - 00:00)
@@ -614,7 +619,7 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -672,7 +677,9 @@ pictures:
     sizes:
       - m59_m60-300x207.jpg
     sort_id: 59
-    objects: [59, 60]
+    objects:
+      - 59
+      - 60
     thumbnail: m59_m60-300x207.jpg
     title: M59 & M60
     date: 26 Apr 2023 (00:34 - 02:34)
@@ -733,7 +740,9 @@ pictures:
     sizes:
       - leo_triplet-300x193.jpg
     sort_id: 65
-    objects: [65, 66]
+    objects:
+      - 65
+      - 66
     thumbnail: leo_triplet-300x193.jpg
     title: The Leo Triplet - M65 & M66
     date: 29 Dec 2025 (04:10 - 05:40)
@@ -855,7 +864,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -949,7 +958,9 @@ pictures:
     sizes:
       - m84-300x533.jpg
     sort_id: 84
-    objects: [84, 86]
+    objects:
+      - 84
+      - 86
     thumbnail: m84-300x533.jpg
     title: M84, M86, & Markarian Chain
     date: 18 Jan 2026 (01:30 - 06:00)
@@ -998,7 +1009,9 @@ pictures:
     sizes:
       - m90-300x533.jpg
     sort_id: 89
-    objects: [89, 90]
+    objects:
+      - 89
+      - 90
     thumbnail: m90-300x533.jpg
     title: M89 & M90
     date: 17 Jan 2026 (05:30 - 06:15)
