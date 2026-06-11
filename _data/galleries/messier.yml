@@ -299,16 +299,16 @@ pictures:
     image_info: 284x10"
     checked: true
   - filename: m26
-    original: m26-3840x2160.jpg
+    original: m26-1080x1238.jpg
     sizes:
-      - m26-300x169.jpg
+      - m26-300x344.jpg
     sort_id: 26
-    thumbnail: m26-300x169.jpg
+    thumbnail: m26-300x344.jpg
     title: M26
-    date: ''
-    location: null
-    equipment: null
-    image_info: null
+    date: 10 Jun 2026 (00:00 - 02:30)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 333x20"
     checked: true
   - filename: m27
     original: m27-3677x2336.jpg
