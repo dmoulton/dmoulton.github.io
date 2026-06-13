@@ -168,16 +168,16 @@ pictures:
     image_info: 56x30"
     checked: true
   - filename: m15
-    original: m15-6096x4056.jpg
+    original: m15-7700x4325.jpg
     sizes:
-      - m15-300x200.jpg
+      - m15-300x169.jpg
     sort_id: 15
-    thumbnail: m15-300x200.jpg
+    thumbnail: m15-300x169.jpg
     title: M15
-    date: 1 Sep 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 40x30"
+    date: '12 Jun 2026 (00:30 - 02:00) '
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 18x60" R | 18x60" G | 15x60" B
     checked: true
   - filename: m16
     original: m16-3922x2750.jpg
@@ -317,7 +317,7 @@ pictures:
     sort_id: 27
     thumbnail: m27-300x191.jpg
     title: M27
-    date: '1 Jul 2022 (02:23 - 02:54)'
+    date: 1 Jul 2022 (02:23 - 02:54)
     location: My Backyard
     equipment: Z73 | Canon T6i
     image_info: 20x60"
@@ -804,22 +804,22 @@ pictures:
     sort_id: 71
     thumbnail: m71-thumbnail.jpg
     title: M71
-    date: 13 September 2020 (03:30 - 04:30)
+    date: 13 Sep 2020 (03:30 - 04:30)
     location: My Backyard
     equipment: Z 73 | Canon T6i
     image_info: 20x120"
     checked: true
   - filename: m72
-    original: m72-5000x3327.jpg
+    original: m72-5271x3382.jpg
     sizes:
-      - m72-300x200.jpg
+      - m72-300x192.jpg
     sort_id: 72
-    thumbnail: m72-300x200.jpg
+    thumbnail: m72-300x192.jpg
     title: M72
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 12 Jun 2026 (02:00 - 04:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 27x60" R | 27x60" G | 24x60" B
     checked: true
   - filename: m73
     original: m73-5225x3417.jpg
