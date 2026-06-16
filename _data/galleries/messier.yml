@@ -9,7 +9,7 @@ pictures:
     title: M1
     date: 25 Sep 2023 (03:03 - 05:55)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance
     image_info: 69x300"
     checked: true
   - filename: m2
@@ -96,16 +96,16 @@ pictures:
     image_info: 30x60"
     checked: true
   - filename: m9
-    original: m9-5748x3779.jpg
+    original: m9-2777x2132.jpg
     sizes:
-      - m9-300x197.jpg
+      - m9-300x230.jpg
     sort_id: 9
-    thumbnail: m9-300x197.jpg
+    thumbnail: m9-300x230.jpg
     title: M9
-    date: 8 Aug 2020
+    date: 20 May 2026 (00:30 - 02:30) | 22 May 2026 (00:40 - 02:25)
     location: My Backyard
-    equipment: Z 73 | Canon T6i | CLS-CCD
-    image_info: 50x60"
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 22x120” Lum | 21x120” R | 25x120” G | 24x120” B
     checked: true
   - filename: m10
     original: m10-5648x3570.jpg
@@ -126,7 +126,7 @@ pictures:
     sort_id: 11
     thumbnail: m11-300x184.jpg
     title: M11
-    date: 28 Jul 2020 (10:50 - 00:24)
+    date: 28 Jul 2020 (22:50 - 00:24)
     location: My Backyard
     equipment: Z 73 | Canon T6i
     image_info: 40x120"
@@ -168,16 +168,16 @@ pictures:
     image_info: 56x30"
     checked: true
   - filename: m15
-    original: m15-6096x4056.jpg
+    original: m15-7700x4325.jpg
     sizes:
-      - m15-300x200.jpg
+      - m15-300x169.jpg
     sort_id: 15
-    thumbnail: m15-300x200.jpg
+    thumbnail: m15-300x169.jpg
     title: M15
-    date: 1 Sep 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 40x30"
+    date: '12 Jun 2026 (00:30 - 02:00) '
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 18x60" R | 18x60" G | 15x60" B
     checked: true
   - filename: m16
     original: m16-3922x2750.jpg
@@ -197,7 +197,7 @@ pictures:
     sort_id: 17
     thumbnail: m17-300x200.jpg
     title: M17
-    date: 20 Jul 2022
+    date: 21 Jul 2022 (00:09 - 01:39)
     location: My Backyard
     equipment: AT130EDT | Hotech Flattener | Canon T6i | Optolong L-eNhance
     image_info: 25x180"
@@ -281,7 +281,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: "9 Jun 2018 (00:56 - 01:28) "
+    date: '9 Jun 2018 (00:56 - 01:28) '
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -299,16 +299,16 @@ pictures:
     image_info: 284x10"
     checked: true
   - filename: m26
-    original: m26-3840x2160.jpg
+    original: m26-1080x1238.jpg
     sizes:
-      - m26-300x169.jpg
+      - m26-300x344.jpg
     sort_id: 26
-    thumbnail: m26-300x169.jpg
+    thumbnail: m26-300x344.jpg
     title: M26
-    date: ""
-    location: null
-    equipment: null
-    image_info: null
+    date: 10 Jun 2026 (00:00 - 02:30)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 333x20"
     checked: true
   - filename: m27
     original: m27-3677x2336.jpg
@@ -317,7 +317,7 @@ pictures:
     sort_id: 27
     thumbnail: m27-300x191.jpg
     title: M27
-    date: "1 Jul 2022 (02:23 - 02:54 "
+    date: 1 Jul 2022 (02:23 - 02:54)
     location: My Backyard
     equipment: Z73 | Canon T6i
     image_info: 20x60"
@@ -362,10 +362,13 @@ pictures:
     sizes:
       - m31-300x200.jpg
     sort_id: 31
-    objects: [31, 32, 110]
+    objects:
+      - 31
+      - 32
+      - 110
     thumbnail: m31-300x200.jpg
     title: M31, M32, & M110
-    date: 16 Sep 2023 (12:04 - 02:15)
+    date: 16 Sep 2023 (00:00 - 02:15)
     location: My Backyard
     equipment: Z 73 | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance
     image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
@@ -482,7 +485,9 @@ pictures:
     sizes:
       - m42-300x200.jpg
     sort_id: 42
-    objects: [42, 43]
+    objects:
+      - 42
+      - 43
     thumbnail: m42-300x200.jpg
     title: M42 & the Running Man
     date: 16 Feb 2023 (19:00 - 00:00)
@@ -535,7 +540,7 @@ pictures:
     date: 12 Mar 2018 (22:30 - 23:00)
     location: My Backyard
     equipment: C 9.25 | Canon T6i
-    image_info: 40x30s
+    image_info: 40x30"
     checked: true
   - filename: m48
     original: m48-3775x2515.jpg
@@ -585,15 +590,16 @@ pictures:
     image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
     checked: true
   - filename: m52
-    original: m52-5687x3756.jpg
-    sizes: []
+    original: m52-2233x3357.jpg
+    sizes:
+      - m52-300x451.jpg
     sort_id: 52
-    thumbnail: m52-thumbnail.jpg
+    thumbnail: m52-300x451.jpg
     title: M52
-    date: 12 Sep 2020
+    date: 15 Jun 2026 (01:30 - 04:00)
     location: My Backyard
-    equipment: Z 73 | Canon T6i
-    image_info: 27x120"
+    equipment: Seestar S50
+    image_info: 303x20"
     checked: true
   - filename: m53
     original: m53-1920x1080.jpg
@@ -614,7 +620,7 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -672,7 +678,9 @@ pictures:
     sizes:
       - m59_m60-300x207.jpg
     sort_id: 59
-    objects: [59, 60]
+    objects:
+      - 59
+      - 60
     thumbnail: m59_m60-300x207.jpg
     title: M59 & M60
     date: 26 Apr 2023 (00:34 - 02:34)
@@ -687,7 +695,7 @@ pictures:
     sort_id: 61
     thumbnail: m61-300x533.jpg
     title: M61
-    date: 17 Jan 2026 (02:00 - (4:00)
+    date: 17 Jan 2026 (02:00 - 04:00)
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 149x20"
@@ -733,7 +741,9 @@ pictures:
     sizes:
       - leo_triplet-300x193.jpg
     sort_id: 65
-    objects: [65, 66]
+    objects:
+      - 65
+      - 66
     thumbnail: leo_triplet-300x193.jpg
     title: The Leo Triplet - M65 & M66
     date: 29 Dec 2025 (04:10 - 05:40)
@@ -795,22 +805,22 @@ pictures:
     sort_id: 71
     thumbnail: m71-thumbnail.jpg
     title: M71
-    date: 13 September 2020 (03:30 - 04:30)
+    date: 13 Sep 2020 (03:30 - 04:30)
     location: My Backyard
     equipment: Z 73 | Canon T6i
     image_info: 20x120"
     checked: true
   - filename: m72
-    original: m72-5000x3327.jpg
+    original: m72-5271x3382.jpg
     sizes:
-      - m72-300x200.jpg
+      - m72-300x192.jpg
     sort_id: 72
-    thumbnail: m72-300x200.jpg
+    thumbnail: m72-300x192.jpg
     title: M72
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 12 Jun 2026 (02:00 - 04:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 27x60" R | 27x60" G | 24x60" B
     checked: true
   - filename: m73
     original: m73-5225x3417.jpg
@@ -819,10 +829,10 @@ pictures:
     sort_id: 73
     thumbnail: m73-300x196.jpg
     title: M73
-    date: 7 Oct 2023
+    date: 7 Oct 2023 (20:35 - 21:10) | 8 Oct 2023 (20:35 - 21:05) | 15 Oct 2023 (20:40 - 22:00)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance | ICE Optical Glass Filters UV/IR Cut
-    image_info: 36x180"
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
+    image_info: 6x360" | 8x180" | 24x120"
     checked: true
   - filename: m74
     original: m74-2002x1521.jpg
@@ -855,7 +865,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -881,7 +891,7 @@ pictures:
     title: M78
     date: 6 Oct 2023 (02:45 - 06:01) | 7 Oct 2023 (02:40 - 06:00) | 8 Oct 2023 (03:40 - 06:05) | 15 Oct 2023 (02:00 - 06:00)
     location: My Backyard
-    equipment: AT130EDT | Canon T6i | Optolong L-enHance | ICE Optical Glass Filters UV/IR Cut
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
     image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
     checked: true
   - filename: m79
@@ -905,7 +915,7 @@ pictures:
     title: M80
     date: 15 May 2026 (00:01 - 03:56)
     location: Heatheridge Observatory
-    equipment: AT130EDT | QHYCCD miniCAM8M | LRGBFilters
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
     image_info: '25x120" Lum | 23x120" R | 20x120" G | 20x120" B '
     checked: true
   - filename: m81
@@ -949,7 +959,9 @@ pictures:
     sizes:
       - m84-300x533.jpg
     sort_id: 84
-    objects: [84, 86]
+    objects:
+      - 84
+      - 86
     thumbnail: m84-300x533.jpg
     title: M84, M86, & Markarian Chain
     date: 18 Jan 2026 (01:30 - 06:00)
@@ -964,7 +976,7 @@ pictures:
     sort_id: 85
     thumbnail: m85-300x533.jpg
     title: M85
-    date: 17 Jan 2026 ( 02:30 - 03:00)
+    date: 17 Jan 2026 (02:30 - 03:00)
     location: My Backyard
     equipment: Seestar S50 | LP Filter
     image_info: 143x20"
@@ -998,7 +1010,9 @@ pictures:
     sizes:
       - m90-300x533.jpg
     sort_id: 89
-    objects: [89, 90]
+    objects:
+      - 89
+      - 90
     thumbnail: m90-300x533.jpg
     title: M89 & M90
     date: 17 Jan 2026 (05:30 - 06:15)
