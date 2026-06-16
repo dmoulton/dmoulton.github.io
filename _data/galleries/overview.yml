@@ -1,18 +1,16 @@
--
- title: Messier Gallery
- directory: messier
- preview:
-  filename: m1
-  original: m1-3119x1965.jpg
-  sizes:
-  - m1-3119x1965.jpg
-  - m1-300x291.jpg
-  thumbnail: m1-300x291.jpg
--
- title: Other Astro Photos
- directory: other
- preview:
-  filename: ngc6888-2023
-  original: ngc6888-2023-4737x3135.jpg
-  sizes: []
-  thumbnail: ngc6888-2023-thumbnail.jpg
+- title: Messier Gallery
+  directory: messier
+  preview:
+    filename: m1
+    original: m1-3119x1965.jpg
+    sizes:
+      - m1-3119x1965.jpg
+      - m1-300x291.jpg
+    thumbnail: m1-300x291.jpg
+- title: Other Astro Photos
+  directory: other
+  preview:
+    filename: ngc6888-2026
+    original: ngc6888-2026.jpg
+    sizes: []
+    thumbnail: ngc6888-2026-thumb.jpg
