@@ -590,15 +590,16 @@ pictures:
     image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
     checked: true
   - filename: m52
-    original: m52-5687x3756.jpg
-    sizes: []
+    original: m52-2233x3357.jpg
+    sizes:
+      - m52-300x451.jpg
     sort_id: 52
-    thumbnail: m52-thumbnail.jpg
+    thumbnail: m52-300x451.jpg
     title: M52
-    date: 12 Sep 2020
+    date: 15 Jun 2026 (01:30 - 04:00)
     location: My Backyard
-    equipment: Z 73 | Canon T6i
-    image_info: 27x120"
+    equipment: Seestar S50
+    image_info: 303x20"
     checked: true
   - filename: m53
     original: m53-1920x1080.jpg
