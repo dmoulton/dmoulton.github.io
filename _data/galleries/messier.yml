@@ -139,7 +139,7 @@ pictures:
     thumbnail: m12-300x183.jpg
     title: M12
     date: 15 May 2026 (01:30 - 04:30)
-    location: My Backyard
+    location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
     image_info: 25x120" Lum | 15x120" Red | 15x120" Green | 15x120" Blue
     checked: true
@@ -585,7 +585,7 @@ pictures:
     thumbnail: m51-thumbnail.jpg
     title: M51
     date: 30 Apr 2026 (21:59 - 00:32) | 1 May 2026 (00:53 - 04:34)
-    location: My Backyard
+    location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | LRGBH Filters
     image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
     checked: true
@@ -1136,7 +1136,7 @@ pictures:
     thumbnail: m100-300x230.jpg
     title: M100
     date: 14 May 2026 (22:30 - 01:30)
-    location: My Backyard
+    location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | LRGBHO Filters
     image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
     checked: true
