@@ -416,10 +416,10 @@ pictures:
     sort_id: 36
     thumbnail: m36-300x200.jpg
     title: M36
-    date: 1 Sep 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 36x30"
+    date:
+    location:
+    equipment:
+    image_info:
     checked: true
   - filename: m37
     original: m37-6096x4056.jpg
@@ -428,10 +428,10 @@ pictures:
     sort_id: 37
     thumbnail: m37-300x200.jpg
     title: M37
-    date: 1 Sep 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 36x30"
+    date:
+    location:
+    equipment:
+    image_info:
     checked: true
   - filename: m38
     original: m38-6096x4056.jpg
@@ -440,10 +440,10 @@ pictures:
     sort_id: 38
     thumbnail: m38-300x200.jpg
     title: M38
-    date: 1 Sep 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 39x30"
+    date:
+    location:
+    equipment:
+    image_info:
     checked: true
   - filename: m39
     original: m39-6024x4022.jpg
