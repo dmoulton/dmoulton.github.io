@@ -227,16 +227,16 @@ pictures:
     image_info: 6x120"
     checked: true
   - filename: m20
-    original: m20-6000x4000.jpg
+    original: m20-7536x4002.jpg
     sizes:
-      - m20-300x200.jpg
+      - m20-300x159.jpg
     sort_id: 20
-    thumbnail: m20-300x200.jpg
+    thumbnail: m20-300x159.jpg
     title: M20
-    date: 18 Jun 2017
-    location: Pit 'n Pole Observing Site
-    equipment: C 9.25 | Canon T6i
-    image_info: 22x90"
+    date: 13 Jun 2026 (00:20 - 04:20) | 13 Jun 2026 (23:45 - 04:10) | 14 Jun 2026 (23:30 - 04:10) | 16 Jun 2026 (23:30 - 04:10) | 17 Jun 2026 (23:30 - 04:15)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 42x120" R | 36x120" G | 36x120" B | 66x480" Ha | 52x480" O
     checked: true
   - filename: m21
     original: m21-3592x1912.jpg
