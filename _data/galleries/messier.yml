@@ -174,7 +174,7 @@ pictures:
     sort_id: 15
     thumbnail: m15-300x169.jpg
     title: M15
-    date: "12 Jun 2026 (00:30 - 02:00) "
+    date: '12 Jun 2026 (00:30 - 02:00) '
     location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 18x60" R | 18x60" G | 15x60" B
@@ -227,16 +227,16 @@ pictures:
     image_info: 6x120"
     checked: true
   - filename: m20
-    original: m20-6000x4000.jpg
+    original: m20-7536x4002.jpg
     sizes:
-      - m20-300x200.jpg
+      - m20-300x159.jpg
     sort_id: 20
-    thumbnail: m20-300x200.jpg
+    thumbnail: m20-300x159.jpg
     title: M20
-    date: 18 Jun 2017
-    location: Pit 'n Pole Observing Site
-    equipment: C 9.25 | Canon T6i
-    image_info: 22x90"
+    date: 13 Jun 2026 (00:20 - 04:20) | 13 Jun 2026 (23:45 - 04:10) | 14 Jun 2026 (23:30 - 04:10) | 16 Jun 2026 (23:30 - 04:10) | 17 Jun 2026 (23:30 - 04:15)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 42x120" R | 36x120" G | 36x120" B | 66x480" Ha | 52x480" O
     checked: true
   - filename: m21
     original: m21-3592x1912.jpg
@@ -281,7 +281,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: "9 Jun 2018 (00:56 - 01:28) "
+    date: '9 Jun 2018 (00:56 - 01:28) '
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -620,7 +620,7 @@ pictures:
     sort_id: 54
     thumbnail: m54-300x169.jpg
     title: M54
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -865,7 +865,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: ""
+    date: ''
     location: null
     equipment: null
     image_info: null
@@ -1128,18 +1128,6 @@ pictures:
     equipment: Seestar S50 | LP Filter
     image_info: 154x20"
     checked: true
-  - filename: m100
-    original: m100-3128x2400.jpg
-    sizes:
-      - m100-300x230.jpg
-    sort_id: 100
-    thumbnail: m100-300x230.jpg
-    title: M100
-    date: 14 May 2026 (22:30 - 01:30)
-    location: Heatheridge Observatory
-    equipment: AT130EDT | QHYCCD miniCAM8M | LRGBHO Filters
-    image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
-    checked: true
   - filename: m101
     original: m101-2502x1877.jpg
     sizes:
@@ -1148,7 +1136,7 @@ pictures:
     thumbnail: m101-300x225.jpg
     title: M101
     date: 7 May 2026 (22:59 - 02:55) | 9 May 2026 (22:18 - 04:41)
-    location: My Backyard
+    location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | LRGBHO Filters
     image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
     checked: true
@@ -1160,7 +1148,7 @@ pictures:
     thumbnail: m102-300x260.jpg
     title: M102
     date: 12 May 2026 (21:41 - 22:55)
-    location: My Backyard
+    location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | Luminance Only
     image_info: 32x120"
     checked: true
