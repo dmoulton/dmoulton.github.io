@@ -1149,7 +1149,7 @@ pictures:
     title: M101
     date: 7 May 2026 (22:59 - 02:55) | 9 May 2026 (22:18 - 04:41)
     location: Heatheridge Observatory
-    equipment: AT130EDT | QHYCCD miniCAM8M | LRGBHO Filters
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
     image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
     checked: true
   - filename: m102
