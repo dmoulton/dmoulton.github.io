@@ -1128,6 +1128,18 @@ pictures:
     equipment: Seestar S50 | LP Filter
     image_info: 154x20"
     checked: true
+  - filename: m100
+    original: m100-3128x2400.jpg
+    sizes:
+      - m100-300x230.jpg
+    sort_id: 100
+    thumbnail: m100-300x230.jpg
+    title: M100
+    date: 14 May 2026 (22:30 - 01:30)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
+    checked: true
   - filename: m101
     original: m101-2502x1877.jpg
     sizes:
