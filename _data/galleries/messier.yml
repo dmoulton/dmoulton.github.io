@@ -416,10 +416,10 @@ pictures:
     sort_id: 36
     thumbnail: m36-300x200.jpg
     title: M36
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m37
     original: m37-6096x4056.jpg
@@ -428,10 +428,10 @@ pictures:
     sort_id: 37
     thumbnail: m37-300x200.jpg
     title: M37
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m38
     original: m38-6096x4056.jpg
@@ -440,10 +440,10 @@ pictures:
     sort_id: 38
     thumbnail: m38-300x200.jpg
     title: M38
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m39
     original: m39-6024x4022.jpg
@@ -614,16 +614,16 @@ pictures:
     image_info: 152x10"
     checked: true
   - filename: m54
-    original: m54-3840x2160.jpg
+    original: m54-3288x1705.jpg
     sizes:
-      - m54-300x169.jpg
+      - m54-300x156.jpg
     sort_id: 54
-    thumbnail: m54-300x169.jpg
+    thumbnail: m54-300x156.jpg
     title: M54
-    date: ''
-    location: null
-    equipment: null
-    image_info: null
+    date: 23 Jul 2026 (22:45 - 00:45)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 24x30" Red | 22x30" Green | 21x30" Blue
     checked: true
   - filename: m55
     original: m55-3840x2160.jpg
