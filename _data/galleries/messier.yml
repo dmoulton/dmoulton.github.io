@@ -84,16 +84,16 @@ pictures:
     image_info: 20x60"
     checked: true
   - filename: m8
-    original: m8-5818x3805.jpg
+    original: m8-2258x1569.jpg
     sizes:
-      - m8-300x196.jpg
+      - m8-300x208.jpg
     sort_id: 8
-    thumbnail: m8-300x196.jpg
+    thumbnail: m8-300x208.jpg
     title: M8 - The Lagoon
-    date: 15 Jun 2018 (02:56 - 03:40)
+    date: 2 Jul 2026 (23:00 - 01:00)
     location: My Backyard
-    equipment: Z 73 | Canon T6i
-    image_info: 30x60"
+    equipment: Seestar S50 | LP Filter
+    image_info: 271x20"
     checked: true
   - filename: m9
     original: m9-2777x2132.jpg
