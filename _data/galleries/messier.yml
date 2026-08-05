@@ -847,16 +847,16 @@ pictures:
     image_info: 30x60"
     checked: true
   - filename: m75
-    original: m75-1920x1080.jpg
+    original: m75-3586x1892.jpg
     sizes:
-      - m75-300x169.jpg
+      - m75-300x158.jpg
     sort_id: 75
-    thumbnail: m75-300x169.jpg
+    thumbnail: m75-300x158.jpg
     title: M75
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 4 Aug 2026 (22:45 - 01:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 22x20” R | 23x20” G | 23x20” B
     checked: true
   - filename: m76
     original: m76-6096x4056.jpg
