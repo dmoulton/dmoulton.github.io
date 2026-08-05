@@ -84,16 +84,16 @@ pictures:
     image_info: 20x60"
     checked: true
   - filename: m8
-    original: m8-5818x3805.jpg
+    original: m8-2258x1569.jpg
     sizes:
-      - m8-300x196.jpg
+      - m8-300x208.jpg
     sort_id: 8
-    thumbnail: m8-300x196.jpg
+    thumbnail: m8-300x208.jpg
     title: M8 - The Lagoon
-    date: 15 Jun 2018 (02:56 - 03:40)
+    date: 2 Jul 2026 (23:00 - 01:00)
     location: My Backyard
-    equipment: Z 73 | Canon T6i
-    image_info: 30x60"
+    equipment: Seestar S50 | LP Filter
+    image_info: 271x20"
     checked: true
   - filename: m9
     original: m9-2777x2132.jpg
@@ -416,10 +416,10 @@ pictures:
     sort_id: 36
     thumbnail: m36-300x200.jpg
     title: M36
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m37
     original: m37-6096x4056.jpg
@@ -428,10 +428,10 @@ pictures:
     sort_id: 37
     thumbnail: m37-300x200.jpg
     title: M37
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m38
     original: m38-6096x4056.jpg
@@ -440,10 +440,10 @@ pictures:
     sort_id: 38
     thumbnail: m38-300x200.jpg
     title: M38
-    date:
-    location:
-    equipment:
-    image_info:
+    date: null
+    location: null
+    equipment: null
+    image_info: null
     checked: true
   - filename: m39
     original: m39-6024x4022.jpg
@@ -614,28 +614,28 @@ pictures:
     image_info: 152x10"
     checked: true
   - filename: m54
-    original: m54-3840x2160.jpg
+    original: m54-3288x1705.jpg
     sizes:
-      - m54-300x169.jpg
+      - m54-300x156.jpg
     sort_id: 54
-    thumbnail: m54-300x169.jpg
+    thumbnail: m54-300x156.jpg
     title: M54
-    date: ''
-    location: null
-    equipment: null
-    image_info: null
+    date: 23 Jul 2026 (22:45 - 00:45)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 24x30" Red | 22x30" Green | 21x30" Blue
     checked: true
   - filename: m55
-    original: m55-3840x2160.jpg
+    original: m55-3442x1821.jpg
     sizes:
-      - m55-300x169.jpg
+      - m55-300x159.jpg
     sort_id: 55
-    thumbnail: m55-300x169.jpg
+    thumbnail: m55-300x159.jpg
     title: M55
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 31 Jul 2026 (23:30 - 02:00)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 33x20" Red | 34x20" Green | 33x20" Blue
     checked: true
   - filename: m56
     original: m56-6096x4056.jpg
@@ -847,16 +847,16 @@ pictures:
     image_info: 30x60"
     checked: true
   - filename: m75
-    original: m75-1920x1080.jpg
+    original: m75-3586x1892.jpg
     sizes:
-      - m75-300x169.jpg
+      - m75-300x158.jpg
     sort_id: 75
-    thumbnail: m75-300x169.jpg
+    thumbnail: m75-300x158.jpg
     title: M75
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 4 Aug 2026 (22:45 - 01:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 22x20” R | 23x20” G | 23x20” B
     checked: true
   - filename: m76
     original: m76-6096x4056.jpg
