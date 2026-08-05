@@ -1,0 +1,2582 @@
+---
+layout: default
+title: Moon Avoidance Calculator
+permalink: /moon-avoidance-calculator/
+nav_order: 3
+generated:
+---
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+    .moon-console {
+        --bg: #060b14;
+        --bg-panel: #0c1626;
+        --bg-panel-2: #101d33;
+        --hairline: #21426b;
+        --accent-bright: #5ec8ff;
+        --accent-mid: #4aa3e8;
+        --accent-dim: #2f7cc4;
+        --accent-faint: #1f5c94;
+        --text-max: #eaf6ff;
+        --accent-bright-rgb: 94, 200, 255;
+        font-size: 16px;
+    }
+    .moon-console,
+    .moon-console * {
+        box-sizing: border-box;
+    }
+    .moon-console {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent-mid);
+        padding: 24px 20px 28px;
+        border-radius: 10px;
+        background:
+            radial-gradient(
+                ellipse 900px 500px at 50% -10%,
+                rgba(var(--accent-bright-rgb), 0.06),
+                transparent 60%
+            ),
+            var(--bg);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+        line-height: 1.4;
+    }
+
+    .moon-console .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .moon-console .console-top {
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: 1px solid var(--hairline);
+        padding-bottom: 14px;
+        margin-bottom: 22px;
+    }
+    .moon-console .site-tag {
+        font-size: 0.68em;
+        color: var(--accent-faint);
+        text-align: right;
+        line-height: 1.5;
+    }
+
+    .moon-console .panel {
+        background: var(--bg-panel);
+        border: 1px solid var(--hairline);
+        border-radius: 2px;
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    .moon-console .panel-label {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72em;
+        color: var(--accent-dim);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .moon-console .panel-label::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--accent-mid);
+        display: inline-block;
+    }
+
+    .moon-console .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+    .moon-console .row.three {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .moon-console .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .moon-console .field.full {
+        grid-column: 1/-1;
+    }
+    .moon-console label {
+        font-size: 0.68em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent-dim);
+    }
+    .moon-console select,
+    .moon-console input {
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--text-max);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85em;
+        padding: 9px 10px;
+        border-radius: 2px;
+        outline: none;
+    }
+    .moon-console select:focus,
+    .moon-console input:focus {
+        border-color: var(--accent-mid);
+    }
+    .moon-console input::placeholder {
+        color: var(--accent-faint);
+    }
+    .moon-console .hint {
+        font-size: 0.65em;
+        color: var(--accent-faint);
+        margin-top: 2px;
+    }
+
+    .moon-console .pickable {
+        display: flex;
+        gap: 0;
+    }
+    .moon-console .pickable input {
+        flex: 1;
+        border-right: none;
+        border-radius: 2px 0 0 2px;
+    }
+    .moon-console .icon-btn {
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        border-left: none;
+        color: var(--accent-mid);
+        padding: 0 12px;
+        cursor: pointer;
+        border-radius: 0 2px 2px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .moon-console .icon-btn:hover {
+        color: var(--accent-bright);
+        border-color: var(--accent-mid);
+    }
+    .moon-console .icon-btn svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+
+    .moon-console .preset-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+    .moon-console .preset-btn {
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--accent-dim);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.65em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 6px 10px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .moon-console .preset-btn:hover {
+        color: var(--accent-bright);
+        border-color: var(--accent-mid);
+    }
+    .moon-console .preset-btn:active {
+        background: var(--accent-faint);
+    }
+
+    .moon-console .target-count {
+        font-size: 0.62em;
+        color: var(--accent-faint);
+        margin-top: 4px;
+    }
+
+    .moon-console .date-display {
+        flex: 1;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        border-right: none;
+        color: var(--text-max);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85em;
+        padding: 9px 10px;
+        border-radius: 2px 0 0 2px;
+        text-align: left;
+        cursor: pointer;
+    }
+    .moon-console .date-display:hover {
+        border-color: var(--accent-mid);
+    }
+
+    .moon-console .calendar-popover {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        z-index: 30;
+        background: var(--bg-panel-2);
+        border: 1px solid var(--hairline);
+        border-radius: 2px;
+        padding: 12px;
+        width: 250px;
+        box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7);
+    }
+    .moon-console .cal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .moon-console .cal-header button {
+        background: none;
+        border: 1px solid var(--hairline);
+        color: var(--accent-mid);
+        cursor: pointer;
+        font-size: 0.9em;
+        line-height: 1;
+        padding: 4px 10px;
+        border-radius: 2px;
+    }
+    .moon-console .cal-header button:hover {
+        color: var(--accent-bright);
+        border-color: var(--accent-mid);
+    }
+    .moon-console .cal-title {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.78em;
+        color: var(--text-max);
+    }
+    .moon-console .cal-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+    }
+    .moon-console .cal-dow {
+        font-size: 0.58em;
+        color: var(--accent-faint);
+        text-align: center;
+        padding: 4px 0;
+        letter-spacing: 0.03em;
+    }
+    .moon-console .cal-day {
+        background: none;
+        border: 1px solid transparent;
+        color: var(--accent-mid);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72em;
+        padding: 6px 0;
+        cursor: pointer;
+        border-radius: 2px;
+        text-align: center;
+    }
+    .moon-console .cal-day:hover {
+        border-color: var(--accent-dim);
+        color: var(--accent-bright);
+    }
+    .moon-console .cal-day.today {
+        color: var(--text-max);
+        border-color: var(--accent-faint);
+    }
+    .moon-console .cal-day.selected {
+        background: var(--accent-mid);
+        color: #1a0605;
+        font-weight: 700;
+    }
+    .moon-console .cal-day.other-month {
+        visibility: hidden;
+        cursor: default;
+    }
+
+    .moon-console .time-select-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .moon-console .time-select-row select {
+        flex: 1;
+        text-align: center;
+        text-align-last: center;
+    }
+    .moon-console .time-colon {
+        color: var(--accent-dim);
+        font-weight: 700;
+        font-size: 1em;
+    }
+
+    /* Readout */
+    .moon-console .readout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    @media (max-width: 560px) {
+        .moon-console .readout-grid {
+            grid-template-columns: 1fr;
+        }
+        .moon-console .row.three {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .moon-console .stat {
+        border-left: 2px solid var(--hairline);
+        padding-left: 10px;
+    }
+    .moon-console .stat .k {
+        font-size: 0.65em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent-dim);
+    }
+    .moon-console .stat .v {
+        font-size: 1.05em;
+        color: var(--text-max);
+        font-weight: 700;
+        margin-top: 2px;
+    }
+    .moon-console .stat .v small {
+        font-size: 0.7em;
+        color: var(--accent-mid);
+        font-weight: 400;
+    }
+
+    .moon-console .moon-visual {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 16px 4px 20px;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 16px;
+    }
+    .moon-console .moon-disc {
+        flex-shrink: 0;
+    }
+    .moon-console .moon-meta {
+        font-size: 0.78em;
+        line-height: 1.7;
+    }
+    .moon-console .moon-meta .phase-name {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 0.95em;
+        color: var(--accent-bright);
+    }
+
+    .moon-console .gauge {
+        margin-top: 6px;
+    }
+    .moon-console .gauge-track {
+        position: relative;
+        height: 10px;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        border-radius: 1px;
+        overflow: visible;
+        margin-top: 8px;
+    }
+    .moon-console .gauge-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: var(--accent-dim);
+    }
+    .moon-console .gauge-marker {
+        position: absolute;
+        top: -4px;
+        width: 2px;
+        height: 18px;
+        background: var(--accent-bright);
+    }
+    .moon-console .gauge-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.62em;
+        color: var(--accent-faint);
+        margin-top: 4px;
+    }
+
+    .moon-console .verdict {
+        margin-top: 18px;
+        padding: 18px;
+        border: 1px solid var(--hairline);
+        border-radius: 2px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    .moon-console .verdict-icon {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    .moon-console .verdict-text .title {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        font-size: 1.15em;
+    }
+    .moon-console .verdict-text .desc {
+        font-size: 0.8em;
+        color: var(--accent-mid);
+        margin-top: 6px;
+        line-height: 1.55;
+    }
+    .moon-console .verdict.good {
+        border-color: var(--accent-bright);
+        box-shadow: 0 0 24px -8px rgba(var(--accent-bright-rgb), 0.35) inset;
+    }
+    .moon-console .verdict.good .title {
+        color: var(--accent-bright);
+    }
+    .moon-console .verdict.marginal .title {
+        color: var(--accent-mid);
+    }
+    .moon-console .verdict.poor .title {
+        color: var(--accent-dim);
+    }
+    .moon-console .verdict.poor {
+        opacity: 0.92;
+    }
+
+    .moon-console .ref-toggle {
+        font-size: 0.68em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent-dim);
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 0;
+    }
+    .moon-console .ref-toggle::before {
+        content: "▸";
+        font-size: 0.6em;
+        transition: transform 0.15s;
+    }
+    .moon-console .ref-toggle.open::before {
+        transform: rotate(90deg);
+    }
+    .moon-console table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.72em;
+        margin-top: 12px;
+    }
+    .moon-console th,
+    .moon-console td {
+        padding: 6px 8px;
+        text-align: right;
+        border-bottom: 1px solid var(--hairline);
+    }
+    .moon-console th:first-child,
+    .moon-console td:first-child {
+        text-align: left;
+        color: var(--accent-mid);
+    }
+    .moon-console th {
+        color: var(--accent-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        font-size: 0.62em;
+    }
+    .moon-console td {
+        color: var(--text-max);
+    }
+    .moon-console .ref-body {
+        display: none;
+    }
+    .moon-console .ref-body.open {
+        display: block;
+    }
+    .moon-console .foot-note {
+        font-size: 0.68em;
+        color: var(--accent-faint);
+        line-height: 1.6;
+        margin-top: 14px;
+    }
+</style>
+
+<h1 class="page-title">{{ page.title }}</h1>
+<p style="color: #6b8299; margin-bottom: 32px">
+    Decision making for astrophotography based on the moon phase
+</p>
+
+<div class="moon-console" id="moonConsole">
+    <div class="wrap">
+        <div class="panel">
+            <div class="panel-label">Observing Location</div>
+            <div class="row">
+                <div class="field">
+                    <label>Latitude (°N, south negative)</label>
+                    <input
+                        type="number"
+                        id="siteLat"
+                        step="0.01"
+                        placeholder="e.g. 41.0"
+                    />
+                </div>
+                <div class="field">
+                    <label>Longitude (°E, west negative)</label>
+                    <input
+                        type="number"
+                        id="siteLon"
+                        step="0.01"
+                        placeholder="e.g. -111.89"
+                    />
+                </div>
+            </div>
+            <div class="hint">
+                Used for moon altitude and astronomical twilight (dusk/dawn)
+                calculations. Saved in your browser for next time.
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-label">Session Input</div>
+            <div class="row">
+                <div class="field">
+                    <label>Target</label>
+                    <input
+                        type="text"
+                        id="targetFilter"
+                        placeholder="Search 139 objects…"
+                        autocomplete="off"
+                    />
+                    <select id="target"></select>
+                    <div class="target-count" id="targetCount"></div>
+                </div>
+                <div class="field">
+                    <label>Filter</label>
+                    <select id="filter">
+                        <option value="Ha">Hα</option>
+                        <option value="OIII">OIII</option>
+                        <option value="SII">SII</option>
+                        <option value="L">Luminance</option>
+                        <option value="RGB">RGB</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" id="customRow" style="display: none">
+                <div class="field">
+                    <label>RA (decimal degrees)</label>
+                    <input
+                        type="number"
+                        id="customRA"
+                        placeholder="e.g. 25.6"
+                        step="0.01"
+                    />
+                </div>
+                <div class="field">
+                    <label>Dec (decimal degrees)</label>
+                    <input
+                        type="number"
+                        id="customDec"
+                        placeholder="e.g. 51.57"
+                        step="0.01"
+                    />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Date</label>
+                    <div class="pickable" style="position: relative">
+                        <button
+                            type="button"
+                            class="date-display"
+                            id="dateDisplayBtn"
+                        ></button>
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="dateBtn"
+                            title="Open calendar"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="3"
+                                    y="5"
+                                    width="18"
+                                    height="16"
+                                    rx="1.5"
+                                />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                            </svg>
+                        </button>
+                        <input type="hidden" id="obsDate" />
+                        <div
+                            class="calendar-popover"
+                            id="calendarPopover"
+                        ></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Local Time</label>
+                    <div class="time-select-row">
+                        <select id="obsHour"></select>
+                        <span class="time-colon">:</span>
+                        <select id="obsMinute"></select>
+                    </div>
+                    <input type="hidden" id="obsTime" />
+                </div>
+            </div>
+            <div class="preset-row" id="presetRow">
+                <button type="button" class="preset-btn" data-preset="dusk">
+                    Astro Dusk
+                </button>
+                <button type="button" class="preset-btn" data-preset="22">
+                    22:00
+                </button>
+                <button type="button" class="preset-btn" data-preset="24">
+                    Midnight
+                </button>
+                <button type="button" class="preset-btn" data-preset="26">
+                    02:00
+                </button>
+                <button type="button" class="preset-btn" data-preset="dawn">
+                    Astro Dawn
+                </button>
+            </div>
+            <div class="hint">
+                Times are evaluated in your browser's local timezone. Separation
+                between object and moon changes only slowly over a night, so one
+                time near mid-session is enough. Dusk/Dawn presets compute
+                astronomical twilight (sun at −18°) for the selected date and
+                roll the date forward automatically when past midnight.
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-label">Readout</div>
+
+            <div class="moon-visual">
+                <svg
+                    id="moonDisc"
+                    class="moon-disc"
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                ></svg>
+                <div class="moon-meta">
+                    <div class="phase-name" id="phaseName">—</div>
+                    <div>Illumination: <span id="illumPct">—</span></div>
+                    <div>Moon altitude: <span id="moonAlt">—</span></div>
+                </div>
+            </div>
+
+            <div class="readout-grid">
+                <div class="stat">
+                    <div class="k">Moon RA / Dec</div>
+                    <div class="v" id="moonRD">—</div>
+                </div>
+                <div class="stat">
+                    <div class="k">Target RA / Dec</div>
+                    <div class="v" id="targRD">—</div>
+                </div>
+                <div class="stat">
+                    <div class="k">Angular Separation</div>
+                    <div class="v" id="sepVal">—</div>
+                </div>
+                <div class="stat">
+                    <div class="k">Recommended Minimum</div>
+                    <div class="v" id="threshVal">—</div>
+                </div>
+            </div>
+
+            <div class="gauge">
+                <div class="gauge-track">
+                    <div class="gauge-fill" id="gaugeFill"></div>
+                    <div class="gauge-marker" id="gaugeMarker"></div>
+                </div>
+                <div class="gauge-labels">
+                    <span>0°</span><span id="gaugeMax">180°</span>
+                </div>
+            </div>
+
+            <div class="verdict" id="verdictBox">
+                <svg
+                    class="verdict-icon"
+                    id="verdictIcon"
+                    viewBox="0 0 34 34"
+                ></svg>
+                <div class="verdict-text">
+                    <div class="title" id="verdictTitle">—</div>
+                    <div class="desc" id="verdictDesc">
+                        Enter a target, filter, and date above.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="ref-toggle" id="refToggle">
+                Threshold reference table
+            </div>
+            <div class="ref-body" id="refBody">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Filter</th>
+                            <th>0% (new)</th>
+                            <th>50% (qtr)</th>
+                            <th>100% (full)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SII</td>
+                            <td>15°</td>
+                            <td>22°</td>
+                            <td>30°</td>
+                        </tr>
+                        <tr>
+                            <td>Hα</td>
+                            <td>20°</td>
+                            <td>30°</td>
+                            <td>40°</td>
+                        </tr>
+                        <tr>
+                            <td>OIII</td>
+                            <td>25°</td>
+                            <td>42°</td>
+                            <td>60°</td>
+                        </tr>
+                        <tr>
+                            <td>Luminance</td>
+                            <td>35°</td>
+                            <td>62°</td>
+                            <td>90°</td>
+                        </tr>
+                        <tr>
+                            <td>RGB</td>
+                            <td>45°</td>
+                            <td>82°</td>
+                            <td>120°</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="foot-note">
+                    Narrowband (Hα/SII) rejects most moonlight by bandpass alone
+                    — tolerable close to a gibbous or full moon. OIII picks up
+                    more scatter (moonlight carries blue-green content).
+                    Broadband L/RGB is most vulnerable, and at a Bortle 6–7 site
+                    the moon adds directly on top of an already-elevated
+                    background — prioritize narrowband during moon-heavy weeks,
+                    save RGB/L for dark-of-moon. These are heuristic starting
+                    points, not hard physics — tighten or loosen them against
+                    your own gradient/background results over time. If moon
+                    altitude is below 0°, it isn't a factor regardless of
+                    separation.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.moon-console -->
+
+<script>
+    const D2R = Math.PI / 180,
+        R2D = 180 / Math.PI;
+    const dayMs = 864e5,
+        J1970 = 2440588,
+        J2000 = 2451545;
+
+    function toJulian(date) {
+        return date.valueOf() / dayMs - 0.5 + J1970;
+    }
+    function toDays(date) {
+        return toJulian(date) - J2000;
+    }
+    const rad = D2R;
+
+    function rightAscension(l, b) {
+        return Math.atan2(
+            Math.sin(l) * Math.cos(e) - Math.tan(b) * Math.sin(e),
+            Math.cos(l),
+        );
+    }
+    function declination(l, b) {
+        return Math.asin(
+            Math.sin(b) * Math.cos(e) + Math.cos(b) * Math.sin(e) * Math.sin(l),
+        );
+    }
+    const e = rad * 23.4397;
+
+    function solarMeanAnomaly(d) {
+        return rad * (357.5291 + 0.98560028 * d);
+    }
+    function eclipticLongitude(M) {
+        const C =
+            rad *
+            (1.9148 * Math.sin(M) +
+                0.02 * Math.sin(2 * M) +
+                0.0003 * Math.sin(3 * M));
+        const P = rad * 102.9372;
+        return M + C + P + Math.PI;
+    }
+    function sunCoords(d) {
+        const M = solarMeanAnomaly(d),
+            L = eclipticLongitude(M);
+        return { ra: rightAscension(L, 0), dec: declination(L, 0) };
+    }
+    function moonCoords(d) {
+        const L = rad * (218.316 + 13.176396 * d);
+        const M = rad * (134.963 + 13.064993 * d);
+        const F = rad * (93.272 + 13.22935 * d);
+        const l = L + rad * 6.289 * Math.sin(M);
+        const b = rad * 5.128 * Math.sin(F);
+        const dt = 385001 - 20905 * Math.cos(M);
+        return { ra: rightAscension(l, b), dec: declination(l, b), dist: dt };
+    }
+    function moonIllumination(date) {
+        const d = toDays(date);
+        const s = sunCoords(d),
+            m = moonCoords(d);
+        const sdist = 149598000;
+        const phi = Math.acos(
+            Math.sin(s.dec) * Math.sin(m.dec) +
+                Math.cos(s.dec) * Math.cos(m.dec) * Math.cos(s.ra - m.ra),
+        );
+        const inc = Math.atan2(
+            sdist * Math.sin(phi),
+            m.dist - sdist * Math.cos(phi),
+        );
+        const angle = Math.atan2(
+            Math.cos(s.dec) * Math.sin(s.ra - m.ra),
+            Math.sin(s.dec) * Math.cos(m.dec) -
+                Math.cos(s.dec) * Math.sin(m.dec) * Math.cos(s.ra - m.ra),
+        );
+        return {
+            fraction: (1 + Math.cos(inc)) / 2,
+            phase: 0.5 + (0.5 * inc * (angle < 0 ? -1 : 1)) / Math.PI,
+            ra: m.ra,
+            dec: m.dec,
+        };
+    }
+    function GMST(jd) {
+        const T = (jd - 2451545.0) / 36525;
+        let g =
+            280.46061837 +
+            360.98564736629 * (jd - 2451545.0) +
+            0.000387933 * T * T -
+            (T * T * T) / 38710000;
+        return ((g % 360) + 360) % 360;
+    }
+    function altitudeOf(date, raRad, decRad, latDeg, lonDeg) {
+        const jd = toJulian(date);
+        const gmst = GMST(jd);
+        const lst = (((gmst + lonDeg) % 360) + 360) % 360;
+        let ha = lst - raRad * R2D;
+        ha = ((ha + 540) % 360) - 180;
+        const haRad = ha * D2R,
+            latRad = latDeg * D2R;
+        const alt = Math.asin(
+            Math.sin(latRad) * Math.sin(decRad) +
+                Math.cos(latRad) * Math.cos(decRad) * Math.cos(haRad),
+        );
+        return alt * R2D;
+    }
+    function moonAltitude(date, raRad, decRad, latDeg, lonDeg) {
+        return altitudeOf(date, raRad, decRad, latDeg, lonDeg);
+    }
+    function sunAltitude(date, latDeg, lonDeg) {
+        const s = sunCoords(toDays(date));
+        return altitudeOf(date, s.ra, s.dec, latDeg, lonDeg);
+    }
+    // Finds astronomical dusk (evening, sun descending through -18deg) and dawn
+    // (following morning, sun ascending through -18deg) for the local calendar
+    // date of `dateStr`, by scanning from local noon through noon the next day.
+    function twilightTimes(dateStr, latDeg, lonDeg) {
+        const [y, m, dd] = dateStr.split("-").map(Number);
+        const start = new Date(y, m - 1, dd, 12, 0, 0); // local noon
+        const stepMin = 3;
+        const steps = Math.round((24 * 60) / stepMin);
+        let prevT = start,
+            prevAlt = sunAltitude(prevT, latDeg, lonDeg);
+        let dusk = null,
+            dawn = null;
+        for (let i = 1; i <= steps; i++) {
+            const t = new Date(start.getTime() + i * stepMin * 60000);
+            const alt = sunAltitude(t, latDeg, lonDeg);
+            if (!dusk && prevAlt > -18 && alt <= -18) {
+                const frac = (prevAlt - -18) / (prevAlt - alt);
+                dusk = new Date(
+                    prevT.getTime() + frac * (t.getTime() - prevT.getTime()),
+                );
+            } else if (dusk && !dawn && prevAlt <= -18 && alt > -18) {
+                const frac = (-18 - prevAlt) / (alt - prevAlt);
+                dawn = new Date(
+                    prevT.getTime() + frac * (t.getTime() - prevT.getTime()),
+                );
+                break;
+            }
+            prevT = t;
+            prevAlt = alt;
+        }
+        return { dusk, dawn };
+    }
+    function fmtDate(d) {
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    }
+    function fmtTime(d) {
+        return `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+    }
+    function angSep(ra1, dec1, ra2, dec2) {
+        const cosSep =
+            Math.sin(dec1) * Math.sin(dec2) +
+            Math.cos(dec1) * Math.cos(dec2) * Math.cos(ra1 - ra2);
+        return Math.acos(Math.min(1, Math.max(-1, cosSep))) * R2D;
+    }
+    function raDecStr(raRad, decRad) {
+        const raH = ((raRad * R2D) / 15 + 24) % 24;
+        const h = Math.floor(raH),
+            m = Math.floor((raH - h) * 60),
+            s = Math.round(((raH - h) * 60 - m) * 60);
+        const decD = decRad * R2D;
+        const sign = decD < 0 ? "-" : "+";
+        const ad = Math.abs(decD);
+        const dd = Math.floor(ad),
+            dm = Math.floor((ad - dd) * 60),
+            ds = Math.round(((ad - dd) * 60 - dm) * 60);
+        return `${h}h${m.toString().padStart(2, "0")}m${s.toString().padStart(2, "0")}s <small>/</small> ${sign}${dd}°${dm.toString().padStart(2, "0")}'${ds.toString().padStart(2, "0")}"`;
+    }
+
+    const MESSIER = [
+        {
+            id: "M1",
+            common: "Crab Nebula",
+            ra: 83.6332 * D2R,
+            dec: 22.0145 * D2R,
+            con: "Taurus",
+            type: "Supernova Remnant",
+        },
+        {
+            id: "M2",
+            common: null,
+            ra: 323.3625 * D2R,
+            dec: -0.8233 * D2R,
+            con: "Aquarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M3",
+            common: null,
+            ra: 205.5468 * D2R,
+            dec: 28.3754 * D2R,
+            con: "Canes Venatici",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M4",
+            common: null,
+            ra: 245.8975 * D2R,
+            dec: -26.5255 * D2R,
+            con: "Scorpius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M5",
+            common: null,
+            ra: 229.6406 * D2R,
+            dec: 2.0827 * D2R,
+            con: "Serpens Caput",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M6",
+            common: "Butterfly Cluster",
+            ra: 265.0865 * D2R,
+            dec: -32.2542 * D2R,
+            con: "Scorpius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M7",
+            common: "Ptolemy's Cluster",
+            ra: 268.4632 * D2R,
+            dec: -34.7928 * D2R,
+            con: "Scorpius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M8",
+            common: "Lagoon Nebula",
+            ra: 270.922 * D2R,
+            dec: -24.3802 * D2R,
+            con: "Sagittarius",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M9",
+            common: null,
+            ra: 259.7991 * D2R,
+            dec: -18.5162 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M10",
+            common: null,
+            ra: 254.2875 * D2R,
+            dec: -4.0993 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M11",
+            common: "Wild Duck Cluster",
+            ra: 282.775 * D2R,
+            dec: -6.27 * D2R,
+            con: "Scutum",
+            type: "Open Cluster",
+        },
+        {
+            id: "M12",
+            common: null,
+            ra: 251.8105 * D2R,
+            dec: -1.9478 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M13",
+            common: "Hercules Globular Cluster",
+            ra: 250.4235 * D2R,
+            dec: 36.4613 * D2R,
+            con: "Hercules",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M14",
+            common: null,
+            ra: 264.4007 * D2R,
+            dec: -3.2459 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M15",
+            common: null,
+            ra: 322.4932 * D2R,
+            dec: 12.1668 * D2R,
+            con: "Pegasus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M16",
+            common: "Eagle Nebula Cluster",
+            ra: 274.7007 * D2R,
+            dec: -13.8072 * D2R,
+            con: "Serpens Claudia",
+            type: "Open Cluster",
+        },
+        {
+            id: "M17",
+            common: "Omega Nebula",
+            ra: 275.1963 * D2R,
+            dec: -16.1715 * D2R,
+            con: "Sagittarius",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M18",
+            common: null,
+            ra: 274.9937 * D2R,
+            dec: -17.102 * D2R,
+            con: "Sagittarius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M19",
+            common: null,
+            ra: 255.657 * D2R,
+            dec: -26.2679 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M20",
+            common: "Trifid Nebula",
+            ra: 270.6755 * D2R,
+            dec: -22.9719 * D2R,
+            con: "Sagittarius",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M21",
+            common: null,
+            ra: 271.056 * D2R,
+            dec: -22.4901 * D2R,
+            con: "Sagittarius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M22",
+            common: null,
+            ra: 279.1008 * D2R,
+            dec: -23.9034 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M23",
+            common: null,
+            ra: 269.2699 * D2R,
+            dec: -18.9853 * D2R,
+            con: "Sagittarius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M24",
+            common: "Milky Way Patch",
+            ra: 274.2338 * D2R,
+            dec: -18.5146 * D2R,
+            con: "Sagittarius",
+            type: "Star Cloud",
+        },
+        {
+            id: "M25",
+            common: null,
+            ra: 277.9449 * D2R,
+            dec: -19.1149 * D2R,
+            con: "Sagittarius",
+            type: "Open Cluster",
+        },
+        {
+            id: "M26",
+            common: null,
+            ra: 281.3278 * D2R,
+            dec: -9.3836 * D2R,
+            con: "Scutum",
+            type: "Open Cluster",
+        },
+        {
+            id: "M27",
+            common: "Dumbbell Nebula",
+            ra: 299.9016 * D2R,
+            dec: 22.721 * D2R,
+            con: "Vulpecula",
+            type: "Planetary Nebula",
+        },
+        {
+            id: "M28",
+            common: null,
+            ra: 276.137 * D2R,
+            dec: -24.8698 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M29",
+            common: null,
+            ra: 305.9907 * D2R,
+            dec: 38.5077 * D2R,
+            con: "Cygnus",
+            type: "Open Cluster",
+        },
+        {
+            id: "M30",
+            common: null,
+            ra: 325.0918 * D2R,
+            dec: -23.1791 * D2R,
+            con: "Capricornus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M31",
+            common: "Andromeda Galaxy",
+            ra: 10.6848 * D2R,
+            dec: 41.2691 * D2R,
+            con: "Andromeda",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M32",
+            common: "Satellite of M31",
+            ra: 10.6743 * D2R,
+            dec: 40.8653 * D2R,
+            con: "Andromeda",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M33",
+            common: "Triangulum Galaxy",
+            ra: 23.462 * D2R,
+            dec: 30.6602 * D2R,
+            con: "Triangulum",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M34",
+            common: null,
+            ra: 40.5308 * D2R,
+            dec: 42.7461 * D2R,
+            con: "Perseus",
+            type: "Open Cluster",
+        },
+        {
+            id: "M35",
+            common: null,
+            ra: 92.2711 * D2R,
+            dec: 24.3386 * D2R,
+            con: "Gemini",
+            type: "Open Cluster",
+        },
+        {
+            id: "M36",
+            common: null,
+            ra: 84.0739 * D2R,
+            dec: 34.1407 * D2R,
+            con: "Auriga",
+            type: "Open Cluster",
+        },
+        {
+            id: "M37",
+            common: null,
+            ra: 88.0765 * D2R,
+            dec: 32.553 * D2R,
+            con: "Auriga",
+            type: "Open Cluster",
+        },
+        {
+            id: "M38",
+            common: null,
+            ra: 82.177 * D2R,
+            dec: 35.8549 * D2R,
+            con: "Auriga",
+            type: "Open Cluster",
+        },
+        {
+            id: "M39",
+            common: null,
+            ra: 322.9513 * D2R,
+            dec: 48.4382 * D2R,
+            con: "Cygnus",
+            type: "Open Cluster",
+        },
+        {
+            id: "M40",
+            common: "Winecke 4",
+            ra: 185.5478 * D2R,
+            dec: 58.0878 * D2R,
+            con: "Ursa Major",
+            type: "Double Star",
+        },
+        {
+            id: "M41",
+            common: null,
+            ra: 101.4998 * D2R,
+            dec: -20.7542 * D2R,
+            con: "Canis Major",
+            type: "Open Cluster",
+        },
+        {
+            id: "M42",
+            common: "Orion Nebula",
+            ra: 83.8187 * D2R,
+            dec: -5.3897 * D2R,
+            con: "Orion",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M43",
+            common: "de Mairan's Nebula",
+            ra: 83.8807 * D2R,
+            dec: -5.2675 * D2R,
+            con: "Orion",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M44",
+            common: "Beehive Cluster",
+            ra: 130.0925 * D2R,
+            dec: 19.6721 * D2R,
+            con: "Cancer",
+            type: "Open Cluster",
+        },
+        {
+            id: "M45",
+            common: "Pleiades",
+            ra: 56.7474 * D2R,
+            dec: 24.1161 * D2R,
+            con: "Taurus",
+            type: "Open Cluster",
+        },
+        {
+            id: "M46",
+            common: null,
+            ra: 115.4451 * D2R,
+            dec: -14.81 * D2R,
+            con: "Puppis",
+            type: "Open Cluster",
+        },
+        {
+            id: "M47",
+            common: null,
+            ra: 114.1459 * D2R,
+            dec: -14.4826 * D2R,
+            con: "Puppis",
+            type: "Open Cluster",
+        },
+        {
+            id: "M48",
+            common: null,
+            ra: 123.4299 * D2R,
+            dec: -5.7504 * D2R,
+            con: "Hydra",
+            type: "Open Cluster",
+        },
+        {
+            id: "M49",
+            common: null,
+            ra: 187.4448 * D2R,
+            dec: 8.0005 * D2R,
+            con: "Virgo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M50",
+            common: null,
+            ra: 105.6686 * D2R,
+            dec: -8.364 * D2R,
+            con: "Monocerus",
+            type: "Open Cluster",
+        },
+        {
+            id: "M51",
+            common: "Whirlpool Galaxy",
+            ra: 202.4696 * D2R,
+            dec: 47.1952 * D2R,
+            con: "Canes Venatici",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M52",
+            common: null,
+            ra: 351.2017 * D2R,
+            dec: 61.5932 * D2R,
+            con: "Cassiopeia",
+            type: "Open Cluster",
+        },
+        {
+            id: "M53",
+            common: null,
+            ra: 198.2301 * D2R,
+            dec: 18.1691 * D2R,
+            con: "Coma Berenices",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M54",
+            common: null,
+            ra: 283.7636 * D2R,
+            dec: -30.4785 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M55",
+            common: null,
+            ra: 294.9975 * D2R,
+            dec: -30.9621 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M56",
+            common: null,
+            ra: 289.148 * D2R,
+            dec: 30.1845 * D2R,
+            con: "Lyra",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M57",
+            common: "Ring Nebula",
+            ra: 283.3959 * D2R,
+            dec: 33.0286 * D2R,
+            con: "Lyra",
+            type: "Planetary Nebula",
+        },
+        {
+            id: "M58",
+            common: null,
+            ra: 189.4313 * D2R,
+            dec: 11.8182 * D2R,
+            con: "Virgo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M59",
+            common: null,
+            ra: 190.5093 * D2R,
+            dec: 11.647 * D2R,
+            con: "Virgo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M60",
+            common: null,
+            ra: 190.9166 * D2R,
+            dec: 11.5527 * D2R,
+            con: "Virgo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M61",
+            common: null,
+            ra: 185.4787 * D2R,
+            dec: 4.4736 * D2R,
+            con: "Virgo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M62",
+            common: null,
+            ra: 255.3025 * D2R,
+            dec: -30.1124 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M63",
+            common: "Sunflower Galaxy",
+            ra: 198.9555 * D2R,
+            dec: 42.0293 * D2R,
+            con: "Canes Venatici",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M64",
+            common: "Blackeye Galaxy",
+            ra: 194.1818 * D2R,
+            dec: 21.683 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M65",
+            common: null,
+            ra: 169.733 * D2R,
+            dec: 13.0924 * D2R,
+            con: "Leo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M66",
+            common: null,
+            ra: 170.0623 * D2R,
+            dec: 12.9915 * D2R,
+            con: "Leo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M67",
+            common: null,
+            ra: 132.8339 * D2R,
+            dec: 11.8119 * D2R,
+            con: "Cancer",
+            type: "Open Cluster",
+        },
+        {
+            id: "M68",
+            common: null,
+            ra: 189.8667 * D2R,
+            dec: -26.743 * D2R,
+            con: "Hydra",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M69",
+            common: null,
+            ra: 277.8468 * D2R,
+            dec: -32.348 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M70",
+            common: null,
+            ra: 280.8027 * D2R,
+            dec: -32.2919 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M71",
+            common: null,
+            ra: 298.4421 * D2R,
+            dec: 18.7784 * D2R,
+            con: "Sagitta",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M72",
+            common: null,
+            ra: 313.3663 * D2R,
+            dec: -12.5371 * D2R,
+            con: "Aquarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M73",
+            common: "Group of 4 stars",
+            ra: 314.7332 * D2R,
+            dec: -12.6355 * D2R,
+            con: "Aquarius",
+            type: "Group/Asterism",
+        },
+        {
+            id: "M74",
+            common: null,
+            ra: 24.174 * D2R,
+            dec: 15.7837 * D2R,
+            con: "Pisces",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M75",
+            common: null,
+            ra: 301.5202 * D2R,
+            dec: -21.9222 * D2R,
+            con: "Sagittarius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M76",
+            common: "Little Dumbbell Nebula",
+            ra: 25.582 * D2R,
+            dec: 51.5755 * D2R,
+            con: "Perseus",
+            type: "Planetary Nebula",
+        },
+        {
+            id: "M77",
+            common: "Cetus A",
+            ra: 40.6696 * D2R,
+            dec: -0.0133 * D2R,
+            con: "Cetus",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M78",
+            common: null,
+            ra: 86.6909 * D2R,
+            dec: 0.0793 * D2R,
+            con: "Orion",
+            type: "Diffuse Nebula",
+        },
+        {
+            id: "M79",
+            common: null,
+            ra: 81.0441 * D2R,
+            dec: -24.5242 * D2R,
+            con: "Lepus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M80",
+            common: null,
+            ra: 244.2605 * D2R,
+            dec: -22.9751 * D2R,
+            con: "Scorpius",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M81",
+            common: "Bode's Galaxy",
+            ra: 148.8882 * D2R,
+            dec: 69.0653 * D2R,
+            con: "Ursa Major",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M82",
+            common: "Cigar Galaxy",
+            ra: 148.9697 * D2R,
+            dec: 69.6794 * D2R,
+            con: "Ursa Major",
+            type: "Irregular Galaxy",
+        },
+        {
+            id: "M83",
+            common: "Southern Pinwheel Galaxy",
+            ra: 204.254 * D2R,
+            dec: -29.8654 * D2R,
+            con: "Hydra",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M84",
+            common: null,
+            ra: 186.2656 * D2R,
+            dec: 12.887 * D2R,
+            con: "Virgo",
+            type: "Lenticular (S0) Galaxy",
+        },
+        {
+            id: "M85",
+            common: null,
+            ra: 186.3505 * D2R,
+            dec: 18.1915 * D2R,
+            con: "Coma Berenices",
+            type: "Lenticular (S0) Galaxy",
+        },
+        {
+            id: "M86",
+            common: null,
+            ra: 186.5489 * D2R,
+            dec: 12.9462 * D2R,
+            con: "Virgo",
+            type: "Lenticular (S0) Galaxy",
+        },
+        {
+            id: "M87",
+            common: "Virgo A",
+            ra: 187.7059 * D2R,
+            dec: 12.3911 * D2R,
+            con: "Virgo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M88",
+            common: null,
+            ra: 187.9965 * D2R,
+            dec: 14.4204 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M89",
+            common: null,
+            ra: 188.9159 * D2R,
+            dec: 12.5563 * D2R,
+            con: "Virgo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M90",
+            common: null,
+            ra: 189.2075 * D2R,
+            dec: 13.1629 * D2R,
+            con: "Virgo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M91",
+            common: null,
+            ra: 188.8602 * D2R,
+            dec: 14.4963 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M92",
+            common: null,
+            ra: 259.2803 * D2R,
+            dec: 43.1365 * D2R,
+            con: "Hercules",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M93",
+            common: null,
+            ra: 116.1218 * D2R,
+            dec: -23.8531 * D2R,
+            con: "Puppis",
+            type: "Open Cluster",
+        },
+        {
+            id: "M94",
+            common: null,
+            ra: 192.7211 * D2R,
+            dec: 41.1204 * D2R,
+            con: "Canes Venatici",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M95",
+            common: null,
+            ra: 160.9904 * D2R,
+            dec: 11.7038 * D2R,
+            con: "Leo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M96",
+            common: null,
+            ra: 161.6906 * D2R,
+            dec: 11.8199 * D2R,
+            con: "Leo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M97",
+            common: "Owl Nebula",
+            ra: 168.6988 * D2R,
+            dec: 55.019 * D2R,
+            con: "Ursa Major",
+            type: "Planetary Nebula",
+        },
+        {
+            id: "M98",
+            common: null,
+            ra: 183.4512 * D2R,
+            dec: 14.9003 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M99",
+            common: null,
+            ra: 184.7067 * D2R,
+            dec: 14.4165 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M100",
+            common: null,
+            ra: 185.7285 * D2R,
+            dec: 15.8218 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M101",
+            common: "Pinwheel Galaxy",
+            ra: 210.8023 * D2R,
+            dec: 54.3489 * D2R,
+            con: "Ursa Major",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M102",
+            common: "Spindle Galaxy",
+            ra: 226.6258 * D2R,
+            dec: 55.7683 * D2R,
+            con: "Draco",
+            type: "Lenticular (S0) Galaxy",
+        },
+        {
+            id: "M103",
+            common: null,
+            ra: 23.3409 * D2R,
+            dec: 60.658 * D2R,
+            con: "Cassiopeia",
+            type: "Open Cluster",
+        },
+        {
+            id: "M104",
+            common: "Sombrero Galaxy",
+            ra: 189.9976 * D2R,
+            dec: -11.6231 * D2R,
+            con: "Virgo",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M105",
+            common: null,
+            ra: 161.9566 * D2R,
+            dec: 12.5816 * D2R,
+            con: "Leo",
+            type: "Elliptical Galaxy",
+        },
+        {
+            id: "M106",
+            common: null,
+            ra: 184.7396 * D2R,
+            dec: 47.304 * D2R,
+            con: "Canes Venatici",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M107",
+            common: null,
+            ra: 248.133 * D2R,
+            dec: -13.0536 * D2R,
+            con: "Ophiucus",
+            type: "Globular Cluster",
+        },
+        {
+            id: "M108",
+            common: null,
+            ra: 167.879 * D2R,
+            dec: 55.6741 * D2R,
+            con: "Ursa Major",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M109",
+            common: null,
+            ra: 179.3999 * D2R,
+            dec: 53.3745 * D2R,
+            con: "Ursa Major",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "M110",
+            common: "Satellite of M31",
+            ra: 10.092 * D2R,
+            dec: 41.6853 * D2R,
+            con: "Andromeda",
+            type: "Elliptical Galaxy",
+        },
+    ];
+    const OTHER_TARGETS = [
+        {
+            id: "NGC7000",
+            common: "North America Nebula",
+            ra: 314.7 * D2R,
+            dec: 44.33 * D2R,
+            con: "Cygnus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC5070",
+            common: "Pelican Nebula",
+            ra: 312.75 * D2R,
+            dec: 44.35 * D2R,
+            con: "Cygnus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC1396",
+            common: "Elephant's Trunk Nebula",
+            ra: 324.775 * D2R,
+            dec: 57.5 * D2R,
+            con: "Cepheus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC6960",
+            common: "Veil Nebula (Western)",
+            ra: 311.425 * D2R,
+            dec: 30.717 * D2R,
+            con: "Cygnus",
+            type: "Supernova Remnant",
+        },
+        {
+            id: "NGC6992",
+            common: "Veil Nebula (Eastern)",
+            ra: 314.1 * D2R,
+            dec: 31.717 * D2R,
+            con: "Cygnus",
+            type: "Supernova Remnant",
+        },
+        {
+            id: "NGC2237",
+            common: "Rosette Nebula",
+            ra: 98.0 * D2R,
+            dec: 5.05 * D2R,
+            con: "Monoceros",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC434",
+            common: "Horsehead Nebula",
+            ra: 85.225 * D2R,
+            dec: -2.467 * D2R,
+            con: "Orion",
+            type: "Dark Nebula",
+        },
+        {
+            id: "NGC2024",
+            common: "Flame Nebula",
+            ra: 85.475 * D2R,
+            dec: -1.85 * D2R,
+            con: "Orion",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC1499",
+            common: "California Nebula",
+            ra: 60.9 * D2R,
+            dec: 36.417 * D2R,
+            con: "Perseus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC1805",
+            common: "Heart Nebula",
+            ra: 38.35 * D2R,
+            dec: 61.433 * D2R,
+            con: "Cassiopeia",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC1848",
+            common: "Soul Nebula",
+            ra: 42.85 * D2R,
+            dec: 60.433 * D2R,
+            con: "Cassiopeia",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC281",
+            common: "Pacman Nebula",
+            ra: 13.2 * D2R,
+            dec: 56.617 * D2R,
+            con: "Cassiopeia",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC7635",
+            common: "Bubble Nebula",
+            ra: 350.175 * D2R,
+            dec: 61.2 * D2R,
+            con: "Cassiopeia",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC6888",
+            common: "Crescent Nebula",
+            ra: 303.0 * D2R,
+            dec: 38.35 * D2R,
+            con: "Cygnus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC5146",
+            common: "Cocoon Nebula",
+            ra: 328.375 * D2R,
+            dec: 47.267 * D2R,
+            con: "Cygnus",
+            type: "Emission/Reflection Nebula",
+        },
+        {
+            id: "NGC7023",
+            common: "Iris Nebula",
+            ra: 315.4 * D2R,
+            dec: 68.167 * D2R,
+            con: "Cepheus",
+            type: "Reflection Nebula",
+        },
+        {
+            id: "SH2-155",
+            common: "Cave Nebula",
+            ra: 344.2 * D2R,
+            dec: 62.617 * D2R,
+            con: "Cepheus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC2359",
+            common: "Thor's Helmet",
+            ra: 109.65 * D2R,
+            dec: -13.217 * D2R,
+            con: "Canis Major",
+            type: "Emission Nebula",
+        },
+        {
+            id: "IC443",
+            common: "Jellyfish Nebula",
+            ra: 94.45 * D2R,
+            dec: 22.567 * D2R,
+            con: "Gemini",
+            type: "Supernova Remnant",
+        },
+        {
+            id: "NGC2264",
+            common: "Christmas Tree/Cone Nebula",
+            ra: 100.25 * D2R,
+            dec: 9.883 * D2R,
+            con: "Monoceros",
+            type: "Cluster/Nebula",
+        },
+        {
+            id: "IC2118",
+            common: "Witch Head Nebula",
+            ra: 76.725 * D2R,
+            dec: -7.217 * D2R,
+            con: "Eridanus",
+            type: "Reflection Nebula",
+        },
+        {
+            id: "NGC891",
+            common: "Silver Sliver Galaxy",
+            ra: 35.65 * D2R,
+            dec: 42.35 * D2R,
+            con: "Andromeda",
+            type: "Spiral Galaxy (edge-on)",
+        },
+        {
+            id: "NGC253",
+            common: "Sculptor Galaxy",
+            ra: 11.9 * D2R,
+            dec: -25.283 * D2R,
+            con: "Sculptor",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "NGC7331",
+            common: "Deer Lick Group",
+            ra: 339.275 * D2R,
+            dec: 34.417 * D2R,
+            con: "Pegasus",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "NGC4565",
+            common: "Needle Galaxy",
+            ra: 189.075 * D2R,
+            dec: 25.983 * D2R,
+            con: "Coma Berenices",
+            type: "Spiral Galaxy (edge-on)",
+        },
+        {
+            id: "SH2-101",
+            common: "Tulip Nebula",
+            ra: 299.9 * D2R,
+            dec: 35.267 * D2R,
+            con: "Cygnus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "NGC6946",
+            common: "Fireworks Galaxy",
+            ra: 308.7 * D2R,
+            dec: 60.15 * D2R,
+            con: "Cepheus",
+            type: "Spiral Galaxy",
+        },
+        {
+            id: "IC1318",
+            common: "Sadr Region",
+            ra: 305.55 * D2R,
+            dec: 40.25 * D2R,
+            con: "Cygnus",
+            type: "Emission Nebula",
+        },
+        {
+            id: "WR134",
+            common: "Wolf-Rayet Nebula",
+            ra: 302.559 * D2R,
+            dec: 36.176 * D2R,
+            con: "Cygnus",
+            type: "Wolf-Rayet Bubble",
+        },
+    ];
+    const ALL_TARGETS = {};
+    MESSIER.forEach((o) => (ALL_TARGETS[o.id] = o));
+    OTHER_TARGETS.forEach((o) => (ALL_TARGETS[o.id] = o));
+
+    function targetLabel(o) {
+        return o.common ? `${o.id} \u2014 ${o.common}` : `${o.id} (${o.con})`;
+    }
+    function matchesFilter(o, q) {
+        if (!q) return true;
+        const hay = (
+            o.id +
+            " " +
+            (o.common || "") +
+            " " +
+            o.con +
+            " " +
+            o.type
+        ).toLowerCase();
+        return hay.includes(q.toLowerCase());
+    }
+    function populateTargets(filterText, preserveValue) {
+        const sel = document.getElementById("target");
+        const prev = preserveValue !== undefined ? preserveValue : sel.value;
+        sel.innerHTML = "";
+        const mGroup = document.createElement("optgroup");
+        mGroup.label = "Messier Catalog";
+        const oGroup = document.createElement("optgroup");
+        oGroup.label = "Other Popular Objects";
+        let count = 0;
+        MESSIER.forEach((o) => {
+            if (!matchesFilter(o, filterText)) return;
+            const opt = document.createElement("option");
+            opt.value = o.id;
+            opt.textContent = targetLabel(o);
+            mGroup.appendChild(opt);
+            count++;
+        });
+        OTHER_TARGETS.forEach((o) => {
+            if (!matchesFilter(o, filterText)) return;
+            const opt = document.createElement("option");
+            opt.value = o.id;
+            opt.textContent = targetLabel(o);
+            oGroup.appendChild(opt);
+            count++;
+        });
+        if (mGroup.children.length) sel.appendChild(mGroup);
+        if (oGroup.children.length) sel.appendChild(oGroup);
+        const customOpt = document.createElement("option");
+        customOpt.value = "CUSTOM";
+        customOpt.textContent = "Custom RA/Dec\u2026";
+        sel.appendChild(customOpt);
+
+        if (
+            prev &&
+            (ALL_TARGETS[prev]
+                ? matchesFilter(ALL_TARGETS[prev], filterText)
+                : prev === "CUSTOM")
+        ) {
+            sel.value = prev;
+        } else if (sel.querySelector("optgroup option, option")) {
+            sel.selectedIndex = 0;
+        }
+        document.getElementById("targetCount").textContent = filterText
+            ? `${count} match${count === 1 ? "" : "es"}`
+            : `${MESSIER.length + OTHER_TARGETS.length} objects available`;
+    }
+
+    const GROUPS = {
+        Ha: { base: 20, k: 20 },
+        OIII: { base: 25, k: 35 },
+        SII: { base: 15, k: 15 },
+        L: { base: 35, k: 55 },
+        RGB: { base: 45, k: 75 },
+    };
+    const FILTER_GROUP_LABEL = {
+        Ha: "Hα",
+        OIII: "OIII",
+        SII: "SII",
+        L: "Luminance",
+        RGB: "RGB (broadband)",
+    };
+
+    const DEFAULT_LAT = 41.0,
+        DEFAULT_LON = -111.89;
+    function getLat() {
+        const v = parseFloat(document.getElementById("siteLat").value);
+        return isNaN(v) ? DEFAULT_LAT : Math.max(-90, Math.min(90, v));
+    }
+    function getLon() {
+        const v = parseFloat(document.getElementById("siteLon").value);
+        return isNaN(v) ? DEFAULT_LON : Math.max(-180, Math.min(180, v));
+    }
+
+    function phaseNameFor(phase, fraction) {
+        if (fraction < 0.02) return "New Moon";
+        if (fraction > 0.98) return "Full Moon";
+        if (Math.abs(phase - 0.25) < 0.02) return "First Quarter";
+        if (Math.abs(phase - 0.75) < 0.02) return "Last Quarter";
+        if (phase < 0.25) return "Waxing Crescent";
+        if (phase < 0.5) return "Waxing Gibbous";
+        if (phase < 0.75) return "Waning Gibbous";
+        return "Waning Crescent";
+    }
+
+    function themeColor(varName) {
+        return getComputedStyle(document.getElementById("moonConsole"))
+            .getPropertyValue(varName)
+            .trim();
+    }
+    function drawMoonDisc(svg, fraction, phase) {
+        const r = 30,
+            cx = 36,
+            cy = 36;
+        const bright = themeColor("--accent-bright");
+        const hairline = themeColor("--hairline");
+        svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${hairline}" stroke-width="1"/>`;
+        if (fraction < 0.015) {
+            return;
+        } // new moon: outline only, nothing lit
+        if (fraction > 0.985) {
+            svg.innerHTML += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${bright}"/>`;
+            return;
+        }
+        const theta = phase * 2 * Math.PI;
+        const rx = Math.abs(Math.cos(theta)) * r;
+        let sweep1, sweep2;
+        if (phase < 0.25) {
+            sweep1 = 1;
+            sweep2 = 1;
+        } else if (phase < 0.5) {
+            sweep1 = 0;
+            sweep2 = 1;
+        } else if (phase < 0.75) {
+            sweep1 = 1;
+            sweep2 = 0;
+        } else {
+            sweep1 = 0;
+            sweep2 = 0;
+        }
+        const d = `M ${cx} ${cy - r} A ${rx} ${r} 0 0 ${sweep1} ${cx} ${cy + r} A ${r} ${r} 0 0 ${sweep2} ${cx} ${cy - r} Z`;
+        svg.innerHTML += `<path d="${d}" fill="${bright}"/>`;
+    }
+
+    function iconFor(kind) {
+        const bright = themeColor("--accent-bright");
+        const mid = themeColor("--accent-mid");
+        const dim = themeColor("--accent-dim");
+        if (kind === "good")
+            return `<circle cx="17" cy="17" r="13" fill="${bright}"/>`;
+        if (kind === "marginal")
+            return `<circle cx="17" cy="17" r="13" fill="none" stroke="${mid}" stroke-width="2.5"/><path d="M17 4 A13 13 0 0 1 17 30 Z" fill="${mid}"/>`;
+        return `<circle cx="17" cy="17" r="13" fill="none" stroke="${dim}" stroke-width="2"/><line x1="10" y1="10" x2="24" y2="24" stroke="${dim}" stroke-width="2"/><line x1="24" y1="10" x2="10" y2="24" stroke="${dim}" stroke-width="2"/>`;
+    }
+
+    function update() {
+        const targetSel = document.getElementById("target").value;
+        document.getElementById("customRow").style.display =
+            targetSel === "CUSTOM" ? "grid" : "none";
+
+        let target;
+        if (targetSel === "CUSTOM") {
+            const ra = parseFloat(document.getElementById("customRA").value);
+            const dec = parseFloat(document.getElementById("customDec").value);
+            if (isNaN(ra) || isNaN(dec)) return;
+            target = { name: "Custom", ra: ra * D2R, dec: dec * D2R };
+        } else {
+            const o = ALL_TARGETS[targetSel];
+            if (!o) return;
+            target = { name: targetLabel(o), ra: o.ra, dec: o.dec };
+        }
+
+        const dateStr = document.getElementById("obsDate").value;
+        const timeStr = document.getElementById("obsTime").value || "23:00";
+        if (!dateStr) return;
+        const dt = new Date(`${dateStr}T${timeStr}:00`);
+        if (isNaN(dt.getTime())) return;
+
+        const illum = moonIllumination(dt);
+        const alt = moonAltitude(dt, illum.ra, illum.dec, getLat(), getLon());
+        const sep = angSep(illum.ra, illum.dec, target.ra, target.dec);
+
+        const filterKey = document.getElementById("filter").value;
+        const g = GROUPS[filterKey];
+        const threshold = g.base + g.k * illum.fraction;
+
+        document.getElementById("phaseName").textContent = phaseNameFor(
+            illum.phase,
+            illum.fraction,
+        );
+        document.getElementById("illumPct").textContent =
+            (illum.fraction * 100).toFixed(0) + "%";
+        document.getElementById("moonAlt").textContent =
+            alt.toFixed(1) + "°" + (alt < 0 ? "  (below horizon)" : "");
+        document.getElementById("moonRD").innerHTML = raDecStr(
+            illum.ra,
+            illum.dec,
+        );
+        document.getElementById("targRD").innerHTML =
+            raDecStr(target.ra, target.dec) +
+            ` <small>(${target.name})</small>`;
+        document.getElementById("sepVal").textContent = sep.toFixed(1) + "°";
+        document.getElementById("threshVal").innerHTML =
+            threshold.toFixed(0) +
+            "° <small>(" +
+            FILTER_GROUP_LABEL[filterKey] +
+            ")</small>";
+
+        drawMoonDisc(
+            document.getElementById("moonDisc"),
+            illum.fraction,
+            illum.phase,
+        );
+
+        const gaugeMax = Math.max(150, threshold * 1.6, sep * 1.15);
+        document.getElementById("gaugeMax").textContent =
+            Math.round(gaugeMax) + "°";
+        document.getElementById("gaugeFill").style.width =
+            Math.min(100, (sep / gaugeMax) * 100) + "%";
+        document.getElementById("gaugeMarker").style.left =
+            Math.min(100, (threshold / gaugeMax) * 100) + "%";
+
+        const belowHorizon = alt < 0;
+        const ratio = sep / threshold;
+        let verdict, title, desc;
+        if (belowHorizon) {
+            verdict = "good";
+            title = "GOOD — Moon Below Horizon";
+            desc = `Moon altitude is ${alt.toFixed(1)}°. It isn't a factor tonight regardless of separation or filter.`;
+        } else if (ratio >= 1.3) {
+            verdict = "good";
+            title = "GOOD";
+            desc = `Separation (${sep.toFixed(0)}°) comfortably clears the recommended minimum (${threshold.toFixed(0)}°) for ${FILTER_GROUP_LABEL[filterKey]} at ${(illum.fraction * 100).toFixed(0)}% illumination.`;
+        } else if (ratio >= 1.0) {
+            verdict = "marginal";
+            title = "MARGINAL";
+            desc = `Separation (${sep.toFixed(0)}°) just clears the ${threshold.toFixed(0)}° minimum. Expect some background gradient — plan on background extraction and check the histogram left edge before committing full integration.`;
+        } else {
+            verdict = "poor";
+            title = "POOR — Reconsider";
+            desc = `Separation (${sep.toFixed(0)}°) is under the ${threshold.toFixed(0)}° minimum for ${FILTER_GROUP_LABEL[filterKey]} at this illumination. Expect gradients and reduced SNR${filterKey === "RGB" || filterKey === "L" ? " — consider swapping to Hα or SII tonight instead." : "."}`;
+        }
+        const box = document.getElementById("verdictBox");
+        box.className = "verdict " + verdict;
+        document.getElementById("verdictTitle").textContent = title;
+        document.getElementById("verdictDesc").textContent = desc;
+        document.getElementById("verdictIcon").innerHTML = iconFor(verdict);
+    }
+
+    [
+        "target",
+        "filter",
+        "customRA",
+        "customDec",
+        "obsDate",
+        "obsTime",
+        "siteLat",
+        "siteLon",
+    ].forEach((id) => {
+        document.getElementById(id).addEventListener("input", update);
+        document.getElementById(id).addEventListener("change", update);
+    });
+
+    function safeGetItem(key) {
+        try {
+            return window.localStorage.getItem(key);
+        } catch (err) {
+            return null;
+        }
+    }
+    function safeSetItem(key, val) {
+        try {
+            window.localStorage.setItem(key, val);
+        } catch (err) {
+            /* ignore, e.g. sandboxed context */
+        }
+    }
+    ["siteLat", "siteLon"].forEach((id) => {
+        document.getElementById(id).addEventListener("change", () => {
+            safeSetItem(id, document.getElementById(id).value);
+        });
+    });
+
+    document.getElementById("targetFilter").addEventListener("input", (e) => {
+        populateTargets(e.target.value);
+        update();
+    });
+
+    document.getElementById("refToggle").addEventListener("click", () => {
+        document.getElementById("refToggle").classList.toggle("open");
+        document.getElementById("refBody").classList.toggle("open");
+    });
+
+    /* ---- Custom date picker (calendar popover) ---- */
+    function pad2(n) {
+        return String(n).padStart(2, "0");
+    }
+
+    let calViewYear, calViewMonth, calSelectedDateStr;
+    const MONTH_NAMES = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    const MONTH_ABBR = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
+    const DOW_NAMES = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+    const DOW_ABBR3 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    function setDateValue(dateStr) {
+        calSelectedDateStr = dateStr;
+        const [y, m, d] = dateStr.split("-").map(Number);
+        calViewYear = y;
+        calViewMonth = m - 1;
+        const hidden = document.getElementById("obsDate");
+        hidden.value = dateStr;
+        document.getElementById("dateDisplayBtn").textContent =
+            `${DOW_ABBR3[new Date(y, m - 1, d).getDay()]}, ${MONTH_ABBR[m - 1]} ${d}, ${y}`;
+        hidden.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    function renderCalendar() {
+        const pop = document.getElementById("calendarPopover");
+        const firstOfMonth = new Date(calViewYear, calViewMonth, 1);
+        const startDow = firstOfMonth.getDay();
+        const daysInMonth = new Date(
+            calViewYear,
+            calViewMonth + 1,
+            0,
+        ).getDate();
+        const todayStr = fmtDate(new Date());
+
+        let html = `<div class="cal-header">
+      <button type="button" id="calPrev">&#8249;</button>
+      <div class="cal-title">${MONTH_NAMES[calViewMonth]} ${calViewYear}</div>
+      <button type="button" id="calNext">&#8250;</button>
+    </div>
+    <div class="cal-grid">`;
+        DOW_NAMES.forEach((d) => (html += `<div class="cal-dow">${d}</div>`));
+        for (let i = 0; i < startDow; i++)
+            html += `<div class="cal-day other-month">&nbsp;</div>`;
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dateStr = `${calViewYear}-${pad2(calViewMonth + 1)}-${pad2(d)}`;
+            let cls = "cal-day";
+            if (dateStr === todayStr) cls += " today";
+            if (dateStr === calSelectedDateStr) cls += " selected";
+            html += `<button type="button" class="${cls}" data-date="${dateStr}">${d}</button>`;
+        }
+        html += `</div>`;
+        pop.innerHTML = html;
+
+        document.getElementById("calPrev").addEventListener("click", (e) => {
+            e.stopPropagation();
+            calViewMonth--;
+            if (calViewMonth < 0) {
+                calViewMonth = 11;
+                calViewYear--;
+            }
+            renderCalendar();
+        });
+        document.getElementById("calNext").addEventListener("click", (e) => {
+            e.stopPropagation();
+            calViewMonth++;
+            if (calViewMonth > 11) {
+                calViewMonth = 0;
+                calViewYear++;
+            }
+            renderCalendar();
+        });
+        pop.querySelectorAll(".cal-day[data-date]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                setDateValue(btn.dataset.date);
+                pop.style.display = "none";
+                update();
+            });
+        });
+    }
+
+    function toggleCalendar() {
+        const pop = document.getElementById("calendarPopover");
+        const isOpen = pop.style.display === "block";
+        pop.style.display = isOpen ? "none" : "block";
+        if (!isOpen) renderCalendar();
+    }
+    document.getElementById("dateDisplayBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleCalendar();
+    });
+    document.getElementById("dateBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleCalendar();
+    });
+    document.addEventListener("click", (e) => {
+        const pop = document.getElementById("calendarPopover");
+        if (
+            pop.style.display === "block" &&
+            !pop.contains(e.target) &&
+            e.target.id !== "dateDisplayBtn" &&
+            e.target.id !== "dateBtn"
+        ) {
+            pop.style.display = "none";
+        }
+    });
+
+    /* ---- Custom time picker (hour / minute selects) ---- */
+    function populateHourMinuteSelects() {
+        const hourSel = document.getElementById("obsHour");
+        const minSel = document.getElementById("obsMinute");
+        for (let h = 0; h < 24; h++) {
+            const opt = document.createElement("option");
+            opt.value = pad2(h);
+            opt.textContent = pad2(h);
+            hourSel.appendChild(opt);
+        }
+        for (let m = 0; m < 60; m++) {
+            const opt = document.createElement("option");
+            opt.value = pad2(m);
+            opt.textContent = pad2(m);
+            minSel.appendChild(opt);
+        }
+    }
+    function setTimeValue(hh, mm) {
+        document.getElementById("obsHour").value = pad2(hh);
+        document.getElementById("obsMinute").value = pad2(mm);
+        syncTimeHidden();
+    }
+    function syncTimeHidden() {
+        const hh = document.getElementById("obsHour").value;
+        const mm = document.getElementById("obsMinute").value;
+        const hidden = document.getElementById("obsTime");
+        hidden.value = `${hh}:${mm}`;
+        hidden.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    document
+        .getElementById("obsHour")
+        .addEventListener("change", syncTimeHidden);
+    document
+        .getElementById("obsMinute")
+        .addEventListener("change", syncTimeHidden);
+
+    /* ---- Time-of-night presets ---- */
+    document.getElementById("presetRow").addEventListener("click", (e) => {
+        const btn = e.target.closest(".preset-btn");
+        if (!btn) return;
+        const preset = btn.dataset.preset;
+        const dateStr = document.getElementById("obsDate").value;
+        if (!dateStr) return;
+
+        let t;
+        if (preset === "dusk" || preset === "dawn") {
+            const tw = twilightTimes(dateStr, getLat(), getLon());
+            t = preset === "dusk" ? tw.dusk : tw.dawn;
+            if (!t) return;
+        } else {
+            const offsetHours = parseInt(preset, 10);
+            const [y, m, dd] = dateStr.split("-").map(Number);
+            t = new Date(y, m - 1, dd, 0, 0, 0);
+            t.setHours(t.getHours() + offsetHours);
+        }
+        setDateValue(fmtDate(t));
+        setTimeValue(t.getHours(), t.getMinutes());
+        update();
+    });
+
+    // init
+    document.getElementById("siteLat").value =
+        safeGetItem("siteLat") || DEFAULT_LAT;
+    document.getElementById("siteLon").value =
+        safeGetItem("siteLon") || DEFAULT_LON;
+    populateTargets("");
+    document.getElementById("target").value = "M76";
+    populateHourMinuteSelects();
+    const today = new Date();
+    setDateValue(fmtDate(today));
+    setTimeValue(23, 0);
+    update();
+</script>
