@@ -38,7 +38,7 @@ jobs:
           bundle exec jekyll build --verbose
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: _site
 
