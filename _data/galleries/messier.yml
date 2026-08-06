@@ -346,16 +346,16 @@ pictures:
     image_info: 9x120"
     checked: true
   - filename: m30
-    original: m30-6096x4056.jpg
+    original: m30-3578x1885.jpg
     sizes:
-      - m30-300x200.jpg
+      - m30-300x158.jpg
     sort_id: 30
-    thumbnail: m30-300x200.jpg
+    thumbnail: m30-300x158.jpg
     title: M30
-    date: 13 Oct 2017
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 40x60"
+    date: 6 Aug 2026 (00:00 - 03:30)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 34x20" Red | 34x20" Green | 34x20" Blue
     checked: true
   - filename: m31
     original: m31-6024x4022.jpg
