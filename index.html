@@ -8,7 +8,7 @@ layout: default
     src="https://astrosphericcloudstorage.blob.core.windows.net/embed/astrosphericembed.js"
 ></script>
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/home.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/home.css" />
 
 <!-- About Me -->
 <div class="home-section">
@@ -65,6 +65,20 @@ layout: default
         </div>
 
         <div class="setup-grid">
+            <div
+                class="setup-item setup-item-with-image"
+                style="grid-column: 1 / -1; border-right: none"
+            >
+                <div class="setup-item-image">
+                    <img src="/assets/obsy.png" width="128" />
+                </div>
+
+                <div>
+                    <div class="setup-item-label">Observatory</div>
+                    <div class="setup-item-value">8ft Exploradome</div>
+                    <div class="setup-item-detail">MaxDome II Dome Control</div>
+                </div>
+            </div>
             <div class="setup-item">
                 <div class="setup-item-icon">🔭</div>
                 <div class="setup-item-label">Primary OTA</div>
@@ -117,16 +131,6 @@ layout: default
                 <div class="setup-item-detail">
                     30mm f/4 guidescope<br />ZWO ASI468 guide camera
                 </div>
-            </div>
-
-            <div
-                class="setup-item"
-                style="grid-column: 1 / -1; border-right: none"
-            >
-                <div class="setup-item-icon">🏠</div>
-                <div class="setup-item-label">Observatory</div>
-                <div class="setup-item-value">8ft Exploradome</div>
-                <div class="setup-item-detail">MaxDome II Dome Control</div>
             </div>
         </div>
     </div>

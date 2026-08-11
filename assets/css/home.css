@@ -184,6 +184,20 @@
     line-height: 1.5;
 }
 
+.setup-item-with-image {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.setup-item-image {
+    flex-shrink: 0;
+}
+
+.setup-item-image img {
+    display: block;
+}
+
 @media (max-width: 540px) {
     .setup-grid {
         grid-template-columns: 1fr;
@@ -229,7 +243,9 @@
     background: #1e3050;
     border: 1px solid #2e4870;
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+    transition:
+        background 0.2s,
+        border-color 0.2s;
     flex-shrink: 0;
 }
 
