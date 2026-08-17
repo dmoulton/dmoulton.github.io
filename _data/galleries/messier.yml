@@ -174,21 +174,22 @@ pictures:
     sort_id: 15
     thumbnail: m15-300x169.jpg
     title: M15
-    date: '12 Jun 2026 (00:30 - 02:00) '
+    date: "12 Jun 2026 (00:30 - 02:00) "
     location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 18x60" R | 18x60" G | 15x60" B
     checked: true
   - filename: m16
-    original: m16-3922x2750.jpg
-    sizes: []
+    original: m16-5029x3052.jpg
+    sizes:
+      - m16-300x182.jpg
     sort_id: 16
-    thumbnail: m16-thumbnail.jpg
+    thumbnail: m16-300x182.jpg
     title: M16 - The Eagle
     date: 15 Jun 2023 (23:41 - 04:40)
     location: My Backyard
     equipment: AT130EDT | Canon T6i | UV/IR Cut
-    image_info: 50x300"
+    image_info: 56x300"
     checked: true
   - filename: m17
     original: m17-6024x4022.jpg
@@ -281,7 +282,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: '9 Jun 2018 (00:56 - 01:28) '
+    date: "9 Jun 2018 (00:56 - 01:28) "
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -353,7 +354,7 @@ pictures:
     thumbnail: m30-300x158.jpg
     title: M30
     date: 6 Aug 2026 (00:00 - 03:30)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 34x20" Red | 34x20" Green | 34x20" Blue
     checked: true
@@ -621,7 +622,7 @@ pictures:
     thumbnail: m54-300x156.jpg
     title: M54
     date: 23 Jul 2026 (22:45 - 00:45)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 24x30" Red | 22x30" Green | 21x30" Blue
     checked: true
@@ -633,7 +634,7 @@ pictures:
     thumbnail: m55-300x159.jpg
     title: M55
     date: 31 Jul 2026 (23:30 - 02:00)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 33x20" Red | 34x20" Green | 33x20" Blue
     checked: true
@@ -865,7 +866,7 @@ pictures:
     sort_id: 76
     thumbnail: m76-300x200.jpg
     title: M76
-    date: ''
+    date: ""
     location: null
     equipment: null
     image_info: null
@@ -1182,7 +1183,7 @@ pictures:
     thumbnail: m104-thumbnail.jpg
     title: M104
     date: 27 Apr 2020 (22:20 - 23:22)
-    location: Pit 'n Pole Observing Site 
+    location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 30x120"
     checked: true
