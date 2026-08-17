@@ -36,11 +36,11 @@ pictures:
     image_info: 28x60"
     checked: true
   - filename: m4
-    original: m4-4339x3101.jpg
+    original: m4-4356x3127.jpg
     sizes:
-      - m4-300x214.jpg
+      - m4-300x215.jpg
     sort_id: 4
-    thumbnail: m4-300x214.jpg
+    thumbnail: m4-300x215.jpg
     title: M4
     date: 30 Jun 2022 (23:23 - 00:25)
     location: Joshua Tree National Park
