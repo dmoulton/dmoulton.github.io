@@ -174,7 +174,7 @@ pictures:
     sort_id: 15
     thumbnail: m15-300x169.jpg
     title: M15
-    date: "12 Jun 2026 (00:30 - 02:00) "
+    date: '12 Jun 2026 (00:30 - 02:00) '
     location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 18x60" R | 18x60" G | 15x60" B
@@ -282,7 +282,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: "9 Jun 2018 (00:56 - 01:28) "
+    date: '9 Jun 2018 (00:56 - 01:28) '
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -354,7 +354,7 @@ pictures:
     thumbnail: m30-300x158.jpg
     title: M30
     date: 6 Aug 2026 (00:00 - 03:30)
-    location: "Heatheridge Observatory "
+    location: 'Heatheridge Observatory '
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 34x20" Red | 34x20" Green | 34x20" Blue
     checked: true
@@ -411,40 +411,40 @@ pictures:
     image_info: 150x20"
     checked: true
   - filename: m36
-    original: m36-6096x4056.jpg
+    original: m36-996x1411.jpg
     sizes:
-      - m36-300x200.jpg
+      - m36-300x425.jpg
     sort_id: 36
-    thumbnail: m36-300x200.jpg
+    thumbnail: m36-300x425.jpg
     title: M36
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 17 Aug 2026 (03:30 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 143x20"
     checked: true
   - filename: m37
-    original: m37-6096x4056.jpg
+    original: m37-989x1796.jpg
     sizes:
-      - m37-300x200.jpg
+      - m37-300x545.jpg
     sort_id: 37
-    thumbnail: m37-300x200.jpg
+    thumbnail: m37-300x545.jpg
     title: M37
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 16 Aug 2026 (04:00 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 102x20"
     checked: true
   - filename: m38
-    original: m38-6096x4056.jpg
+    original: m38-987x1832.jpg
     sizes:
-      - m38-300x200.jpg
+      - m38-300x557.jpg
     sort_id: 38
-    thumbnail: m38-300x200.jpg
+    thumbnail: m38-300x557.jpg
     title: M38
-    date: null
-    location: null
-    equipment: null
-    image_info: null
+    date: 16 Aug 2026 (03:00 - 04:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 90x20"
     checked: true
   - filename: m39
     original: m39-6024x4022.jpg
@@ -622,7 +622,7 @@ pictures:
     thumbnail: m54-300x156.jpg
     title: M54
     date: 23 Jul 2026 (22:45 - 00:45)
-    location: "Heatheridge Observatory "
+    location: 'Heatheridge Observatory '
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 24x30" Red | 22x30" Green | 21x30" Blue
     checked: true
@@ -634,7 +634,7 @@ pictures:
     thumbnail: m55-300x159.jpg
     title: M55
     date: 31 Jul 2026 (23:30 - 02:00)
-    location: "Heatheridge Observatory "
+    location: 'Heatheridge Observatory '
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 33x20" Red | 34x20" Green | 33x20" Blue
     checked: true
@@ -860,16 +860,16 @@ pictures:
     image_info: 22x20” R | 23x20” G | 23x20” B
     checked: true
   - filename: m76
-    original: m76-6096x4056.jpg
+    original: m76-3613x1898.jpg
     sizes:
-      - m76-300x200.jpg
+      - m76-300x158.jpg
     sort_id: 76
-    thumbnail: m76-300x200.jpg
+    thumbnail: m76-300x158.jpg
     title: M76
-    date: ""
-    location: null
-    equipment: null
-    image_info: null
+    date: 03 Jul 2026 (03:00 - 04:00) | 30 Jul 2026 (23:30 - 04:30) | 02 Aug 2026 (23:00 - 04:45) | 14 Aug 2026 (23:00 - 05:00) | 15 Aug 2026 (23:00 - 05:00) | 16 Aug 2026 (00:30 - 05:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 61x480" H | 79x480" O | 68x20" R | 66x20" G | 67x20" B
     checked: true
   - filename: m77
     original: m77-2064x2180.jpg
