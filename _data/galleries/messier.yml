@@ -860,16 +860,16 @@ pictures:
     image_info: 22x20” R | 23x20” G | 23x20” B
     checked: true
   - filename: m76
-    original: m76-6096x4056.jpg
+    original: m76-3613x1898.jpg
     sizes:
-      - m76-300x200.jpg
+      - m76-300x158.jpg
     sort_id: 76
-    thumbnail: m76-300x200.jpg
+    thumbnail: m76-300x158.jpg
     title: M76
-    date: ''
-    location: null
-    equipment: null
-    image_info: null
+    date: 03 Jul 2026 (03:00 - 04:00) | 30 Jul 2026 (23:30 - 04:30) | 02 Aug 2026 (23:00 - 04:45) | 14 Aug 2026 (23:00 - 05:00) | 15 Aug 2026 (23:00 - 05:00) | 16 Aug 2026 (00:30 - 05:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 61x480" H | 79x480" O | 68x20" R | 66x20" G | 67x20" B
     checked: true
   - filename: m77
     original: m77-2064x2180.jpg
