@@ -174,7 +174,7 @@ pictures:
     sort_id: 15
     thumbnail: m15-300x169.jpg
     title: M15
-    date: '12 Jun 2026 (00:30 - 02:00) '
+    date: "12 Jun 2026 (00:30 - 02:00) "
     location: Heatheridge Observatory
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 18x60" R | 18x60" G | 15x60" B
@@ -282,7 +282,7 @@ pictures:
     sort_id: 24
     thumbnail: m24-300x200.jpg
     title: M24
-    date: '9 Jun 2018 (00:56 - 01:28) '
+    date: "9 Jun 2018 (00:56 - 01:28) "
     location: Pit 'n Pole Observing Site
     equipment: C 9.25 | Canon T6i
     image_info: 28x60"
@@ -354,7 +354,7 @@ pictures:
     thumbnail: m30-300x158.jpg
     title: M30
     date: 6 Aug 2026 (00:00 - 03:30)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 34x20" Red | 34x20" Green | 34x20" Blue
     checked: true
@@ -622,7 +622,7 @@ pictures:
     thumbnail: m54-300x156.jpg
     title: M54
     date: 23 Jul 2026 (22:45 - 00:45)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 24x30" Red | 22x30" Green | 21x30" Blue
     checked: true
@@ -634,7 +634,7 @@ pictures:
     thumbnail: m55-300x159.jpg
     title: M55
     date: 31 Jul 2026 (23:30 - 02:00)
-    location: 'Heatheridge Observatory '
+    location: "Heatheridge Observatory "
     equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
     image_info: 33x20" Red | 34x20" Green | 33x20" Blue
     checked: true
@@ -1034,11 +1034,11 @@ pictures:
     image_info: 158x20"
     checked: true
   - filename: m92
-    original: m92-2160x3840.jpg
+    original: m92-1666x2612.jpg
     sizes:
-      - m92-300x533.jpg
+      - m92-300x470.jpg
     sort_id: 92
-    thumbnail: m92-300x533.jpg
+    thumbnail: m92-300x470.jpg
     title: M92
     date: 23 Sep 2025 (22:00 - 22:20)
     location: My Backyard
