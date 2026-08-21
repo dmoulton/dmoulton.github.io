@@ -3,18 +3,26 @@ layout: default
 title: My Galleries
 permalink: /astrophotography/
 nav_order: 2
+no_menu_item: true
 ---
 
 <h1 class="page-title">{{ page.title }}</h1>
-<p style="color:#6b8299;margin-bottom:32px;">These are my attempts at astrophotography. Information on my setup can be found <a href="/my-setup">here</a>.</p>
+<p style="color: #6b8299; margin-bottom: 32px">
+    These are my attempts at astrophotography. Information on my setup can be
+    found <a href="/my-setup">here</a>.
+</p>
 
 <div class="gallery-overview">
-  {% for gallery in site.data.galleries.overview %}
-    <a class="gallery-card" href="{{ site.baseurl }}/astrophotography/{{ gallery.directory }}.html">
-      <img
-        src="{{ site.baseurl }}/assets/astrophotography/{% if gallery.picture_path %}{{ gallery.picture_path }}{% else %}{{ gallery.directory }}{% endif %}/{{ gallery.preview.thumbnail }}"
-        alt="{{ gallery.title }}" />
-      <div class="gallery-card-title">{{ gallery.title }}</div>
+    {% for gallery in site.data.galleries.overview %}
+    <a
+        class="gallery-card"
+        href="{{ site.baseurl }}/astrophotography/{{ gallery.directory }}.html"
+    >
+        <img
+            src="{{ site.baseurl }}/assets/astrophotography/{% if gallery.picture_path %}{{ gallery.picture_path }}{% else %}{{ gallery.directory }}{% endif %}/{{ gallery.preview.thumbnail }}"
+            alt="{{ gallery.title }}"
+        />
+        <div class="gallery-card-title">{{ gallery.title }}</div>
     </a>
-  {% endfor %}
+    {% endfor %}
 </div>

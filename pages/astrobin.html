@@ -1,75 +1,151 @@
 ---
 layout: default
-title: Latest Astrobin
+title: Astrobin Gallery
 comments: false
 permalink: /my-astrobin/
 published: true
 no_menu_item: false
-nav_order: 1
+nav_order: 2
 support: [jquery, gallery]
 ---
 
 <style>
-#image-gallery .image-wrapper { padding-right: 5px; }
-#image-gallery .gallery-sizer  { width: 23%; }
+    #image-gallery .image-wrapper {
+        padding-right: 5px;
+    }
+    #image-gallery .gallery-sizer {
+        width: 23%;
+    }
 </style>
 
 <h1 class="page-title">{{ page.title }}</h1>
 <p class="astrobin-intro">
-  My latest uploads to <a href="https://www.astrobin.com/users/dmoulton/" target="_blank" rel="noopener">Astrobin</a>.
-  Click any image to view it on Astrobin.
+    My uploads to
+    <a
+        href="https://www.astrobin.com/users/dmoulton/"
+        target="_blank"
+        rel="noopener"
+        >Astrobin</a
+    >. Click any image to view it on Astrobin.
 </p>
 
+<p id="astrobin-pagination" class="astrobin-pagination"></p>
+
 <div id="image-gallery" class="image-gallery">
-  <div id="gallery-sizer" class="gallery-sizer"></div>
+    <div id="gallery-sizer" class="gallery-sizer"></div>
 </div>
 
 <script>
-var request = new XMLHttpRequest();
-request.open('GET', 'https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key={{ site.astrobin_key }}&api_secret={{ site.astrobin_secret }}&format=json', true);
+    // Read the current offset from this page's own URL (?offset=N), default 0
+    var currentOffset =
+        parseInt(
+            new URLSearchParams(window.location.search).get("offset"),
+            10,
+        ) || 0;
 
-request.onload = function() {
-  if (request.status < 200 || request.status >= 400) return;
-  var data = JSON.parse(this.response);
-  var gallery = document.getElementById('image-gallery');
+    var request = new XMLHttpRequest();
+    request.open(
+        "GET",
+        "https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key={{ site.astrobin_key }}&api_secret={{ site.astrobin_secret }}&limit=25&offset=" +
+            currentOffset +
+            "&format=json",
+        true,
+    );
 
-  data['objects'].forEach(function(image) {
-    var ident = image.hash || image.id;
-    var href  = 'https://www.astrobin.com/' + ident;
+    request.onload = function () {
+        if (request.status < 200 || request.status >= 400) return;
+        var data = JSON.parse(this.response);
+        var gallery = document.getElementById("image-gallery");
 
-    var wrapper = document.createElement('div');
-    wrapper.className = 'image-wrapper';
+        // Build previous/next links from meta, pointing back at this same page
+        var meta = data["meta"] || {};
+        var pagination = document.getElementById("astrobin-pagination");
 
-    var a = document.createElement('a');
-    a.className = 'image';
-    a.href = href;
-    a.target = '_blank';
-    a.rel = 'noopener';
+        function offsetFromApiUrl(apiUrl) {
+            // apiUrl is a relative API path like "/api/v1/image/?...&offset=50"
+            var params = new URLSearchParams(apiUrl.split("?")[1] || "");
+            return params.get("offset");
+        }
 
-    var img = document.createElement('img');
-    img.src = image.url_regular;
-    img.alt = image.title || '';
-    img.title = image.title || '';
+        var links = [];
+        var limit = meta.limit || 25;
+        var totalCount = meta.total_count || 0;
 
-    a.appendChild(img);
-    wrapper.appendChild(a);
-    gallery.appendChild(wrapper);
-  });
+        // Offset of the last page: the highest multiple of limit below total_count
+        var lastOffset = Math.max(
+            0,
+            Math.floor((totalCount - 1) / limit) * limit,
+        );
 
-  // Init Isotope masonry after images are added
-  $(document).ready(function() {
-    var $grid = $('#image-gallery').isotope({
-      percentPosition: true,
-      columnWidth: '#gallery-sizer',
-      itemSelector: '.image-wrapper',
-      layoutMode: 'masonry'
-    });
+        if (meta.previous) {
+            links.push(
+                '<a href="?offset=0" class="astrobin-first">&laquo; First</a>',
+            );
 
-    $grid.imagesLoaded().progress(function() {
-      $grid.isotope('layout');
-    });
-  });
-};
+            var prevOffset = offsetFromApiUrl(meta.previous);
+            links.push(
+                '<a href="?offset=' +
+                    prevOffset +
+                    '" class="astrobin-prev">&lsaquo; Previous</a>',
+            );
+        }
 
-request.send();
+        if (meta.next) {
+            var nextOffset = offsetFromApiUrl(meta.next);
+            links.push(
+                '<a href="?offset=' +
+                    nextOffset +
+                    '" class="astrobin-next">Next &rsaquo;</a>',
+            );
+
+            links.push(
+                '<a href="?offset=' +
+                    lastOffset +
+                    '" class="astrobin-last">Last &raquo;</a>',
+            );
+        }
+
+        if (pagination) {
+            pagination.innerHTML = links.join(" | ");
+        }
+
+        data["objects"].forEach(function (image) {
+            var ident = image.hash || image.id;
+            var href = "https://www.astrobin.com/" + ident;
+
+            var wrapper = document.createElement("div");
+            wrapper.className = "image-wrapper";
+
+            var a = document.createElement("a");
+            a.className = "image";
+            a.href = href;
+            a.target = "_blank";
+            a.rel = "noopener";
+
+            var img = document.createElement("img");
+            img.src = image.url_regular;
+            img.alt = image.title || "";
+            img.title = image.title || "";
+
+            a.appendChild(img);
+            wrapper.appendChild(a);
+            gallery.appendChild(wrapper);
+        });
+
+        // Init Isotope masonry after images are added
+        $(document).ready(function () {
+            var $grid = $("#image-gallery").isotope({
+                percentPosition: true,
+                columnWidth: "#gallery-sizer",
+                itemSelector: ".image-wrapper",
+                layoutMode: "masonry",
+            });
+
+            $grid.imagesLoaded().progress(function () {
+                $grid.isotope("layout");
+            });
+        });
+    };
+
+    request.send();
 </script>
