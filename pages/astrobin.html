@@ -25,7 +25,9 @@ support: [jquery, gallery]
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 40px;
+        /* extra top padding clears the site's sticky header (64px), which
+           otherwise overlaps the top of a vertically-centered image */
+        padding: 104px 40px 40px;
         box-sizing: border-box;
         background: rgba(0, 0, 0, 0.85);
     }
@@ -43,14 +45,14 @@ support: [jquery, gallery]
         position: relative;
         display: inline-block;
         max-width: 100%;
-        max-height: calc(100vh - 120px);
+        max-height: calc(100vh - 184px);
     }
     .astrobin-lightbox-image-wrap img {
         display: block;
         width: auto;
         height: auto;
         max-width: 100%;
-        max-height: calc(100vh - 120px);
+        max-height: calc(100vh - 184px);
     }
     .astrobin-lightbox-link {
         margin-top: 12px;
@@ -69,13 +71,13 @@ support: [jquery, gallery]
     }
     .astrobin-lightbox-close {
         position: absolute;
-        top: 28px;
-        right: 8px;
+        top: 0;
+        right: 0;
         width: 32px;
         height: 32px;
         border: none;
         border-radius: 50%;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.8);
         color: #fff;
         font-size: 22px;
         line-height: 1;
@@ -101,6 +103,13 @@ support: [jquery, gallery]
     .astrobin-pagination-controls button:disabled {
         cursor: default;
         opacity: 0.5;
+    }
+
+    .astrobin-attribution {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
     }
 </style>
 
@@ -157,6 +166,11 @@ support: [jquery, gallery]
     </div>
 </div>
 
+
+<p class="astrobin-attribution">
+    This product uses the AstroBin API but is not endorsed or certified by AstroBin.
+</p>
+
 <script>
     // The "Featured" collection on Astrobin - only these images are shown
     // here; the rest of the catalog is linked out to Astrobin itself.
@@ -164,7 +178,7 @@ support: [jquery, gallery]
 
     var apiKey = "{{ site.astrobin_key }}";
     var apiSecret = "{{ site.astrobin_secret }}";
-    var IMAGES_PER_PAGE = 25;
+    var IMAGES_PER_PAGE = 20;
 
     var gallery = document.getElementById("image-gallery");
     var paginationControls = document.querySelectorAll(
