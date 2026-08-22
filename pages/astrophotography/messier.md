@@ -7,7 +7,7 @@ permalink: /astrophotography/messier
 nav_order: 1
 ---
 
-I have an on-going project to image all objects in the Messier catalog. The images reflect both my present and past skill level. I add images as I create them, and sometimes update existing images when I have one that is better. It will probably take a few years to capture all 110 objects.
+I have an on-going project to image all objects in the Messier catalog. The images reflect both my present and past skill level. I add images as I create them, and sometimes update existing images when I have one that is better. All 110 objects have now been imaged, a project that took 9 years of on and off work.
 
 [Astronomical League Messier Imaging Program log](./messier-list.html)
 
