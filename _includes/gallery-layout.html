@@ -25,7 +25,6 @@
     .lg-info-btn {
         display: inline-block;
         float: right;
-        cursor: pointer;
         padding: 0 14px;
         line-height: 47px;
         font-size: 1.3rem;
@@ -50,7 +49,8 @@
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
     }
-    .lg-info-popover.lg-info-open {
+    .lg-info-btn:hover + .lg-info-popover,
+    .lg-info-popover:hover {
         display: block;
     }
     .lg-info-popover table {
@@ -172,40 +172,28 @@
           var idx = $('.lg-current').index('.lg-item');
           if (idx < 0) idx = 0;
           $('.lg-info-popover').html(buildPopoverHtml(imageData{% if include.id_number %}{{ include.id_number }}{% endif %}[idx] || {}));
-
-          $(document).on('click.lginfo{% if include.id_number %}{{ include.id_number }}{% endif %}', '.lg-info-btn', function(e) {
-            e.stopPropagation();
-            $('.lg-info-popover').toggleClass('lg-info-open');
-          });
-          $(document).on('click.lginfodismiss{% if include.id_number %}{{ include.id_number }}{% endif %}', '.lg-outer', function() {
-            $('.lg-info-popover').removeClass('lg-info-open');
-          });
         });
 
         $gallery{% if include.id_number %}{{ include.id_number }}{% endif %}.on('onAfterSlide.lg', function(e, prevIndex, index) {
-          $('.lg-info-popover')
-            .removeClass('lg-info-open')
-            .html(buildPopoverHtml(imageData{% if include.id_number %}{{ include.id_number }}{% endif %}[index] || {}));
-        });
-
-        $gallery{% if include.id_number %}{{ include.id_number }}{% endif %}.on('onBeforeClose.lg', function() {
-          $(document).off('click.lginfo{% if include.id_number %}{{ include.id_number }}{% endif %} click.lginfodismiss{% if include.id_number %}{{ include.id_number }}{% endif %}');
+          $('.lg-info-popover').html(buildPopoverHtml(imageData{% if include.id_number %}{{ include.id_number }}{% endif %}[index] || {}));
         });
       });
 
       // init isotope
+      // fitRows (not masonry) so images lay out strictly left-to-right,
+      // top-to-bottom in the order they appear in the gallery's yml file -
+      // masonry's shortest-column packing would reorder them based on
+      // each image's height.
       var $grid{% if include.id_number %}{{ include.id_number }}{% endif %} = $('#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}').isotope({
         percentPosition: true,
-        columnWidth: '#gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}',
         itemSelector: '.image-wrapper',
-        layoutMode: "masonry",
-        masonry: { gutter: 10 }
+        layoutMode: "fitRows"
       });
 
       // layout Isotope after each image loads
       $(document).ready(function() {
         $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.imagesLoaded().progress(function() {
-          $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.masonry();
+          $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.isotope('layout');
         });
       });
     })();
