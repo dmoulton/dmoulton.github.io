@@ -1,1455 +1,1455 @@
 picture_path: messier
 pictures:
-- filename: m1
-  original: m1-3119x1965.jpg
-  sizes:
-  - m1-300x291.jpg
-  sort_id: 1
-  thumbnail: m1-300x291.jpg
-  title: M1
-  constellation: Taurus
-  notes: ''
-  date: 25 Sep 2023 (03:03 - 05:55)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | Optolong L-eNhance
-  image_info: 69x300"
-  checked: true
-- filename: m2
-  original: m2-4877x2993.jpg
-  sizes: []
-  sort_id: 2
-  thumbnail: m2-thumbnail.jpg
-  title: M2
-  constellation: Aquarius
-  notes: ''
-  date: 26 Aug 2017 (23:00 - 23:55)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 36x30"
-  checked: true
-- filename: m3
-  original: m3-3184x1968.jpg
-  sizes:
-  - m3-300x185.jpg
-  sort_id: 3
-  thumbnail: m3-300x185.jpg
-  title: M3
-  constellation: Canes Venatici
-  notes: ''
-  date: 14 Apr 2019 (01:16 - 01:48)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 28x60"
-  checked: true
-- filename: m4
-  original: m4-4356x3127.jpg
-  sizes:
-  - m4-300x215.jpg
-  sort_id: 4
-  thumbnail: m4-300x215.jpg
-  title: M4
-  constellation: Scorpius
-  notes: ''
-  date: 30 Jun 2022 (23:23 - 00:25)
-  location: Joshua Tree National Park
-  equipment: AT130EDT | Hotech Flattener | Canon T6i
-  image_info: 18x120"
-  checked: true
-- filename: m5
-  original: m5-2752x1951.jpg
-  sizes:
-  - m5-300x213.jpg
-  sort_id: 5
-  thumbnail: m5-300x213.jpg
-  title: M5
-  constellation: Serpens
-  notes: ''
-  date: 14 Apr 2019 (00:58 - 01:30)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 26x60"
-  checked: true
-- filename: m6
-  original: m6-5704x3751.jpg
-  sizes:
-  - m6-300x197.jpg
-  sort_id: 6
-  thumbnail: m6-300x197.jpg
-  title: M6
-  constellation: Scorpius
-  notes: ''
-  date: 11 Aug 2020 (03:57 - 04:44)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m7
-  original: m7-2000x1287.jpg
-  sizes:
-  - m7-300x193.jpg
-  sort_id: 7
-  thumbnail: m7-300x193.jpg
-  title: M7
-  constellation: Scorpius
-  notes: ''
-  date: 18 Jul 2020 (23:33 - 23:55)
-  location: Pit 'n Pole Observing Site
-  equipment: Z 73 | Canon T6i
-  image_info: 20x60"
-  checked: true
-- filename: m8
-  original: m8-2258x1569.jpg
-  sizes:
-  - m8-300x208.jpg
-  sort_id: 8
-  thumbnail: m8-300x208.jpg
-  title: M8 - The Lagoon
-  constellation: Sagittarius
-  notes: ''
-  date: 2 Jul 2026 (23:00 - 01:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 271x20"
-  checked: true
-- filename: m9
-  original: m9-2777x2132.jpg
-  sizes:
-  - m9-300x230.jpg
-  sort_id: 9
-  thumbnail: m9-300x230.jpg
-  title: M9
-  constellation: Ophiuchus
-  notes: ''
-  date: 20 May 2026 (00:30 - 02:30) | 22 May 2026 (00:40 - 02:25)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
-  image_info: 22x120” Lum | 21x120” R | 25x120” G | 24x120” B
-  checked: true
-- filename: m10
-  original: m10-5648x3570.jpg
-  sizes:
-  - m10-300x190.jpg
-  sort_id: 10
-  thumbnail: m10-300x190.jpg
-  title: M10
-  constellation: Ophiuchus
-  notes: ''
-  date: 11 Aug 2020 (00:27 - 01:25)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m11
-  original: m11-5005x3074.jpg
-  sizes:
-  - m11-300x184.jpg
-  sort_id: 11
-  thumbnail: m11-300x184.jpg
-  title: M11
-  constellation: Scutum
-  notes: ''
-  date: 28 Jul 2020 (22:50 - 00:24)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 40x120"
-  checked: true
-- filename: m12
-  original: m12-6097x3722.jpg
-  sizes:
-  - m12-300x183.jpg
-  sort_id: 12
-  thumbnail: m12-300x183.jpg
-  title: M12
-  constellation: Ophiuchus
-  notes: ''
-  date: 15 May 2026 (01:30 - 04:30)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
-  image_info: 25x120" Lum | 15x120" Red | 15x120" Green | 15x120" Blue
-  checked: true
-- filename: m13
-  original: m13-3268x2459.jpg
-  sizes:
-  - m13-300x226.jpg
-  sort_id: 13
-  thumbnail: m13-300x226.jpg
-  title: M13
-  constellation: Hercules
-  notes: ''
-  date: 25 Aug 2023 (23:05 - 00:03)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i
-  image_info: 33x60"
-  checked: true
-- filename: m14
-  original: m14-4996x2915.jpg
-  sizes:
-  - m14-300x175.jpg
-  sort_id: 14
-  thumbnail: m14-300x175.jpg
-  title: M14
-  constellation: Ophiuchus
-  notes: ''
-  date: 18 Aug 2020 (22:30 - 23:06)
-  location: Pit 'n Pole Observing Site
-  equipment: Z 73 | Canon T6i
-  image_info: 56x30"
-  checked: true
-- filename: m15
-  original: m15-7700x4325.jpg
-  sizes:
-  - m15-300x169.jpg
-  sort_id: 15
-  thumbnail: m15-300x169.jpg
-  title: M15
-  constellation: Pegasus
-  notes: ''
-  date: '12 Jun 2026 (00:30 - 02:00) '
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 18x60" R | 18x60" G | 15x60" B
-  checked: true
-- filename: m16
-  original: m16-5029x3052.jpg
-  sizes:
-  - m16-300x182.jpg
-  sort_id: 16
-  thumbnail: m16-300x182.jpg
-  title: M16 - The Eagle
-  constellation: Serpens
-  notes: ''
-  date: 15 Jun 2023 (23:41 - 04:40)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | UV/IR Cut
-  image_info: 56x300"
-  checked: true
-- filename: m17
-  original: m17-6024x4022.jpg
-  sizes:
-  - m17-300x200.jpg
-  sort_id: 17
-  thumbnail: m17-300x200.jpg
-  title: M17
-  constellation: Sagittarius
-  notes: ''
-  date: 21 Jul 2022 (00:09 - 01:39)
-  location: My Backyard
-  equipment: AT130EDT | Hotech Flattener | Canon T6i | Optolong L-eNhance
-  image_info: 25x180"
-  checked: true
-- filename: m18
-  original: m18-3840x2160.jpg
-  sizes:
-  - m18-300x169.jpg
-  sort_id: 18
-  thumbnail: m18-300x169.jpg
-  title: M18
-  constellation: Sagittarius
-  notes: ''
-  date: 7 Jul 2025 (23:30 - 00:29)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 233x10"
-  checked: true
-- filename: m19
-  original: m19-2952x2269.jpg
-  sizes:
-  - m19-300x231.jpg
-  sort_id: 19
-  thumbnail: m19-300x231.jpg
-  title: M19
-  constellation: Ophiuchus
-  notes: ''
-  date: 15 May 2023 (02:15 - 02:34)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | UV/IR Cut
-  image_info: 6x120"
-  checked: true
-- filename: m20
-  original: m20-7536x4002.jpg
-  sizes:
-  - m20-300x159.jpg
-  sort_id: 20
-  thumbnail: m20-300x159.jpg
-  title: M20
-  constellation: Sagittarius
-  notes: ''
-  date: 13 Jun 2026 (00:20 - 04:20) | 13 Jun 2026 (23:45 - 04:10) | 14 Jun 2026 (23:30 - 04:10) | 16 Jun 2026 (23:30 - 04:10) | 17 Jun 2026 (23:30 - 04:15)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
-  image_info: 42x120" R | 36x120" G | 36x120" B | 66x480" Ha | 52x480" O
-  checked: true
-- filename: m21
-  original: m21-3592x1912.jpg
-  sizes:
-  - m21-300x160.jpg
-  sort_id: 21
-  thumbnail: m21-300x160.jpg
-  title: M21
-  constellation: Sagittarius
-  notes: ''
-  date: 07 Jun 2025 (22:30 - 23:29)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 223x10"
-  checked: true
-- filename: m22
-  original: m22-5516x3525.jpg
-  sizes:
-  - m22-300x192.jpg
-  sort_id: 22
-  thumbnail: m22-300x192.jpg
-  title: M22
-  constellation: Sagittarius
-  notes: ''
-  date: 19 Jul 2020 (00:06 - 00:30)
-  location: Pit 'n Pole Observing Site
-  equipment: Z 73 | Canon T6i
-  image_info: 20x60"
-  checked: true
-- filename: m23
-  original: m23-1920x1080.jpg
-  sizes:
-  - m23-300x169.jpg
-  sort_id: 23
-  thumbnail: m23-300x169.jpg
-  title: M23
-  constellation: Sagittarius
-  notes: ''
-  date: 6 Jul 2025 (00:04 - 00:43)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 92x10"
-  checked: true
-- filename: m24
-  original: m24-6024x4022.jpg
-  sizes:
-  - m24-300x200.jpg
-  sort_id: 24
-  thumbnail: m24-300x200.jpg
-  title: M24
-  constellation: Sagittarius
-  notes: ''
-  date: '9 Jun 2018 (00:56 - 01:28) '
-  location: Pit 'n Pole Observing Site
-  equipment: C 9.25 | Canon T6i
-  image_info: 28x60"
-  checked: true
-- filename: m25
-  original: m25-3840x2160.jpg
-  sizes:
-  - m25-300x169.jpg
-  sort_id: 25
-  thumbnail: m25-300x169.jpg
-  title: M25
-  constellation: Sagittarius
-  notes: ''
-  date: 7 Jul 2025 (00:30 - 01:39)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 284x10"
-  checked: true
-- filename: m26
-  original: m26-1080x1238.jpg
-  sizes:
-  - m26-300x344.jpg
-  sort_id: 26
-  thumbnail: m26-300x344.jpg
-  title: M26
-  constellation: Scutum
-  notes: ''
-  date: 10 Jun 2026 (00:00 - 02:30)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 333x20"
-  checked: true
-- filename: m27
-  original: m27-3677x2336.jpg
-  sizes:
-  - m27-300x191.jpg
-  sort_id: 27
-  thumbnail: m27-300x191.jpg
-  title: M27
-  constellation: Vulpecula
-  notes: ''
-  date: 1 Jul 2022 (02:23 - 02:54)
-  location: My Backyard
-  equipment: Z73 | Canon T6i
-  image_info: 20x60"
-  checked: true
-- filename: m28
-  original: m28-5506x3531.jpg
-  sizes:
-  - m28-300x192.jpg
-  sort_id: 28
-  thumbnail: m28-300x192.jpg
-  title: M28
-  constellation: Sagittarius
-  notes: ''
-  date: 18 Jul 2018 (00:36 - 00:56)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 20x60"
-  checked: true
-- filename: m29
-  original: m29-6024x4022.jpg
-  sizes: []
-  sort_id: 29
-  thumbnail: m29-thumbnail.jpg
-  title: M29
-  constellation: Cygnus
-  notes: ''
-  date: 13 Sep 2020 (04:55 - 05:15)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 9x120"
-  checked: true
-- filename: m30
-  original: m30-3578x1885.jpg
-  sizes:
-  - m30-300x158.jpg
-  sort_id: 30
-  thumbnail: m30-300x158.jpg
-  title: M30
-  constellation: Capricornus
-  notes: ''
-  date: 6 Aug 2026 (00:00 - 03:30)
-  location: 'Heatheridge Observatory '
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 34x20" Red | 34x20" Green | 34x20" Blue
-  checked: true
-- filename: m31
-  original: m31-6024x4022.jpg
-  sizes:
-  - m31-300x200.jpg
-  sort_id: 31
-  objects:
-  - 31
-  - 32
-  - 110
-  thumbnail: m31-300x200.jpg
-  title: M31, M32, & M110
-  constellation: Andromeda
-  notes: ''
-  date: 16 Sep 2023 (00:00 - 02:15)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance
-  image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
-  checked: true
-- filename: m33
-  original: m33-4895x3268.jpg
-  sizes:
-  - m33-300x200.jpg
-  sort_id: 33
-  thumbnail: m33-300x200.jpg
-  title: M33
-  constellation: Triangulum
-  notes: ''
-  date: 12 Nov 2021 (21:01 - 22:52)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i | Astronomik CSL-CCD
-  image_info: 16x300"
-  checked: true
-- filename: m34
-  original: m34-2160x3840.jpg
-  sizes:
-  - m34-300x533.jpg
-  sort_id: 34
-  thumbnail: m34-300x533.jpg
-  title: M34
-  constellation: Perseus
-  notes: ''
-  date: 25 Jan 2026 (19:30 - 21:11)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 150x20"
-  checked: true
-- filename: m35
-  original: m35-2126x3576.jpg
-  sizes:
-  - m35-300x505.jpg
-  sort_id: 35
-  thumbnail: m35-300x505.jpg
-  title: M35
-  constellation: Gemini
-  notes: ''
-  date: 25 Jan 2026 (21:15 - 23:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 150x20"
-  checked: true
-- filename: m36
-  original: m36-996x1411.jpg
-  sizes:
-  - m36-300x425.jpg
-  sort_id: 36
-  thumbnail: m36-300x425.jpg
-  title: M36
-  constellation: Auriga
-  notes: ''
-  date: 17 Aug 2026 (03:30 - 05:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 143x20"
-  checked: true
-- filename: m37
-  original: m37-989x1796.jpg
-  sizes:
-  - m37-300x545.jpg
-  sort_id: 37
-  thumbnail: m37-300x545.jpg
-  title: M37
-  constellation: Auriga
-  notes: ''
-  date: 16 Aug 2026 (04:00 - 05:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 102x20"
-  checked: true
-- filename: m38
-  original: m38-987x1832.jpg
-  sizes:
-  - m38-300x557.jpg
-  sort_id: 38
-  thumbnail: m38-300x557.jpg
-  title: M38
-  constellation: Auriga
-  notes: ''
-  date: 16 Aug 2026 (03:00 - 04:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 90x20"
-  checked: true
-- filename: m39
-  original: m39-6024x4022.jpg
-  sizes: []
-  sort_id: 39
-  thumbnail: m39-thumbnail.jpg
-  title: M39
-  constellation: Cygnus
-  notes: ''
-  date: 12 Sep 2020 (22:45 - 00:17)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 38x120"
-  checked: true
-- filename: m40
-  original: m40-1603x1079.jpg
-  sizes:
-  - m40-300x202.jpg
-  sort_id: 40
-  thumbnail: m40-300x202.jpg
-  title: M40
-  constellation: Ursa Major
-  notes: ''
-  date: 29 Jun 2025 (22:03 - 22:33)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 41x10"
-  checked: true
-- filename: m41
-  original: m41-1080x1920.jpg
-  sizes:
-  - m41-300x533.jpg
-  sort_id: 41
-  thumbnail: m41-300x533.jpg
-  title: M41
-  constellation: Canis Major
-  notes: ''
-  date: 16 Jan 2026 (22:00 - 22:37)
-  location: My Backyard
-  equipment: Seestar S50 | LP
-  image_info: 101x20"
-  checked: true
-- filename: m42
-  original: m42-5000x3338.jpg
-  sizes:
-  - m42-300x200.jpg
-  sort_id: 42
-  objects:
-  - 42
-  - 43
-  thumbnail: m42-300x200.jpg
-  title: M42 & the Running Man
-  constellation: Orion
-  notes: ''
-  date: 16 Feb 2023 (19:00 - 00:00)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | Optolong L-eNhance
-  image_info: 58x120" | 49x60" | 28x30"
-  checked: true
-- filename: m44
-  original: m44-6096x4056.jpg
-  sizes: []
-  sort_id: 44
-  thumbnail: m44-thumbnail.jpg
-  title: M44
-  constellation: Cancer
-  notes: ''
-  date: 12 Mar 2018 (22:59 - 23:35)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m45
-  original: m45-5000x3338.jpg
-  sizes:
-  - m45-300x200.jpg
-  sort_id: 45
-  thumbnail: m45-300x200.jpg
-  title: M45 - The Pleiades
-  constellation: Taurus
-  notes: ''
-  date: 20 Sep 2020 (01:00 - 03:00)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 30x120"
-  checked: true
-- filename: m46
-  original: m46-6024x4022.jpg
-  sizes:
-  - m46-300x200.jpg
-  sort_id: 46
-  thumbnail: m46-300x200.jpg
-  title: M46
-  constellation: Puppis
-  notes: ''
-  date: 19 Feb 2020 (20:30 - 21:30)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 19x60"
-  checked: true
-- filename: m47
-  original: m47-6096x4056.jpg
-  sizes:
-  - m47-300x200.jpg
-  sort_id: 47
-  thumbnail: m47-300x200.jpg
-  title: M47
-  constellation: Puppis
-  notes: ''
-  date: 12 Mar 2018 (22:30 - 23:00)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 40x30"
-  checked: true
-- filename: m48
-  original: m48-3775x2515.jpg
-  sizes:
-  - m48-300x200.jpg
-  sort_id: 48
-  thumbnail: m48-300x200.jpg
-  title: M48
-  constellation: Hydra
-  notes: ''
-  date: 16 Mar 2023 (22:00 - 23:00)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i
-  image_info: 76x30"
-  checked: true
-- filename: m49
-  original: m49-4000x2595.jpg
-  sizes:
-  - m49-300x195.jpg
-  sort_id: 49
-  thumbnail: m49-300x195.jpg
-  title: M49
-  constellation: Virgo
-  notes: ''
-  date: 25 Apr 2023 (22:25 - 00:15)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i
-  image_info: 31x180"
-  checked: true
-- filename: m50
-  original: m50-6024x4022.png
-  sizes:
-  - m50-300x200.png
-  sort_id: 50
-  thumbnail: m50-300x200.png
-  title: M50
-  constellation: Monoceros
-  notes: ''
-  date: 27 Feb 2020 (22:15 - 23:00)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 13x120"
-  checked: true
-- filename: m51
-  original: m51-1844x1691.jpg
-  sizes: []
-  sort_id: 51
-  thumbnail: m51-thumbnail.jpg
-  title: M51
-  constellation: Canes Venatici
-  notes: ''
-  date: 30 Apr 2026 (21:59 - 00:32) | 1 May 2026 (00:53 - 04:34)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGBH Filters
-  image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
-  checked: true
-- filename: m52
-  original: m52-2233x3357.jpg
-  sizes:
-  - m52-300x451.jpg
-  sort_id: 52
-  thumbnail: m52-300x451.jpg
-  title: M52
-  constellation: Cassiopeia
-  notes: ''
-  date: 15 Jun 2026 (01:30 - 04:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 303x20"
-  checked: true
-- filename: m53
-  original: m53-1920x1080.jpg
-  sizes:
-  - m53-300x169.jpg
-  sort_id: 53
-  thumbnail: m53-300x169.jpg
-  title: M53
-  constellation: Coma Berenices
-  notes: ''
-  date: 5 Jul 2025 (23:05 - 23:59)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 152x10"
-  checked: true
-- filename: m54
-  original: m54-3288x1705.jpg
-  sizes:
-  - m54-300x156.jpg
-  sort_id: 54
-  thumbnail: m54-300x156.jpg
-  title: M54
-  constellation: Sagittarius
-  notes: ''
-  date: 23 Jul 2026 (22:45 - 00:45)
-  location: 'Heatheridge Observatory '
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 24x30" Red | 22x30" Green | 21x30" Blue
-  checked: true
-- filename: m55
-  original: m55-3442x1821.jpg
-  sizes:
-  - m55-300x159.jpg
-  sort_id: 55
-  thumbnail: m55-300x159.jpg
-  title: M55
-  constellation: Sagittarius
-  notes: ''
-  date: 31 Jul 2026 (23:30 - 02:00)
-  location: 'Heatheridge Observatory '
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 33x20" Red | 34x20" Green | 33x20" Blue
-  checked: true
-- filename: m56
-  original: m56-6096x4056.jpg
-  sizes:
-  - m56-300x200.jpg
-  sort_id: 56
-  thumbnail: m56-300x200.jpg
-  title: M56
-  constellation: Lyra
-  notes: ''
-  date: 16 Aug 2017 (22:57 - 23:15)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 23x30"
-  checked: true
-- filename: m57
-  original: m57-3000x2000.jpg
-  sizes:
-  - m57-300x200.jpg
-  sort_id: 57
-  thumbnail: m57-300x200.jpg
-  title: M57
-  constellation: Lyra
-  notes: ''
-  date: 16 Aug 2017 (22:43 - 23:07)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 23x30"
-  checked: true
-- filename: m58
-  original: m58-1080x1920.jpg
-  sizes:
-  - m58-300x533.jpg
-  sort_id: 58
-  thumbnail: m58-300x533.jpg
-  title: M58
-  constellation: Virgo
-  notes: ''
-  date: 17 Jan 2026 (02:30 - 04:30)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 148x20"
-  checked: true
-- filename: m59_m60
-  original: m59_m60-4000x2755.jpg
-  sizes:
-  - m59_m60-300x207.jpg
-  sort_id: 59
-  objects:
-  - 59
-  - 60
-  thumbnail: m59_m60-300x207.jpg
-  title: M59 & M60
-  constellation: Virgo
-  notes: ''
-  date: 26 Apr 2023 (00:34 - 02:34)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 31x180"
-  checked: true
-- filename: m61
-  original: m61-1080x1920.jpg
-  sizes:
-  - m61-300x533.jpg
-  sort_id: 61
-  thumbnail: m61-300x533.jpg
-  title: M61
-  constellation: Virgo
-  notes: ''
-  date: 17 Jan 2026 (02:00 - 04:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 149x20"
-  checked: true
-- filename: m62
-  original: m62-5044x3538.jpg
-  sizes:
-  - m62-300x210.jpg
-  sort_id: 62
-  thumbnail: m62-300x210.jpg
-  title: M62
-  constellation: Ophiuchus
-  notes: ''
-  date: 18 Aug 2020 (23:14 - 23:30)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 25x30"
-  checked: true
-- filename: m63
-  original: m63-2043x1724.jpg
-  sizes:
-  - m63-300x253.jpg
-  sort_id: 63
-  thumbnail: m63-300x253.jpg
-  title: M63
-  constellation: Canes Venatici
-  notes: ''
-  date: 3 Jun 2018 (23:43 - 00:14)
-  location: Pit 'n Pole Observing Site
-  equipment: Z 73 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m64
-  original: m64-1080x1920.jpg
-  sizes:
-  - m64-300x533.jpg
-  sort_id: 64
-  thumbnail: m64-300x533.jpg
-  title: M64 The Blackeye Galaxy
-  constellation: Coma Berenices
-  notes: ''
-  date: 17 Jan 2026 (00:30 - 02:30)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 154x20"
-  checked: true
-- filename: leo_triplet
-  original: leo_triplet-4994x3203.jpg
-  sizes:
-  - leo_triplet-300x193.jpg
-  sort_id: 65
-  objects:
-  - 65
-  - 66
-  thumbnail: leo_triplet-300x193.jpg
-  title: The Leo Triplet - M65 & M66
-  constellation: Leo
-  notes: ''
-  date: 29 Dec 2025 (04:10 - 05:40)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 63x20"
-  checked: true
-- filename: m67
-  original: m67-3705x2342.jpg
-  sizes:
-  - m67-300x190.jpg
-  sort_id: 67
-  thumbnail: m67-300x190.jpg
-  title: M67
-  constellation: Cancer
-  notes: ''
-  date: 16 Mar 2023 (23:20 - 23:44)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 8x30" | 3x60"
-  checked: true
-- filename: m68
-  original: m68-902x933.jpg
-  sizes:
-  - m68-300x310.jpg
-  sort_id: 68
-  thumbnail: m68-300x310.jpg
-  title: M68
-  constellation: Hydra
-  notes: ''
-  date: 25 Jan 2026 (03:00 - 06:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 320x20"
-  checked: true
-- filename: m69
-  original: m69-1820x980.jpg
-  sizes:
-  - m69-300x162.jpg
-  sort_id: 69
-  thumbnail: m69-300x162.jpg
-  title: M69
-  constellation: Sagittarius
-  notes: ''
-  date: 27 Jul 2025 (01:00 - 02:04)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 139x20"
-  checked: true
-- filename: m70
-  original: m70-1859x1038.jpg
-  sizes:
-  - m70-300x168.jpg
-  sort_id: 70
-  thumbnail: m70-300x168.jpg
-  title: M70
-  constellation: Sagittarius
-  notes: ''
-  date: 27 Jul 2025 (23:00 - 00:12)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 120x20"
-  checked: true
-- filename: m71
-  original: m71-6024x4022.jpg
-  sizes: []
-  sort_id: 71
-  thumbnail: m71-thumbnail.jpg
-  title: M71
-  constellation: Sagitta
-  notes: ''
-  date: 13 Sep 2020 (03:30 - 04:30)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 20x120"
-  checked: true
-- filename: m72
-  original: m72-5271x3382.jpg
-  sizes:
-  - m72-300x192.jpg
-  sort_id: 72
-  thumbnail: m72-300x192.jpg
-  title: M72
-  constellation: Aquarius
-  notes: ''
-  date: 12 Jun 2026 (02:00 - 04:00)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 27x60" R | 27x60" G | 24x60" B
-  checked: true
-- filename: m73
-  original: m73-5225x3417.jpg
-  sizes:
-  - m73-300x196.jpg
-  sort_id: 73
-  thumbnail: m73-300x196.jpg
-  title: M73
-  constellation: Aquarius
-  notes: ''
-  date: 7 Oct 2023 (20:35 - 21:10) | 8 Oct 2023 (20:35 - 21:05) | 15 Oct 2023 (20:40 - 22:00)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
-  image_info: 6x360" | 8x180" | 24x120"
-  checked: true
-- filename: m74
-  original: m74-2002x1521.jpg
-  sizes:
-  - m74-300x228.jpg
-  sort_id: 74
-  thumbnail: m74-300x228.jpg
-  title: M74
-  constellation: Pisces
-  notes: ''
-  date: 29 Jan 2019 (20:08 - 20:41)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m75
-  original: m75-3586x1892.jpg
-  sizes:
-  - m75-300x158.jpg
-  sort_id: 75
-  thumbnail: m75-300x158.jpg
-  title: M75
-  constellation: Sagittarius
-  notes: ''
-  date: 4 Aug 2026 (22:45 - 01:00)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
-  image_info: 22x20” R | 23x20” G | 23x20” B
-  checked: true
-- filename: m76
-  original: m76-3613x1898.jpg
-  sizes:
-  - m76-300x158.jpg
-  sort_id: 76
-  thumbnail: m76-300x158.jpg
-  title: M76
-  constellation: Perseus
-  notes: ''
-  date: 03 Jul 2026 (03:00 - 04:00) | 30 Jul 2026 (23:30 - 04:30) | 02 Aug 2026 (23:00 - 04:45) | 14 Aug 2026 (23:00 - 05:00) | 15 Aug 2026 (23:00 - 05:00) | 16 Aug 2026 (00:30 - 05:00)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
-  image_info: 61x480" H | 79x480" O | 68x20" R | 66x20" G | 67x20" B
-  checked: true
-- filename: m77
-  original: m77-2064x2180.jpg
-  sizes:
-  - m77-300x317.jpg
-  sort_id: 77
-  thumbnail: m77-300x317.jpg
-  title: M77
-  constellation: Cetus
-  notes: ''
-  date: 18 Jan 2026 (19:10 - 20:10)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 137x20"
-  checked: true
-- filename: m78
-  original: m78-5442x3506.jpg
-  sizes:
-  - m78-300x193.jpg
-  sort_id: 78
-  thumbnail: m78-300x193.jpg
-  title: M78
-  constellation: Orion
-  notes: ''
-  date: 6 Oct 2023 (02:45 - 06:01) | 7 Oct 2023 (02:40 - 06:00) | 8 Oct 2023 (03:40 - 06:05) | 15 Oct 2023 (02:00 - 06:00)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
-  image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
-  checked: true
-- filename: m79
-  original: m79-4103x2651.jpg
-  sizes:
-  - m79-300x194.jpg
-  sort_id: 79
-  thumbnail: m79-300x194.jpg
-  title: M79
-  constellation: Lepus
-  notes: ''
-  date: 14 Jan 2018 (21:30 - 22:06)
-  location: My Backyard
-  equipment: C 9.25 | Canon T6i
-  image_info: 30x60"
-  checked: true
-- filename: m80
-  original: m80-5417x3234.jpg
-  sizes:
-  - m80-300x179.jpg
-  sort_id: 80
-  thumbnail: m80-300x179.jpg
-  title: M80
-  constellation: Scorpius
-  notes: ''
-  date: 15 May 2026 (00:01 - 03:56)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
-  image_info: '25x120" Lum | 23x120" R | 20x120" G | 20x120" B '
-  checked: true
-- filename: m81
-  original: m81-1981x1798.jpg
-  sizes:
-  - m81-300x272.jpg
-  sort_id: 81
-  thumbnail: m81-300x272.jpg
-  title: M81
-  constellation: Ursa Major
-  notes: ''
-  date: 4 May 2019 (01:00 - 01:45)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 16x120"
-  checked: true
-- filename: m82
-  original: m82-1445x1592.jpg
-  sizes:
-  - m82-300x331.jpg
-  sort_id: 82
-  thumbnail: m82-300x331.jpg
-  title: M82
-  constellation: Ursa Major
-  notes: ''
-  date: 4 May 2019 (01:00 - 01:45)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 16x120"
-  checked: true
-- filename: m83
-  original: m83-795x751.jpg
-  sizes:
-  - m83-300x283.jpg
-  sort_id: 83
-  thumbnail: m83-300x283.jpg
-  title: M83 The Southern Pinwheel
-  constellation: Hydra
-  notes: ''
-  date: 25 Jan 2026 (03:50 - 06:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 320x20"
-  checked: true
-- filename: m84
-  original: m84-2052x3648.jpg
-  sizes:
-  - m84-300x533.jpg
-  sort_id: 84
-  objects:
-  - 84
-  - 86
-  thumbnail: m84-300x533.jpg
-  title: M84, M86, & Markarian Chain
-  constellation: Virgo
-  notes: ''
-  date: 18 Jan 2026 (01:30 - 06:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 529x20"
-  checked: true
-- filename: m85
-  original: m85-1080x1920.jpg
-  sizes:
-  - m85-300x533.jpg
-  sort_id: 85
-  thumbnail: m85-300x533.jpg
-  title: M85
-  constellation: Coma Berenices
-  notes: ''
-  date: 17 Jan 2026 (02:30 - 03:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 143x20"
-  checked: true
-- filename: m87
-  original: m87-4763x3073.jpg
-  sizes:
-  - m87-300x194.jpg
-  sort_id: 87
-  thumbnail: m87-300x194.jpg
-  title: M87 The Smoking Gun Galaxy
-  constellation: Virgo
-  notes: ''
-  date: 16 May 2023 (23:45 - 02:15)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 40x180"
-  checked: true
-- filename: m88
-  original: m88-1080x1920.jpg
-  sizes:
-  - m88-300x533.jpg
-  sort_id: 88
-  thumbnail: m88-300x533.jpg
-  title: M88
-  constellation: Coma Berenices
-  notes: ''
-  date: 16 Jan 2026 (03:30 - 04:30)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 146x20"
-  checked: true
-- filename: m90
-  original: m90-1080x1920.jpg
-  sizes:
-  - m90-300x533.jpg
-  sort_id: 89
-  objects:
-  - 89
-  - 90
-  thumbnail: m90-300x533.jpg
-  title: M89 & M90
-  constellation: Virgo
-  notes: ''
-  date: 17 Jan 2026 (05:30 - 06:15)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 97x20"
-  checked: true
-- filename: m91
-  original: m91-1080x1920.jpg
-  sizes:
-  - m91-300x533.jpg
-  sort_id: 91
-  thumbnail: m91-300x533.jpg
-  title: M91
-  constellation: Coma Berenices
-  notes: ''
-  date: 17 Jan 2026 (04:30 - 05:30)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 158x20"
-  checked: true
-- filename: m92
-  original: m92-1666x2612.jpg
-  sizes:
-  - m92-300x470.jpg
-  sort_id: 92
-  thumbnail: m92-300x470.jpg
-  title: M92
-  constellation: Hercules
-  notes: ''
-  date: 23 Sep 2025 (22:00 - 22:20)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 15x20"
-  checked: true
-- filename: m93
-  original: m93-4824x2988.jpg
-  sizes:
-  - m93-300x186.jpg
-  sort_id: 93
-  thumbnail: m93-300x186.jpg
-  title: M93
-  constellation: Puppis
-  notes: ''
-  date: 18 Mar 2023 (21:36 - 22:50)
-  location: My Backyard
-  equipment: AT130EDT | Canon T6i
-  image_info: 49x60"
-  checked: true
-- filename: m94
-  original: m94-849x1143.jpg
-  sizes:
-  - m94-300x404.jpg
-  sort_id: 94
-  thumbnail: m94-300x404.jpg
-  title: M94
-  constellation: Canes Venatici
-  notes: ''
-  date: 25 Jan 2026 (00:00 - 02:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 253x20"
-  checked: true
-- filename: m95
-  original: m95-3585x2132.jpg
-  sizes:
-  - m95-300x178.jpg
-  sort_id: 95
-  thumbnail: m95-300x178.jpg
-  title: M95
-  constellation: Leo
-  notes: ''
-  date: 19 Mar 2023 (22:45 - 01:45)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 37x180" | 10x20"
-  checked: true
-- filename: m96
-  original: m96-3597x2563.jpg
-  sizes:
-  - m96-300x214.jpg
-  sort_id: 96
-  thumbnail: m96-300x214.jpg
-  title: M96
-  constellation: Leo
-  notes: ''
-  date: 19 Mar 2023 (22:45 - 01:45)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 37x180" | 10x20"
-  checked: true
-- filename: m97
-  original: m97-1611x996.jpg
-  sizes:
-  - m97-300x185.jpg
-  sort_id: 97
-  thumbnail: m97-300x185.jpg
-  title: M97
-  constellation: Ursa Major
-  notes: ''
-  date: 30 Jun 2025 (22:20 - 23:15)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 159x10"
-  checked: true
-- filename: m98
-  original: m98-1080x1920.jpg
-  sizes:
-  - m98-300x533.jpg
-  sort_id: 98
-  thumbnail: m98-300x533.jpg
-  title: M98
-  constellation: Coma Berenices
-  notes: ''
-  date: 17 Jan 2026 (04:00 - 05:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 152x20"
-  checked: true
-- filename: m99
-  original: m99-1080x1920.jpg
-  sizes:
-  - m99-300x533.jpg
-  sort_id: 99
-  thumbnail: m99-300x533.jpg
-  title: M99
-  constellation: Coma Berenices
-  notes: ''
-  date: 17 Jan 2026 (05:00 - 06:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 154x20"
-  checked: true
-- filename: m100
-  original: m100-3128x2400.jpg
-  sizes:
-  - m100-300x230.jpg
-  sort_id: 100
-  thumbnail: m100-300x230.jpg
-  title: M100
-  constellation: Coma Berenices
-  notes: ''
-  date: 14 May 2026 (22:30 - 01:30)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
-  image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
-  checked: true
-- filename: m101
-  original: m101-2502x1877.jpg
-  sizes:
-  - m101-300x225.jpg
-  sort_id: 101
-  thumbnail: m101-300x225.jpg
-  title: M101
-  constellation: Ursa Major
-  notes: ''
-  date: 7 May 2026 (22:59 - 02:55) | 9 May 2026 (22:18 - 04:41)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
-  image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
-  checked: true
-- filename: m102
-  original: m102-3350x2905.jpg
-  sizes:
-  - m102-300x260.jpg
-  sort_id: 102
-  thumbnail: m102-300x260.jpg
-  title: M102
-  constellation: Draco
-  notes: ''
-  date: 12 May 2026 (21:41 - 22:55)
-  location: Heatheridge Observatory
-  equipment: AT130EDT | QHYCCD miniCAM8M | Luminance Only
-  image_info: 32x120"
-  checked: true
-- filename: m103
-  original: m103-1079x1426.jpg
-  sizes: []
-  sort_id: 103
-  thumbnail: m103-300x396.jpg
-  title: M103
-  constellation: Cassiopeia
-  notes: ''
-  date: 17 Jun 2026 (02:00 - 04:00)
-  location: My Backyard
-  equipment: Seestar S50
-  image_info: 203x20"
-  checked: true
-- filename: m104
-  original: m104-4022x6024.jpg
-  sizes: []
-  sort_id: 104
-  thumbnail: m104-thumbnail.jpg
-  title: M104
-  constellation: Virgo
-  notes: ''
-  date: 27 Apr 2020 (22:20 - 23:22)
-  location: Pit 'n Pole Observing Site
-  equipment: C 9.25 | Canon T6i
-  image_info: 30x120"
-  checked: true
-- filename: m105
-  original: m105-3393x2538.jpg
-  sizes:
-  - m105-300x259.jpg
-  sort_id: 105
-  thumbnail: m105-300x259.jpg
-  title: M105
-  constellation: Leo
-  notes: ''
-  date: 19 Mar 2023 (01:56 - 04:05) | 27 Mar 2023 (21:39 - 23:05)
-  location: My Backyard
-  equipment: Z 73 | Canon T6i
-  image_info: 58x180"
-  checked: true
-- filename: m106
-  original: m106-968x1109.jpg
-  sizes:
-  - m106-300x344.jpg
-  sort_id: 106
-  thumbnail: m106-300x344.jpg
-  title: M106
-  constellation: Canes Venatici
-  notes: ''
-  date: 25 Jan 2026 (01:50 - 03:50)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 299x20"
-  checked: true
-- filename: m107
-  original: m107-3630x2030.jpg
-  sizes:
-  - m107-300x168.jpg
-  sort_id: 107
-  thumbnail: m107-300x168.jpg
-  title: M107
-  constellation: Ophiuchus
-  notes: ''
-  date: 11 Jul 2025 (22:30 - 00:00)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 349x10"
-  checked: true
-- filename: m108
-  original: m108-806x708.jpg
-  sizes:
-  - m108-300x264.jpg
-  sort_id: 108
-  thumbnail: m108-300x264.jpg
-  title: M108
-  constellation: Ursa Major
-  notes: ''
-  date: 18 Jan 2026 (00:30 - 02:28)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 150x20"
-  checked: true
-- filename: m109
-  original: m109-924x1208.jpg
-  sizes:
-  - m109-300x392.jpg
-  sort_id: 109
-  thumbnail: m109-300x392.jpg
-  title: M109
-  constellation: Ursa Major
-  notes: ''
-  date: 20 Jan 2026 (00:30 - 02:28)
-  location: My Backyard
-  equipment: Seestar S50 | LP Filter
-  image_info: 215x20"
-  checked: true
+  - filename: m1
+    original: m1-3119x1965.jpg
+    sizes:
+      - m1-300x291.jpg
+    sort_id: 1
+    thumbnail: m1-300x291.jpg
+    title: M1
+    constellation: Taurus
+    notes: ''
+    date: 25 Sep 2023 (03:03 - 05:55)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance
+    image_info: 69x300"
+    checked: true
+  - filename: m2
+    original: m2-4877x2993.jpg
+    sizes: []
+    sort_id: 2
+    thumbnail: m2-thumbnail.jpg
+    title: M2
+    constellation: Aquarius
+    notes: ''
+    date: 26 Aug 2017 (23:00 - 23:55)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 36x30"
+    checked: true
+  - filename: m3
+    original: m3-3184x1968.jpg
+    sizes:
+      - m3-300x185.jpg
+    sort_id: 3
+    thumbnail: m3-300x185.jpg
+    title: M3
+    constellation: Canes Venatici
+    notes: ''
+    date: 14 Apr 2019 (01:16 - 01:48)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 28x60"
+    checked: true
+  - filename: m4
+    original: m4-4356x3127.jpg
+    sizes:
+      - m4-300x215.jpg
+    sort_id: 4
+    thumbnail: m4-300x215.jpg
+    title: M4
+    constellation: Scorpius
+    notes: ''
+    date: 30 Jun 2022 (23:23 - 00:25)
+    location: Joshua Tree National Park
+    equipment: AT130EDT | Hotech Flattener | Canon T6i
+    image_info: 18x120"
+    checked: true
+  - filename: m5
+    original: m5-2752x1951.jpg
+    sizes:
+      - m5-300x213.jpg
+    sort_id: 5
+    thumbnail: m5-300x213.jpg
+    title: M5
+    constellation: Serpens
+    notes: ''
+    date: 14 Apr 2019 (00:58 - 01:30)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 26x60"
+    checked: true
+  - filename: m6
+    original: m6-5704x3751.jpg
+    sizes:
+      - m6-300x197.jpg
+    sort_id: 6
+    thumbnail: m6-300x197.jpg
+    title: M6
+    constellation: Scorpius
+    notes: ''
+    date: 11 Aug 2020 (03:57 - 04:44)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m7
+    original: m7-2000x1287.jpg
+    sizes:
+      - m7-300x193.jpg
+    sort_id: 7
+    thumbnail: m7-300x193.jpg
+    title: M7
+    constellation: Scorpius
+    notes: ''
+    date: 18 Jul 2020 (23:33 - 23:55)
+    location: Pit 'n Pole Observing Site
+    equipment: Z 73 | Canon T6i
+    image_info: 20x60"
+    checked: true
+  - filename: m8
+    original: m8-2258x1569.jpg
+    sizes:
+      - m8-300x208.jpg
+    sort_id: 8
+    thumbnail: m8-300x208.jpg
+    title: M8 - The Lagoon
+    constellation: Sagittarius
+    notes: ''
+    date: 2 Jul 2026 (23:00 - 01:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 271x20"
+    checked: true
+  - filename: m9
+    original: m9-2777x2132.jpg
+    sizes:
+      - m9-300x230.jpg
+    sort_id: 9
+    thumbnail: m9-300x230.jpg
+    title: M9
+    constellation: Ophiuchus
+    notes: ''
+    date: 20 May 2026 (00:30 - 02:30) | 22 May 2026 (00:40 - 02:25)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 22x120” Lum | 21x120” R | 25x120” G | 24x120” B
+    checked: true
+  - filename: m10
+    original: m10-5648x3570.jpg
+    sizes:
+      - m10-300x190.jpg
+    sort_id: 10
+    thumbnail: m10-300x190.jpg
+    title: M10
+    constellation: Ophiuchus
+    notes: ''
+    date: 11 Aug 2020 (00:27 - 01:25)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m11
+    original: m11-5005x3074.jpg
+    sizes:
+      - m11-300x184.jpg
+    sort_id: 11
+    thumbnail: m11-300x184.jpg
+    title: M11
+    constellation: Scutum
+    notes: ''
+    date: 28 Jul 2020 (22:50 - 00:24)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 40x120"
+    checked: true
+  - filename: m12
+    original: m12-6097x3722.jpg
+    sizes:
+      - m12-300x183.jpg
+    sort_id: 12
+    thumbnail: m12-300x183.jpg
+    title: M12
+    constellation: Ophiuchus
+    notes: ''
+    date: 15 May 2026 (01:30 - 04:30)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 25x120" Lum | 15x120" Red | 15x120" Green | 15x120" Blue
+    checked: true
+  - filename: m13
+    original: m13-3268x2459.jpg
+    sizes:
+      - m13-300x226.jpg
+    sort_id: 13
+    thumbnail: m13-300x226.jpg
+    title: M13
+    constellation: Hercules
+    notes: ''
+    date: 25 Aug 2023 (23:05 - 00:03)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i
+    image_info: 33x60"
+    checked: true
+  - filename: m14
+    original: m14-4996x2915.jpg
+    sizes:
+      - m14-300x175.jpg
+    sort_id: 14
+    thumbnail: m14-300x175.jpg
+    title: M14
+    constellation: Ophiuchus
+    notes: ''
+    date: 18 Aug 2020 (22:30 - 23:06)
+    location: Pit 'n Pole Observing Site
+    equipment: Z 73 | Canon T6i
+    image_info: 56x30"
+    checked: true
+  - filename: m15
+    original: m15-7700x4325.jpg
+    sizes:
+      - m15-300x169.jpg
+    sort_id: 15
+    thumbnail: m15-300x169.jpg
+    title: M15
+    constellation: Pegasus
+    notes: ''
+    date: '12 Jun 2026 (00:30 - 02:00) '
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 18x60" R | 18x60" G | 15x60" B
+    checked: true
+  - filename: m16
+    original: m16-5029x3052.jpg
+    sizes:
+      - m16-300x182.jpg
+    sort_id: 16
+    thumbnail: m16-300x182.jpg
+    title: M16 - The Eagle
+    constellation: Serpens
+    notes: ''
+    date: 15 Jun 2023 (23:41 - 04:40)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | UV/IR Cut
+    image_info: 56x300"
+    checked: true
+  - filename: m17
+    original: m17-6024x4022.jpg
+    sizes:
+      - m17-300x200.jpg
+    sort_id: 17
+    thumbnail: m17-300x200.jpg
+    title: M17
+    constellation: Sagittarius
+    notes: ''
+    date: 21 Jul 2022 (00:09 - 01:39)
+    location: My Backyard
+    equipment: AT130EDT | Hotech Flattener | Canon T6i | Optolong L-eNhance
+    image_info: 25x180"
+    checked: true
+  - filename: m18
+    original: m18-3840x2160.jpg
+    sizes:
+      - m18-300x169.jpg
+    sort_id: 18
+    thumbnail: m18-300x169.jpg
+    title: M18
+    constellation: Sagittarius
+    notes: ''
+    date: 7 Jul 2025 (23:30 - 00:29)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 233x10"
+    checked: true
+  - filename: m19
+    original: m19-2952x2269.jpg
+    sizes:
+      - m19-300x231.jpg
+    sort_id: 19
+    thumbnail: m19-300x231.jpg
+    title: M19
+    constellation: Ophiuchus
+    notes: ''
+    date: 15 May 2023 (02:15 - 02:34)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | UV/IR Cut
+    image_info: 6x120"
+    checked: true
+  - filename: m20
+    original: m20-7536x4002.jpg
+    sizes:
+      - m20-300x159.jpg
+    sort_id: 20
+    thumbnail: m20-300x159.jpg
+    title: M20
+    constellation: Sagittarius
+    notes: ''
+    date: 13 Jun 2026 (00:20 - 04:20) | 13 Jun 2026 (23:45 - 04:10) | 14 Jun 2026 (23:30 - 04:10) | 16 Jun 2026 (23:30 - 04:10) | 17 Jun 2026 (23:30 - 04:15)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 42x120" R | 36x120" G | 36x120" B | 66x480" Ha | 52x480" O
+    checked: true
+  - filename: m21
+    original: m21-3592x1912.jpg
+    sizes:
+      - m21-300x160.jpg
+    sort_id: 21
+    thumbnail: m21-300x160.jpg
+    title: M21
+    constellation: Sagittarius
+    notes: ''
+    date: 07 Jun 2025 (22:30 - 23:29)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 223x10"
+    checked: true
+  - filename: m22
+    original: m22-5516x3525.jpg
+    sizes:
+      - m22-300x192.jpg
+    sort_id: 22
+    thumbnail: m22-300x192.jpg
+    title: M22
+    constellation: Sagittarius
+    notes: ''
+    date: 19 Jul 2020 (00:06 - 00:30)
+    location: Pit 'n Pole Observing Site
+    equipment: Z 73 | Canon T6i
+    image_info: 20x60"
+    checked: true
+  - filename: m23
+    original: m23-1920x1080.jpg
+    sizes:
+      - m23-300x169.jpg
+    sort_id: 23
+    thumbnail: m23-300x169.jpg
+    title: M23
+    constellation: Sagittarius
+    notes: ''
+    date: 6 Jul 2025 (00:04 - 00:43)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 92x10"
+    checked: true
+  - filename: m24
+    original: m24-6024x4022.jpg
+    sizes:
+      - m24-300x200.jpg
+    sort_id: 24
+    thumbnail: m24-300x200.jpg
+    title: M24
+    constellation: Sagittarius
+    notes: ''
+    date: '9 Jun 2018 (00:56 - 01:28) '
+    location: Pit 'n Pole Observing Site
+    equipment: C 9.25 | Canon T6i
+    image_info: 28x60"
+    checked: true
+  - filename: m25
+    original: m25-3840x2160.jpg
+    sizes:
+      - m25-300x169.jpg
+    sort_id: 25
+    thumbnail: m25-300x169.jpg
+    title: M25
+    constellation: Sagittarius
+    notes: ''
+    date: 7 Jul 2025 (00:30 - 01:39)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 284x10"
+    checked: true
+  - filename: m26
+    original: m26-1080x1238.jpg
+    sizes:
+      - m26-300x344.jpg
+    sort_id: 26
+    thumbnail: m26-300x344.jpg
+    title: M26
+    constellation: Scutum
+    notes: ''
+    date: 10 Jun 2026 (00:00 - 02:30)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 333x20"
+    checked: true
+  - filename: m27
+    original: m27-3677x2336.jpg
+    sizes:
+      - m27-300x191.jpg
+    sort_id: 27
+    thumbnail: m27-300x191.jpg
+    title: M27
+    constellation: Vulpecula
+    notes: ''
+    date: 1 Jul 2022 (02:23 - 02:54)
+    location: My Backyard
+    equipment: Z73 | Canon T6i
+    image_info: 20x60"
+    checked: true
+  - filename: m28
+    original: m28-5506x3531.jpg
+    sizes:
+      - m28-300x192.jpg
+    sort_id: 28
+    thumbnail: m28-300x192.jpg
+    title: M28
+    constellation: Sagittarius
+    notes: ''
+    date: 18 Jul 2018 (00:36 - 00:56)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 20x60"
+    checked: true
+  - filename: m29
+    original: m29-6024x4022.jpg
+    sizes: []
+    sort_id: 29
+    thumbnail: m29-thumbnail.jpg
+    title: M29
+    constellation: Cygnus
+    notes: ''
+    date: 13 Sep 2020 (04:55 - 05:15)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 9x120"
+    checked: true
+  - filename: m30
+    original: m30-3578x1885.jpg
+    sizes:
+      - m30-300x158.jpg
+    sort_id: 30
+    thumbnail: m30-300x158.jpg
+    title: M30
+    constellation: Capricornus
+    notes: ''
+    date: 6 Aug 2026 (00:00 - 03:30)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 34x20" Red | 34x20" Green | 34x20" Blue
+    checked: true
+  - filename: m31
+    original: m31-6024x4022.jpg
+    sizes:
+      - m31-300x200.jpg
+    sort_id: 31
+    objects:
+      - 31
+      - 32
+      - 110
+    thumbnail: m31-300x200.jpg
+    title: M31, M32, & M110
+    constellation: Andromeda
+    notes: ''
+    date: 16 Sep 2023 (00:00 - 02:15)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i | Astronomik CSL-CCD | Optolong L-eNhance
+    image_info: 45x120" - UV/IR Cut | 71x240" - L-eNhance
+    checked: true
+  - filename: m33
+    original: m33-4895x3268.jpg
+    sizes:
+      - m33-300x200.jpg
+    sort_id: 33
+    thumbnail: m33-300x200.jpg
+    title: M33
+    constellation: Triangulum
+    notes: ''
+    date: 12 Nov 2021 (21:01 - 22:52)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i | Astronomik CSL-CCD
+    image_info: 16x300"
+    checked: true
+  - filename: m34
+    original: m34-2160x3840.jpg
+    sizes:
+      - m34-300x533.jpg
+    sort_id: 34
+    thumbnail: m34-300x533.jpg
+    title: M34
+    constellation: Perseus
+    notes: ''
+    date: 25 Jan 2026 (19:30 - 21:11)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 150x20"
+    checked: true
+  - filename: m35
+    original: m35-2126x3576.jpg
+    sizes:
+      - m35-300x505.jpg
+    sort_id: 35
+    thumbnail: m35-300x505.jpg
+    title: M35
+    constellation: Gemini
+    notes: ''
+    date: 25 Jan 2026 (21:15 - 23:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 150x20"
+    checked: true
+  - filename: m36
+    original: m36-996x1411.jpg
+    sizes:
+      - m36-300x425.jpg
+    sort_id: 36
+    thumbnail: m36-300x425.jpg
+    title: M36
+    constellation: Auriga
+    notes: ''
+    date: 17 Aug 2026 (03:30 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 143x20"
+    checked: true
+  - filename: m37
+    original: m37-989x1796.jpg
+    sizes:
+      - m37-300x545.jpg
+    sort_id: 37
+    thumbnail: m37-300x545.jpg
+    title: M37
+    constellation: Auriga
+    notes: ''
+    date: 16 Aug 2026 (04:00 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 102x20"
+    checked: true
+  - filename: m38
+    original: m38-987x1832.jpg
+    sizes:
+      - m38-300x557.jpg
+    sort_id: 38
+    thumbnail: m38-300x557.jpg
+    title: M38
+    constellation: Auriga
+    notes: ''
+    date: 16 Aug 2026 (03:00 - 04:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 90x20"
+    checked: true
+  - filename: m39
+    original: m39-6024x4022.jpg
+    sizes: []
+    sort_id: 39
+    thumbnail: m39-thumbnail.jpg
+    title: M39
+    constellation: Cygnus
+    notes: ''
+    date: 12 Sep 2020 (22:45 - 00:17)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 38x120"
+    checked: true
+  - filename: m40
+    original: m40-1603x1079.jpg
+    sizes:
+      - m40-300x202.jpg
+    sort_id: 40
+    thumbnail: m40-300x202.jpg
+    title: M40
+    constellation: Ursa Major
+    notes: ''
+    date: 29 Jun 2025 (22:03 - 22:33)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 41x10"
+    checked: true
+  - filename: m41
+    original: m41-1080x1920.jpg
+    sizes:
+      - m41-300x533.jpg
+    sort_id: 41
+    thumbnail: m41-300x533.jpg
+    title: M41
+    constellation: Canis Major
+    notes: ''
+    date: 16 Jan 2026 (22:00 - 22:37)
+    location: My Backyard
+    equipment: Seestar S50 | LP
+    image_info: 101x20"
+    checked: true
+  - filename: m42
+    original: m42-5000x3338.jpg
+    sizes:
+      - m42-300x200.jpg
+    sort_id: 42
+    objects:
+      - 42
+      - 43
+    thumbnail: m42-300x200.jpg
+    title: M42 & the Running Man
+    constellation: Orion
+    notes: ''
+    date: 16 Feb 2023 (19:00 - 00:00)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance
+    image_info: 58x120" | 49x60" | 28x30"
+    checked: true
+  - filename: m44
+    original: m44-6096x4056.jpg
+    sizes: []
+    sort_id: 44
+    thumbnail: m44-thumbnail.jpg
+    title: M44
+    constellation: Cancer
+    notes: ''
+    date: 12 Mar 2018 (22:59 - 23:35)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m45
+    original: m45-5000x3338.jpg
+    sizes:
+      - m45-300x200.jpg
+    sort_id: 45
+    thumbnail: m45-300x200.jpg
+    title: M45 - The Pleiades
+    constellation: Taurus
+    notes: ''
+    date: 20 Sep 2020 (01:00 - 03:00)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 30x120"
+    checked: true
+  - filename: m46
+    original: m46-6024x4022.jpg
+    sizes:
+      - m46-300x200.jpg
+    sort_id: 46
+    thumbnail: m46-300x200.jpg
+    title: M46
+    constellation: Puppis
+    notes: ''
+    date: 19 Feb 2020 (20:30 - 21:30)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 19x60"
+    checked: true
+  - filename: m47
+    original: m47-6096x4056.jpg
+    sizes:
+      - m47-300x200.jpg
+    sort_id: 47
+    thumbnail: m47-300x200.jpg
+    title: M47
+    constellation: Puppis
+    notes: ''
+    date: 12 Mar 2018 (22:30 - 23:00)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 40x30"
+    checked: true
+  - filename: m48
+    original: m48-3775x2515.jpg
+    sizes:
+      - m48-300x200.jpg
+    sort_id: 48
+    thumbnail: m48-300x200.jpg
+    title: M48
+    constellation: Hydra
+    notes: ''
+    date: 16 Mar 2023 (22:00 - 23:00)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i
+    image_info: 76x30"
+    checked: true
+  - filename: m49
+    original: m49-4000x2595.jpg
+    sizes:
+      - m49-300x195.jpg
+    sort_id: 49
+    thumbnail: m49-300x195.jpg
+    title: M49
+    constellation: Virgo
+    notes: ''
+    date: 25 Apr 2023 (22:25 - 00:15)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i
+    image_info: 31x180"
+    checked: true
+  - filename: m50
+    original: m50-6024x4022.png
+    sizes:
+      - m50-300x200.png
+    sort_id: 50
+    thumbnail: m50-300x200.png
+    title: M50
+    constellation: Monoceros
+    notes: ''
+    date: 27 Feb 2020 (22:15 - 23:00)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 13x120"
+    checked: true
+  - filename: m51
+    original: m51-1844x1691.jpg
+    sizes: []
+    sort_id: 51
+    thumbnail: m51-thumbnail.jpg
+    title: M51
+    constellation: Canes Venatici
+    notes: ''
+    date: 30 Apr 2026 (21:59 - 00:32) | 1 May 2026 (00:53 - 04:34)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGBH Filters
+    image_info: 36x120" Lum | 35x120" Red | 35x120" Green | 35x120" Blue | 12x300" Hα
+    checked: true
+  - filename: m52
+    original: m52-2233x3357.jpg
+    sizes:
+      - m52-300x451.jpg
+    sort_id: 52
+    thumbnail: m52-300x451.jpg
+    title: M52
+    constellation: Cassiopeia
+    notes: ''
+    date: 15 Jun 2026 (01:30 - 04:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 303x20"
+    checked: true
+  - filename: m53
+    original: m53-1920x1080.jpg
+    sizes:
+      - m53-300x169.jpg
+    sort_id: 53
+    thumbnail: m53-300x169.jpg
+    title: M53
+    constellation: Coma Berenices
+    notes: ''
+    date: 5 Jul 2025 (23:05 - 23:59)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 152x10"
+    checked: true
+  - filename: m54
+    original: m54-3288x1705.jpg
+    sizes:
+      - m54-300x156.jpg
+    sort_id: 54
+    thumbnail: m54-300x156.jpg
+    title: M54
+    constellation: Sagittarius
+    notes: ''
+    date: 23 Jul 2026 (22:45 - 00:45)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 24x30" Red | 22x30" Green | 21x30" Blue
+    checked: true
+  - filename: m55
+    original: m55-3442x1821.jpg
+    sizes:
+      - m55-300x159.jpg
+    sort_id: 55
+    thumbnail: m55-300x159.jpg
+    title: M55
+    constellation: Sagittarius
+    notes: ''
+    date: 31 Jul 2026 (23:30 - 02:00)
+    location: 'Heatheridge Observatory '
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 33x20" Red | 34x20" Green | 33x20" Blue
+    checked: true
+  - filename: m56
+    original: m56-6096x4056.jpg
+    sizes:
+      - m56-300x200.jpg
+    sort_id: 56
+    thumbnail: m56-300x200.jpg
+    title: M56
+    constellation: Lyra
+    notes: ''
+    date: 16 Aug 2017 (22:57 - 23:15)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 23x30"
+    checked: true
+  - filename: m57
+    original: m57-3000x2000.jpg
+    sizes:
+      - m57-300x200.jpg
+    sort_id: 57
+    thumbnail: m57-300x200.jpg
+    title: M57
+    constellation: Lyra
+    notes: ''
+    date: 16 Aug 2017 (22:43 - 23:07)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 23x30"
+    checked: true
+  - filename: m58
+    original: m58-1080x1920.jpg
+    sizes:
+      - m58-300x533.jpg
+    sort_id: 58
+    thumbnail: m58-300x533.jpg
+    title: M58
+    constellation: Virgo
+    notes: ''
+    date: 17 Jan 2026 (02:30 - 04:30)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 148x20"
+    checked: true
+  - filename: m59_m60
+    original: m59_m60-4000x2755.jpg
+    sizes:
+      - m59_m60-300x207.jpg
+    sort_id: 59
+    objects:
+      - 59
+      - 60
+    thumbnail: m59_m60-300x207.jpg
+    title: M59 & M60
+    constellation: Virgo
+    notes: ''
+    date: 26 Apr 2023 (00:34 - 02:34)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 31x180"
+    checked: true
+  - filename: m61
+    original: m61-1080x1920.jpg
+    sizes:
+      - m61-300x533.jpg
+    sort_id: 61
+    thumbnail: m61-300x533.jpg
+    title: M61
+    constellation: Virgo
+    notes: ''
+    date: 17 Jan 2026 (02:00 - 04:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 149x20"
+    checked: true
+  - filename: m62
+    original: m62-5044x3538.jpg
+    sizes:
+      - m62-300x210.jpg
+    sort_id: 62
+    thumbnail: m62-300x210.jpg
+    title: M62
+    constellation: Ophiuchus
+    notes: ''
+    date: 18 Aug 2020 (23:14 - 23:30)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 25x30"
+    checked: true
+  - filename: m63
+    original: m63-2043x1724.jpg
+    sizes:
+      - m63-300x253.jpg
+    sort_id: 63
+    thumbnail: m63-300x253.jpg
+    title: M63
+    constellation: Canes Venatici
+    notes: ''
+    date: 3 Jun 2018 (23:43 - 00:14)
+    location: Pit 'n Pole Observing Site
+    equipment: Z 73 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m64
+    original: m64-1080x1920.jpg
+    sizes:
+      - m64-300x533.jpg
+    sort_id: 64
+    thumbnail: m64-300x533.jpg
+    title: M64 The Blackeye Galaxy
+    constellation: Coma Berenices
+    notes: ''
+    date: 17 Jan 2026 (00:30 - 02:30)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 154x20"
+    checked: true
+  - filename: leo_triplet
+    original: leo_triplet-4994x3203.jpg
+    sizes:
+      - leo_triplet-300x193.jpg
+    sort_id: 65
+    objects:
+      - 65
+      - 66
+    thumbnail: leo_triplet-300x193.jpg
+    title: The Leo Triplet - M65 & M66
+    constellation: Leo
+    notes: ''
+    date: 29 Dec 2025 (04:10 - 05:40)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 63x20"
+    checked: true
+  - filename: m67
+    original: m67-3705x2342.jpg
+    sizes:
+      - m67-300x190.jpg
+    sort_id: 67
+    thumbnail: m67-300x190.jpg
+    title: M67
+    constellation: Cancer
+    notes: ''
+    date: 16 Mar 2023 (23:20 - 23:44)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 8x30" | 3x60"
+    checked: true
+  - filename: m68
+    original: m68-902x933.jpg
+    sizes:
+      - m68-300x310.jpg
+    sort_id: 68
+    thumbnail: m68-300x310.jpg
+    title: M68
+    constellation: Hydra
+    notes: ''
+    date: 25 Jan 2026 (03:00 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 320x20"
+    checked: true
+  - filename: m69
+    original: m69-1820x980.jpg
+    sizes:
+      - m69-300x162.jpg
+    sort_id: 69
+    thumbnail: m69-300x162.jpg
+    title: M69
+    constellation: Sagittarius
+    notes: ''
+    date: 27 Jul 2025 (01:00 - 02:04)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 139x20"
+    checked: true
+  - filename: m70
+    original: m70-1859x1038.jpg
+    sizes:
+      - m70-300x168.jpg
+    sort_id: 70
+    thumbnail: m70-300x168.jpg
+    title: M70
+    constellation: Sagittarius
+    notes: ''
+    date: 27 Jul 2025 (23:00 - 00:12)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 120x20"
+    checked: true
+  - filename: m71
+    original: m71-6024x4022.jpg
+    sizes: []
+    sort_id: 71
+    thumbnail: m71-thumbnail.jpg
+    title: M71
+    constellation: Sagitta
+    notes: ''
+    date: 13 Sep 2020 (03:30 - 04:30)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 20x120"
+    checked: true
+  - filename: m72
+    original: m72-5271x3382.jpg
+    sizes:
+      - m72-300x192.jpg
+    sort_id: 72
+    thumbnail: m72-300x192.jpg
+    title: M72
+    constellation: Aquarius
+    notes: ''
+    date: 12 Jun 2026 (02:00 - 04:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 27x60" R | 27x60" G | 24x60" B
+    checked: true
+  - filename: m73
+    original: m73-5225x3417.jpg
+    sizes:
+      - m73-300x196.jpg
+    sort_id: 73
+    thumbnail: m73-300x196.jpg
+    title: M73
+    constellation: Aquarius
+    notes: ''
+    date: 7 Oct 2023 (20:35 - 21:10) | 8 Oct 2023 (20:35 - 21:05) | 15 Oct 2023 (20:40 - 22:00)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
+    image_info: 6x360" | 8x180" | 24x120"
+    checked: true
+  - filename: m74
+    original: m74-2002x1521.jpg
+    sizes:
+      - m74-300x228.jpg
+    sort_id: 74
+    thumbnail: m74-300x228.jpg
+    title: M74
+    constellation: Pisces
+    notes: ''
+    date: 29 Jan 2019 (20:08 - 20:41)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m75
+    original: m75-3586x1892.jpg
+    sizes:
+      - m75-300x158.jpg
+    sort_id: 75
+    thumbnail: m75-300x158.jpg
+    title: M75
+    constellation: Sagittarius
+    notes: ''
+    date: 4 Aug 2026 (22:45 - 01:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGB Filters
+    image_info: 22x20” R | 23x20” G | 23x20” B
+    checked: true
+  - filename: m76
+    original: m76-3613x1898.jpg
+    sizes:
+      - m76-300x158.jpg
+    sort_id: 76
+    thumbnail: m76-300x158.jpg
+    title: M76
+    constellation: Perseus
+    notes: ''
+    date: 03 Jul 2026 (03:00 - 04:00) | 30 Jul 2026 (23:30 - 04:30) | 02 Aug 2026 (23:00 - 04:45) | 14 Aug 2026 (23:00 - 05:00) | 15 Aug 2026 (23:00 - 05:00) | 16 Aug 2026 (00:30 - 05:00)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | RGBHO Filters
+    image_info: 61x480" H | 79x480" O | 68x20" R | 66x20" G | 67x20" B
+    checked: true
+  - filename: m77
+    original: m77-2064x2180.jpg
+    sizes:
+      - m77-300x317.jpg
+    sort_id: 77
+    thumbnail: m77-300x317.jpg
+    title: M77
+    constellation: Cetus
+    notes: ''
+    date: 18 Jan 2026 (19:10 - 20:10)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 137x20"
+    checked: true
+  - filename: m78
+    original: m78-5442x3506.jpg
+    sizes:
+      - m78-300x193.jpg
+    sort_id: 78
+    thumbnail: m78-300x193.jpg
+    title: M78
+    constellation: Orion
+    notes: ''
+    date: 6 Oct 2023 (02:45 - 06:01) | 7 Oct 2023 (02:40 - 06:00) | 8 Oct 2023 (03:40 - 06:05) | 15 Oct 2023 (02:00 - 06:00)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i | Optolong L-eNhance | ICE Optical Glass Filters UV/IR Cut
+    image_info: 29x480" - UV/IR Cut | 68x480" - L-eNhance
+    checked: true
+  - filename: m79
+    original: m79-4103x2651.jpg
+    sizes:
+      - m79-300x194.jpg
+    sort_id: 79
+    thumbnail: m79-300x194.jpg
+    title: M79
+    constellation: Lepus
+    notes: ''
+    date: 14 Jan 2018 (21:30 - 22:06)
+    location: My Backyard
+    equipment: C 9.25 | Canon T6i
+    image_info: 30x60"
+    checked: true
+  - filename: m80
+    original: m80-5417x3234.jpg
+    sizes:
+      - m80-300x179.jpg
+    sort_id: 80
+    thumbnail: m80-300x179.jpg
+    title: M80
+    constellation: Scorpius
+    notes: ''
+    date: 15 May 2026 (00:01 - 03:56)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: '25x120" Lum | 23x120" R | 20x120" G | 20x120" B '
+    checked: true
+  - filename: m81
+    original: m81-1981x1798.jpg
+    sizes:
+      - m81-300x272.jpg
+    sort_id: 81
+    thumbnail: m81-300x272.jpg
+    title: M81
+    constellation: Ursa Major
+    notes: ''
+    date: 4 May 2019 (01:00 - 01:45)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 16x120"
+    checked: true
+  - filename: m82
+    original: m82-1445x1592.jpg
+    sizes:
+      - m82-300x331.jpg
+    sort_id: 82
+    thumbnail: m82-300x331.jpg
+    title: M82
+    constellation: Ursa Major
+    notes: ''
+    date: 4 May 2019 (01:00 - 01:45)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 16x120"
+    checked: true
+  - filename: m83
+    original: m83-795x751.jpg
+    sizes:
+      - m83-300x283.jpg
+    sort_id: 83
+    thumbnail: m83-300x283.jpg
+    title: M83 The Southern Pinwheel
+    constellation: Hydra
+    notes: ''
+    date: 25 Jan 2026 (03:50 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 320x20"
+    checked: true
+  - filename: m84
+    original: m84-2052x3648.jpg
+    sizes:
+      - m84-300x533.jpg
+    sort_id: 84
+    objects:
+      - 84
+      - 86
+    thumbnail: m84-300x533.jpg
+    title: M84, M86, & Markarian Chain
+    constellation: Virgo
+    notes: ''
+    date: 18 Jan 2026 (01:30 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 529x20"
+    checked: true
+  - filename: m85
+    original: m85-1080x1920.jpg
+    sizes:
+      - m85-300x533.jpg
+    sort_id: 85
+    thumbnail: m85-300x533.jpg
+    title: M85
+    constellation: Coma Berenices
+    notes: ''
+    date: 17 Jan 2026 (02:30 - 03:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 143x20"
+    checked: true
+  - filename: m87
+    original: m87-4763x3073.jpg
+    sizes:
+      - m87-300x194.jpg
+    sort_id: 87
+    thumbnail: m87-300x194.jpg
+    title: M87 The Smoking Gun Galaxy
+    constellation: Virgo
+    notes: ''
+    date: 16 May 2023 (23:45 - 02:15)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 40x180"
+    checked: true
+  - filename: m88
+    original: m88-1080x1920.jpg
+    sizes:
+      - m88-300x533.jpg
+    sort_id: 88
+    thumbnail: m88-300x533.jpg
+    title: M88
+    constellation: Coma Berenices
+    notes: ''
+    date: 16 Jan 2026 (03:30 - 04:30)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 146x20"
+    checked: true
+  - filename: m90
+    original: m90-1080x1920.jpg
+    sizes:
+      - m90-300x533.jpg
+    sort_id: 89
+    objects:
+      - 89
+      - 90
+    thumbnail: m90-300x533.jpg
+    title: M89 & M90
+    constellation: Virgo
+    notes: ''
+    date: 17 Jan 2026 (05:30 - 06:15)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 97x20"
+    checked: true
+  - filename: m91
+    original: m91-1080x1920.jpg
+    sizes:
+      - m91-300x533.jpg
+    sort_id: 91
+    thumbnail: m91-300x533.jpg
+    title: M91
+    constellation: Coma Berenices
+    notes: ''
+    date: 17 Jan 2026 (04:30 - 05:30)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 158x20"
+    checked: true
+  - filename: m92
+    original: m92-1666x2612.jpg
+    sizes:
+      - m92-300x470.jpg
+    sort_id: 92
+    thumbnail: m92-300x470.jpg
+    title: M92
+    constellation: Hercules
+    notes: ''
+    date: 23 Sep 2025 (22:00 - 22:20)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 15x20"
+    checked: true
+  - filename: m93
+    original: m93-4824x2988.jpg
+    sizes:
+      - m93-300x186.jpg
+    sort_id: 93
+    thumbnail: m93-300x186.jpg
+    title: M93
+    constellation: Puppis
+    notes: ''
+    date: 18 Mar 2023 (21:36 - 22:50)
+    location: My Backyard
+    equipment: AT130EDT | Canon T6i
+    image_info: 49x60"
+    checked: true
+  - filename: m94
+    original: m94-849x1143.jpg
+    sizes:
+      - m94-300x404.jpg
+    sort_id: 94
+    thumbnail: m94-300x404.jpg
+    title: M94
+    constellation: Canes Venatici
+    notes: ''
+    date: 25 Jan 2026 (00:00 - 02:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 253x20"
+    checked: true
+  - filename: m95
+    original: m95-3585x2132.jpg
+    sizes:
+      - m95-300x178.jpg
+    sort_id: 95
+    thumbnail: m95-300x178.jpg
+    title: M95
+    constellation: Leo
+    notes: ''
+    date: 19 Mar 2023 (22:45 - 01:45)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 37x180" | 10x20"
+    checked: true
+  - filename: m96
+    original: m96-3597x2563.jpg
+    sizes:
+      - m96-300x214.jpg
+    sort_id: 96
+    thumbnail: m96-300x214.jpg
+    title: M96
+    constellation: Leo
+    notes: ''
+    date: 19 Mar 2023 (22:45 - 01:45)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 37x180" | 10x20"
+    checked: true
+  - filename: m97
+    original: m97-1611x996.jpg
+    sizes:
+      - m97-300x185.jpg
+    sort_id: 97
+    thumbnail: m97-300x185.jpg
+    title: M97
+    constellation: Ursa Major
+    notes: ''
+    date: 30 Jun 2025 (22:20 - 23:15)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 159x10"
+    checked: true
+  - filename: m98
+    original: m98-1080x1920.jpg
+    sizes:
+      - m98-300x533.jpg
+    sort_id: 98
+    thumbnail: m98-300x533.jpg
+    title: M98
+    constellation: Coma Berenices
+    notes: ''
+    date: 17 Jan 2026 (04:00 - 05:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 152x20"
+    checked: true
+  - filename: m99
+    original: m99-1080x1920.jpg
+    sizes:
+      - m99-300x533.jpg
+    sort_id: 99
+    thumbnail: m99-300x533.jpg
+    title: M99
+    constellation: Coma Berenices
+    notes: ''
+    date: 17 Jan 2026 (05:00 - 06:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 154x20"
+    checked: true
+  - filename: m100
+    original: m100-3128x2400.jpg
+    sizes:
+      - m100-300x230.jpg
+    sort_id: 100
+    thumbnail: m100-300x230.jpg
+    title: M100
+    constellation: Coma Berenices
+    notes: ''
+    date: 14 May 2026 (22:30 - 01:30)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 50x120" Lum | 30x120" Red | 30x120" Green | 27x120" Blue
+    checked: true
+  - filename: m101
+    original: m101-2502x1877.jpg
+    sizes:
+      - m101-300x225.jpg
+    sort_id: 101
+    thumbnail: m101-300x225.jpg
+    title: M101
+    constellation: Ursa Major
+    notes: ''
+    date: 7 May 2026 (22:59 - 02:55) | 9 May 2026 (22:18 - 04:41)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 55x120" Lum | 33x120" Red | 33x120" Green | 30x120" Blue
+    checked: true
+  - filename: m102
+    original: m102-3350x2905.jpg
+    sizes:
+      - m102-300x260.jpg
+    sort_id: 102
+    thumbnail: m102-300x260.jpg
+    title: M102
+    constellation: Draco
+    notes: ''
+    date: 12 May 2026 (21:41 - 22:55)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | Luminance Only
+    image_info: 32x120"
+    checked: true
+  - filename: m103
+    original: m103-1079x1426.jpg
+    sizes: []
+    sort_id: 103
+    thumbnail: m103-300x396.jpg
+    title: M103
+    constellation: Cassiopeia
+    notes: ''
+    date: 17 Jun 2026 (02:00 - 04:00)
+    location: My Backyard
+    equipment: Seestar S50
+    image_info: 203x20"
+    checked: true
+  - filename: m104
+    original: m104-4022x6024.jpg
+    sizes: []
+    sort_id: 104
+    thumbnail: m104-thumbnail.jpg
+    title: M104
+    constellation: Virgo
+    notes: ''
+    date: 27 Apr 2020 (22:20 - 23:22)
+    location: Pit 'n Pole Observing Site
+    equipment: C 9.25 | Canon T6i
+    image_info: 30x120"
+    checked: true
+  - filename: m105
+    original: m105-3393x2538.jpg
+    sizes:
+      - m105-300x259.jpg
+    sort_id: 105
+    thumbnail: m105-300x259.jpg
+    title: M105
+    constellation: Leo
+    notes: ''
+    date: 19 Mar 2023 (01:56 - 04:05) | 27 Mar 2023 (21:39 - 23:05)
+    location: My Backyard
+    equipment: Z 73 | Canon T6i
+    image_info: 58x180"
+    checked: true
+  - filename: m106
+    original: m106-968x1109.jpg
+    sizes:
+      - m106-300x344.jpg
+    sort_id: 106
+    thumbnail: m106-300x344.jpg
+    title: M106
+    constellation: Canes Venatici
+    notes: ''
+    date: 25 Jan 2026 (01:50 - 03:50)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 299x20"
+    checked: true
+  - filename: m107
+    original: m107-3630x2030.jpg
+    sizes:
+      - m107-300x168.jpg
+    sort_id: 107
+    thumbnail: m107-300x168.jpg
+    title: M107
+    constellation: Ophiuchus
+    notes: ''
+    date: 11 Jul 2025 (22:30 - 00:00)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 349x10"
+    checked: true
+  - filename: m108
+    original: m108-806x708.jpg
+    sizes:
+      - m108-300x264.jpg
+    sort_id: 108
+    thumbnail: m108-300x264.jpg
+    title: M108
+    constellation: Ursa Major
+    notes: ''
+    date: 18 Jan 2026 (00:30 - 02:28)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 150x20"
+    checked: true
+  - filename: m109
+    original: m109-924x1208.jpg
+    sizes:
+      - m109-300x392.jpg
+    sort_id: 109
+    thumbnail: m109-300x392.jpg
+    title: M109
+    constellation: Ursa Major
+    notes: ''
+    date: 20 Jan 2026 (00:30 - 02:28)
+    location: My Backyard
+    equipment: Seestar S50 | LP Filter
+    image_info: 215x20"
+    checked: true

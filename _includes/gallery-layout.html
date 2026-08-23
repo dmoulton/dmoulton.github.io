@@ -127,17 +127,18 @@
       var imageData{% if include.id_number %}{{ include.id_number }}{% endif %} = [
         {% for picture in include.gallery.pictures %}
         {
-          date: "{{ picture.date | escape }}",
-          location: "{{ picture.location | escape }}",
-          equipment: "{{ picture.equipment | escape }}",
-          image_info: "{{ picture.image_info | escape }}",
-          constellation: "{{ picture.constellation | escape }}"
+          date: {{ picture.date | jsonify }},
+          location: {{ picture.location | jsonify }},
+          equipment: {{ picture.equipment | jsonify }},
+          image_info: {{ picture.image_info | jsonify }},
+          constellation: {{ picture.constellation | jsonify }},
+          notes: {{ picture.notes | jsonify }}
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ];
 
       function buildPopoverHtml(data) {
-        var hasData = data.date || data.location || data.equipment || data.image_info;
+        var hasData = data.date || data.location || data.equipment || data.image_info || data.notes;
         if (!hasData) {
           return '<p class="no-data">Image data not entered</p>';
         }
@@ -147,6 +148,7 @@
         if (data.equipment)  rows += '<tr><th>Equipment</th><td>'  + data.equipment.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
         if (data.image_info) rows += '<tr><th>Image Info</th><td>' + data.image_info.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
         if (data.constellation) rows += '<tr><th>Constellation</th><td>' + data.constellation + '</td></tr>';
+        if (data.notes)       rows += '<tr><th>Notes</th><td>'       + data.notes.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
         return '<table>' + rows + '</table>';
       }
 
