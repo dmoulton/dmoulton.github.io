@@ -9,6 +9,28 @@
         {{ site.email }}
       </a>
 
+      {% if site.instagram_username %}
+      <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
+        </svg>
+        Instagram
+      </a>
+      {% endif %}
+
+      {% if site.astrobin_username %}
+      <a href="https://astrobin.com/u/{{ site.astrobin_username }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M.75 20.5 4.9 14.3 7 15.85 12.35 5.4 16 8.1V1h4v9.25l3.25 1.95V22H4v-1.5H.75Zm11.2-.5 2.58-8 2.92 8h-1.62l-.57-1.72h-1.79L12.95 20h-1Zm1.98-3.2h.84l-.43-1.98-.41 1.98Z"
+          />
+        </svg>
+        Astrobin
+      </a>
+      {% endif %}
+
       {% if site.github_username %}
       <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" fill="currentColor">
@@ -18,22 +40,15 @@
       </a>
       {% endif %}
 
-      {% if site.twitter_username %}
-      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-        Twitter
-      </a>
-      {% endif %}
 
+<!--
       <a href="{{ '/feed.xml' | prepend: site.baseurl }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/>
           <circle cx="5" cy="19" r="1" fill="currentColor"/>
         </svg>
         RSS
-      </a>
+      </a> -->
     </div>
 
     <div class="footer-copy">&copy; {{ 'now' | date: "%Y" }} David Moulton</div>

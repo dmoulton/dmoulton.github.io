@@ -136,70 +136,7 @@ permalink: /astrophotography/messier-list
     }
 </style>
 
-<style>
-    .lg-toolbar {
-        position: relative;
-    }
-    .lg-info-btn {
-        display: inline-block;
-        float: right;
-        cursor: pointer;
-        padding: 0 14px;
-        line-height: 47px;
-        font-size: 1.3rem;
-        color: #999;
-        transition: color 0.2s;
-        user-select: none;
-    }
-    .lg-info-btn:hover {
-        color: #fff;
-    }
-    .lg-info-popover {
-        display: none;
-        position: absolute;
-        top: 47px;
-        right: 0;
-        width: 476px;
-        background: rgba(10, 12, 20, 0.88);
-        border: 1px solid rgba(137, 180, 250, 0.25);
-        border-top: none;
-        padding: 14px 16px;
-        z-index: 1090;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    .lg-info-popover.lg-info-open {
-        display: block;
-    }
-    .lg-info-popover table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: "Space Mono", monospace;
-        font-size: 0.75rem;
-        color: #cdd6f4;
-    }
-    .lg-info-popover th {
-        text-align: left;
-        color: #89b4fa;
-        font-weight: 700;
-        padding: 4px 12px 4px 0;
-        white-space: nowrap;
-        vertical-align: top;
-        width: 1%;
-    }
-    .lg-info-popover td {
-        padding: 4px 0;
-        vertical-align: top;
-        line-height: 1.5;
-    }
-    .lg-info-popover .no-data {
-        color: #6c7086;
-        font-family: "Space Mono", monospace;
-        font-size: 0.75rem;
-        font-style: italic;
-        margin: 0;
-    }
-</style>
+{% include lg-info-popover.html %}
 
 <style>
     .ml-notes {
@@ -529,32 +466,16 @@ append: "|||" | append: pic.sort_id %} {% assign row_keys = row_keys | push: key
       var imageData = [
         {% for pic in all_pictures %}
         {
-          name: "{{ pic.title | escape }}",
-          date: "{{ pic.date | escape }}",
-          location: "{{ pic.location | escape }}",
-          equipment: "{{ pic.equipment | escape }}",
-          image_info: "{{ pic.image_info | escape }}",
-          constellation: "{{ pic.constellation | escape }}",
-          notes: "{{ picture.notes | escape }}"
+          name: {{ pic.title | jsonify }},
+          date: {{ pic.date | jsonify }},
+          location: {{ pic.location | jsonify }},
+          equipment: {{ pic.equipment | jsonify }},
+          image_info: {{ pic.image_info | jsonify }},
+          constellation: {{ pic.constellation | jsonify }},
+          notes: {{ pic.notes | jsonify }}
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ];
-
-      function buildPopoverHtml(data) {
-        var hasData = data.date || data.location || data.equipment || data.image_info;
-        if (!hasData) {
-          return '<p class="no-data">Image data not entered</p>';
-        }
-        var rows = '';
-        if (data.name)      rows += '<tr><th>Name</th><td>'   + data.name   + '</td></tr>';
-        if (data.constellation) rows += '<tr><th>Constellation</th><td>' + data.constellation + '</td></tr>';
-        if (data.date)          rows += '<tr><th>Date</th><td>'       + data.date.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
-        if (data.location)      rows += '<tr><th>Location</th><td>'   + data.location   + '</td></tr>';
-        if (data.equipment)     rows += '<tr><th>Equipment</th><td>'  + data.equipment.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
-        if (data.image_info)    rows += '<tr><th>Image Info</th><td>' + data.image_info.split('|').map(function(s){ return s.trim(); }).join('<br>') + '</td></tr>';
-        if (data.notes)         rows += '<tr><th>Notes</th><td>' + data.notes + '</td></tr>';
-        return '<table>' + rows + '</table>';
-      }
 
       $(document).ready(function () {
         var $lg = $('#messier-hidden-gallery').lightGallery({
@@ -570,46 +491,7 @@ append: "|||" | append: pic.sort_id %} {% assign row_keys = row_keys | push: key
           }
         });
 
-        var hideTimer;
-        $lg.on('onAfterOpen.lg', function () {
-          $('.lg-toolbar').append(
-            '<span class="lg-info-btn" title="Image Info">&#9432;</span>' +
-            '<div class="lg-info-popover"></div>'
-          );
-          var idx = $('.lg-current').index('.lg-item');
-          if (idx < 0) idx = 0;
-          $('.lg-info-popover').html(buildPopoverHtml(imageData[idx] || {}));
-
-          $(document).on('mouseenter.lginfomessierlist', '.lg-info-btn', function () {
-            clearTimeout(hideTimer);
-            $('.lg-info-popover').addClass('lg-info-open');
-          });
-          $(document).on('mouseleave.lginfomessierlist', '.lg-info-btn', function () {
-            hideTimer = setTimeout(function () {
-              $('.lg-info-popover').removeClass('lg-info-open');
-            }, 150);
-          });
-          $(document).on('mouseenter.lginfomessierlist', '.lg-info-popover', function () {
-            clearTimeout(hideTimer);
-          });
-          $(document).on('mouseleave.lginfomessierlist', '.lg-info-popover', function () {
-            hideTimer = setTimeout(function () {
-              $('.lg-info-popover').removeClass('lg-info-open');
-            }, 150);
-          });
-        });
-
-        $lg.on('onAfterSlide.lg', function (e, prevIndex, index) {
-          clearTimeout(hideTimer);
-          $('.lg-info-popover')
-            .removeClass('lg-info-open')
-            .html(buildPopoverHtml(imageData[index] || {}));
-        });
-
-        $lg.on('onBeforeClose.lg', function () {
-          clearTimeout(hideTimer);
-          $(document).off('.lginfomessierlist');
-        });
+        initLgInfoPopover($lg, imageData);
       });
     })();
 </script>

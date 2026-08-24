@@ -369,12 +369,12 @@
 
   .gallery-sizer,
   .image-wrapper {
-    width: calc(25% - 7.5px);
-    margin-bottom: 10px;
+    width: calc(25% - 10px);
+    margin: 0 5px 10px;
 
-    @media (max-width: 900px) { width: calc(33.333% - 6.667px); }
-    @media (max-width: 600px) { width: calc(50% - 5px); }
-    @media (max-width: 400px) { width: 100%; }
+    @media (max-width: 900px) { width: calc(33.333% - 10px); }
+    @media (max-width: 600px) { width: calc(50% - 10px); }
+    @media (max-width: 400px) { width: 100%; margin: 0 0 10px; }
   }
 
   .image {
@@ -386,7 +386,10 @@
 
     img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      object-position: center;
+      background: #000;
       display: block;
       border-radius: 0;
       border: none;

@@ -16,125 +16,283 @@ support: [jquery, gallery]
     #image-gallery .gallery-sizer {
         width: 23%;
     }
+
+    .astrobin-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* extra top padding clears the site's sticky header (64px), which
+           otherwise overlaps the top of a vertically-centered image */
+        padding: 104px 40px 40px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.85);
+    }
+    .astrobin-lightbox[hidden] {
+        display: none;
+    }
+    .astrobin-lightbox-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .astrobin-lightbox-image-wrap {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        max-height: calc(100vh - 184px);
+    }
+    .astrobin-lightbox-image-wrap img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: calc(100vh - 184px);
+    }
+    .astrobin-lightbox-link {
+        margin-top: 12px;
+        color: #fff;
+    }
+    .astrobin-lightbox-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 8px 12px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+    }
+    .astrobin-lightbox-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+    }
+    body.astrobin-lightbox-open {
+        overflow: hidden;
+    }
+
+    .astrobin-pagination-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 12px 0;
+    }
+    .astrobin-pagination-controls[hidden] {
+        display: none;
+    }
+    .astrobin-pagination-controls button {
+        cursor: pointer;
+    }
+    .astrobin-pagination-controls button:disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    .astrobin-attribution {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+    }
 </style>
 
 <h1 class="page-title">{{ page.title }}</h1>
 <p class="astrobin-intro">
-    My uploads to
+    A selection of my favorite astrophotos. Click any image to see a larger version, or see my
     <a
         href="https://www.astrobin.com/users/dmoulton/"
         target="_blank"
         rel="noopener"
-        >Astrobin</a
-    >. Click any image to view it on Astrobin.
+        >full catalog on Astrobin</a
+    >.
 </p>
 
-<p id="astrobin-pagination" class="astrobin-pagination"></p>
+<div class="astrobin-pagination-controls" data-astrobin-pagination hidden>
+    <button type="button" data-astrobin-prev-page>&lsaquo; Prev</button>
+    <span data-astrobin-page-indicator></span>
+    <button type="button" data-astrobin-next-page>Next &rsaquo;</button>
+</div>
 
 <div id="image-gallery" class="image-gallery">
     <div id="gallery-sizer" class="gallery-sizer"></div>
 </div>
 
-<script>
-    // Read the current offset from this page's own URL (?offset=N), default 0
-    var currentOffset =
-        parseInt(
-            new URLSearchParams(window.location.search).get("offset"),
-            10,
-        ) || 0;
+<div class="astrobin-pagination-controls" data-astrobin-pagination hidden>
+    <button type="button" data-astrobin-prev-page>&lsaquo; Prev</button>
+    <span data-astrobin-page-indicator></span>
+    <button type="button" data-astrobin-next-page>Next &rsaquo;</button>
+</div>
 
-    var request = new XMLHttpRequest();
-    request.open(
-        "GET",
-        "https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key={{ site.astrobin_key }}&api_secret={{ site.astrobin_secret }}&limit=25&offset=" +
-            currentOffset +
-            "&format=json",
-        true,
+<div id="astrobin-lightbox" class="astrobin-lightbox" hidden>
+    <div class="astrobin-lightbox-content">
+        <div class="astrobin-lightbox-image-wrap">
+            <img id="astrobin-lightbox-img" src="" alt="" />
+            <div
+                id="astrobin-lightbox-caption"
+                class="astrobin-lightbox-caption"
+            ></div>
+            <button
+                type="button"
+                class="astrobin-lightbox-close"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+        </div>
+        <a
+            id="astrobin-lightbox-link"
+            href="#"
+            target="astrobin-viewer"
+            class="astrobin-lightbox-link"
+            >View on Astrobin &rsaquo;</a
+        >
+    </div>
+</div>
+
+
+<p class="astrobin-attribution">
+    This website uses the AstroBin API but is not endorsed or certified by AstroBin.
+</p>
+
+<script>
+    // The "Featured" collection on Astrobin - only these images are shown
+    // here; the rest of the catalog is linked out to Astrobin itself.
+    var FEATURED_COLLECTION_ID = 113888;
+
+    var apiKey = "{{ site.astrobin_key }}";
+    var apiSecret = "{{ site.astrobin_secret }}";
+    var IMAGES_PER_PAGE = 20;
+
+    var gallery = document.getElementById("image-gallery");
+    var paginationControls = document.querySelectorAll(
+        "[data-astrobin-pagination]",
+    );
+    var prevPageButtons = document.querySelectorAll(
+        "[data-astrobin-prev-page]",
+    );
+    var nextPageButtons = document.querySelectorAll(
+        "[data-astrobin-next-page]",
+    );
+    var pageIndicators = document.querySelectorAll(
+        "[data-astrobin-page-indicator]",
     );
 
-    request.onload = function () {
-        if (request.status < 200 || request.status >= 400) return;
-        var data = JSON.parse(this.response);
-        var gallery = document.getElementById("image-gallery");
+    var lightbox = document.getElementById("astrobin-lightbox");
+    var lightboxImg = document.getElementById("astrobin-lightbox-img");
+    var lightboxLink = document.getElementById("astrobin-lightbox-link");
+    var lightboxCaption = document.getElementById(
+        "astrobin-lightbox-caption",
+    );
 
-        // Build previous/next links from meta, pointing back at this same page
-        var meta = data["meta"] || {};
-        var pagination = document.getElementById("astrobin-pagination");
+    function openLightbox(image, href) {
+        lightboxImg.src = image.url_hd || image.url_regular;
+        lightboxImg.alt = image.title || "";
+        lightboxLink.href = href;
+        lightboxCaption.textContent = image.title || "";
+        lightboxCaption.hidden = !image.title;
+        lightbox.hidden = false;
+        document.body.classList.add("astrobin-lightbox-open");
+    }
 
-        function offsetFromApiUrl(apiUrl) {
-            // apiUrl is a relative API path like "/api/v1/image/?...&offset=50"
-            var params = new URLSearchParams(apiUrl.split("?")[1] || "");
-            return params.get("offset");
-        }
+    function closeLightbox() {
+        lightbox.hidden = true;
+        lightboxImg.src = "";
+        lightboxCaption.textContent = "";
+        document.body.classList.remove("astrobin-lightbox-open");
+    }
 
-        var links = [];
-        var limit = meta.limit || 25;
-        var totalCount = meta.total_count || 0;
+    document
+        .querySelector(".astrobin-lightbox-close")
+        .addEventListener("click", closeLightbox);
 
-        // Offset of the last page: the highest multiple of limit below total_count
-        var lastOffset = Math.max(
-            0,
-            Math.floor((totalCount - 1) / limit) * limit,
-        );
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) closeLightbox();
+    });
 
-        if (meta.previous) {
-            links.push(
-                '<a href="?offset=0" class="astrobin-first">&laquo; First</a>',
-            );
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
 
-            var prevOffset = offsetFromApiUrl(meta.previous);
-            links.push(
-                '<a href="?offset=' +
-                    prevOffset +
-                    '" class="astrobin-prev">&lsaquo; Previous</a>',
-            );
-        }
+    function fetchJson(url, onSuccess) {
+        var request = new XMLHttpRequest();
+        request.open("GET", url, true);
+        request.onload = function () {
+            if (request.status < 200 || request.status >= 400) return;
+            onSuccess(JSON.parse(this.response));
+        };
+        request.send();
+    }
 
-        if (meta.next) {
-            var nextOffset = offsetFromApiUrl(meta.next);
-            links.push(
-                '<a href="?offset=' +
-                    nextOffset +
-                    '" class="astrobin-next">Next &rsaquo;</a>',
-            );
+    function renderImage(image) {
+        var ident = image.hash || image.id;
+        var href = "https://www.astrobin.com/" + ident;
 
-            links.push(
-                '<a href="?offset=' +
-                    lastOffset +
-                    '" class="astrobin-last">Last &raquo;</a>',
-            );
-        }
+        var wrapper = document.createElement("div");
+        wrapper.className = "image-wrapper";
 
-        if (pagination) {
-            pagination.innerHTML = links.join(" | ");
-        }
-
-        data["objects"].forEach(function (image) {
-            var ident = image.hash || image.id;
-            var href = "https://www.astrobin.com/" + ident;
-
-            var wrapper = document.createElement("div");
-            wrapper.className = "image-wrapper";
-
-            var a = document.createElement("a");
-            a.className = "image";
-            a.href = href;
-            a.target = "_blank";
-            a.rel = "noopener";
-
-            var img = document.createElement("img");
-            img.src = image.url_regular;
-            img.alt = image.title || "";
-            img.title = image.title || "";
-
-            a.appendChild(img);
-            wrapper.appendChild(a);
-            gallery.appendChild(wrapper);
+        var a = document.createElement("a");
+        a.className = "image";
+        a.href = href;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.addEventListener("click", function (event) {
+            // Let modified clicks (middle-click, ctrl/cmd/shift/alt-click)
+            // behave normally so opening in a new tab still works.
+            if (
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+            ) {
+                return;
+            }
+            event.preventDefault();
+            openLightbox(image, href);
         });
 
-        // Init Isotope masonry after images are added
+        var img = document.createElement("img");
+        img.src = image.url_regular;
+        img.alt = image.title || "";
+        img.title = image.title || "";
+
+        a.appendChild(img);
+        wrapper.appendChild(a);
+        gallery.appendChild(wrapper);
+    }
+
+    // Isotope masonry grid. Rebuilt from scratch on every page change -
+    // reusing the instance across pages (via reloadItems) left it with
+    // stale internal column-height/sizing state once items were swapped
+    // out from under it, which made items stack on top of each other and
+    // stay stacked even after paging back to a page that had rendered
+    // correctly before.
+    var $grid = null;
+
+    function layoutGallery() {
         $(document).ready(function () {
-            var $grid = $("#image-gallery").isotope({
+            if ($grid) {
+                $grid.isotope("destroy");
+            }
+
+            $grid = $("#image-gallery").isotope({
                 percentPosition: true,
                 columnWidth: "#gallery-sizer",
                 itemSelector: ".image-wrapper",
@@ -145,7 +303,132 @@ support: [jquery, gallery]
                 $grid.isotope("layout");
             });
         });
-    };
+    }
 
-    request.send();
+    // Renders one page (at most IMAGES_PER_PAGE images) of an ordered list
+    // of already-fetched images, and updates the prev/next controls.
+    var currentPageImages = [];
+    var currentPage = 0;
+
+    function renderPage(page) {
+        currentPage = page;
+
+        gallery.querySelectorAll(".image-wrapper").forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+
+        var start = page * IMAGES_PER_PAGE;
+        currentPageImages
+            .slice(start, start + IMAGES_PER_PAGE)
+            .forEach(renderImage);
+
+        layoutGallery();
+
+        var pageCount = Math.max(
+            1,
+            Math.ceil(currentPageImages.length / IMAGES_PER_PAGE),
+        );
+
+        var indicatorText = "Page " + (page + 1) + " of " + pageCount;
+
+        paginationControls.forEach(function (controls) {
+            controls.hidden = pageCount <= 1;
+        });
+        prevPageButtons.forEach(function (button) {
+            button.disabled = page === 0;
+        });
+        nextPageButtons.forEach(function (button) {
+            button.disabled = page >= pageCount - 1;
+        });
+        pageIndicators.forEach(function (indicator) {
+            indicator.textContent = indicatorText;
+        });
+    }
+
+    prevPageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            if (currentPage > 0) renderPage(currentPage - 1);
+        });
+    });
+
+    nextPageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            var pageCount = Math.ceil(
+                currentPageImages.length / IMAGES_PER_PAGE,
+            );
+            if (currentPage < pageCount - 1) renderPage(currentPage + 1);
+        });
+    });
+
+    // The collection endpoint only lists member images as bare hash URIs,
+    // with no thumbnail/title data. Rather than fetch each one individually
+    // (N calls), page through the user's full image list in the API's
+    // max page size (25, server-enforced) - which already returns full
+    // image data - and keep only the hashes that belong to this collection,
+    // stopping as soon as every member has been matched.
+    function loadCollection(collectionId) {
+        var url =
+            "https://www.astrobin.com/api/v1/collection/" +
+            collectionId +
+            "/?api_key=" +
+            apiKey +
+            "&api_secret=" +
+            apiSecret +
+            "&format=json";
+
+        fetchJson(url, function (collection) {
+            var hashes = (collection.images || []).map(function (uri) {
+                var parts = uri.split("/");
+                return parts[parts.length - 1];
+            });
+
+            if (hashes.length === 0) {
+                renderPage(0);
+                return;
+            }
+
+            var found = {};
+
+            function fetchPage(offset) {
+                var pageUrl =
+                    "https://www.astrobin.com/api/v1/image/?user=dmoulton&api_key=" +
+                    apiKey +
+                    "&api_secret=" +
+                    apiSecret +
+                    "&limit=25&offset=" +
+                    offset +
+                    "&format=json";
+
+                fetchJson(pageUrl, function (data) {
+                    (data.objects || []).forEach(function (image) {
+                        if (hashes.indexOf(image.hash) !== -1) {
+                            found[image.hash] = image;
+                        }
+                    });
+
+                    var allFound = hashes.every(function (hash) {
+                        return found[hash];
+                    });
+                    var meta = data.meta || {};
+
+                    if (allFound || !meta.next) {
+                        currentPageImages = hashes
+                            .filter(function (hash) {
+                                return found[hash];
+                            })
+                            .map(function (hash) {
+                                return found[hash];
+                            });
+                        renderPage(0);
+                    } else {
+                        fetchPage(offset + 25);
+                    }
+                });
+            }
+
+            fetchPage(0);
+        });
+    }
+
+    loadCollection(FEATURED_COLLECTION_ID);
 </script>
