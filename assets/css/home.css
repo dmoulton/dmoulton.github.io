@@ -136,22 +136,22 @@
 
 .setup-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0;
 }
 
 .setup-item {
     padding: 22px 26px;
-    border-bottom: 1px solid #1e3050;
-    border-right: 1px solid #1e3050;
+    /*border-bottom: 1px solid #1e3050;
+    border-right: 1px solid #1e3050;*/
 }
 
-.setup-item:nth-child(even) {
+/*.setup-item:nth-child(all) {
     border-right: none;
 }
-.setup-item:nth-last-child(-n + 2) {
+.setup-item:nth-last-child(all) {
     border-bottom: none;
-}
+}*/
 
 .setup-item-icon {
     font-size: 1.4rem;
