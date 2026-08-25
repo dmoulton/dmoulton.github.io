@@ -6,6 +6,7 @@ layout: default
 <script
     type="text/javascript"
     src="https://astrosphericcloudstorage.blob.core.windows.net/embed/astrosphericembed.js"
+    defer
 ></script>
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/home.css" />
@@ -39,13 +40,10 @@ layout: default
 <div class="home-section">
     <p class="section-heading">// Heatheridge Observatory</p>
     <div class="setup-card">
-        <div
-            style="
-                overflow: hidden;
-                max-height: 620px;
-                border-bottom: 1px solid #1e3050;
-            "
-        >
+        <!-- border-bottom lives on this wrapper, not the img itself, since
+             the img's transform: scale(0.95) below would shrink a border
+             painted directly on it inward, leaving a gap at this edge -->
+        <div style="border-bottom: 1px solid #1e3050">
             <img
                 src="{{ site.baseurl }}/assets/observatory.jpeg"
                 alt="Observatory interior showing Paramount MyT mount with AT130EDT and Zenithstar 73"
@@ -67,19 +65,24 @@ layout: default
         <div class="setup-grid">
             <div class="setup-item setup-item-with-image">
                 <div class="setup-item-image">
-                    <img src="/assets/obsy.png" width="128" />
+                    <img
+                        src="/assets/obsy-84.png"
+                        width="84"
+                        height="102"
+                        alt=""
+                    />
                 </div>
 
                 <div>
                     <div class="setup-item-label">Heatheridge Observatory</div>
                     <div class="setup-item-value">8ft Exploradome</div>
-                    <div class="setup-item-detail">MaxDome II Dome Control</div>
+                    <div class="setup-item-detail">MaxDome II Dome Control</br>10x10 ft Square Observatory</br>Bortle 6 Sky in Utah</div>
                 </div>
             </div>
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/myt_small.png" />
+                    <img src="assets/myt_small.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Mount</div>
                 <div class="setup-item-value">Paramount MyT</div>
@@ -90,16 +93,16 @@ layout: default
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/scopes_icon.png" />
+                    <img src="assets/nina-icon-32.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Software</div>
-                <div class="setup-item-value">NINA / Siril</div>
-                <div class="setup-item-detail"></div>
+                <div class="setup-item-value">NINA</div>
+                <div class="setup-item-detail">Guiding with PHD2</br>Processing with Siril</div>
             </div>
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/scopes_icon.png" />
+                    <img src="assets/scopes_icon.png" width="32" height="22" alt="" />
                 </div>
                 <div class="setup-item-label">Primary OTA</div>
                 <div class="setup-item-value">AstroTech AT130EDT</div>
@@ -110,7 +113,7 @@ layout: default
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/minicam_icon.png" />
+                    <img src="assets/minicam_icon.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Primary Camera</div>
                 <div class="setup-item-value">QHY Minicam8</div>
@@ -121,7 +124,7 @@ layout: default
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/phd2_icon.png" />
+                    <img src="assets/qhy5iiim-oag-32.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Primary Guiding</div>
                 <div class="setup-item-value">OAG + QHY5IIIM</div>
@@ -132,7 +135,7 @@ layout: default
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/scopes_icon.png" />
+                    <img src="assets/scopes_icon.png" width="32" height="22" alt="" />
                 </div>
                 <div class="setup-item-label">Widefield OTA</div>
                 <div class="setup-item-value">William Optics Zenithstar 73</div>
@@ -143,7 +146,7 @@ layout: default
 
             <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/canon_camera.png" />
+                    <img src="assets/canon-t6i-body-32.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Widefield Camera</div>
                 <div class="setup-item-value">Canon T6i</div>
@@ -152,9 +155,9 @@ layout: default
                 </div>
             </div>
 
-            <div class="setup-item" style="border-bottom: 1px solid #1e3050">
+            <div class="setup-item">
                 <div class="setup-item-icon">
-                    <img src="assets/phd2_icon.png" />
+                    <img src="assets/asi462mc-32.png" width="32" height="32" alt="" />
                 </div>
                 <div class="setup-item-label">Widefield Guiding</div>
                 <div class="setup-item-value">Svbony 30mm f/4 + ZWO ASI468</div>
@@ -176,12 +179,15 @@ layout: default
 
     <!--Now setup the control with the Javascript API -->
     <script type="text/javascript">
-        // Initialize the control
-        m_AstrosphericEmbed.Create(
-            "AstrosphericEmbedContainer",
-            40.2968735,
-            -111.6945017,
-        );
+        // Wait for DOMContentLoaded since the Astrospheric embed script
+        // above is deferred and may not have run yet at this point.
+        document.addEventListener("DOMContentLoaded", function () {
+            m_AstrosphericEmbed.Create(
+                "AstrosphericEmbedContainer",
+                40.2968735,
+                -111.6945017,
+            );
+        });
     </script>
 </div>
 
