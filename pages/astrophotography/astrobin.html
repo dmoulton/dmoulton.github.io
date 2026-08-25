@@ -83,6 +83,37 @@ support: [jquery, gallery]
         line-height: 1;
         cursor: pointer;
     }
+    .astrobin-lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+    .astrobin-lightbox-nav:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .astrobin-lightbox-nav:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+    .astrobin-lightbox-prev {
+        left: 16px;
+    }
+    .astrobin-lightbox-next {
+        right: 16px;
+    }
     body.astrobin-lightbox-open {
         overflow: hidden;
     }
@@ -141,6 +172,20 @@ support: [jquery, gallery]
 </div>
 
 <div id="astrobin-lightbox" class="astrobin-lightbox" hidden>
+    <button
+        type="button"
+        class="astrobin-lightbox-nav astrobin-lightbox-prev"
+        aria-label="Previous image"
+    >
+        &lsaquo;
+    </button>
+    <button
+        type="button"
+        class="astrobin-lightbox-nav astrobin-lightbox-next"
+        aria-label="Next image"
+    >
+        &rsaquo;
+    </button>
     <div class="astrobin-lightbox-content">
         <div class="astrobin-lightbox-image-wrap">
             <img id="astrobin-lightbox-img" src="" alt="" />
@@ -200,13 +245,39 @@ support: [jquery, gallery]
     var lightboxCaption = document.getElementById(
         "astrobin-lightbox-caption",
     );
+    var lightboxPrevButton = document.querySelector(".astrobin-lightbox-prev");
+    var lightboxNextButton = document.querySelector(".astrobin-lightbox-next");
 
-    function openLightbox(image, href) {
+    // Navigation spans the full set of matched images (currentPageImages),
+    // not just whatever page of the grid is currently visible behind the
+    // lightbox, so Prev/Next keep working seamlessly across page boundaries.
+    var lightboxIndex = -1;
+
+    function updateLightboxNav() {
+        lightboxPrevButton.disabled = lightboxIndex <= 0;
+        lightboxNextButton.disabled =
+            lightboxIndex >= currentPageImages.length - 1;
+    }
+
+    function showLightboxImage(index) {
+        var image = currentPageImages[index];
+        if (!image) return;
+
+        lightboxIndex = index;
+
+        var ident = image.hash || image.id;
+        var href = "https://www.astrobin.com/" + ident;
+
         lightboxImg.src = image.url_hd || image.url_regular;
         lightboxImg.alt = image.title || "";
         lightboxLink.href = href;
         lightboxCaption.textContent = image.title || "";
         lightboxCaption.hidden = !image.title;
+        updateLightboxNav();
+    }
+
+    function openLightbox(index) {
+        showLightboxImage(index);
         lightbox.hidden = false;
         document.body.classList.add("astrobin-lightbox-open");
     }
@@ -215,19 +286,36 @@ support: [jquery, gallery]
         lightbox.hidden = true;
         lightboxImg.src = "";
         lightboxCaption.textContent = "";
+        lightboxIndex = -1;
         document.body.classList.remove("astrobin-lightbox-open");
+    }
+
+    function showPrevImage() {
+        if (lightboxIndex > 0) showLightboxImage(lightboxIndex - 1);
+    }
+
+    function showNextImage() {
+        if (lightboxIndex < currentPageImages.length - 1) {
+            showLightboxImage(lightboxIndex + 1);
+        }
     }
 
     document
         .querySelector(".astrobin-lightbox-close")
         .addEventListener("click", closeLightbox);
 
+    lightboxPrevButton.addEventListener("click", showPrevImage);
+    lightboxNextButton.addEventListener("click", showNextImage);
+
     lightbox.addEventListener("click", function (event) {
         if (event.target === lightbox) closeLightbox();
     });
 
     document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+        if (lightbox.hidden) return;
+        if (event.key === "Escape") closeLightbox();
+        else if (event.key === "ArrowLeft") showPrevImage();
+        else if (event.key === "ArrowRight") showNextImage();
     });
 
     function fetchJson(url, onSuccess) {
@@ -240,7 +328,44 @@ support: [jquery, gallery]
         request.send();
     }
 
-    function renderImage(image) {
+    // When an image has been revised on AstroBin, the base image object's
+    // own url_* fields still point at the original (revision "0") - the
+    // actual current version lives at a separate imagerevision resource.
+    // Swap those urls in before rendering so the gallery shows what's
+    // actually marked as the final revision, not the first upload.
+    function applyFinalRevision(image, onDone) {
+        if (image.is_final !== false || !image.revisions || !image.revisions.length) {
+            onDone();
+            return;
+        }
+
+        var revisionUri = image.revisions[image.revisions.length - 1];
+        var revisionUrl =
+            "https://www.astrobin.com" +
+            revisionUri +
+            "?api_key=" +
+            apiKey +
+            "&api_secret=" +
+            apiSecret +
+            "&format=json";
+
+        var request = new XMLHttpRequest();
+        request.open("GET", revisionUrl, true);
+        request.onload = function () {
+            if (request.status >= 200 && request.status < 400) {
+                var revision = JSON.parse(request.response);
+                image.url_regular = revision.url_regular || image.url_regular;
+                image.url_hd = revision.url_hd || image.url_hd;
+                image.w = revision.w || image.w;
+                image.h = revision.h || image.h;
+            }
+            onDone();
+        };
+        request.onerror = onDone;
+        request.send();
+    }
+
+    function renderImage(image, index) {
         var ident = image.hash || image.id;
         var href = "https://www.astrobin.com/" + ident;
 
@@ -265,7 +390,7 @@ support: [jquery, gallery]
                 return;
             }
             event.preventDefault();
-            openLightbox(image, href);
+            openLightbox(index);
         });
 
         var img = document.createElement("img");
@@ -320,7 +445,9 @@ support: [jquery, gallery]
         var start = page * IMAGES_PER_PAGE;
         currentPageImages
             .slice(start, start + IMAGES_PER_PAGE)
-            .forEach(renderImage);
+            .forEach(function (image, i) {
+                renderImage(image, start + i);
+            });
 
         layoutGallery();
 
@@ -419,7 +546,18 @@ support: [jquery, gallery]
                             .map(function (hash) {
                                 return found[hash];
                             });
-                        renderPage(0);
+
+                        var remaining = currentPageImages.length;
+                        if (remaining === 0) {
+                            renderPage(0);
+                        } else {
+                            currentPageImages.forEach(function (image) {
+                                applyFinalRevision(image, function () {
+                                    remaining--;
+                                    if (remaining === 0) renderPage(0);
+                                });
+                            });
+                        }
                     } else {
                         fetchPage(offset + 25);
                     }
