@@ -804,11 +804,11 @@ pictures:
     image_info: 31x180"
     checked: true
   - filename: m61
-    original: m61-1080x1920.jpg
+    original: m61-891x1301.jpg
     sizes:
-      - m61-300x533.jpg
+      - m61-300x438.jpg
     sort_id: 61
-    thumbnail: m61-300x533.jpg
+    thumbnail: m61-300x438.jpg
     title: M61
     constellation: Virgo
     notes: ''

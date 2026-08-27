@@ -43,6 +43,6 @@ RUN gem install bundler -v 2.6.9 && \
     bundle config set --global bin "$GEM_HOME/bin" && \
     echo "alias js='jekyll serve --host 0.0.0.0'" >> ~/.zshrc
 
-EXPOSE 4000
+    EXPOSE 4000
 # Let VS Code handle startup; don't specify CMD or ENTRYPOINT
 CMD ["sleep", "infinity"]
