@@ -15,17 +15,18 @@ pictures:
     image_info: 69x300"
     checked: true
   - filename: m2
-    original: m2-4877x2993.jpg
-    sizes: []
+    original: m2-4382x2928.jpg
+    sizes:
+      - m2-300x200.jpg
     sort_id: 2
-    thumbnail: m2-thumbnail.jpg
+    thumbnail: m2-300x200.jpg
     title: M2
     constellation: Aquarius
     notes: ''
-    date: 26 Aug 2017 (23:00 - 23:55)
-    location: My Backyard
-    equipment: C 9.25 | Canon T6i
-    image_info: 36x30"
+    date: 31 Aug (21:30 - 23:30)
+    location: Heatheridge Observatory
+    equipment: AT130EDT | QHYCCD miniCAM8M | LRGB Filters
+    image_info: 62x20” L | 21x20” R | 21x20” G | 21x20” B
     checked: true
   - filename: m3
     original: m3-3184x1968.jpg
