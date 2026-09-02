@@ -6,3 +6,4 @@ Gemfile.lock
 *Zone.Identifier
 *DS_Store
 .claude
+.vscode
