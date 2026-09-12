@@ -1,0 +1,303 @@
+---
+layout: default
+title: Inner Planet Phases
+permalink: /inner-planets-phases/
+no_menu_item: true
+---
+
+<style>
+  .page-content > .wrapper { max-width: 1200px; }
+  .page-content { padding-top: 24px; }
+</style>
+
+<div id="venus-orbit-sim">
+  <div class="vos-head">
+    <div class="vos-title-block">
+      <h2>Mercury, Venus, Earth &amp; their changing phases</h2>
+      <div id="vos-date" class="vos-date text-small tabular-nums" aria-live="polite">2026-09-12</div>
+    </div>
+    <div class="viz-controls" aria-label="Animation controls">
+      <button type="button" class="btn btn-primary" id="vos-toggle">Pause</button>
+      <button type="button" class="btn" id="vos-direction" aria-pressed="false">Direction: Forward</button>
+      <button type="button" class="btn" id="vos-six-months">6 months ago</button>
+      <button type="button" class="btn" id="vos-today">Today</button>
+      <label class="form-label" for="vos-speed">Speed <span id="vos-speed-label" class="tabular-nums">24 days/sec</span>
+        <input class="form-range" id="vos-speed" type="range" min="2" max="120" step="2" value="24">
+      </label>
+    </div>
+  </div>
+  <div class="vos-layout">
+    <section class="vos-orbit-panel" aria-label="Top-down orbital animation">
+      <canvas id="vos-orbits" role="img" aria-label="Animated top-down view of Mercury, Venus, and Earth orbiting the Sun"></canvas>
+    </section>
+    <section class="vos-phase-panel" aria-label="Venus and Mercury phases as seen from Earth">
+      <div class="vos-phase-item">
+        <h3>Venus from Earth</h3>
+        <div id="vos-visibility" class="vos-visibility" aria-live="polite">Evening object</div>
+        <canvas id="vos-phase" role="img" aria-label="Animated telescopic phase of Venus matching the orbital positions"></canvas>
+        <div id="vos-phase-name" class="vos-phase-name">Gibbous</div>
+        <div class="vos-readout text-small" aria-live="polite">
+          <span><span id="vos-lit" class="tabular-nums">—</span> illuminated</span>
+          <span><span id="vos-angle" class="tabular-nums">—</span> phase angle</span>
+          <span><span id="vos-elongation" class="tabular-nums">—</span> elongation</span>
+        </div>
+      </div>
+      <div class="vos-phase-item">
+        <h3>Mercury from Earth</h3>
+        <div id="vos-mercury-visibility" class="vos-visibility" aria-live="polite">Morning object</div>
+        <canvas id="vos-mercury-phase" role="img" aria-label="Animated telescopic phase of Mercury matching the orbital positions"></canvas>
+        <div id="vos-mercury-phase-name" class="vos-phase-name">Gibbous</div>
+        <div class="vos-readout text-small" aria-live="polite">
+          <span><span id="vos-mercury-lit" class="tabular-nums">—</span> illuminated</span>
+          <span><span id="vos-mercury-angle" class="tabular-nums">—</span> phase angle</span>
+          <span><span id="vos-mercury-elongation" class="tabular-nums">—</span> elongation</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="vos-legend text-small">
+    <span><i class="vos-dot vos-earth"></i>Earth · 365.26 d</span>
+    <span><i class="vos-dot vos-venus"></i>Venus · 224.70 d</span>
+    <span><i class="vos-dot vos-mercury"></i>Mercury · 87.97 d</span>
+    <span class="text-muted">Circular-orbit approximation; distances and periods proportional</span>
+  </div>
+</div>
+
+<style>
+  #venus-orbit-sim {
+    --background:#080c14;
+    --foreground:#eaf2ff;
+    --muted:#162132;
+    --muted-foreground:#6b8299;
+    --border:#1e3050;
+    --primary:#4fc3f7;
+    --blue:#4fc3f7;
+    --orange:#ff8a3d;
+    --yellow:#ffd54a;
+    width:100%;
+    max-width:980px;
+    margin:0 auto;
+    color:var(--foreground);
+  }
+  #venus-orbit-sim .text-small { font-size:.78rem; }
+  #venus-orbit-sim .text-muted { color:var(--muted-foreground); }
+  #venus-orbit-sim .tabular-nums { font-variant-numeric:tabular-nums; }
+  #venus-orbit-sim .viz-controls { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+  #venus-orbit-sim .btn {
+    appearance:none;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:#0d1520;
+    color:var(--foreground);
+    padding:7px 11px;
+    font:500 .78rem "Space Mono",monospace;
+    cursor:pointer;
+  }
+  #venus-orbit-sim .btn:hover { border-color:var(--primary); color:var(--primary); }
+  #venus-orbit-sim .btn-primary { background:var(--primary); border-color:var(--primary); color:#080c14; }
+  #venus-orbit-sim .form-label { color:var(--muted-foreground); font:400 .75rem "Space Mono",monospace; }
+  #venus-orbit-sim .form-range { display:block; width:100%; margin-top:4px; accent-color:var(--primary); }
+  #venus-orbit-sim .vos-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:10px; }
+  #venus-orbit-sim h2, #venus-orbit-sim h3 { margin:0; font-weight:500; }
+  #venus-orbit-sim .vos-head .viz-controls { margin-left:auto; }
+  #venus-orbit-sim .form-label { min-width:180px; margin:0; }
+  #venus-orbit-sim .vos-layout { display:grid; grid-template-columns:minmax(0, 1.75fr) minmax(210px, .75fr); gap:18px; align-items:center; }
+  #venus-orbit-sim section { min-width:0; }
+  #venus-orbit-sim canvas { display:block; width:100%; }
+  #venus-orbit-sim #vos-orbits { aspect-ratio:1/1; }
+  #venus-orbit-sim #vos-phase, #venus-orbit-sim #vos-mercury-phase { aspect-ratio:1/1; max-width:190px; margin:6px auto 0; }
+  #venus-orbit-sim .vos-phase-panel { text-align:center; }
+  #venus-orbit-sim .vos-phase-item + .vos-phase-item { margin-top:14px; }
+  #venus-orbit-sim .vos-phase-name { font-weight:500; margin-top:4px; }
+  #venus-orbit-sim .vos-visibility { color:var(--muted-foreground); margin-top:4px; }
+  #venus-orbit-sim .vos-readout { display:grid; gap:3px; margin-top:8px; color:var(--muted-foreground); }
+  #venus-orbit-sim .vos-date { margin-top:3px; color:var(--muted-foreground); }
+  #venus-orbit-sim .vos-legend { display:flex; flex-wrap:wrap; gap:10px 18px; justify-content:center; align-items:center; margin-top:8px; }
+  #venus-orbit-sim .vos-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:-1px; }
+  #venus-orbit-sim .vos-earth { background:var(--blue); }
+  #venus-orbit-sim .vos-venus { background:var(--yellow); }
+  #venus-orbit-sim .vos-mercury { background:var(--muted-foreground); }
+  @media (max-width:620px) {
+    #venus-orbit-sim .vos-layout { grid-template-columns:1fr; }
+    #venus-orbit-sim #vos-phase, #venus-orbit-sim #vos-mercury-phase { max-width:170px; }
+  }
+  @media (min-width:621px) and (max-height:900px) {
+    #venus-orbit-sim .vos-head { margin-bottom:4px; }
+    #venus-orbit-sim #vos-orbits { width:auto; height:calc(100vh - 400px); max-height:410px; max-width:100%; margin:0 auto; }
+    #venus-orbit-sim #vos-phase, #venus-orbit-sim #vos-mercury-phase { width:auto; height:min(96px, calc((100vh - 500px) / 2)); margin-top:3px; }
+    #venus-orbit-sim .vos-phase-item + .vos-phase-item { margin-top:6px; }
+    #venus-orbit-sim .vos-readout { gap:1px; margin-top:3px; }
+    #venus-orbit-sim .vos-legend { margin-top:3px; }
+  }
+</style>
+
+<script>
+(() => {
+  const root = document.getElementById('venus-orbit-sim');
+  const orbitCanvas = root.querySelector('#vos-orbits');
+  const phaseCanvas = root.querySelector('#vos-phase');
+  const mercuryPhaseCanvas = root.querySelector('#vos-mercury-phase');
+  const octx = orbitCanvas.getContext('2d');
+  const pctx = phaseCanvas.getContext('2d');
+  const mpctx = mercuryPhaseCanvas.getContext('2d');
+  const toggle = root.querySelector('#vos-toggle');
+  const directionButton = root.querySelector('#vos-direction');
+  const sixMonths = root.querySelector('#vos-six-months');
+  const today = root.querySelector('#vos-today');
+  const speed = root.querySelector('#vos-speed');
+  const speedLabel = root.querySelector('#vos-speed-label');
+  const dateEl = root.querySelector('#vos-date');
+  const litEl = root.querySelector('#vos-lit');
+  const angleEl = root.querySelector('#vos-angle');
+  const elongationEl = root.querySelector('#vos-elongation');
+  const phaseNameEl = root.querySelector('#vos-phase-name');
+  const visibilityEl = root.querySelector('#vos-visibility');
+  const mercuryLitEl = root.querySelector('#vos-mercury-lit');
+  const mercuryAngleEl = root.querySelector('#vos-mercury-angle');
+  const mercuryElongationEl = root.querySelector('#vos-mercury-elongation');
+  const mercuryPhaseNameEl = root.querySelector('#vos-mercury-phase-name');
+  const mercuryVisibilityEl = root.querySelector('#vos-mercury-visibility');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const epoch = Date.UTC(2026, 8, 12, 12);
+  const earth0 = -10.62 * Math.PI / 180;
+  const venus0 = -35.86 * Math.PI / 180;
+  const mercury0 = -145.27 * Math.PI / 180;
+  const earthPeriod = 365.256;
+  const venusPeriod = 224.701;
+  const mercuryPeriod = 87.969;
+  let days = 0;
+  let running = !reduced;
+  let direction = 1;
+  let last = performance.now();
+
+  const colorProbe = document.createElement('span');
+  colorProbe.style.display = 'none';
+  root.appendChild(colorProbe);
+  const css = name => {
+    colorProbe.style.color = `var(${name})`;
+    return getComputedStyle(colorProbe).color;
+  };
+  const fit = canvas => {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const r = canvas.getBoundingClientRect();
+    const w = Math.max(1, Math.round(r.width * dpr));
+    const h = Math.max(1, Math.round(r.height * dpr));
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+    return {w, h, dpr};
+  };
+  const pos = (radius, angle) => ({x: radius * Math.cos(angle), y: radius * Math.sin(angle)});
+  const phaseLabel = k => k < .03 ? 'New' : k < .47 ? 'Crescent' : k < .53 ? 'Quarter' : k < .97 ? 'Gibbous' : 'Full';
+
+  function geometry() {
+    const ae = earth0 + days * Math.PI * 2 / earthPeriod;
+    const av = venus0 + days * Math.PI * 2 / venusPeriod;
+    const am = mercury0 + days * Math.PI * 2 / mercuryPeriod;
+    const e = pos(1.0065, ae), v = pos(.7283, av), m = pos(.3871, am);
+    const phaseGeometry = body => {
+      const toSun = {x:-body.x, y:-body.y};
+      const toEarth = {x:e.x-body.x, y:e.y-body.y};
+      const ls = Math.hypot(toSun.x,toSun.y), le = Math.hypot(toEarth.x,toEarth.y);
+      const cosA = Math.max(-1, Math.min(1, (toSun.x*toEarth.x + toSun.y*toEarth.y)/(ls*le)));
+      const alpha = Math.acos(cosA);
+      const cross = toEarth.x*toSun.y - toEarth.y*toSun.x;
+      const earthToSun = {x:-e.x, y:-e.y};
+      const earthToBody = {x:body.x-e.x, y:body.y-e.y};
+      const elongation = Math.atan2(
+        earthToSun.x*earthToBody.y-earthToSun.y*earthToBody.x,
+        earthToSun.x*earthToBody.x+earthToSun.y*earthToBody.y
+      );
+      return {alpha,k:(1+cosA)/2,side:Math.sign(cross)||1,elongation};
+    };
+    return {e,v,m,venusPhase:phaseGeometry(v),mercuryPhase:phaseGeometry(m)};
+  }
+
+  function drawOrbits(g) {
+    const {w,h,dpr}=fit(orbitCanvas), c={x:w/2,y:h/2}, R=Math.min(w,h)*.405;
+    octx.clearRect(0,0,w,h);
+    const fg=css('--foreground'), border=css('--border'), muted=css('--muted-foreground');
+    octx.lineWidth=1.25*dpr; octx.strokeStyle=border;
+    [1, .7283/1.0065, .3871/1.0065].forEach(q=>{octx.beginPath();octx.arc(c.x,c.y,R*q,0,Math.PI*2);octx.stroke();});
+    const map=p=>({x:c.x+p.x/1.0065*R,y:c.y-p.y/1.0065*R});
+    const sunR=20*dpr, sgrad=octx.createRadialGradient(c.x,c.y,0,c.x,c.y,sunR*1.8);
+    sgrad.addColorStop(0,css('--yellow'));sgrad.addColorStop(.58,css('--orange'));sgrad.addColorStop(1,'transparent');
+    octx.fillStyle=sgrad;octx.beginPath();octx.arc(c.x,c.y,sunR*1.8,0,Math.PI*2);octx.fill();
+    octx.fillStyle=css('--yellow');octx.beginPath();octx.arc(c.x,c.y,sunR,0,Math.PI*2);octx.fill();
+    const drawPlanet=(p,r,color,label)=>{const q=map(p);octx.fillStyle=color;octx.beginPath();octx.arc(q.x,q.y,r*dpr,0,Math.PI*2);octx.fill();octx.fillStyle=fg;octx.font=`500 ${12*dpr}px system-ui`;octx.textAlign='center';octx.fillText(label,q.x,q.y-(r+8)*dpr);};
+    drawPlanet(g.e,8,css('--blue'),'EARTH'); drawPlanet(g.v,7,css('--yellow'),'VENUS'); drawPlanet(g.m,5,css('--muted-foreground'),'MERCURY');
+    octx.fillStyle=muted;octx.font=`400 ${11*dpr}px system-ui`;octx.textAlign='center';octx.fillText('SUN',c.x,c.y+(sunR/dpr+17)*dpr);
+  }
+
+  function drawPhase(canvas,ctx,phase,isMercury=false) {
+    const {w,h,dpr}=fit(canvas); ctx.clearRect(0,0,w,h);
+    const image=ctx.createImageData(w,h), data=image.data;
+    const cx=w/2, cy=h/2, radius=Math.min(w,h)*.37;
+    const sa=Math.sin(phase.alpha)*phase.side, ca=Math.cos(phase.alpha);
+    for(let py=Math.max(0,Math.floor(cy-radius));py<Math.min(h,Math.ceil(cy+radius));py++){
+      for(let px=Math.max(0,Math.floor(cx-radius));px<Math.min(w,Math.ceil(cx+radius));px++){
+        const nx=(px-cx)/radius, ny=(cy-py)/radius, rr=nx*nx+ny*ny;
+        if(rr>1) continue;
+        const nz=Math.sqrt(1-rr), light=Math.max(0,nx*sa+nz*ca);
+        const limb=.62+.38*nz, glow=Math.pow(light,.72)*limb;
+        const ambient=.045*limb;
+        const i=(py*w+px)*4;
+        data[i]=Math.round((isMercury?35:28)+(isMercury?155:225)*glow+22*ambient);
+        data[i+1]=Math.round((isMercury?34:23)+(isMercury?145:177)*glow+18*ambient);
+        data[i+2]=Math.round((isMercury?32:20)+(isMercury?130:70)*glow+14*ambient);
+        data[i+3]=255;
+      }
+    }
+    ctx.putImageData(image,0,0);
+    ctx.strokeStyle=css('--border');ctx.lineWidth=1.2*dpr;ctx.beginPath();ctx.arc(cx,cy,radius,0,Math.PI*2);ctx.stroke();
+  }
+
+  function render() {
+    const g=geometry(); drawOrbits(g); drawPhase(phaseCanvas,pctx,g.venusPhase); drawPhase(mercuryPhaseCanvas,mpctx,g.mercuryPhase,true);
+    const date=new Date(epoch+days*86400000);
+    dateEl.textContent=date.toISOString().slice(0,10);
+    litEl.textContent=`${Math.round(g.venusPhase.k*100)}%`;
+    angleEl.textContent=`${(g.venusPhase.alpha*180/Math.PI).toFixed(1)}°`;
+    phaseNameEl.textContent=phaseLabel(g.venusPhase.k);
+    const visibility = phase => {
+      const elongationDeg=Math.abs(phase.elongation*180/Math.PI);
+      return elongationDeg<0.5?'At conjunction':phase.elongation>0?'Evening object':'Morning object';
+    };
+    const elongationText = phase => {
+      const degrees=Math.abs(phase.elongation*180/Math.PI).toFixed(1);
+      const direction=Math.abs(phase.elongation*180/Math.PI)<0.05?'conjunction':phase.elongation>0?'eastern':'western';
+      return `${degrees}° ${direction}`;
+    };
+    visibilityEl.textContent=visibility(g.venusPhase);
+    elongationEl.textContent=elongationText(g.venusPhase);
+    mercuryLitEl.textContent=`${Math.round(g.mercuryPhase.k*100)}%`;
+    mercuryAngleEl.textContent=`${(g.mercuryPhase.alpha*180/Math.PI).toFixed(1)}°`;
+    mercuryPhaseNameEl.textContent=phaseLabel(g.mercuryPhase.k);
+    mercuryVisibilityEl.textContent=visibility(g.mercuryPhase);
+    mercuryElongationEl.textContent=elongationText(g.mercuryPhase);
+  }
+  function frame(now) {
+    const dt=Math.min(.1,(now-last)/1000); last=now;
+    if(running) days+=dt*Number(speed.value)*direction;
+    render(); requestAnimationFrame(frame);
+  }
+  toggle.addEventListener('click',()=>{running=!running;toggle.textContent=running?'Pause':'Play';toggle.classList.toggle('btn-primary',running);});
+  directionButton.addEventListener('click',()=>{
+    direction*=-1;
+    const reversing=direction<0;
+    directionButton.textContent=reversing?'Direction: Reverse':'Direction: Forward';
+    directionButton.setAttribute('aria-pressed',String(reversing));
+  });
+  const jumpTo = target => {
+    days=(target-epoch)/86400000;
+    running=false;
+    toggle.textContent='Play';
+    toggle.classList.remove('btn-primary');
+    render();
+  };
+  sixMonths.addEventListener('click',()=>jumpTo(Date.UTC(2026,2,12,12)));
+  today.addEventListener('click',()=>jumpTo(epoch));
+  speed.addEventListener('input',()=>{speedLabel.textContent=`${speed.value} days/sec`;});
+  new ResizeObserver(render).observe(root);
+  toggle.textContent=running?'Pause':'Play';
+  requestAnimationFrame(frame);
+})();
+</script>
