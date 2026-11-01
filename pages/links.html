@@ -1,0 +1,81 @@
+---
+layout: null
+title: Links
+permalink: /links/
+no_menu_item: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Moulton — Links</title>
+<meta name="description" content="All my links, social media, and more.">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#080c14; --surface:#0d1520; --surface2:#111d2e; --border:#1e3050; --accent:#4fc3f7; --text:#eaf2ff; --dim:#8aa0b6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: radial-gradient(ellipse at top, #0f1b2e 0%, var(--bg) 60%) fixed, var(--bg);
+    color: var(--text);
+    font-family: 'Syne', Arial, sans-serif;
+    display: flex; justify-content: center;
+    padding: 48px 16px 32px;
+  }
+  main { width: 100%; max-width: 480px; display: flex; flex-direction: column; align-items: center; }
+  .avatar { width: 84px; height: 102px; object-fit: contain; }
+  h1 { margin: 18px 0 4px; font-size: 1.6rem; font-weight: 700; }
+  .handle { margin: 0 0 28px; font-family: 'Space Mono', monospace; font-size: .8rem; letter-spacing: .06em; color: var(--accent); }
+  ul { list-style: none; margin: 0; padding: 0; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+  .link {
+    display: flex; align-items: center; gap: 14px;
+    min-height: 64px; padding: 12px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    color: var(--text); text-decoration: none;
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .link:hover, .link:focus-visible { border-color: rgba(79,195,247,.55); background: var(--surface2); transform: translateY(-1px); }
+  .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .link svg { flex: none; width: 24px; height: 24px; color: var(--accent); }
+  .link span { display: flex; flex-direction: column; min-width: 0; }
+  .link strong { font-size: 1.05rem; font-weight: 600; }
+  .link small { font-family: 'Space Mono', monospace; font-size: .72rem; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .link .arrow { margin-left: auto; width: 16px; height: 16px; color: var(--dim); }
+  footer { margin-top: 36px; font-family: 'Space Mono', monospace; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+  <img class="avatar" src="{{ '/assets/obsy-84.png' | relative_url }}" alt="Heatheridge Observatory logo" width="84" height="102">
+  <h1>David Moulton</h1>
+  <p class="handle">@moulton_astro</p>
+
+  <ul>
+    {% for link in site.data.links %}
+    <li>
+      <a class="link" href="{{ link.url }}" target="_blank" rel="noopener">
+        {%- case link.icon -%}
+        {%- when "shop" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        {%- when "video" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5L10 9.5z"/></svg>
+        {%- when "globe" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        {%- when "at" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a2.5 2.5 0 0 0 5 0v-1a9 9 0 1 0-3.5 7.1"/></svg>
+        {%- when "people" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 4.8"/></svg>
+        {%- when "camera" -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
+        {%- else -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+        {%- endcase -%}
+        <span><strong>{{ link.label }}</strong>{% if link.note %}<small>{{ link.note }}</small>{% endif %}</span>
+        <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 3l5 5-5 5"/></svg>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+</main>
+</body>
+</html>

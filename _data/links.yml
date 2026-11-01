@@ -1,0 +1,30 @@
+# Links shown on /links/ (the Instagram "link in bio" page), top to bottom.
+# icon: globe | shop | video | camera | at | people | link
+- label: davidmoulton.me
+  url: https://davidmoulton.me/
+  note: Astrophotography, blog and tools
+  icon: globe
+- label: eBay
+  url: https://www.ebay.com/usr/moultondj
+  note: ebay.com/usr/moultondj
+  icon: shop
+- label: Etsy Shop
+  url: https://www.etsy.com/shop/TimpanogosPrints
+  note: TimpanogosPrints on Etsy
+  icon: shop
+- label: TikTok
+  url: https://www.tiktok.com/@moulton_astro
+  note: "@moulton_astro"
+  icon: video
+- label: Instagram
+  url: https://instagram.com/moulton_astro
+  note: "@moulton_astro"
+  icon: camera
+- label: Threads
+  url: https://www.threads.net/@moulton_astro
+  note: "@moulton_astro"
+  icon: at
+- label: Facebook
+  url: https://www.facebook.com/dmoulton
+  note: facebook.com/dmoulton
+  icon: people
