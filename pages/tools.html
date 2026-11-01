@@ -1,0 +1,46 @@
+---
+layout: default
+title: Tools & Explainers
+permalink: /tools/
+no_menu_item: true
+---
+{% assign tools_group = site.data.navigation.groups | where: "id", "tools" | first %}
+{% assign tools = site.pages | where_exp: "p", "p.title != nil" | where: "nav_group", "tools" | sort: "nav_order" %}
+<div class="tools-hub">
+  <p class="tools-hub__kicker">// Tools &amp; explainers</p>
+  <h1 class="tools-hub__title">Astronomy Tools</h1>
+  <p class="tools-hub__intro">Planning calculators, NINA resources and interactive explainers.</p>
+
+  <div class="tools-hub__filters" role="group" aria-label="Filter tools">
+    <button type="button" class="tools-hub__chip" data-filter="all" aria-pressed="true">All</button>
+    {% for section in tools_group.sections %}
+      {% assign count = tools | where: "nav_section", section | size %}
+      {% if count > 0 %}<button type="button" class="tools-hub__chip" data-filter="{{ section | slugify }}" aria-pressed="false">{{ section }}</button>{% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="tools-hub__grid">
+    {% for tool in tools %}
+      <a class="tool-card" href="{{ tool.url | prepend: site.baseurl }}" data-section="{{ tool.nav_section | slugify }}">
+        {% include tool-icon.html icon=tool.nav_icon %}
+        <span class="tool-card__tag">{{ tool.nav_section }}{% if tool.nav_badge %} · {{ tool.nav_badge }}{% endif %}</span>
+        <span class="tool-card__name">{{ tool.title }}</span>
+        {% if tool.nav_desc %}<span class="tool-card__desc">{{ tool.nav_desc }}</span>{% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function() {
+    var chips = document.querySelectorAll('.tools-hub__chip');
+    var cards = document.querySelectorAll('.tool-card');
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var f = chip.getAttribute('data-filter');
+        chips.forEach(function(c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+        cards.forEach(function(card) { card.hidden = f !== 'all' && card.getAttribute('data-section') !== f; });
+      });
+    });
+  })();
+</script>

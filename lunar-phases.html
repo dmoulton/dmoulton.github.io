@@ -1,13 +1,29 @@
 ---
-layout: default
+layout: null
 title: Lunar Phases
 permalink: /lunar-phases/
 no_menu_item: true
+nav_group: tools
+nav_section: Explainers
+nav_desc: "Drag the Moon around Earth and watch its phase change"
+nav_badge: New
+nav_icon: phases
+nav_order: 3
 ---
 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Lunar Phases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-.page-content > .wrapper { max-width:1200px; }
-.page-content { padding-top:24px; }
+html,body { margin:0;min-height:100%; }
+body { box-sizing:border-box;padding:1rem;background:#080c14; }
 #lunar-phases { --bg:#080c14;--fg:#eaf2ff;--secondary:#9bb0c7;--border:#1e3050;--cyan:#4fc3f7;color:var(--fg);max-width:980px;margin:0 auto;font-family:Syne,Arial,sans-serif;line-height:1.6; }
 #lunar-phases * { box-sizing:border-box; }
 #lunar-phases h1 { font-size:clamp(1.65rem,4vw,2.15rem);margin:0 0 8px;font-weight:700; }
@@ -38,17 +54,22 @@ no_menu_item: true
 #lunar-phases output { font:.875rem 'Space Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--fg); }
 #lp-day { width:100%;accent-color:var(--cyan);height:32px;margin:8px 0;cursor:pointer; }
 #lunar-phases .lp-ticks { display:flex;justify-content:space-between;color:var(--secondary);font:.75rem 'Space Mono',monospace; }
-#lunar-phases .lp-ticks span { flex:1;text-align:center; }
-#lunar-phases .lp-ticks span:first-child { text-align:left; }
-#lunar-phases .lp-ticks span:last-child { text-align:right; }
+#lunar-phases .lp-ticks button { flex:1;text-align:center;background:none;border:0;padding:4px 0;margin:0;color:inherit;font:inherit;line-height:1.4;cursor:pointer;border-radius:4px;transition:color .15s; }
+#lunar-phases .lp-ticks button:first-child { text-align:left; }
+#lunar-phases .lp-ticks button:last-child { text-align:right; }
+#lunar-phases .lp-ticks button:hover,#lunar-phases .lp-ticks button.lp-current { color:var(--cyan); }
+#lunar-phases .lp-ticks button:focus-visible { outline:2px solid var(--cyan);outline-offset:2px; }
 #lunar-phases .lp-explanation { margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px; }
 #lunar-phases .lp-explanation p { font-size:.95rem; }
 #lunar-phases .lp-foot { margin-top:20px;font-size:.8rem;color:var(--secondary); }
 #lunar-phases a { color:var(--cyan); }
 #lunar-phases .lp-sr { position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
 @media(max-width:650px){#lunar-phases .lp-layout { grid-template-columns:1fr;gap:12px; }#lp-orbit { max-width:320px;margin:auto; }#lp-phase { max-width:220px; }#lunar-phases .lp-explanation { grid-template-columns:1fr;gap:14px; }#lunar-phases .lp-cycle { width:100%;margin:0; }#lunar-phases .lp-ticks { font-size:.75rem; }#lunar-phases .lp-head { margin-bottom:14px; }#lunar-phases .lp-slider { margin-top:16px; }#lunar-phases .lp-slider-head { flex-wrap:wrap;gap:4px 12px; }}
-@media(max-width:420px){.page-content > .wrapper { padding-left:18px;padding-right:18px; }#lunar-phases .lp-ticks span:nth-child(2),#lunar-phases .lp-ticks span:nth-child(4){visibility:hidden;} }
+@media(max-width:420px){body { padding-left:18px;padding-right:18px; }#lunar-phases .lp-ticks button:nth-child(2),#lunar-phases .lp-ticks button:nth-child(4){visibility:hidden;} }
 </style>
+</head>
+<body>
+{% include back-link.html %}
 <main id="lunar-phases">
  <header class="lp-head"><p class="lp-kicker">// Explore the Moon</p><h1>One Moon, changing phases</h1><p>Follow the Moon around Earth and compare the view from space with the phase we see in the sky.</p></header>
  <div class="lp-toolbar" aria-label="Animation controls">
@@ -56,9 +77,9 @@ no_menu_item: true
   <label class="lp-speed" for="lp-speed">Speed <select id="lp-speed"><option value="0.5">0.5× · slow</option><option value="1" selected>1× · normal</option><option value="2">2× · fast</option><option value="4">4× · fastest</option></select></label>
   <span class="lp-cycle" id="lp-duration">One lunar month in 30 seconds</span>
  </div>
- <div class="lp-slider"><div class="lp-slider-head"><label for="lp-day">Day of the lunar month</label><output for="lp-day" id="lp-day-label">Day 0.00 / 29.53</output></div><input id="lp-day" type="range" min="0" max="29.53" step="0.01" value="0" aria-describedby="lp-slider-help"><div class="lp-ticks" aria-hidden="true"><span>New<br>0</span><span>First quarter<br>7.38</span><span>Full<br>14.77</span><span>Last quarter<br>22.15</span><span>New<br>29.53</span></div><p id="lp-slider-help" class="lp-sr">Moving the slider pauses playback. Use arrow keys to change the day.</p></div>
+ <div class="lp-slider"><div class="lp-slider-head"><label for="lp-day">Day of the lunar month</label><output for="lp-day" id="lp-day-label">Day 0.00 / 29.53</output></div><input id="lp-day" type="range" min="0" max="29.53" step="0.01" value="0" aria-describedby="lp-slider-help"><div class="lp-ticks" role="group" aria-label="Jump to a phase"><button type="button" data-f="0" aria-label="Go to New Moon, day 0">New<br>0</button><button type="button" data-f="0.25" aria-label="Go to First quarter, day 7.38">First quarter<br>7.38</button><button type="button" data-f="0.5" aria-label="Go to Full Moon, day 14.77">Full<br>14.77</button><button type="button" data-f="0.75" aria-label="Go to Last quarter, day 22.15">Last quarter<br>22.15</button><button type="button" data-f="1" aria-label="Go to New Moon, day 29.53">New<br>29.53</button></div><p id="lp-slider-help" class="lp-sr">Moving the slider pauses playback. Use arrow keys to change the day.</p></div>
  <div class="lp-layout">
-  <section aria-label="Overhead view of the Earth and Moon"><div class="lp-sunlight"><svg viewBox="0 0 72 18" aria-hidden="true"><path d="M70 9H3M10 3L3 9l7 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Sunlight from the right</span></div><canvas id="lp-orbit" role="img" aria-label="View above Earth's north pole. Sunlight comes from the right. The Moon moves counterclockwise around Earth."></canvas><p class="lp-note">Overhead view · above Earth’s north pole</p></section>
+  <section aria-label="Overhead view of the Earth and Moon"><div class="lp-sunlight"><svg viewBox="0 0 72 18" aria-hidden="true"><path d="M70 9H3M10 3L3 9l7 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Sunlight from the right</span></div><canvas id="lp-orbit" role="img" aria-label="View above Earth's north pole. Sunlight comes from the right. The Moon moves counterclockwise around Earth. Drag the Moon to move it along its orbit."></canvas><p class="lp-note">Overhead view · above Earth’s north pole</p></section>
   <section class="lp-earth-view"><h2>Moon as seen from Earth</h2><canvas id="lp-phase" role="img" aria-label="The Moon's phase as seen from Earth"></canvas><p class="lp-phase-name" id="lp-name">New Moon</p><p class="lp-lit" id="lp-lit">0% illuminated</p><p class="lp-note" id="lp-description">The sunlit half faces away from Earth.</p><p class="lp-note" style="margin-top:14px">North-up view; waxing lights the right side.</p></section>
  </div>
 
@@ -73,7 +94,9 @@ no_menu_item: true
  const q=id=>root.querySelector('#lp-'+id);
  const orbit=q('orbit'),phase=q('phase'),slider=q('day'),play=q('play'),speed=q('speed');
  const MONTH=29.53,TAU=Math.PI*2;
- let day=0,running=!matchMedia('(prefers-reduced-motion: reduce)').matches,last=performance.now();
+ const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let day=0,running=!reduceMotion,last=performance.now(),glide=null;
+ const ticks=[...root.querySelectorAll('.lp-ticks button')];
  // Orthographic projection of the LROC map: longitude 0 at disk center, north up.
  const SIZE=320,RADIUS=155;
  const texture=document.createElement('canvas');texture.width=texture.height=SIZE;
@@ -114,15 +137,30 @@ no_menu_item: true
   const {ctx:p,w:pw}=fit(phase),image=phaseImage,data=image.data,sx=Math.sin(a),sz=-Math.cos(a);
   for(const {i,nx,z,albedo} of samples){const light=Math.max(0,nx*sx+z*sz);const v=light>0?albedo*(.18+.82*Math.pow(light,.3)):12;data[i]=v;data[i+1]=v;data[i+2]=v;data[i+3]=255;}
   tx.putImageData(image,0,0);p.drawImage(texture,0,0,pw,pw);
-  const [name,description]=phaseInfo(f);q('name').textContent=name;q('description').textContent=description;q('lit').textContent=(lit*100).toFixed(1)+'% illuminated';q('day-label').textContent=`Day ${day.toFixed(2)} / 29.53`;slider.value=day;slider.setAttribute('aria-valuetext',`Day ${day.toFixed(2)}, ${name}, ${(lit*100).toFixed(1)} percent illuminated`);phase.setAttribute('aria-label',`${name}: ${(lit*100).toFixed(1)} percent illuminated, as seen from Earth`);
+  const [name,description]=phaseInfo(f);q('name').textContent=name;q('description').textContent=description;q('lit').textContent=(lit*100).toFixed(1)+'% illuminated';q('day-label').textContent=`Day ${day.toFixed(2)} / 29.53`;slider.value=day;ticks.forEach(b=>b.classList.toggle('lp-current',Math.abs(day-Number(b.dataset.f)*MONTH)<.01));slider.setAttribute('aria-valuetext',`Day ${day.toFixed(2)}, ${name}, ${(lit*100).toFixed(1)} percent illuminated`);phase.setAttribute('aria-label',`${name}: ${(lit*100).toFixed(1)} percent illuminated, as seen from Earth`);
  }
  function sync(){play.textContent=running?'Pause':'Play';play.setAttribute('aria-label',running?'Pause animation':'Play animation');}
- play.addEventListener('click',()=>{running=!running;last=performance.now();sync();});
- slider.addEventListener('input',()=>{day=Number(slider.value);running=false;sync();render();});
- slider.addEventListener('change',()=>{q('status').textContent=slider.getAttribute('aria-valuetext');});
+ function announce(){q('status').textContent=slider.getAttribute('aria-valuetext');}
+ function goTo(target){running=false;sync();if(reduceMotion||Math.abs(target-day)<.01){glide=null;day=target;render();announce();return;}glide={from:day,to:target,start:performance.now(),dur:Math.min(1400,350+Math.abs(target-day)*45)};}
+ ticks.forEach(b=>b.addEventListener('click',()=>goTo(Number(b.dataset.f)*MONTH)));
+ // Drag the Moon (or tap the orbit ring) in the overhead view
+ let dragging=false;
+ function orbitHit(e){const r=orbit.getBoundingClientRect(),w=r.width,px=e.clientX-r.left-w*.5,py=e.clientY-r.top-w*.5,R=w*.34,mr=Math.max(10,w*.025),a=day/MONTH*TAU;return {onMoon:Math.hypot(px-R*Math.cos(a),py+R*Math.sin(a))<=mr+12,onRing:Math.abs(Math.hypot(px,py)-R)<=14,angle:Math.atan2(-py,px)};}
+ function dayFromAngle(ang){let f=((ang/TAU)%1+1)%1;for(const s of [.25,.5,.75])if(Math.abs(f-s)<.012)f=s;if(f<.012)f=0;else if(f>.988)f=1;return f*MONTH;}
+ orbit.addEventListener('pointerdown',e=>{const h=orbitHit(e);if(!h.onMoon&&!h.onRing)return;e.preventDefault();dragging=true;orbit.setPointerCapture(e.pointerId);glide=null;running=false;sync();if(!h.onMoon){day=dayFromAngle(h.angle);render();}orbit.style.cursor='grabbing';});
+ orbit.addEventListener('pointermove',e=>{if(dragging){day=dayFromAngle(orbitHit(e).angle);render();return;}const h=orbitHit(e);orbit.style.cursor=h.onMoon?'grab':h.onRing?'pointer':'';});
+ const endDrag=()=>{if(!dragging)return;dragging=false;orbit.style.cursor='grab';announce();};
+ orbit.addEventListener('pointerup',endDrag);orbit.addEventListener('pointercancel',endDrag);
+ orbit.addEventListener('touchstart',e=>{const h=orbitHit(e.touches[0]);if(h.onMoon||h.onRing)e.preventDefault();},{passive:false});
+ orbit.addEventListener('touchmove',e=>{if(dragging)e.preventDefault();},{passive:false});
+ play.addEventListener('click',()=>{glide=null;running=!running;last=performance.now();sync();});
+ slider.addEventListener('input',()=>{glide=null;day=Number(slider.value);running=false;sync();render();});
+ slider.addEventListener('change',announce);
  speed.addEventListener('change',()=>{q('duration').textContent=`One lunar month in ${30/Number(speed.value)} seconds`;});
  document.addEventListener('visibilitychange',()=>{last=performance.now();});
- function frame(now){const dt=Math.min((now-last)/1000,.1);last=now;if(running&&!document.hidden){day=(day+dt*MONTH/30*Number(speed.value))%MONTH;render();}requestAnimationFrame(frame);}
+ function frame(now){const dt=Math.min((now-last)/1000,.1);last=now;if(glide){const t=Math.min(1,(now-glide.start)/glide.dur),e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;day=glide.from+(glide.to-glide.from)*e;render();if(t>=1){day=glide.to;glide=null;render();announce();}}else if(running&&!document.hidden){day=(day+dt*MONTH/30*Number(speed.value))%MONTH;render();}requestAnimationFrame(frame);}
  new ResizeObserver(render).observe(root);sync();render();requestAnimationFrame(frame);
 })();
 </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Header dropdown groups. A page joins a group with `nav_group: <id>` in its
+# front matter (plus optional nav_section, nav_desc, nav_badge, nav_icon,
+# nav_order). Pages with no nav_group stay as plain links in the top bar.
+groups:
+  - id: gallery
+    title: Galleries
+  - id: tools
+    title: Tools
+    hub: /tools/
+    hub_label: All tools & explainers
+    sections: [Calculators, NINA, Explainers]

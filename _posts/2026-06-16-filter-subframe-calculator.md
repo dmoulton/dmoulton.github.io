@@ -2,7 +2,7 @@
 Title: Filter Subframe Caluclator
 layout: post
 categories: astronomy
-comments: false
+comments: true
 author: David Moulton
 ---
 Clear skies are a limited resource. This subframe calculator is designed to streamline the planning of your imaging runs by balancing desired integration times with hardware constraints and overhead requirements. It ensures that your planned sequence fits within your available imaging window while maintaining the correct ratios between your various filters.

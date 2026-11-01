@@ -2,7 +2,7 @@
   <div class="wrapper">
     <a class="site-title" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
 
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main">
       <a href="#" class="menu-icon" id="nav-toggle" aria-label="Toggle menu">
         <svg viewBox="0 0 18 15" width="20" height="15">
           <path fill="#6b8299" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
@@ -12,7 +12,41 @@
       </a>
 
       <div class="trigger" id="nav-trigger">
-        {% assign nav_pages = site.pages | where_exp: "p", "p.title != nil" | where_exp: "p", "p.no_menu_item != true" | sort: "nav_order" %}
+        {% assign titled_pages = site.pages | where_exp: "p", "p.title != nil" %}
+
+        {%- comment -%} Dropdown groups, configured in _data/navigation.yml {%- endcomment -%}
+        {% for group in site.data.navigation.groups %}
+          {% assign group_pages = titled_pages | where: "nav_group", group.id | sort: "nav_order" %}
+          {% if group_pages.size > 0 %}
+            {% assign group_active = false %}
+            {% if page.nav_group == group.id or page.url == group.hub %}{% assign group_active = true %}{% endif %}
+            <div class="nav-group" data-nav-group>
+              <button type="button" class="page-link nav-group__toggle{% if group_active %} active{% endif %}" aria-expanded="false" aria-controls="nav-menu-{{ group.id }}">
+                {{ group.title }}
+                <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <div class="nav-menu" id="nav-menu-{{ group.id }}">
+                {% if group.sections %}
+                  {% for section in group.sections %}
+                    {% assign section_pages = group_pages | where: "nav_section", section %}
+                    {% if section_pages.size > 0 %}
+                      <p class="nav-menu__heading">{{ section }}</p>
+                      {% for item in section_pages %}{% include nav-item.html item=item %}{% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  {% for item in group_pages %}{% include nav-item.html item=item %}{% endfor %}
+                {% endif %}
+                {% if group.hub %}
+                  <a class="nav-menu__all" href="{{ group.hub | prepend: site.baseurl }}">{{ group.hub_label }} &rarr;</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        {%- comment -%} Plain top-level links: pages not in a group {%- endcomment -%}
+        {% assign nav_pages = titled_pages | where_exp: "p", "p.no_menu_item != true" | where_exp: "p", "p.nav_group == nil" | sort: "nav_order" %}
         {% for my_page in nav_pages %}
           <a class="page-link{% if page.url == my_page.url %} active{% endif %}"
              href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
@@ -32,5 +66,35 @@
         trigger.classList.toggle('open');
       });
     }
+
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-nav-group]'));
+    function setOpen(group, open) {
+      group.classList.toggle('open', open);
+      group.querySelector('.nav-group__toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeAll(except) {
+      groups.forEach(function(g) { if (g !== except) setOpen(g, false); });
+    }
+    groups.forEach(function(group) {
+      var button = group.querySelector('.nav-group__toggle');
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var willOpen = !group.classList.contains('open');
+        closeAll(group);
+        setOpen(group, willOpen);
+      });
+      group.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && group.classList.contains('open')) {
+          setOpen(group, false);
+          button.focus();
+        }
+      });
+      group.addEventListener('focusout', function(e) {
+        if (e.relatedTarget && !group.contains(e.relatedTarget)) setOpen(group, false);
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('[data-nav-group]')) closeAll(null);
+    });
   })();
 </script>

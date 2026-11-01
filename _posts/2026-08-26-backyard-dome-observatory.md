@@ -2,7 +2,7 @@
 Title: Building a Backyard Dome Observatory
 layout: post
 categories: astronomy astrophotography observatory
-comments: false
+comments: true
 author: David Moulton
 ---
 

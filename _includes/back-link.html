@@ -1,0 +1,15 @@
+{%- comment -%}
+  Small "back to the site" bar for standalone pages (layout: null).
+  include.adaptive=true uses light-dark() colors for pages that follow the system theme.
+{%- endcomment -%}
+{%- if include.adaptive -%}
+  {%- assign primary = "light-dark(#0b6fa4, #4fc3f7)" -%}
+  {%- assign secondary = "light-dark(#4a5a6b, #8aa0b6)" -%}
+{%- else -%}
+  {%- assign primary = "#4fc3f7" -%}
+  {%- assign secondary = "#8aa0b6" -%}
+{%- endif -%}
+<nav aria-label="Site" style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;max-width:980px;margin:0 auto 12px;font:12px/1.5 'Space Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase">
+  <a href="{{ '/' | relative_url }}" style="color:{{ primary }};text-decoration:none">&larr; David Moulton</a>
+  <a href="{{ '/tools/' | relative_url }}" style="color:{{ secondary }};text-decoration:none">All tools &amp; explainers</a>
+</nav>

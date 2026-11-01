@@ -1,0 +1,4 @@
+<a class="nav-menu__item{% if page.url == include.item.url %} is-current{% endif %}" href="{{ include.item.url | prepend: site.baseurl }}"{% if page.url == include.item.url %} aria-current="page"{% endif %}>
+  <span class="nav-menu__title">{{ include.item.title }}{% if include.item.nav_badge %}<span class="nav-badge">{{ include.item.nav_badge }}</span>{% endif %}</span>
+  {% if include.item.nav_desc %}<span class="nav-menu__desc">{{ include.item.nav_desc }}</span>{% endif %}
+</a>
