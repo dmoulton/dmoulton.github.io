@@ -1,0 +1,492 @@
+---
+layout: null
+title: Why Stacking Works
+permalink: /why-stacking-works/
+no_menu_item: true
+nav_group: tools
+nav_section: Explainers
+nav_desc: "Stack up to 500 subs and watch a nebula come out of the noise"
+nav_badge: New
+nav_icon: stack
+nav_order: 5
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Why Stacking Works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body { margin:0;min-height:100%; }
+body { box-sizing:border-box;padding:1rem;background:#080c14; }
+#stacking { --bg:#080c14;--fg:#eaf2ff;--secondary:#9bb0c7;--border:#1e3050;--cyan:#4fc3f7;--gold:#ffd54a;color:var(--fg);max-width:980px;margin:0 auto;font-family:Syne,system-ui,sans-serif;line-height:1.5; }
+#stacking * { box-sizing:border-box; }
+#stacking h1 { font-size:clamp(1.65rem,4vw,2.15rem);margin:0 0 8px;font-weight:700;line-height:1.15; }
+#stacking h2 { font-size:1.05rem;margin:0 0 2px; }
+#stacking p { margin:0;color:var(--secondary); }
+#stacking a { color:var(--cyan); }
+#stacking :focus-visible { outline:2px solid var(--gold);outline-offset:3px; }
+#stacking .st-kicker { font:.8rem 'Space Mono',monospace;color:var(--cyan);margin-bottom:10px; }
+#stacking .st-head { margin-bottom:18px;max-width:70ch; }
+
+#stacking .st-frame { position:relative;background:#000;border-radius:5px;overflow:hidden; }
+#st-image { display:block;width:100%;height:auto;aspect-ratio:900/478; }
+#stacking .st-spot { position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none; }
+#stacking .st-spot-label { position:absolute;transform:translate(14px,-50%);font:.72rem 'Space Mono',monospace;color:var(--gold);white-space:nowrap;pointer-events:none;text-shadow:0 0 4px #000,0 0 4px #000; }
+#stacking .st-loading { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:.875rem 'Space Mono',monospace;color:var(--secondary);padding:16px;text-align:center; }
+
+#stacking .st-readout { display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 28px;margin:16px 0 4px; }
+#stacking .st-count { font-size:clamp(1.9rem,6vw,2.75rem);font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums; }
+#stacking .st-stat { font:.875rem 'Space Mono',monospace;color:var(--secondary);font-variant-numeric:tabular-nums; }
+#stacking .st-stat b { color:var(--fg);font-weight:700; }
+#stacking .st-stat.st-snr b { color:var(--gold); }
+
+#st-subs { display:block;width:100%;accent-color:var(--cyan);height:32px;margin:6px 0 0;cursor:pointer; }
+#stacking .st-ticks { position:relative;height:30px;margin:0 8px;font:.75rem 'Space Mono',monospace; }
+#stacking .st-ticks button { position:absolute;transform:translateX(-50%);background:none;border:0;padding:4px 6px;color:var(--secondary);font:inherit;cursor:pointer;border-radius:4px; }
+#stacking .st-ticks button:hover,#stacking .st-ticks button.st-current { color:var(--cyan); }
+
+#stacking .st-controls { display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:8px 0 28px; }
+#stacking .st-controls button,#stacking .st-controls select { font:.875rem 'Space Mono',monospace;min-height:44px;border:1px solid var(--border);border-radius:5px;background:var(--bg);color:var(--fg);padding:0 12px; }
+#st-play { min-width:96px;background:var(--cyan)!important;color:var(--bg)!important;border-color:var(--cyan)!important;cursor:pointer; }
+#stacking .st-controls label { display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--secondary); }
+#st-sky-note { font-size:.875rem;flex:1 1 260px; }
+
+#stacking .st-plots { display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+#stacking .st-plots section { min-width:0; }
+#stacking .st-plots p { font-size:.875rem;margin-bottom:8px;min-height:2.6em; }
+#stacking .st-plots canvas { display:block;width:100%;height:230px; }
+
+#stacking .st-explanation { margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px; }
+#stacking .st-explanation p { font-size:.95rem; }
+#stacking .st-explanation strong { color:var(--fg); }
+#stacking .st-foot { margin-top:20px;font-size:.8rem;max-width:80ch; }
+#stacking .st-sr { position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
+
+@media(max-width:760px){
+  #stacking .st-plots { grid-template-columns:1fr; }
+  #stacking .st-plots p { min-height:0; }
+  #stacking .st-explanation { grid-template-columns:1fr;gap:14px; }
+}
+@media(max-width:420px){ body { padding-left:16px;padding-right:16px; } }
+</style>
+</head>
+<body>
+{% include back-link.html %}
+<main id="stacking">
+  <header class="st-head">
+    <p class="st-kicker">// Explore astrophotography</p>
+    <h1>Every sub is noisy. Stacking averages the noise away.</h1>
+    <p>Add more exposures of the Trifid Nebula and watch faint detail come through. The nebula is the same in every sub, but the noise is different each time.</p>
+  </header>
+
+  <div class="st-frame">
+    <canvas id="st-image" width="900" height="478" role="img" aria-label="The Trifid Nebula, stacked from 1 sub"></canvas>
+    <div class="st-spot" id="st-spot" hidden></div>
+    <div class="st-spot-label" id="st-spot-label" hidden>this spot</div>
+    <div class="st-loading" id="st-loading">Preparing subs…</div>
+  </div>
+
+  <div class="st-readout">
+    <span class="st-count" id="st-count">1 sub</span>
+    <span class="st-stat"><b id="st-time">2 min</b> total at 2 min per sub</span>
+    <span class="st-stat st-snr">Signal-to-noise at this spot: <b id="st-snr">–</b></span>
+  </div>
+
+  <label class="st-sr" for="st-subs">Number of subs stacked</label>
+  <input id="st-subs" type="range" min="0" max="17" step="1" value="0">
+  <div class="st-ticks" id="st-ticks"></div>
+
+  <div class="st-controls">
+    <button type="button" id="st-play">Play</button>
+    <label for="st-sky">Sky <select id="st-sky">
+      <option value="dark" selected>Dark site</option>
+      <option value="suburban">Suburban</option>
+      <option value="city">City</option>
+    </select></label>
+    <p id="st-sky-note"></p>
+  </div>
+
+  <div class="st-plots">
+    <section>
+      <h2>One pixel, sub by sub</h2>
+      <p>Each dot is this spot in a single sub. The running average settles on the true brightness.</p>
+      <canvas id="st-pixel" role="img" aria-label="Single sub brightness values at one pixel, with the running average approaching the true value"></canvas>
+    </section>
+    <section>
+      <h2>More subs, slower gains</h2>
+      <p>Signal-to-noise grows with the square root of the subs, so doubling it takes four times as many.</p>
+      <canvas id="st-curve" role="img" aria-label="Signal-to-noise improvement rising quickly at first and then more slowly as subs are added"></canvas>
+    </section>
+  </div>
+
+  <div class="st-explanation">
+    <p><strong>Signal repeats, noise doesn’t.</strong> Light from the nebula lands on the same pixel in every sub. Noise pushes that pixel up or down at random, so averaging keeps the nebula and shrinks the noise.</p>
+    <p><strong>Why the gains slow down.</strong> 4 subs are twice as clean as one, 16 are 4× as clean, and 64 are 8× as clean. Your first few hours change the image the most, and later hours mostly help the faintest detail.</p>
+    <p><strong>What stacking can’t fix.</strong> Anything that repeats in every sub stays in the stack, including poor focus, trailed stars, and gradients. Brighter skies add noise, so they take many more subs to reach the same result.</p>
+  </div>
+
+  <p class="st-foot">This is a simulation. Shot noise, sky glow, and read noise are calculated for each pixel and added to my finished image of M20, then averaged as if each sub were taken separately. Real stacking also calibrates and aligns the subs and rejects outliers such as satellite trails.</p>
+  <div id="st-status" class="st-sr" aria-live="polite"></div>
+</main>
+
+<script>
+(function () {
+  const IMAGE_URL = "{{ '/assets/astrophotography/explainers/m20-900x478.jpg' | prepend: site.baseurl }}";
+  const STOPS = [1, 2, 3, 4, 6, 8, 11, 16, 23, 32, 45, 64, 91, 128, 181, 256, 362, 500];
+  const TICKS = [1, 4, 16, 64, 256, 500];
+  const SUB_MINUTES = 2;
+
+  // Noise model, in electrons per sub. The image is treated as a cube-root
+  // stretch of the linear signal, which is what makes faint areas noisy.
+  const WHITE_LEVEL = 150; // Electrons that display as full white.
+  const READ_NOISE = 4;
+  const SKIES = {
+    dark: { label: "dark site", electrons: 60 },
+    suburban: { label: "suburban", electrons: 400 },
+    city: { label: "city", electrons: 1600 },
+  };
+  const SPOT = { x: 0.455, y: 0.70 }; // A faint part of the blue reflection nebula.
+  const NOISE_SCALE = 32; // Stored noise fields use int8, with 1 sigma = 32.
+
+  const $ = (id) => document.getElementById(id);
+  const canvas = $("st-image");
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  const W = canvas.width, H = canvas.height, COUNT = W * H;
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let source = null;       // Original RGBA pixels.
+  let noiseFields = null;  // One unit-variance noise field per stop.
+  let output = null;
+  let stopIndex = 0;
+  let sky = "dark";
+  let spotSignal = 0;
+  let timer = null;
+
+  // Seeded so that the page looks the same on every visit.
+  function makeRandom(seed) {
+    return function () {
+      seed = (seed + 0x6d2b79f5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function makeGaussian(random) {
+    let spare = null;
+    return function () {
+      if (spare !== null) { const s = spare; spare = null; return s; }
+      const r = Math.sqrt(-2 * Math.log(1 - random()));
+      const a = 2 * Math.PI * random();
+      spare = r * Math.sin(a);
+      return r * Math.cos(a);
+    };
+  }
+
+  // The sum of n Gaussian subs is itself Gaussian with variance n, so each stop
+  // adds one increment. This gives the same noise as adding subs one at a time.
+  function buildNoiseFields() {
+    const gaussian = makeGaussian(makeRandom(20));
+    const POOL = 1 << 18;
+    const pool = new Float32Array(POOL);
+    for (let i = 0; i < POOL; i++) pool[i] = gaussian();
+    const random = makeRandom(7);
+    const sum = new Float32Array(COUNT);
+    let previous = 0;
+    return STOPS.map((n) => {
+      const step = Math.sqrt(n - previous);
+      const toUnit = NOISE_SCALE / Math.sqrt(n);
+      const field = new Int8Array(COUNT);
+      let p = Math.floor(random() * POOL);
+      for (let i = 0; i < COUNT; i++) {
+        if ((i & 1023) === 0) p = Math.floor(random() * POOL);
+        sum[i] += step * pool[p];
+        p = (p + 1) & (POOL - 1);
+        const v = Math.round(sum[i] * toUnit);
+        field[i] = v > 127 ? 127 : v < -127 ? -127 : v;
+      }
+      previous = n;
+      return field;
+    });
+  }
+
+  function linear(pixelValue) {
+    const v = pixelValue / 255;
+    return v * v * v * WHITE_LEVEL;
+  }
+  function noisePerSub(electrons) {
+    return Math.sqrt(READ_NOISE * READ_NOISE + SKIES[sky].electrons + electrons);
+  }
+
+  function renderImage() {
+    const field = noiseFields[stopIndex];
+    const signal = new Float32Array(256);
+    const sigma = new Float32Array(256);
+    for (let v = 0; v < 256; v++) {
+      signal[v] = linear(v);
+      sigma[v] = noisePerSub(signal[v]) / Math.sqrt(STOPS[stopIndex]) / NOISE_SCALE;
+    }
+    const out = output.data, src = source;
+    // Reading green and blue at an offset gives each channel its own noise
+    // without storing three fields.
+    const G = 104729, B = 224737;
+    for (let i = 0, p = 0; i < COUNT; i++, p += 4) {
+      for (let c = 0; c < 3; c++) {
+        const v = src[p + c];
+        const z = field[c === 0 ? i : (i + (c === 1 ? G : B)) % COUNT];
+        const e = signal[v] + sigma[v] * z;
+        out[p + c] = e <= 0 ? 0 : Math.min(255, 255 * Math.cbrt(e / WHITE_LEVEL));
+      }
+      out[p + 3] = 255;
+    }
+    ctx.putImageData(output, 0, 0);
+  }
+
+  function formatTime(subs) {
+    const minutes = subs * SUB_MINUTES;
+    if (minutes < 60) return `${minutes} min`;
+    const h = Math.floor(minutes / 60), m = minutes % 60;
+    return m ? `${h} h ${m} min` : `${h} h`;
+  }
+  function snrPerSub() {
+    return spotSignal / noisePerSub(spotSignal);
+  }
+
+  function updateText() {
+    const n = STOPS[stopIndex];
+    const snr = snrPerSub() * Math.sqrt(n);
+    const countText = n === 1 ? "1 sub" : `${n} subs`;
+    $("st-count").textContent = countText;
+    $("st-time").textContent = formatTime(n);
+    $("st-snr").textContent = snr < 10 ? snr.toFixed(1) : Math.round(snr).toString();
+    canvas.setAttribute("aria-label", `The Trifid Nebula, stacked from ${countText}`);
+    $("st-status").textContent = timer ? "" : `${countText}, signal-to-noise ${snr.toFixed(1)}`;
+    document.querySelectorAll("#st-ticks button").forEach((b) => {
+      b.classList.toggle("st-current", Number(b.dataset.subs) === n);
+    });
+    const dark = SKIES.dark.electrons, rn = READ_NOISE * READ_NOISE + spotSignal;
+    const ratio = (rn + SKIES[sky].electrons) / (rn + dark);
+    $("st-sky-note").textContent = sky === "dark"
+      ? "The darkest sky here adds the least noise."
+      : `This sky takes about ${ratio < 10 ? ratio.toFixed(1) : Math.round(ratio)}× as many subs as a dark site for the same result.`;
+  }
+
+  /* ---- Plots ---- */
+  function css(name) {
+    return getComputedStyle($("stacking")).getPropertyValue(name).trim();
+  }
+  function setupPlot(el) {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const w = el.clientWidth, h = el.clientHeight;
+    if (el.width !== Math.round(w * dpr)) { el.width = Math.round(w * dpr); el.height = Math.round(h * dpr); }
+    const c = el.getContext("2d");
+    c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    c.clearRect(0, 0, w, h);
+    c.font = "11px 'Space Mono', monospace";
+    return { c, w, h };
+  }
+
+  const pixelSeries = (() => {
+    const g = makeGaussian(makeRandom(42));
+    return Array.from({ length: 500 }, () => g());
+  })();
+
+  function drawPixelPlot() {
+    const { c, w, h } = setupPlot($("st-pixel"));
+    const n = STOPS[stopIndex];
+    const sigma = noisePerSub(spotSignal);
+    const L = 8, R = 8, T = 10, B = 26;
+    const yMin = spotSignal - 3.2 * sigma, yMax = spotSignal + 3.2 * sigma;
+    const x = (i) => L + (Math.log(i) / Math.log(500)) * (w - L - R);
+    const y = (v) => T + (1 - (v - yMin) / (yMax - yMin)) * (h - T - B);
+    const secondary = css("--secondary");
+
+    c.strokeStyle = css("--border");
+    c.beginPath(); c.moveTo(L, h - B + .5); c.lineTo(w - R, h - B + .5); c.stroke();
+    c.fillStyle = secondary;
+    c.textAlign = "center";
+    (w < 420 ? [1, 4, 16, 64] : [1, 4, 16, 64, 256]).forEach((t) => c.fillText(t, Math.max(L + 4, x(t)), h - B + 15));
+    c.textAlign = "right";
+    c.fillText("subs", w - R, h - B + 15);
+
+    c.setLineDash([4, 4]);
+    c.strokeStyle = css("--gold");
+    c.beginPath(); c.moveTo(L, y(spotSignal)); c.lineTo(w - R, y(spotSignal)); c.stroke();
+    c.setLineDash([]);
+
+    c.fillStyle = "rgba(155,176,199,.55)";
+    for (let i = 1; i <= n; i++) {
+      const v = spotSignal + sigma * pixelSeries[i - 1];
+      c.beginPath(); c.arc(x(i), Math.max(T, Math.min(h - B, y(v))), 1.6, 0, 7); c.fill();
+    }
+    c.strokeStyle = css("--cyan");
+    c.lineWidth = 2;
+    c.beginPath();
+    let total = 0;
+    for (let i = 1; i <= n; i++) {
+      total += spotSignal + sigma * pixelSeries[i - 1];
+      const py = Math.max(T, Math.min(h - B, y(total / i)));
+      i === 1 ? c.moveTo(x(i), py) : c.lineTo(x(i), py);
+    }
+    c.stroke();
+    c.lineWidth = 1;
+    c.textAlign = "left";
+    c.fillStyle = css("--cyan");
+    c.fillText("running average", L, T + 4);
+    c.fillStyle = css("--gold");
+    c.fillText("true brightness", L + 130, T + 4);
+  }
+
+  function drawCurvePlot() {
+    const { c, w, h } = setupPlot($("st-curve"));
+    const n = STOPS[stopIndex];
+    const L = 34, R = 10, T = 10, B = 26;
+    const yTop = Math.sqrt(500);
+    const x = (s) => L + (s / 500) * (w - L - R);
+    const y = (g) => T + (1 - g / yTop) * (h - T - B);
+    const secondary = css("--secondary");
+
+    c.strokeStyle = css("--border");
+    c.beginPath(); c.moveTo(L, h - B + .5); c.lineTo(w - R, h - B + .5); c.stroke();
+    c.fillStyle = secondary;
+    c.textAlign = "right";
+    [1, 4, 8, 16].forEach((g) => {
+      const s = g * g;
+      c.strokeStyle = css("--border");
+      c.beginPath(); c.moveTo(L, y(g)); c.lineTo(x(s), y(g)); c.lineTo(x(s), h - B); c.stroke();
+      c.fillStyle = secondary;
+      c.textAlign = "right";
+      c.fillText(`${g}×`, L - 6, y(g) + 4);
+    });
+    c.textAlign = "center";
+    [64, 256, 500].forEach((s) => c.fillText(s, Math.min(w - R - 12, x(s)), h - B + 15));
+    c.textAlign = "left";
+    c.fillText("subs", L, h - B + 15);
+
+    c.strokeStyle = css("--cyan");
+    c.lineWidth = 2;
+    c.beginPath();
+    for (let s = 1; s <= 500; s += s < 20 ? 1 : 5) {
+      s === 1 ? c.moveTo(x(s), y(Math.sqrt(s))) : c.lineTo(x(s), y(Math.sqrt(s)));
+    }
+    c.stroke();
+    c.lineWidth = 1;
+
+    const g = Math.sqrt(n);
+    c.fillStyle = css("--gold");
+    c.beginPath(); c.arc(x(n), y(g), 5, 0, 7); c.fill();
+    c.textAlign = n > 330 ? "right" : "left";
+    c.fillText(n === 1 ? "single sub" : `${g < 10 ? g.toFixed(1) : Math.round(g)}× cleaner`, x(n) + (n > 330 ? -10 : 10), y(g) + (n > 330 ? 38 : 4));
+  }
+
+  function render() {
+    renderImage();
+    updateText();
+    drawPixelPlot();
+    drawCurvePlot();
+  }
+
+  /* ---- Controls ---- */
+  const slider = $("st-subs"), play = $("st-play");
+
+  function setStop(i) {
+    stopIndex = i;
+    slider.value = i;
+    render();
+  }
+  function stop(label) {
+    clearInterval(timer);
+    timer = null;
+    play.textContent = label;
+  }
+  function start() {
+    if (stopIndex >= STOPS.length - 1) setStop(0);
+    play.textContent = "Pause";
+    timer = setInterval(() => {
+      if (stopIndex >= STOPS.length - 1) { stop("Replay"); updateText(); return; }
+      setStop(stopIndex + 1);
+    }, 550);
+  }
+  play.addEventListener("click", () => {
+    if (timer) stop("Play"); else start();
+  });
+  slider.addEventListener("input", () => {
+    if (timer) stop("Play");
+    setStop(Number(slider.value));
+    if (stopIndex === STOPS.length - 1) play.textContent = "Replay";
+    else play.textContent = "Play";
+  });
+  $("st-sky").addEventListener("change", (e) => {
+    sky = e.target.value;
+    render();
+  });
+
+  const ticks = $("st-ticks");
+  TICKS.forEach((n) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.dataset.subs = n;
+    b.textContent = n;
+    b.setAttribute("aria-label", `Show ${n} ${n === 1 ? "sub" : "subs"}`);
+    b.style.left = `${(STOPS.indexOf(n) / (STOPS.length - 1)) * 100}%`;
+    b.addEventListener("click", () => {
+      if (timer) stop("Play");
+      setStop(STOPS.indexOf(n));
+      play.textContent = stopIndex === STOPS.length - 1 ? "Replay" : "Play";
+    });
+    ticks.appendChild(b);
+  });
+
+  let resizeFrame = null;
+  new ResizeObserver(() => {
+    if (!noiseFields) return;
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => { drawPixelPlot(); drawCurvePlot(); });
+  }).observe($("st-pixel"));
+
+  /* ---- Start ---- */
+  const img = new Image();
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0, W, H);
+    source = ctx.getImageData(0, 0, W, H).data;
+    output = ctx.createImageData(W, H);
+
+    // Average the area under the marker so a single star can't skew it.
+    const cx = Math.round(SPOT.x * W), cy = Math.round(SPOT.y * H);
+    let total = 0, samples = 0;
+    for (let y = cy - 5; y <= cy + 5; y++) {
+      for (let x = cx - 5; x <= cx + 5; x++) {
+        const p = (y * W + x) * 4;
+        total += linear(source[p + 2]);
+        samples++;
+      }
+    }
+    spotSignal = total / samples;
+    [$("st-spot"), $("st-spot-label")].forEach((el) => {
+      el.hidden = false;
+      el.style.left = `${SPOT.x * 100}%`;
+      el.style.top = `${SPOT.y * 100}%`;
+    });
+
+    // Let the "Preparing" message paint before the noise fields are built.
+    requestAnimationFrame(() => setTimeout(() => {
+      noiseFields = buildNoiseFields();
+      $("st-loading").hidden = true;
+      $("st-loading").style.display = "none";
+      render();
+      if (!reducedMotion) start();
+    }, 0));
+  };
+  img.onerror = () => {
+    $("st-loading").textContent = "The nebula image didn't load. Reload the page to try again.";
+  };
+  img.src = IMAGE_URL;
+})();
+</script>
+</body>
+</html>
