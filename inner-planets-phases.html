@@ -1307,8 +1307,15 @@ html&gt;body{padding:0}&lt;/style&gt;
     toggle.classList.remove(&#x27;btn-primary&#x27;);
     render();
   };
-  sixMonths.addEventListener(&#x27;click&#x27;,()=&gt;jumpTo(Date.UTC(2026,2,12,12)));
-  today.addEventListener(&#x27;click&#x27;,()=&gt;jumpTo(epoch));
+  // Noon UTC on the viewer's local calendar date, so the displayed date matches their calendar.
+  const dateMonthsAgo = months =&gt; {
+    const now=new Date();
+    const y=now.getFullYear(), m=now.getMonth()-months;
+    const lastDay=new Date(Date.UTC(y,m+1,0)).getUTCDate();
+    return Date.UTC(y,m,Math.min(now.getDate(),lastDay),12);
+  };
+  sixMonths.addEventListener(&#x27;click&#x27;,()=&gt;jumpTo(dateMonthsAgo(6)));
+  today.addEventListener(&#x27;click&#x27;,()=&gt;jumpTo(dateMonthsAgo(0)));
   speed.addEventListener(&#x27;input&#x27;,()=&gt;{speedLabel.textContent=`${speed.value} days/sec`;});
   new ResizeObserver(render).observe(root);
   toggle.textContent=running?&#x27;Pause&#x27;:&#x27;Play&#x27;;
