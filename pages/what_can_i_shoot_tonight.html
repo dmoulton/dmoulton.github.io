@@ -1,0 +1,764 @@
+---
+layout: default
+title: What Can I Shoot Tonight?
+permalink: /what-can-i-shoot-tonight/
+nav_group: tools
+nav_section: Calculators
+nav_desc: "Targets ranked for tonight's sky, Moon, and location"
+nav_badge: New
+nav_icon: tonight
+nav_order: 2
+---
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+    .tonight {
+        --bg: #060b14;
+        --bg-panel: #0c1626;
+        --hairline: #21426b;
+        --accent-bright: #5ec8ff;
+        --accent-mid: #4aa3e8;
+        --accent-dim: #2f7cc4;
+        --accent-faint: #1f5c94;
+        --text-max: #eaf6ff;
+        --text-soft: #9db8d3;
+        --moon: #ffd54a;
+        --track: #13243c;
+        font-size: 16px;
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent-mid);
+        padding: 24px 20px 28px;
+        border-radius: 10px;
+        background: var(--bg);
+        line-height: 1.4;
+    }
+    .tonight,
+    .tonight * {
+        box-sizing: border-box;
+    }
+    .tonight .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    .tonight .panel {
+        background: var(--bg-panel);
+        border: 1px solid var(--hairline);
+        border-radius: 2px;
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    .tonight .panel-label {
+        font-family: "Oswald", sans-serif;
+        letter-spacing: 0.04em;
+        font-size: 0.95em;
+        color: var(--accent-bright);
+        margin-bottom: 14px;
+    }
+    .tonight .site-name {
+        color: var(--text-max);
+        margin-left: 8px;
+    }
+    .tonight .controls {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        align-items: end;
+    }
+    .tonight .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+    }
+    .tonight label {
+        font-size: 0.72em;
+        color: var(--accent-mid);
+    }
+    .tonight select,
+    .tonight input {
+        width: 100%;
+        min-width: 0;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--text-max);
+        font-family: inherit;
+        font-size: 0.85em;
+        padding: 9px 10px;
+        border-radius: 2px;
+        color-scheme: dark;
+    }
+    .tonight select:focus-visible,
+    .tonight input:focus-visible,
+    .tonight button:focus-visible {
+        outline: 2px solid var(--accent-bright);
+        outline-offset: 2px;
+    }
+    .tonight .locate-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+    .tonight .locate-row[hidden] {
+        display: none;
+    }
+    .tonight .text-btn {
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--accent-bright);
+        font-family: inherit;
+        font-size: 0.72em;
+        padding: 7px 11px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .tonight .text-btn:hover {
+        border-color: var(--accent-mid);
+    }
+    .tonight .text-btn:disabled {
+        opacity: 0.6;
+        cursor: wait;
+    }
+    .tonight .locate-status {
+        font-size: 0.72em;
+        color: var(--text-soft);
+    }
+    .tonight .hint {
+        font-size: 0.72em;
+        color: var(--text-soft);
+        margin-top: 10px;
+    }
+    .tonight .hint a {
+        color: var(--accent-bright);
+    }
+
+    .tonight .night-summary {
+        color: var(--text-max);
+        font-size: 0.92em;
+    }
+    .tonight .night-summary p {
+        margin: 0 0 4px;
+    }
+    .tonight .night-summary .moon-line {
+        color: var(--moon);
+    }
+    .tonight .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        margin-top: 12px;
+        font-size: 0.72em;
+        color: var(--text-soft);
+    }
+    .tonight .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+    }
+    .tonight .swatch {
+        display: inline-block;
+        width: 22px;
+        height: 10px;
+        border-radius: 1px;
+    }
+    .tonight .swatch.tick {
+        width: 2px;
+        height: 14px;
+        background: var(--text-max);
+    }
+
+    .tonight .usable {
+        background: var(--accent-bright);
+    }
+    .tonight .blocked {
+        background: repeating-linear-gradient(
+            135deg,
+            var(--moon) 0 2px,
+            transparent 2px 5px
+        );
+    }
+
+    .tonight .group-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 4px 12px;
+        margin: 26px 0 2px;
+    }
+    .tonight h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1.3em;
+        color: var(--text-max);
+        margin: 0;
+    }
+    .tonight .group-note {
+        font-size: 0.78em;
+        color: var(--text-soft);
+    }
+
+    /* Every row shares these columns so all the night bars line up. */
+    .tonight .row,
+    .tonight .axis-row {
+        display: grid;
+        grid-template-columns: minmax(0, 280px) minmax(0, 1fr) 190px;
+        gap: 4px 16px;
+        align-items: center;
+    }
+    .tonight .axis-row {
+        margin-top: 10px;
+        padding-bottom: 4px;
+    }
+    .tonight .axis {
+        grid-column: 2;
+        position: relative;
+        height: 30px;
+    }
+    .tonight .axis .tick-label {
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        font-size: 0.68em;
+        color: var(--text-soft);
+    }
+    .tonight .axis .moon-band {
+        position: absolute;
+        bottom: 2px;
+        height: 5px;
+        background: var(--moon);
+        opacity: 0.75;
+        border-radius: 1px;
+    }
+    .tonight .row {
+        padding: 9px 0;
+        border-top: 1px solid var(--track);
+    }
+    .tonight .who b {
+        display: block;
+        color: var(--text-max);
+        font-weight: 500;
+        font-size: 0.86em;
+    }
+    .tonight .who span {
+        display: block;
+        font-size: 0.72em;
+        color: var(--text-soft);
+    }
+    .tonight .bar {
+        position: relative;
+        height: 20px;
+        background: var(--track);
+        border-radius: 1px;
+        overflow: hidden;
+    }
+    .tonight .bar i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    .tonight .bar .meridian {
+        width: 2px;
+        margin-left: -1px;
+        background: var(--text-max);
+    }
+    .tonight .bar .now,
+    .tonight .axis .now {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #ff8a80;
+    }
+    .tonight .stats b {
+        color: var(--text-max);
+        font-weight: 500;
+        font-size: 0.95em;
+    }
+    .tonight .stats span {
+        display: block;
+        font-size: 0.7em;
+        color: var(--text-soft);
+    }
+    .tonight .more {
+        margin-top: 12px;
+    }
+    .tonight .empty {
+        color: var(--text-soft);
+        font-size: 0.85em;
+        padding: 12px 0;
+    }
+
+    @media (max-width: 860px) {
+        .tonight .controls {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .tonight .row {
+            grid-template-columns: minmax(0, 1fr) auto;
+        }
+        .tonight .row .bar {
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+        .tonight .row .stats {
+            text-align: right;
+        }
+        .tonight .axis-row {
+            display: block;
+        }
+    }
+    @media (max-width: 520px) {
+        .tonight {
+            padding: 16px 12px 20px;
+        }
+        .tonight .panel {
+            padding: 14px;
+        }
+        .tonight .controls {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+</style>
+
+<h1 class="page-title">{{ page.title }}</h1>
+<p style="color: #6b8299; margin-bottom: 32px">
+    Objects that are climbing after dusk come first, since they have the night
+    ahead of them. Western objects follow if they still have enough time left.
+</p>
+
+<div class="tonight" id="tonight">
+    <div class="wrap">
+        <div class="panel">
+            <div class="panel-label">
+                Your night
+                <span class="site-name" id="siteName"></span>
+            </div>
+            <div class="controls">
+                <div class="field">
+                    <label for="siteLat">Latitude (south negative)</label>
+                    <input type="number" id="siteLat" step="0.01" />
+                </div>
+                <div class="field">
+                    <label for="siteLon">Longitude (west negative)</label>
+                    <input type="number" id="siteLon" step="0.01" />
+                </div>
+                <div class="field">
+                    <label for="nightDate">Night of</label>
+                    <input type="date" id="nightDate" />
+                </div>
+                <div class="field">
+                    <label for="filter">Filter</label>
+                    <select id="filter">
+                        <option value="Ha">Hα</option>
+                        <option value="OIII">OIII</option>
+                        <option value="SII">SII</option>
+                        <option value="L">Luminance</option>
+                        <option value="RGB">RGB</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="minAlt">Lowest altitude</label>
+                    <select id="minAlt">
+                        <option value="20">20°</option>
+                        <option value="25">25°</option>
+                        <option value="30" selected>30°</option>
+                        <option value="35">35°</option>
+                        <option value="40">40°</option>
+                        <option value="45">45°</option>
+                        <option value="50">50°</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="minHours">Imaging time, at least</label>
+                    <select id="minHours">
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3" selected>3 hours</option>
+                        <option value="4">4 hours</option>
+                        <option value="6">6 hours</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="kind">Object type</label>
+                    <select id="kind">
+                        <option value="all">All objects</option>
+                        <option value="nebula">Nebulae</option>
+                        <option value="galaxy">Galaxies</option>
+                        <option value="cluster">Star clusters</option>
+                    </select>
+                </div>
+                <div class="locate-row" id="locateRow" hidden>
+                    <button type="button" class="text-btn" id="useMyLocation">
+                        Use my location
+                    </button>
+                    <span class="locate-status" id="locateStatus" aria-live="polite"></span>
+                </div>
+            </div>
+            <div class="hint">
+                Times use your browser's time zone. "Use my location" sends your
+                rounded coordinates to
+                <a href="https://www.bigdatacloud.com/" rel="noopener">BigDataCloud</a>
+                to look up the place name.
+            </div>
+        </div>
+
+        <div class="panel night-summary" id="summary" aria-live="polite"></div>
+        <div id="results"></div>
+
+        <p class="hint">
+            The Moon rule matches the
+            <a href="{{ '/moon-avoidance-calculator/' | prepend: site.baseurl }}">Moon Avoidance Calculator</a>:
+            time is lost when the Moon is up and closer than the filter allows.
+            Altitudes ignore local horizons and atmospheric refraction, so check
+            your own trees and rooflines. Object data uses
+            <a href="https://github.com/mattiaverga/OpenNGC" rel="noopener">OpenNGC</a>
+            (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>).
+        </p>
+    </div>
+</div>
+
+<script src="{{ '/assets/js/sky-tools.js' | prepend: site.baseurl }}"></script>
+<script>
+    (function () {
+        const {
+            GMST,
+            toJulian,
+            R2D,
+            moonIllumination,
+            altitudeOf,
+            twilightTimes,
+            fmtDate,
+            fmtTime,
+            angSep,
+            TARGETS,
+            GROUPS,
+            safeGetItem,
+            safeSetItem,
+            setupLocationPanel,
+        } = SkyTools;
+
+        const STEP_MINUTES = 5;
+        const FIRST_ROWS = { east: 25, west: 15 };
+        const DEFAULT_LAT = 41.0;
+        const DEFAULT_LON = -111.89;
+        const SAVED_CHOICES = ["filter", "minAlt", "minHours", "kind"];
+
+        const $ = (id) => document.getElementById(id);
+        let showAll = { east: false, west: false };
+
+        function kindOf(type) {
+            if (/galaxy|galaxies/i.test(type)) return "galaxy";
+            if (/nebula|remnant|bubble/i.test(type)) return "nebula";
+            if (/cluster/i.test(type)) return "cluster";
+            return "other";
+        }
+
+        // Hour angle in degrees from -180 to 180. Negative means east of the meridian.
+        function hourAngle(date, raRad, lonDeg) {
+            const lst = GMST(toJulian(date)) + lonDeg;
+            return ((((lst - raRad * R2D) % 360) + 540) % 360) - 180;
+        }
+
+        function numberFrom(id, fallback, limit) {
+            const v = parseFloat($(id).value);
+            return isNaN(v) ? fallback : Math.max(-limit, Math.min(limit, v));
+        }
+
+        function formatDuration(hours) {
+            const totalMinutes = Math.round(hours * 60);
+            const h = Math.floor(totalMinutes / 60);
+            const m = totalMinutes % 60;
+            return m ? `${h} h ${m} min` : `${h} h`;
+        }
+
+        // Evaluates one night in fixed time steps. Moon positions are shared by all objects.
+        function buildNight(dateStr, lat, lon, filterKey) {
+            const { dusk, dawn } = twilightTimes(dateStr, lat, lon);
+            if (!dusk || !dawn) return null;
+            // Whole steps that end exactly at dawn, so imaging time can't exceed the night.
+            const count = Math.max(1, Math.round((dawn - dusk) / (STEP_MINUTES * 60000)));
+            const stepMs = (dawn - dusk) / count;
+            const samples = [];
+            for (let i = 0; i < count; i++) {
+                const date = new Date(dusk.getTime() + (i + 0.5) * stepMs);
+                const moon = moonIllumination(date);
+                samples.push({
+                    date,
+                    moon,
+                    moonAlt: altitudeOf(date, moon.ra, moon.dec, lat, lon),
+                    moonLimit:
+                        GROUPS[filterKey].base +
+                        GROUPS[filterKey].k * moon.fraction,
+                });
+            }
+            return { dusk, dawn, samples, stepMs, lat, lon };
+        }
+
+        // West of the meridian isn't enough: some objects are below the horizon at
+        // dusk and rise in the east later. An object belongs in the western group
+        // only if it's past the meridian and dusk is its highest point of the night.
+        function sinkingAtDusk(target, night) {
+            const { dusk, dawn, lat, lon } = night;
+            const altitudeAt = (date) => altitudeOf(date, target.ra, target.dec, lat, lon);
+            return (
+                hourAngle(dusk, target.ra, lon) > 0 &&
+                altitudeAt(dusk) >= altitudeAt(dawn)
+            );
+        }
+
+        function evaluate(target, night, minAlt) {
+            const { samples, lat, lon } = night;
+            const states = new Array(samples.length);
+            let usableSteps = 0;
+            let peak = -90;
+            samples.forEach((s, i) => {
+                const alt = altitudeOf(s.date, target.ra, target.dec, lat, lon);
+                peak = Math.max(peak, alt);
+                if (alt < minAlt) {
+                    states[i] = "";
+                    return;
+                }
+                const moonClear =
+                    s.moonAlt < 0 ||
+                    angSep(s.moon.ra, s.moon.dec, target.ra, target.dec) >=
+                        s.moonLimit;
+                states[i] = moonClear ? "usable" : "blocked";
+                if (moonClear) usableSteps++;
+            });
+
+            let meridian = null;
+            for (let i = 1; i < samples.length && !meridian; i++) {
+                const before = hourAngle(samples[i - 1].date, target.ra, lon);
+                const after = hourAngle(samples[i].date, target.ra, lon);
+                if (before < 0 && after >= 0 && after - before < 90) {
+                    meridian = samples[i].date;
+                }
+            }
+
+            return {
+                target,
+                states,
+                peak,
+                meridian,
+                hours: (usableSteps * night.stepMs) / 3600000,
+                east: !sinkingAtDusk(target, night),
+            };
+        }
+
+        // Groups consecutive equal states into [state, firstStep, lastStep + 1].
+        function runsOf(states) {
+            const runs = [];
+            let start = 0;
+            for (let i = 1; i <= states.length; i++) {
+                if (i === states.length || states[i] !== states[start]) {
+                    if (states[start]) runs.push([states[start], start, i]);
+                    start = i;
+                }
+            }
+            return runs;
+        }
+
+        function position(date, night) {
+            const span = night.dawn - night.dusk;
+            return ((date - night.dusk) / span) * 100;
+        }
+
+        function nowMark(night) {
+            const now = new Date();
+            return now > night.dusk && now < night.dawn
+                ? `<i class="now" style="left:${position(now, night)}%"></i>`
+                : "";
+        }
+
+        function axisHtml(night) {
+            const labels = [];
+            const first = new Date(night.dusk);
+            first.setMinutes(0, 0, 0);
+            first.setHours(first.getHours() + 1);
+            const spanHours = (night.dawn - night.dusk) / 3600000;
+            const every = spanHours > 6 ? 2 : 1;
+            for (
+                let t = new Date(first);
+                t < night.dawn;
+                t = new Date(t.getTime() + every * 3600000)
+            ) {
+                labels.push(
+                    `<span class="tick-label" style="left:${position(t, night)}%">${fmtTime(t)}</span>`,
+                );
+            }
+            const moonStates = night.samples.map((s) => (s.moonAlt >= 0 ? "up" : ""));
+            const steps = night.samples.length;
+            const bands = runsOf(moonStates).map(
+                ([, a, b]) =>
+                    `<span class="moon-band" style="left:${(a / steps) * 100}%;width:${((b - a) / steps) * 100}%" title="Moon is up"></span>`,
+            );
+            return `<div class="axis-row"><div class="axis" aria-hidden="true">${labels.join("")}${bands.join("")}${nowMark(night)}</div></div>`;
+        }
+
+        function windowsText(result, night) {
+            const timeAt = (step) => new Date(night.dusk.getTime() + step * night.stepMs);
+            return runsOf(result.states)
+                .filter(([state]) => state === "usable")
+                .map(([, a, b]) => `${fmtTime(timeAt(a))} to ${fmtTime(timeAt(b))}`)
+                .join(", ");
+        }
+
+        function rowHtml(result, night) {
+            const t = result.target;
+            const steps = result.states.length;
+            const segments = runsOf(result.states).map(
+                ([state, a, b]) =>
+                    `<i class="${state}" style="left:${(a / steps) * 100}%;width:${((b - a) / steps) * 100}%"></i>`,
+            );
+            const meridianMark = result.meridian
+                ? `<i class="meridian" style="left:${position(result.meridian, night)}%"></i>`
+                : "";
+            const windows = windowsText(result, night);
+            const details = [t.common, t.con, t.common ? null : t.type]
+                .filter(Boolean)
+                .join(", ");
+            const meridianText = result.meridian
+                ? `, meridian ${fmtTime(result.meridian)}`
+                : "";
+            return `<article class="row">
+                <div class="who"><b>${t.names.slice(0, 2).join(" / ")}</b><span>${details}</span></div>
+                <div class="bar" role="img" aria-label="Clear for imaging ${windows}" title="Clear for imaging ${windows}">${segments.join("")}${meridianMark}${nowMark(night)}</div>
+                <div class="stats"><b>${formatDuration(result.hours)}</b><span>Peak ${Math.round(result.peak)}°${meridianText}</span></div>
+            </article>`;
+        }
+
+        function groupHtml(key, title, note, results, night) {
+            const limit = FIRST_ROWS[key];
+            const visible = showAll[key] ? results : results.slice(0, limit);
+            const rows = visible.map((r) => rowHtml(r, night)).join("");
+            const more =
+                results.length > limit && !showAll[key]
+                    ? `<button type="button" class="text-btn more" data-show="${key}">Show all ${results.length} objects</button>`
+                    : "";
+            const body = results.length
+                ? `${axisHtml(night)}${rows}${more}`
+                : `<p class="empty">No objects here meet your settings. Try less imaging time, a lower altitude, or a narrowband filter.</p>`;
+            return `<section>
+                <div class="group-head"><h2>${title}</h2><span class="group-note">${note}</span></div>
+                ${body}
+            </section>`;
+        }
+
+        function summaryHtml(night, filterKey) {
+            const hours = (night.dawn - night.dusk) / 3600000;
+            const mid = night.samples[Math.floor(night.samples.length / 2)];
+            const upRuns = runsOf(night.samples.map((s) => (s.moonAlt >= 0 ? "up" : "")));
+            const steps = night.samples;
+            let moonText;
+            if (!upRuns.length) {
+                moonText = "The Moon stays down all night.";
+            } else {
+                const timeAt = (step) => new Date(night.dusk.getTime() + step * night.stepMs);
+                const times = upRuns.map(([, a, b]) => {
+                    const start = a === 0 ? "dusk" : fmtTime(timeAt(a));
+                    const end = b >= steps.length ? "dawn" : fmtTime(timeAt(b));
+                    return `${start} to ${end}`;
+                });
+                moonText = `The Moon is up from ${times.join(" and ")}. Stay ${Math.round(mid.moonLimit)}° away with this filter.`;
+            }
+            return `<p>Dark from ${fmtTime(night.dusk)} to ${fmtTime(night.dawn)} (${formatDuration(hours)}).</p>
+                <p class="moon-line">Moon ${Math.round(mid.moon.fraction * 100)}% lit. ${moonText}</p>
+                <div class="legend">
+                    <span><i class="swatch usable"></i>Clear for imaging</span>
+                    <span><i class="swatch blocked"></i>High enough, but too close to the Moon</span>
+                    <span><i class="swatch tick"></i>Crosses the meridian</span>
+                </div>`;
+        }
+
+        function byBestNight(a, b) {
+            return b.hours - a.hours || b.peak - a.peak;
+        }
+
+        function update() {
+            const dateStr = $("nightDate").value;
+            if (!dateStr) return;
+            const lat = numberFrom("siteLat", DEFAULT_LAT, 90);
+            const lon = numberFrom("siteLon", DEFAULT_LON, 180);
+            const filterKey = $("filter").value;
+            const night = buildNight(dateStr, lat, lon, filterKey);
+
+            if (!night) {
+                $("summary").innerHTML =
+                    "<p>The Sun doesn't get 18° below the horizon on this night, so there's no astronomical darkness to plan around. Try another date.</p>";
+                $("results").innerHTML = "";
+                return;
+            }
+
+            const minAlt = Number($("minAlt").value);
+            const minHours = Number($("minHours").value);
+            const kind = $("kind").value;
+            const results = TARGETS.filter(
+                (t) => kind === "all" || kindOf(t.type) === kind,
+            )
+                .map((t) => evaluate(t, night, minAlt))
+                .filter((r) => r.hours >= minHours);
+
+            const east = results.filter((r) => r.east).sort(byBestNight);
+            const west = results.filter((r) => !r.east).sort(byBestNight);
+
+            $("summary").innerHTML = summaryHtml(night, filterKey);
+            $("results").innerHTML =
+                groupHtml(
+                    "east",
+                    `East or still to rise (${east.length})`,
+                    "Climbing at dusk or rising later, most imaging time first",
+                    east,
+                    night,
+                ) +
+                groupHtml(
+                    "west",
+                    `West and sinking (${west.length})`,
+                    "Already heading down at dusk, with enough time left",
+                    west,
+                    night,
+                );
+        }
+
+        $("results").addEventListener("click", (event) => {
+            const key = event.target.dataset && event.target.dataset.show;
+            if (!key) return;
+            showAll[key] = true;
+            update();
+        });
+
+        function changed() {
+            showAll = { east: false, west: false };
+            update();
+        }
+
+        // Before dawn, "tonight" still means the night that began yesterday.
+        function defaultNight(lat, lon) {
+            const now = new Date();
+            const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+            const { dawn } = twilightTimes(fmtDate(yesterday), lat, lon);
+            return dawn && now < dawn ? fmtDate(yesterday) : fmtDate(now);
+        }
+
+        $("siteLat").value = safeGetItem("siteLat") || DEFAULT_LAT;
+        $("siteLon").value = safeGetItem("siteLon") || DEFAULT_LON;
+        $("nightDate").value = defaultNight(
+            numberFrom("siteLat", DEFAULT_LAT, 90),
+            numberFrom("siteLon", DEFAULT_LON, 180),
+        );
+        SAVED_CHOICES.forEach((id) => {
+            const saved = safeGetItem(`tonight-${id}`);
+            if (saved && [...$(id).options].some((o) => o.value === saved)) {
+                $(id).value = saved;
+            }
+            $(id).addEventListener("change", () => {
+                safeSetItem(`tonight-${id}`, $(id).value);
+                changed();
+            });
+        });
+        ["siteLat", "siteLon", "nightDate"].forEach((id) => {
+            $(id).addEventListener("change", changed);
+        });
+        setupLocationPanel(changed);
+        update();
+    })();
+</script>
