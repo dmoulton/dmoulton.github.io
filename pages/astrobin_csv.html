@@ -176,6 +176,38 @@ nav_order: 3
         display: block;
         color: var(--text-soft);
     }
+    .acq .help {
+        font-size: 0.8em;
+        color: var(--text-soft);
+    }
+    .acq .help summary {
+        color: var(--accent-bright);
+        cursor: pointer;
+    }
+    .acq .help summary:focus-visible {
+        outline: 2px solid var(--accent-bright);
+        outline-offset: 2px;
+    }
+    .acq .help ol {
+        margin: 10px 0;
+        padding-left: 22px;
+    }
+    .acq .help li {
+        margin-bottom: 4px;
+    }
+    .acq .help .example {
+        font-size: 1em;
+        margin: 0;
+        overflow-wrap: anywhere;
+    }
+    .acq .help b {
+        color: var(--text-max);
+        font-weight: 700;
+    }
+    .acq .help code {
+        font-family: inherit;
+        color: var(--text-max);
+    }
     .acq textarea {
         display: block;
         width: 100%;
@@ -251,9 +283,25 @@ nav_order: 3
                 <tbody id="filterRows"></tbody>
             </table>
             <p style="margin-top: 12px">
-                Use the numeric ID from AstroBin's equipment database. This browser
-                remembers your Bortle value and filter IDs.
+                This browser remembers your Bortle value and filter IDs.
             </p>
+            <details class="help">
+                <summary>How do I find my filter ID?</summary>
+                <ol>
+                    <li>On AstroBin, click your name in the top navigation bar.</li>
+                    <li>Click <b>Equipment</b>.</li>
+                    <li>Click a setup that includes the filter.</li>
+                    <li>In the window that slides in from the right, click the filter.</li>
+                    <li>
+                        Look at the address in your browser. The filter ID is the number
+                        right after <code>/filter/</code>.
+                    </li>
+                </ol>
+                <p class="example">
+                    For example, the ID is <b>32344</b> in
+                    <code>app.astrobin.com/equipment/explorer/filter/<b>32344</b>/qhyccd-minicam8m-blue</code>
+                </p>
+            </details>
         </div>
 
         <div class="panel" id="csvPanel" hidden>
