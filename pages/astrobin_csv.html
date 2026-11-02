@@ -1,0 +1,857 @@
+---
+layout: default
+title: AstroBin Acquisition CSV
+permalink: /astrobin-csv/
+nav_group: tools
+nav_section: Calculators
+nav_desc: "Build an AstroBin CSV from your FITS files, right in the browser"
+nav_badge: New
+nav_icon: table
+nav_order: 3
+---
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+    .acq {
+        --bg: #060b14;
+        --bg-panel: #0c1626;
+        --hairline: #21426b;
+        --accent-bright: #5ec8ff;
+        --accent-mid: #4aa3e8;
+        --text-max: #eaf6ff;
+        --text-soft: #9db8d3;
+        --warn: #ffd54a;
+        font-size: 16px;
+        font-family: "JetBrains Mono", monospace;
+        color: var(--accent-mid);
+        padding: 24px 20px 28px;
+        border-radius: 10px;
+        background: var(--bg);
+        line-height: 1.45;
+    }
+    .acq,
+    .acq * {
+        box-sizing: border-box;
+    }
+    .acq .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+    }
+    .acq .panel {
+        background: var(--bg-panel);
+        border: 1px solid var(--hairline);
+        border-radius: 2px;
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    .acq .panel[hidden],
+    .acq [hidden] {
+        display: none;
+    }
+    .acq h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        font-size: 1.05em;
+        color: var(--accent-bright);
+        margin: 0 0 12px;
+    }
+    .acq p {
+        margin: 0 0 10px;
+        font-size: 0.8em;
+        color: var(--text-soft);
+    }
+    .acq .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+    .acq button {
+        font-family: inherit;
+        font-size: 0.8em;
+        border-radius: 2px;
+        padding: 9px 14px;
+        cursor: pointer;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--accent-bright);
+    }
+    .acq button:hover {
+        border-color: var(--accent-mid);
+    }
+    .acq button.primary {
+        background: var(--accent-bright);
+        border-color: var(--accent-bright);
+        color: var(--bg);
+        font-weight: 700;
+    }
+    .acq button:focus-visible,
+    .acq input:focus-visible,
+    .acq textarea:focus-visible {
+        outline: 2px solid var(--accent-bright);
+        outline-offset: 2px;
+    }
+    .acq .status {
+        font-size: 0.78em;
+        color: var(--text-soft);
+    }
+    .acq .warnings {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.78em;
+        color: var(--warn);
+    }
+    .acq .warnings li {
+        margin-top: 4px;
+    }
+    .acq .targets {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 4px 14px;
+        max-height: 260px;
+        overflow-y: auto;
+    }
+    .acq .targets label {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+        padding: 3px 0;
+        font-size: 0.82em;
+        color: var(--text-max);
+        cursor: pointer;
+        overflow-wrap: anywhere;
+    }
+    .acq .targets small {
+        color: var(--text-soft);
+        white-space: nowrap;
+    }
+    .acq input[type="checkbox"] {
+        accent-color: var(--accent-bright);
+        flex: none;
+    }
+    .acq input[type="text"],
+    .acq input[type="number"] {
+        width: 100%;
+        min-width: 0;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--text-max);
+        font-family: inherit;
+        font-size: 0.85em;
+        padding: 8px 10px;
+        border-radius: 2px;
+        color-scheme: dark;
+    }
+    .acq label.field {
+        display: block;
+        font-size: 0.78em;
+        margin-bottom: 14px;
+    }
+    .acq label.field input {
+        display: block;
+        margin-top: 6px;
+        max-width: 90px;
+        font-size: 1.05em;
+    }
+    .acq table {
+        width: 100%;
+        max-width: 460px;
+        border-collapse: collapse;
+        font-size: 0.82em;
+    }
+    .acq th {
+        text-align: left;
+        font-weight: 400;
+        color: var(--text-soft);
+        padding: 0 10px 6px 0;
+    }
+    .acq td {
+        padding: 3px 10px 3px 0;
+        color: var(--text-max);
+    }
+    .acq td small {
+        display: block;
+        color: var(--text-soft);
+    }
+    .acq textarea {
+        display: block;
+        width: 100%;
+        min-height: 220px;
+        resize: vertical;
+        background: var(--bg);
+        border: 1px solid var(--hairline);
+        color: var(--text-max);
+        font-family: inherit;
+        font-size: 0.8em;
+        line-height: 1.5;
+        padding: 12px;
+        border-radius: 2px;
+        margin-bottom: 12px;
+        white-space: pre;
+        overflow-x: auto;
+    }
+    @media (max-width: 520px) {
+        .acq {
+            padding: 16px 12px 20px;
+        }
+        .acq .panel {
+            padding: 14px;
+        }
+    }
+</style>
+
+<h1 class="page-title">{{ page.title }}</h1>
+<p style="color: #6b8299; margin-bottom: 32px">
+    Choose a folder of FITS light frames and get a CSV to paste into AstroBin's
+    acquisition import.
+</p>
+
+<div class="acq" id="acq">
+    <div class="wrap">
+        <div class="panel">
+            <h2>Choose your images</h2>
+            <p>
+                Pick a folder that contains your light frames. Subfolders are
+                included, so your top-level imaging folder works. Your browser may
+                ask for permission or call this an upload, but your files stay on
+                your computer. This page only reads their headers.
+            </p>
+            <div class="actions">
+                <button type="button" class="primary" id="chooseFolder">Choose folder</button>
+                <button type="button" id="useLastFolder" hidden></button>
+                <button type="button" id="stopScan" hidden>Stop</button>
+                <span class="status" id="scanStatus" aria-live="polite"></span>
+            </div>
+            <input type="file" id="folderInput" webkitdirectory multiple hidden />
+            <ul class="warnings" id="scanWarnings"></ul>
+        </div>
+
+        <div class="panel" id="targetPanel" hidden>
+            <h2>Choose a target</h2>
+            <p>
+                Select more than one if the same object was saved under different
+                names.
+            </p>
+            <div class="targets" id="targets"></div>
+        </div>
+
+        <div class="panel" id="settingsPanel" hidden>
+            <h2>Add your AstroBin details</h2>
+            <label class="field">
+                Bortle (optional)
+                <input type="number" id="bortle" min="1" max="9" step="1" />
+            </label>
+            <table>
+                <thead>
+                    <tr><th scope="col">Filter in your files</th><th scope="col">AstroBin filter ID</th></tr>
+                </thead>
+                <tbody id="filterRows"></tbody>
+            </table>
+            <p style="margin-top: 12px">
+                Use the numeric ID from AstroBin's equipment database. This browser
+                remembers your Bortle value and filter IDs.
+            </p>
+        </div>
+
+        <div class="panel" id="csvPanel" hidden>
+            <h2>Your CSV</h2>
+            <textarea id="csvOutput" aria-label="CSV text" readonly spellcheck="false" wrap="off"></textarea>
+            <div class="actions">
+                <button type="button" class="primary" id="copyCsv">Copy CSV</button>
+                <button type="button" id="saveCsv">Save file</button>
+                <span class="status" id="csvStatus" aria-live="polite"></span>
+            </div>
+            <ul class="warnings" id="csvWarnings"></ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const BLOCK_SIZE = 2880;
+        const CARD_SIZE = 80;
+        const MAX_HEADER_BLOCKS = 256;
+        const CONCURRENT_READS = 16;
+        const FITS_EXTENSION = /\.(fits|fit|fts)$/i;
+        const XISF_EXTENSION = /\.xisf$/i;
+        const STORAGE_KEY = "astrobin-csv-settings";
+        const FOLDER_DB = "astrobin-csv";
+        const FOLDER_STORE = "folders";
+        const FOLDER_KEY = "last";
+
+        const $ = (id) => document.getElementById(id);
+        const decoder = new TextDecoder("ascii");
+
+        let frames = [];
+        let selected = new Set();
+        let scanId = 0;
+        let settings = loadSettings();
+        let lastFolder = null;
+
+        function loadSettings() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                if (saved && typeof saved === "object") {
+                    return { bortle: saved.bortle || "", filterIds: saved.filterIds || {} };
+                }
+            } catch (err) {
+                /* Settings are a convenience, so the page works without them. */
+            }
+            return { bortle: "", filterIds: {} };
+        }
+
+        function saveSettings() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+            } catch (err) {
+                /* See loadSettings. */
+            }
+        }
+
+        /* ---- Last folder ---- */
+
+        // Only folder handles can be remembered, and only some browsers have them.
+        // Everything here is optional, so a failure just leaves the button hidden.
+        function openFolderDb() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(FOLDER_DB, 1);
+                request.onupgradeneeded = () => request.result.createObjectStore(FOLDER_STORE);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        async function folderStore(mode, action) {
+            const db = await openFolderDb();
+            try {
+                return await new Promise((resolve, reject) => {
+                    const transaction = db.transaction(FOLDER_STORE, mode);
+                    const request = action(transaction.objectStore(FOLDER_STORE));
+                    transaction.oncomplete = () => resolve(request.result);
+                    transaction.onerror = () => reject(transaction.error);
+                    transaction.onabort = () => reject(transaction.error);
+                });
+            } finally {
+                db.close();
+            }
+        }
+
+        function showLastFolderButton(handle) {
+            lastFolder = handle;
+            const button = $("useLastFolder");
+            button.hidden = !handle;
+            button.textContent = handle ? `Use last folder (${handle.name})` : "";
+        }
+
+        async function rememberFolder(handle) {
+            showLastFolderButton(handle);
+            try {
+                await folderStore("readwrite", (store) => store.put(handle, FOLDER_KEY));
+            } catch (err) {
+                /* The folder still works for this visit. */
+            }
+        }
+
+        async function forgetFolder() {
+            showLastFolderButton(null);
+            try {
+                await folderStore("readwrite", (store) => store.delete(FOLDER_KEY));
+            } catch (err) {
+                /* Nothing to clean up if storage isn't available. */
+            }
+        }
+
+        async function restoreLastFolder() {
+            if (!window.showDirectoryPicker) return;
+            try {
+                const handle = await folderStore("readonly", (store) => store.get(FOLDER_KEY));
+                if (handle) showLastFolderButton(handle);
+            } catch (err) {
+                /* See the note above. */
+            }
+        }
+
+        /* ---- FITS headers ---- */
+
+        function parseValue(text) {
+            const trimmed = text.trimStart();
+            if (trimmed.startsWith("'")) {
+                let value = "";
+                for (let i = 1; i < trimmed.length; i++) {
+                    if (trimmed[i] !== "'") {
+                        value += trimmed[i];
+                    } else if (trimmed[i + 1] === "'") {
+                        value += "'";
+                        i++;
+                    } else {
+                        break;
+                    }
+                }
+                return value.trimEnd();
+            }
+            const comment = trimmed.indexOf("/");
+            return (comment >= 0 ? trimmed.slice(0, comment) : trimmed).trim();
+        }
+
+        // Reads one header unit and returns the offset just past it. Only header
+        // blocks are read, so large image files stay fast.
+        async function readUnit(file, offset, cards) {
+            for (let block = 0; block < MAX_HEADER_BLOCKS; block++) {
+                const buffer = await file.slice(offset, offset + BLOCK_SIZE).arrayBuffer();
+                if (buffer.byteLength < BLOCK_SIZE) return offset;
+                offset += BLOCK_SIZE;
+                const text = decoder.decode(buffer);
+                for (let at = 0; at < BLOCK_SIZE; at += CARD_SIZE) {
+                    const card = text.slice(at, at + CARD_SIZE);
+                    const key = card.slice(0, 8).trim();
+                    if (key === "END") return offset;
+                    if (key && card[8] === "=" && !cards.has(key.toUpperCase())) {
+                        cards.set(key.toUpperCase(), parseValue(card.slice(9)));
+                    }
+                }
+            }
+            return offset;
+        }
+
+        async function readHeader(file) {
+            const cards = new Map();
+            const next = await readUnit(file, 0, cards);
+            if (!cards.has("SIMPLE")) throw new Error("Not a FITS file");
+            // A compressed file keeps an empty primary unit, with the real cards in the next one.
+            if (numberFrom(cards, "NAXIS") === 0 && !cards.has("OBJECT")) {
+                await readUnit(file, next, cards);
+            }
+            return cards;
+        }
+
+        function numberFrom(cards, key) {
+            const text = cards.get(key);
+            if (text === undefined || text.trim() === "") return null;
+            const value = Number(text);
+            return Number.isFinite(value) ? value : null;
+        }
+
+        // Keeps the local time written in the file, whatever this computer's time zone is.
+        function parseLocalDate(text) {
+            const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(text || "");
+            return m ? Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) : null;
+        }
+
+        function normalizeName(name) {
+            return name.trim().split(/\s+/).join(" ");
+        }
+
+        function isSnapshot(path) {
+            return path.split(/[\\/]/).some((part) => part.toUpperCase() === "SNAPSHOT");
+        }
+
+        function frameFrom(cards) {
+            const target = normalizeName(cards.get("OBJECT") || "");
+            // Darks and flats have their own type here. NINA also writes LIGHT for
+            // snapshots, so those are skipped by folder name earlier.
+            if (!target || (cards.get("IMAGETYP") || "").trim().toUpperCase() !== "LIGHT") return null;
+            const exposure = numberFrom(cards, "EXPOSURE") ?? numberFrom(cards, "EXPTIME");
+            const start = parseLocalDate(cards.get("DATE-LOC"));
+            if (!(exposure > 0) || start === null) return { missingData: true };
+            const gain = numberFrom(cards, "GAIN");
+            return {
+                target,
+                filter: (cards.get("FILTER") || "").trim(),
+                exposure,
+                night: new Date(start - 12 * 3600000).toISOString().slice(0, 10),
+                gain: gain === null ? null : Math.round(gain),
+                binning: Math.round(numberFrom(cards, "XBINNING") ?? 1),
+                temperature: numberFrom(cards, "CCD-TEMP") ?? numberFrom(cards, "SET-TEMP"),
+            };
+        }
+
+        /* ---- Folder scan ---- */
+
+        async function* walkDirectory(handle, path) {
+            for await (const entry of handle.values()) {
+                const entryPath = `${path}/${entry.name}`;
+                if (entry.kind === "directory") {
+                    yield* walkDirectory(entry, entryPath);
+                } else {
+                    yield { path: entryPath, handle: entry };
+                }
+            }
+        }
+
+        async function* filesFromInput(files) {
+            for (const file of files) {
+                yield { path: file.webkitRelativePath || file.name, file };
+            }
+        }
+
+        async function scan(entries) {
+            const id = ++scanId;
+            const result = { frames: [], checked: 0, unreadable: 0, xisf: 0, missingData: 0 };
+            resetResults();
+            setScanning(true);
+
+            const running = new Set();
+            const processEntry = async (entry) => {
+                try {
+                    const file = entry.file || (await entry.handle.getFile());
+                    const frame = frameFrom(await readHeader(file));
+                    if (frame && frame.missingData) {
+                        result.missingData++;
+                    } else if (frame) {
+                        result.frames.push(frame);
+                    }
+                } catch (err) {
+                    result.unreadable++;
+                }
+                result.checked++;
+            };
+
+            for await (const entry of entries) {
+                if (id !== scanId) break;
+                const name = entry.path.split(/[\\/]/).pop();
+                if (XISF_EXTENSION.test(name)) {
+                    result.xisf++;
+                    continue;
+                }
+                if (!FITS_EXTENSION.test(name) || isSnapshot(entry.path)) continue;
+                const task = processEntry(entry).finally(() => {
+                    running.delete(task);
+                    if (id === scanId) {
+                        $("scanStatus").textContent = `Checked ${result.checked.toLocaleString()} FITS files`;
+                    }
+                });
+                running.add(task);
+                if (running.size >= CONCURRENT_READS) await Promise.race(running);
+            }
+            await Promise.all(running);
+            if (id !== scanId) return;
+            finishScan(result);
+        }
+
+        function setScanning(scanning) {
+            $("chooseFolder").disabled = scanning;
+            $("useLastFolder").disabled = scanning;
+            $("stopScan").hidden = !scanning;
+        }
+
+        // Reads a folder handle. A folder that was moved or renamed is forgotten.
+        async function scanFolder(handle) {
+            try {
+                await scan(walkDirectory(handle, handle.name));
+            } catch (err) {
+                scanId++;
+                setScanning(false);
+                if (err.name === "NotFoundError") {
+                    await forgetFolder();
+                    $("scanStatus").textContent = `Couldn't find ${handle.name}. It may have moved, so choose it again.`;
+                } else {
+                    $("scanStatus").textContent = `Couldn't read ${handle.name}. Choose the folder again.`;
+                }
+            }
+        }
+
+        function finishScan(result) {
+            scanId++;
+            setScanning(false);
+            frames = result.frames;
+            const warnings = [];
+            const count = (n, one, many) => `${n.toLocaleString()} ${n === 1 ? one : many}`;
+            if (result.unreadable) warnings.push(`Skipped ${count(result.unreadable, "FITS file", "FITS files")} that couldn't be read.`);
+            if (result.missingData) warnings.push(`Skipped ${count(result.missingData, "frame", "frames")} with no exposure time or DATE-LOC.`);
+            if (result.xisf) warnings.push(`Skipped ${count(result.xisf, "XISF file", "XISF files")} because only FITS is supported.`);
+            showList("scanWarnings", warnings);
+
+            if (!frames.length) {
+                $("scanStatus").textContent = result.checked
+                    ? `Checked ${result.checked.toLocaleString()} FITS files and found no light frames. Try another folder.`
+                    : "No FITS files were found here. Try another folder.";
+                return;
+            }
+            const targets = new Set(frames.map(targetKey)).size;
+            $("scanStatus").textContent =
+                `Found ${frames.length.toLocaleString()} light ${frames.length === 1 ? "frame" : "frames"} of ${targets} ${targets === 1 ? "target" : "targets"}.`;
+            showTargets();
+        }
+
+        function resetResults() {
+            frames = [];
+            selected = new Set();
+            ["targetPanel", "settingsPanel", "csvPanel"].forEach((id) => ($(id).hidden = true));
+            showList("scanWarnings", []);
+            $("scanStatus").textContent = "Reading headers…";
+        }
+
+        /* ---- Targets and settings ---- */
+
+        const targetKey = (frame) => frame.target.toLowerCase();
+
+        function showTargets() {
+            const groups = new Map();
+            frames.forEach((f) => {
+                const key = targetKey(f);
+                if (!groups.has(key)) groups.set(key, { name: f.target, count: 0 });
+                groups.get(key).count++;
+            });
+            const box = $("targets");
+            box.textContent = "";
+            [...groups.entries()]
+                .sort((a, b) => a[1].name.localeCompare(b[1].name, undefined, { numeric: true }))
+                .forEach(([key, group]) => {
+                    const label = document.createElement("label");
+                    const input = document.createElement("input");
+                    input.type = "checkbox";
+                    input.value = key;
+                    input.addEventListener("change", () => {
+                        if (input.checked) selected.add(key);
+                        else selected.delete(key);
+                        update();
+                    });
+                    const name = document.createElement("span");
+                    name.textContent = group.name;
+                    const count = document.createElement("small");
+                    count.textContent = `${group.count.toLocaleString()} ${group.count === 1 ? "frame" : "frames"}`;
+                    label.append(input, name, count);
+                    box.append(label);
+                });
+            $("targetPanel").hidden = false;
+            if (groups.size === 1) {
+                box.querySelector("input").checked = true;
+                selected.add([...groups.keys()][0]);
+            }
+            update();
+        }
+
+        function selectedFrames() {
+            return frames.filter((f) => selected.has(targetKey(f)));
+        }
+
+        function compareText(a, b) {
+            return a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0;
+        }
+
+        // R, G, B, S, H, O first, then any other filters alphabetically.
+        const FILTER_ORDER = [
+            /^(r|red)$/i,
+            /^(g|green)$/i,
+            /^(b|blue)$/i,
+            /^(s|sii|s2|sulfur|sulphur)$/i,
+            /^(h|ha|h-a|h-alpha|halpha|hα)$/i,
+            /^(o|oiii|o3|oxygen)$/i,
+        ];
+
+        function filterRank(filter) {
+            const rank = FILTER_ORDER.findIndex((pattern) => pattern.test(filter.trim()));
+            return rank < 0 ? FILTER_ORDER.length : rank;
+        }
+
+        function compareFilters(a, b) {
+            return filterRank(a) - filterRank(b) || compareText(a, b);
+        }
+
+        function showFilterRows(chosen) {
+            const body = $("filterRows");
+            const filters = [...new Set(chosen.map((f) => f.filter))].sort(compareFilters);
+            const focused = document.activeElement && document.activeElement.dataset.filter;
+            body.textContent = "";
+            filters.forEach((filter) => {
+                const row = document.createElement("tr");
+                const name = document.createElement("td");
+                name.textContent = filter || "(no filter)";
+                const idCell = document.createElement("td");
+                const input = document.createElement("input");
+                input.type = "text";
+                input.inputMode = "numeric";
+                input.dataset.filter = filter;
+                input.setAttribute("aria-label", `AstroBin filter ID for ${filter || "frames with no filter"}`);
+                input.value = settings.filterIds[filter] || "";
+                input.addEventListener("input", () => {
+                    settings.filterIds[filter] = input.value.trim();
+                    saveSettings();
+                    showCsv();
+                });
+                idCell.append(input);
+                row.append(name, idCell);
+                body.append(row);
+                if (filter === focused) input.focus();
+            });
+        }
+
+        /* ---- CSV ---- */
+
+        function formatNumber(value) {
+            return String(parseFloat(value.toFixed(3)));
+        }
+
+        function roundAwayFromZero(value) {
+            return value < 0 ? -Math.round(-value) : Math.round(value);
+        }
+
+        function csvCell(value) {
+            return /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+        }
+
+        function buildCsv(chosen) {
+            const rows = new Map();
+            chosen.forEach((f) => {
+                const key = [f.night, f.filter.toLowerCase(), f.exposure, f.gain, f.binning].join("|");
+                if (!rows.has(key)) rows.set(key, { ...f, count: 0, temperatures: [] });
+                const row = rows.get(key);
+                row.count++;
+                if (f.temperature !== null) row.temperatures.push(f.temperature);
+            });
+            const sorted = [...rows.values()].sort(
+                (a, b) =>
+                    a.night.localeCompare(b.night) ||
+                    compareFilters(a.filter, b.filter) ||
+                    a.exposure - b.exposure ||
+                    (a.gain ?? 0) - (b.gain ?? 0) ||
+                    a.binning - b.binning,
+            );
+            const lines = ["date,filter,number,duration,binning,gain,sensorCooling,bortle"];
+            sorted.forEach((row) => {
+                const cooling = row.temperatures.length
+                    ? String(roundAwayFromZero(row.temperatures.reduce((sum, t) => sum + t, 0) / row.temperatures.length))
+                    : "";
+                lines.push(
+                    [
+                        row.night,
+                        csvCell(settings.filterIds[row.filter] || ""),
+                        row.count,
+                        formatNumber(row.exposure),
+                        row.binning,
+                        row.gain ?? "",
+                        cooling === "-0" ? "0" : cooling,
+                        settings.bortle,
+                    ].join(","),
+                );
+            });
+            return lines.join("\n") + "\n";
+        }
+
+        function showCsv() {
+            const chosen = selectedFrames();
+            $("csvOutput").value = buildCsv(chosen);
+            $("csvStatus").textContent = "";
+            const missing = [...new Set(chosen.map((f) => f.filter))]
+                .filter((filter) => !settings.filterIds[filter])
+                .map((filter) => filter || "(no filter)");
+            const nights = new Set(chosen.map((f) => f.night)).size;
+            const warnings = [];
+            if (missing.length) warnings.push(`Add an AstroBin ID for ${missing.join(", ")}. Those rows have a blank filter until you do.`);
+            showList("csvWarnings", warnings);
+            $("csvStatus").textContent =
+                `${chosen.length.toLocaleString()} ${chosen.length === 1 ? "frame" : "frames"} from ${nights} ${nights === 1 ? "night" : "nights"}`;
+        }
+
+        function update() {
+            const chosen = selectedFrames();
+            $("settingsPanel").hidden = !chosen.length;
+            $("csvPanel").hidden = !chosen.length;
+            if (!chosen.length) return;
+            showFilterRows(chosen);
+            showCsv();
+        }
+
+        function showList(id, items) {
+            const list = $(id);
+            list.textContent = "";
+            items.forEach((text) => {
+                const item = document.createElement("li");
+                item.textContent = text;
+                list.append(item);
+            });
+        }
+
+        function fileStem() {
+            const names = [...new Set(selectedFrames().map((f) => f.target))];
+            return (names[0] || "target").replace(/[\\/:*?"<>|]/g, "_");
+        }
+
+        /* ---- Controls ---- */
+
+        $("chooseFolder").addEventListener("click", async () => {
+            if (!window.showDirectoryPicker) {
+                $("folderInput").click();
+                return;
+            }
+            let handle;
+            try {
+                handle = await window.showDirectoryPicker({ id: "astrobin-csv", mode: "read" });
+            } catch (err) {
+                if (err.name !== "AbortError") $("folderInput").click();
+                return;
+            }
+            rememberFolder(handle);
+            scanFolder(handle);
+        });
+
+        $("useLastFolder").addEventListener("click", async () => {
+            const handle = lastFolder;
+            try {
+                const options = { mode: "read" };
+                const permission =
+                    (await handle.queryPermission(options)) === "granted"
+                        ? "granted"
+                        : await handle.requestPermission(options);
+                if (permission !== "granted") {
+                    $("scanStatus").textContent = "Your browser needs permission to read this folder. Click again to allow it.";
+                    return;
+                }
+            } catch (err) {
+                await forgetFolder();
+                $("scanStatus").textContent = "That folder isn't available anymore. Choose it again.";
+                return;
+            }
+            scanFolder(handle);
+        });
+
+        $("folderInput").addEventListener("change", (event) => {
+            const files = [...event.target.files];
+            event.target.value = "";
+            if (files.length) scan(filesFromInput(files));
+        });
+
+        $("stopScan").addEventListener("click", () => {
+            scanId++;
+            setScanning(false);
+            $("scanStatus").textContent = "Stopped. Choose a folder to start again.";
+        });
+
+        restoreLastFolder();
+
+        $("bortle").value = settings.bortle;
+        $("bortle").addEventListener("input", () => {
+            const value = $("bortle").value.trim();
+            settings.bortle = /^[1-9]$/.test(value) ? value : "";
+            saveSettings();
+            showCsv();
+        });
+
+        $("copyCsv").addEventListener("click", async () => {
+            const output = $("csvOutput");
+            try {
+                await navigator.clipboard.writeText(output.value);
+            } catch (err) {
+                output.select();
+                if (!document.execCommand("copy")) {
+                    $("csvStatus").textContent = "Couldn't copy automatically. The text is selected, so copy it from there.";
+                    return;
+                }
+            }
+            $("csvStatus").textContent = "Copied. Paste it into AstroBin's acquisition import.";
+        });
+
+        $("saveCsv").addEventListener("click", () => {
+            const url = URL.createObjectURL(new Blob([$("csvOutput").value], { type: "text/csv" }));
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `${fileStem()}_astrobin.csv`;
+            link.click();
+            URL.revokeObjectURL(url);
+            $("csvStatus").textContent = `Saved ${link.download}.`;
+        });
+    })();
+</script>
